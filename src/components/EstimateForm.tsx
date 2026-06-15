@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { Icon } from "./Icons";
 import { services, site } from "@/lib/site";
 
@@ -28,6 +29,11 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
       if (!res.ok || !json.ok) {
         throw new Error(json.error || "Something went wrong.");
       }
+      // Conversion event — see which pages/services actually produce leads.
+      track("estimate_submitted", {
+        service: String(data.service ?? "unknown"),
+        page: typeof window !== "undefined" ? window.location.pathname : "",
+      });
       setStatus("sent");
     } catch {
       setStatus("error");
