@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* ============================================================
+   NYC Painting Pros — design system
+   Navy ink · warm cream · confident amber accent
+   ============================================================ */
+
+@theme {
+  --color-ink: #0b1a2b;
+  --color-ink-700: #15314c;
+  --color-ink-600: #1f4669;
+  --color-cream: #faf6ef;
+  --color-cream-200: #f1e9dc;
+  --color-paper: #ffffff;
+  --color-green: #16924f;
+  --color-green-600: #0e6f3b;
+  --color-green-300: #7fd6a6;
+  --color-sky: #2f6fb0;
+  --color-muted: #5a6b7b;
+  --color-line: #e6ddce;
+
+  --shadow-soft: 0 1px 2px rgba(11, 26, 43, 0.04), 0 8px 30px rgba(11, 26, 43, 0.08);
+  --shadow-lift: 0 20px 60px -20px rgba(11, 26, 43, 0.35);
+
+  --radius-xl: 1.25rem;
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-green);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-green-600);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.95rem 1.6rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--color-green);
+  color: #fff;
+  box-shadow: 0 10px 24px -8px rgba(22, 146, 79, 0.55);
+}
+.btn-primary:hover {
+  background: var(--color-green-600);
+  box-shadow: 0 16px 30px -10px rgba(22, 146, 79, 0.65);
+  transform: translateY(-1px);
+}
+.btn-dark {
+  background: var(--color-ink);
+  color: #fff;
+}
+.btn-dark:hover {
+  background: var(--color-ink-700);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+}
+.btn-ghost:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.paint-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
