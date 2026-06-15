@@ -78,13 +78,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={site.phoneHref} className="btn btn-dark hidden sm:inline-flex">
-            <Icon.phone className="w-4 h-4" />
-            Call Now
-          </a>
-          <Link href="/contact" className="btn btn-primary hidden sm:inline-flex">
-            Free Estimate
-          </Link>
+          <div className="hidden sm:flex items-center gap-3">
+            <a href={site.phoneHref} className="btn btn-dark">
+              <Icon.phone className="w-4 h-4" />
+              Call Now
+            </a>
+            <Link href="/contact" className="btn btn-primary">
+              Free Estimate
+            </Link>
+          </div>
           <button
             onClick={() => setOpen((v) => !v)}
             className="lg:hidden p-2 -mr-2 text-[var(--color-ink)]"
