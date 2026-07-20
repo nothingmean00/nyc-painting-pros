@@ -33,7 +33,7 @@ export function adminAuthConfigured() {
 
 export function verifyAdminCredentials(email: string, password: string) {
   const expectedEmail = process.env.ADMIN_EMAIL;
-  const expectedPassword = process.env.ADMIN_PASSWORD;
+  const expectedPassword = process.env.ADMIN_PASSWORD?.trimEnd();
   if (!expectedEmail || !expectedPassword) return false;
 
   return (
