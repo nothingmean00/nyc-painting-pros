@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & Free Estimate — NYC Painting Pros",
   description:
-    "Get a free, no-obligation painting estimate in NYC. Call, email, or send us your project details and we'll respond within one business hour.",
+    "Request a free, no-obligation estimate for painting, wallpaper, wall finishes, repairs, or property turnovers in New York City.",
   alternates: { canonical: "/contact" },
 };
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Get in touch"
         title="Let's get your free estimate"
-        subtitle="Tell us about your project and a project manager will reach out within one business hour — usually much sooner. No pressure, no obligation."
+        subtitle="Tell us about the space, surface condition, access, and timeline. A project manager will review the details and confirm the right next step."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Contact", path: "/contact" },
@@ -79,11 +79,12 @@ export default function ContactPage() {
           <div className="mt-8 rounded-2xl bg-[var(--color-ink)] text-white p-6">
             <div className="flex items-center gap-2 text-[var(--color-green-300)]">
               <Icon.shield className="w-5 h-5" />
-              <span className="font-semibold">Licensed · Insured · Warrantied</span>
+              <span className="font-semibold">Building paperwork coordinated</span>
             </div>
             <p className="mt-2 text-sm text-white/70">
-              Need a Certificate of Insurance for your building? We issue them
-              the same day — just ask.
+              If your building requires a Certificate of Insurance or specific
+              additional-insured language, include it with your request so we
+              can confirm the project requirements.
             </p>
           </div>
         </div>

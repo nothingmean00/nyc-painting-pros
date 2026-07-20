@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = `${site.name} — NYC's most trusted painters`;
+export const alt = `${site.name} — detail-focused NYC painters`;
 
 export default function Og() {
   return new ImageResponse(
@@ -39,14 +39,14 @@ export default function Og() {
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 78, fontWeight: 800, lineHeight: 1.05, display: "flex" }}>
-            New York&apos;s most
+            Detail-focused
           </div>
           <div style={{ fontSize: 78, fontWeight: 800, lineHeight: 1.05, display: "flex" }}>
-            <span>trusted&nbsp;</span>
+            <span>NYC&nbsp;</span>
             <span style={{ color: "#7fd6a6" }}>painters.</span>
           </div>
           <div style={{ fontSize: 30, color: "#cdd6df", marginTop: 26, display: "flex" }}>
-            Interior · Exterior · Commercial — all five boroughs
+            Interior · Exterior · Commercial · all five boroughs
           </div>
         </div>
 

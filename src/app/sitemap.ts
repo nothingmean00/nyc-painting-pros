@@ -4,32 +4,27 @@ import { moneyPages } from "@/lib/money-pages";
 import { posts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const staticRoutes = ["", "/services", "/areas", "/painting", "/blog", "/guarantee", "/about", "/contact"];
+  const staticRoutes = ["", "/services", "/areas", "/painting", "/blog", "/guarantee", "/about", "/contact", "/privacy"];
 
   return [
     ...staticRoutes.map((path) => ({
       url: `${site.url}${path}`,
-      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : 0.8,
     })),
     // Money pages — highest commercial intent, prioritized for crawl.
     ...moneyPages.map((p) => ({
       url: `${site.url}/painting/${p.slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
     ...services.map((s) => ({
       url: `${site.url}/services/${s.slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
     ...areas.map((a) => ({
       url: `${site.url}/areas/${a.slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

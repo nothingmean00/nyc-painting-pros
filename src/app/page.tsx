@@ -24,11 +24,19 @@ const popularSlugs = [
   "exterior-painting-nyc",
 ];
 
+const neighborhoodSlugs = [
+  "upper-east-side-apartment-painters",
+  "tribeca-loft-painting",
+  "park-slope-brownstone-painters",
+  "long-island-city-condo-painting",
+  "williamsburg-office-painting",
+];
+
 const trustBadges = [
-  { icon: "shield", label: "Licensed & Insured", sub: "$2M liability" },
-  { icon: "leaf", label: "EPA Lead-Safe", sub: "RRP certified" },
+  { icon: "shield", label: "Written Scope", sub: "Clear inclusions" },
+  { icon: "leaf", label: "Low-VOC Options", sub: "Product matched" },
   { icon: "medal", label: `${site.warrantyYears}-Year Warranty`, sub: "In writing" },
-  { icon: "clock", label: "On-Time, Every Time", sub: "Or we call ahead" },
+  { icon: "clock", label: "Planned Schedule", sub: "Access coordinated" },
 ] as const;
 
 export default function Home() {
@@ -52,9 +60,10 @@ export default function Home() {
               Serving all five boroughs of NYC
             </span>
             <h1 className="font-display text-[2.6rem] sm:text-6xl leading-[1.04] mt-6">
-              New York&apos;s most
+              Detail-focused{" "}
               <br />
-              trusted{" "}
+              {" "}
+              NYC{" "}
               <span className="relative text-[var(--color-green-600)]">
                 painters
                 <svg
@@ -76,10 +85,9 @@ export default function Home() {
               .
             </h1>
             <p className="mt-6 text-lg text-[var(--color-muted)] max-w-xl leading-relaxed">
-              Flawless interior, exterior &amp; commercial painting across all
-              five boroughs. Meticulous prep, premium finishes, spotless
-              cleanup — backed by a written {site.warrantyYears}-year
-              warranty.
+              Painting, wallpaper, decorative finishes, and turnover services
+              across all five boroughs. The scope, preparation, materials, and
+              schedule are documented before work begins.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn btn-primary text-base">
@@ -138,8 +146,8 @@ export default function Home() {
             Expert painting for every NYC space
           </h2>
           <p className="mt-4 text-lg text-[var(--color-muted)]">
-            From a single accent wall to a full commercial build-out, our crews
-            bring the same obsessive attention to prep, lines, and cleanup.
+            From a single wallpapered room to a commercial repaint or recurring
+            apartment turns, the plan starts with the surface and how the space is used.
           </p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -170,23 +178,22 @@ export default function Home() {
       <section className="bg-[var(--color-ink)] text-white">
         <div className="container-x py-20 lg:py-28 grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <span className="eyebrow !text-[var(--color-green-300)]">Why NYC chooses us</span>
+            <span className="eyebrow !text-[var(--color-green-300)]">How we work</span>
             <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-              The details others skip are the ones we obsess over
+              Details are decided before the crew arrives
             </h2>
             <p className="mt-5 text-white/70 text-lg leading-relaxed">
-              Anyone can roll paint on a wall. A finish you&apos;ll still love
-              years from now comes from everything around it — protecting your
-              floors, sanding between coats, cutting razor-sharp lines, and
-              leaving your home cleaner than we found it.
+              Surface condition, access, protection, product compatibility,
+              sheen, and drying time all affect the result. We document those
+              choices so expectations stay clear from estimate to walkthrough.
             </p>
             <ul className="mt-8 grid sm:grid-cols-2 gap-4">
               {[
-                "Dedicated project manager on every job",
-                "Background-checked, in-house crews",
-                "Daily clean-up & dust containment",
-                "Transparent, itemized fixed pricing",
-                "Premium Benjamin Moore & Sherwin-Williams",
+                "One project contact from estimate to closeout",
+                "Preparation matched to the surface condition",
+                "Daily cleanup and dust-control planning",
+                "Itemized pricing with options and exclusions",
+                "Specified products, colors, sheens, and coat counts",
                 "Written workmanship warranty",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-3">
@@ -198,10 +205,10 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: "shield", t: "Licensed & insured", s: "$2M liability + workers' comp" },
-              { icon: "leaf", t: "EPA Lead-Safe", s: "Certified for pre-1978 buildings" },
-              { icon: "medal", t: `${site.warrantyYears}-yr warranty`, s: "In writing, on every job" },
-              { icon: "pin", t: "Five boroughs", s: "Local crews, citywide reach" },
+              { icon: "shield", t: "Written scope", s: "Prep, products, and exclusions" },
+              { icon: "leaf", t: "Finish options", s: "Low-VOC and specialty systems" },
+              { icon: "medal", t: `${site.warrantyYears}-yr warranty`, s: "Terms documented in writing" },
+              { icon: "pin", t: "Five boroughs", s: "Building access coordinated" },
             ].map((s) => {
               const I = Icon[s.icon as keyof typeof Icon];
               return (
@@ -323,6 +330,49 @@ export default function Home() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ============================ LOCAL PROJECTS ============================ */}
+      <section className="container-x py-20 lg:py-28">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Neighborhood expertise</span>
+            <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
+              Built around real NYC buildings
+            </h2>
+            <p className="mt-4 text-lg text-[var(--color-muted)]">
+              Co-op paperwork, high ceilings, brownstone trim, condo move-ins,
+              and office downtime all change the painting plan.
+            </p>
+          </div>
+          <Link href="/painting" className="btn btn-ghost">
+            Compare projects <Icon.arrow className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {neighborhoodSlugs.map((slug) => {
+            const p = moneyPages.find((m) => m.slug === slug);
+            if (!p) return null;
+            const I = Icon[p.icon];
+            return (
+              <Link
+                key={p.slug}
+                href={`/painting/${p.slug}`}
+                className="group rounded-2xl border border-[var(--color-line)] bg-white p-5 transition-all hover:-translate-y-1 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)]"
+              >
+                <span className="grid place-items-center w-10 h-10 rounded-lg bg-[var(--color-green)]/12 text-[var(--color-green-600)]">
+                  <I className="w-5 h-5" />
+                </span>
+                <h3 className="mt-4 font-display text-lg leading-snug group-hover:text-[var(--color-green-600)]">
+                  {p.h1}
+                </h3>
+                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-[var(--color-muted)]">
+                  {p.lede}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

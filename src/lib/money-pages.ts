@@ -248,7 +248,7 @@ export const moneyPages: MoneyPage[] = [
         a: "We handle patching, crack repair, and skim coating as part of prep. Heavier plaster or water-damage repair is itemized separately so the quote stays transparent.",
       },
     ],
-    relatedServices: ["interior-painting", "drywall-plaster-repair"],
+    relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
     relatedPages: ["interior-painting-manhattan", "rental-turnover-painting-nyc", "pre-war-apartment-painting-nyc"],
   },
@@ -1051,7 +1051,7 @@ export const moneyPages: MoneyPage[] = [
         a: "We use scuff- and scrub-resistant finishes built to survive tenants and make the next turnover easier and cheaper.",
       },
     ],
-    relatedServices: ["interior-painting", "drywall-plaster-repair"],
+    relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
     relatedAreas: ["manhattan", "brooklyn", "queens", "bronx"],
     relatedPages: ["apartment-painting-nyc", "co-op-condo-painting-nyc"],
   },
@@ -1124,7 +1124,7 @@ export const moneyPages: MoneyPage[] = [
         a: "Very. We cut clean, straight transitions at ceilings, corners, and trim so the wall looks intentional and professionally finished.",
       },
     ],
-    relatedServices: ["interior-painting"],
+    relatedServices: ["decorative-finishes", "wallpaper-installation", "interior-painting"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
     relatedPages: ["apartment-painting-nyc", "interior-painting-brooklyn"],
   },
@@ -1497,6 +1497,376 @@ export const moneyPages: MoneyPage[] = [
     relatedServices: ["interior-painting"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
     relatedPages: ["trim-molding-installation-nyc", "apartment-painting-nyc"],
+  },
+
+  // 21 - LONG-TAIL LOCAL ---------------------------------------------------
+  {
+    slug: "upper-east-side-apartment-painters",
+    keyword: "Upper East Side apartment painters",
+    icon: "roller",
+    title: "Upper East Side Apartment Painters | Co-op & Condo Painting",
+    description:
+      "Upper East Side apartment painters for co-ops, condos, pre-war homes, and occupied units. COIs handled, low-VOC finishes, clean crews, free itemized estimate.",
+    h1: "Upper East Side apartment painters",
+    lede: "Co-op paperwork, pre-war plaster, white-glove building rules, and tight elevator windows handled by one clean, insured painting crew.",
+    intro: [
+      "Upper East Side apartments often combine beautiful detail with strict building logistics. A simple repaint can involve a managing agent, a Certificate of Insurance, freight elevator windows, protected lobby paths, and work-hour rules before a brush ever touches the wall.",
+      "We build the schedule around those realities. Our crews protect floors and fixtures, repair plaster properly, use low-VOC premium paint, and keep the job site quiet and organized enough for occupied buildings.",
+    ],
+    scope: {
+      heading: "What Upper East Side apartment painting includes",
+      items: [
+        "Same-day COIs for co-op and condo managing agents",
+        "Furniture, floor, hallway, and elevator protection",
+        "Crack repair, patching, sanding, and spot priming",
+        "Low-VOC Benjamin Moore or Sherwin-Williams finishes",
+        "Clean lines around crown molding, trim, and built-ins",
+        "Daily cleanup and a written final walkthrough",
+      ],
+    },
+    sections: [
+      {
+        h2: "Built for co-op boards and managing agents",
+        body: "Upper East Side buildings usually want paperwork before they want paint. We provide insurance certificates, written scope details, and schedule coordination early so approval does not hold up the start date.",
+        bullets: [
+          "COI naming your building and managing agent",
+          "Work scheduled inside building-approved hours",
+          "Protection plans for hallways, service elevators, and lobbies",
+        ],
+      },
+      {
+        h2: "Pre-war plaster and fine trim need better prep",
+        body: "Older Upper East Side apartments show every shortcut. We stabilize hairline cracks, feather repairs, sand old ridges, and prime where needed before finish coats, so the final result looks smooth in morning and evening light.",
+      },
+    ],
+    cost: {
+      intro:
+        "Upper East Side pricing depends on apartment size, prep level, trim detail, and building logistics. Typical ranges:",
+      rows: [
+        { item: "Studio or junior one repaint", range: "$2,400 - $5,200" },
+        { item: "1-2 bedroom co-op or condo", range: "$4,500 - $9,500" },
+        { item: "Pre-war plaster prep add-on", range: "$600 - $2,500" },
+        { item: "Single room or nursery", range: "$650 - $1,800" },
+      ],
+      note: "Every estimate is itemized after photos or a walkthrough, including prep, paint, access logistics, and optional trim or ceiling work.",
+    },
+    faqs: [
+      {
+        q: "Do Upper East Side co-ops require a COI for painting?",
+        a: "Most do. We issue Certificates of Insurance quickly and can name the building, managing agent, and ownership entity exactly as requested.",
+      },
+      {
+        q: "Can you paint while I live in the apartment?",
+        a: "Yes. We work room by room, contain dust, keep walkways open, and use low-VOC paint so most clients stay home during the project.",
+      },
+      {
+        q: "Do you repair old plaster cracks before painting?",
+        a: "Yes. We repair cracks and damaged plaster before priming and painting; heavier skim coating is priced separately so the scope stays clear.",
+      },
+      {
+        q: "How fast can you start after board approval?",
+        a: "Most approved projects can be scheduled within a week, sometimes sooner. The exact start date depends on scope and building access windows.",
+      },
+    ],
+    relatedServices: ["interior-painting", "drywall-plaster-repair", "wallpaper-removal"],
+    relatedAreas: ["manhattan"],
+    relatedPages: ["co-op-condo-painting-nyc", "pre-war-apartment-painting-nyc", "interior-painting-manhattan"],
+  },
+
+  // 22 - LONG-TAIL LOCAL ---------------------------------------------------
+  {
+    slug: "tribeca-loft-painting",
+    keyword: "Tribeca loft painting",
+    icon: "building",
+    title: "Tribeca Loft Painting | High Ceilings, Exposed Brick & Condos",
+    description:
+      "Tribeca loft painting for open-plan condos, high ceilings, exposed brick, and gallery-smooth walls. Clean protection, COIs, premium finishes, free estimate.",
+    h1: "Tribeca loft painting",
+    lede: "High ceilings, long sightlines, exposed brick, and polished condo logistics painted with the precision loft spaces demand.",
+    intro: [
+      "Tribeca lofts make paint work visible. Long walls, oversized windows, gallery lighting, and high ceilings leave no place for roller marks, flashing, or uneven cut lines to hide.",
+      "We plan loft projects around clean access, dust control, lift-safe work, and finish consistency across wide open surfaces. Whether you are refreshing a white-box condo or adding depth to a live-work loft, the job is staged for a crisp, durable result.",
+    ],
+    scope: {
+      heading: "What Tribeca loft painting includes",
+      items: [
+        "COIs and building access coordination",
+        "Protection for floors, glass, steel, brick, and millwork",
+        "Tall-wall setup with safe ladders or lifts as needed",
+        "Surface repair, sanding, priming, and finish coats",
+        "Sheen and color guidance for strong natural light",
+        "Daily cleanup suitable for occupied condo buildings",
+      ],
+    },
+    sections: [
+      {
+        h2: "Long walls need consistent prep and sheen",
+        body: "In a loft, even small patch halos become obvious because the light travels across long uninterrupted surfaces. We feather repairs wider, prime correctly, and keep sheen consistent so walls read clean from every angle.",
+      },
+      {
+        h2: "Exposed brick, beams, and glass get protected first",
+        body: "Tribeca interiors often mix painted walls with brick, steel, stone, oversized windows, and custom millwork. We mask those materials before sanding or spraying so the finished space still feels like a loft, not a job site.",
+        bullets: [
+          "Brick and stone masked before wall prep begins",
+          "Window frames and glass protected from overspray and dust",
+          "Careful transitions where painted walls meet raw materials",
+        ],
+      },
+    ],
+    cost: {
+      intro:
+        "Tribeca loft costs are driven by ceiling height, wall length, access equipment, and finish level. Typical ranges:",
+      rows: [
+        { item: "Open living area refresh", range: "$3,500 - $8,500" },
+        { item: "Full 1-2 bedroom loft repaint", range: "$6,500 - $16,000" },
+        { item: "High ceiling setup", range: "$600 - $2,500" },
+        { item: "Gallery-smooth wall prep", range: "Quoted on inspection" },
+      ],
+      note: "We quote each loft after reviewing ceiling height, access, current wall condition, and whether ceilings, trim, or brick-adjacent detail work are included.",
+    },
+    faqs: [
+      {
+        q: "Can you paint lofts with very high ceilings?",
+        a: "Yes. We use the right ladder, scaffold, or lift setup for the space and coordinate any building rules before work begins.",
+      },
+      {
+        q: "Do you paint or seal exposed brick?",
+        a: "We can, but only after discussing the tradeoffs. Many clients want brick protected, not painted; if sealing or limewashing makes sense, we specify the right product.",
+      },
+      {
+        q: "How do you avoid roller marks on long loft walls?",
+        a: "We repair and prime correctly, maintain a wet edge, use the right nap, and choose sheen carefully so broad walls finish evenly.",
+      },
+      {
+        q: "Do Tribeca condo buildings need insurance certificates?",
+        a: "Usually, yes. We issue COIs and coordinate access requirements with your managing agent or building staff.",
+      },
+    ],
+    relatedServices: ["interior-painting", "drywall-plaster-repair", "commercial-painting"],
+    relatedAreas: ["manhattan"],
+    relatedPages: ["interior-painting-manhattan", "co-op-condo-painting-nyc", "skim-coating-nyc"],
+  },
+
+  // 23 - LONG-TAIL LOCAL ---------------------------------------------------
+  {
+    slug: "park-slope-brownstone-painters",
+    keyword: "Park Slope brownstone painters",
+    icon: "house",
+    title: "Park Slope Brownstone Painters | Interior & Exterior Detail Work",
+    description:
+      "Park Slope brownstone painters for plaster, trim, stair halls, parlor floors, facades, and front doors. Historic detail protected. Free itemized estimate.",
+    h1: "Park Slope brownstone painters",
+    lede: "Historic plaster, deep trim, stair halls, parlor floors, facades, and front doors finished with restoration-level care.",
+    intro: [
+      "A Park Slope brownstone is full of details that make painting slower and more valuable: original moldings, tall stair halls, pocket doors, plaster medallions, wood floors, and street-facing entries that define the whole house.",
+      "We protect those details first, then repair, prime, and paint with a system matched to the surface. The result is clean enough for daily family life and careful enough for historic interiors.",
+    ],
+    scope: {
+      heading: "What Park Slope brownstone painting includes",
+      items: [
+        "Protection for wood floors, stairs, railings, and built-ins",
+        "Plaster crack repair and skim coating where needed",
+        "Crisp trim, casing, baseboard, and crown molding work",
+        "Parlor-floor, hallway, stairwell, and bedroom painting",
+        "Exterior door, cornice, stoop, and facade coatings",
+        "Low-VOC options for families, kids, and pets",
+      ],
+    },
+    sections: [
+      {
+        h2: "Brownstone interiors are detail work, not just wall work",
+        body: "The difference between a rushed repaint and a brownstone-quality finish is in the trim edges, plaster repairs, sanding, and masking. We protect original woodwork and cut clean lines around the details that give the home its character.",
+      },
+      {
+        h2: "Exterior paint has to survive Brooklyn weather",
+        body: "Front doors, railings, cornices, and facade trim take sun, freeze-thaw cycles, rain, and street dust. We scrape, sand, prime, and coat with exterior systems selected for the exact surface.",
+        bullets: [
+          "Rust treatment and metal primer for railings",
+          "Weather-rated coatings for doors and trim",
+          "Lead-safe practices for older painted surfaces",
+        ],
+      },
+    ],
+    cost: {
+      intro:
+        "Park Slope brownstone costs vary by floor count, trim complexity, plaster condition, and exterior scope. Typical ranges:",
+      rows: [
+        { item: "Parlor floor repaint", range: "$5,500 - $12,000" },
+        { item: "Stair hall and common areas", range: "$3,500 - $9,000" },
+        { item: "Full interior phase", range: "$12,000 - $35,000" },
+        { item: "Front door, railings, or facade detail", range: "$900 - $6,500" },
+      ],
+      note: "We itemize rooms, trim, plaster repair, and exterior details separately so you can phase the project if needed.",
+    },
+    faqs: [
+      {
+        q: "Do you paint brownstone stair halls?",
+        a: "Yes. We protect stairs and railings, use the right access setup, and sequence the work so the stair remains usable when possible.",
+      },
+      {
+        q: "Can you preserve original trim and molding?",
+        a: "Yes. We mask, sand, caulk, fill, and paint trim carefully, and can discuss stripping or restoration where old paint buildup is hiding detail.",
+      },
+      {
+        q: "Do you handle exterior brownstone painting?",
+        a: "Yes. We paint front doors, railings, cornices, trim, and select facade surfaces using weather-rated prep and coatings.",
+      },
+      {
+        q: "Is your process safe for older painted surfaces?",
+        a: "We follow lead-safe practices on older buildings and contain dust before sanding or disturbing suspect coatings.",
+      },
+    ],
+    relatedServices: ["interior-painting", "exterior-painting", "drywall-plaster-repair"],
+    relatedAreas: ["brooklyn"],
+    relatedPages: ["brownstone-painting-brooklyn", "interior-painting-brooklyn", "trim-molding-installation-nyc"],
+  },
+
+  // 24 - LONG-TAIL LOCAL ---------------------------------------------------
+  {
+    slug: "long-island-city-condo-painting",
+    keyword: "Long Island City condo painting",
+    icon: "building",
+    title: "Long Island City Condo Painting | High-Rise Apartments & Lofts",
+    description:
+      "Long Island City condo painting for high-rise units, waterfront apartments, lofts, and move-in repaints. COIs, clean protection, free estimate.",
+    h1: "Long Island City condo painting",
+    lede: "High-rise condos, waterfront apartments, and modern lofts painted cleanly around building rules, elevators, and tight move-in timelines.",
+    intro: [
+      "Long Island City condos often need a fast, polished repaint before move-in, listing, or furnishing. The challenge is not only the paint; it is timing the work around COIs, loading docks, elevator reservations, and freshly installed floors or millwork.",
+      "We handle the building-side details, protect new finishes, and deliver a crisp repaint that matches the clean lines of modern LIC apartments.",
+    ],
+    scope: {
+      heading: "What LIC condo painting includes",
+      items: [
+        "COIs and elevator scheduling support",
+        "Move-in, pre-listing, and occupied-unit painting",
+        "Full protection for floors, counters, windows, and fixtures",
+        "Drywall patching, nail-hole repair, sanding, and priming",
+        "Low-odor, low-VOC paint for quick occupancy",
+        "Final walkthrough before furniture or staging arrives",
+      ],
+    },
+    sections: [
+      {
+        h2: "Fast repainting before furniture arrives",
+        body: "The easiest time to paint a condo is before the movers show up. We can quote quickly from photos, schedule around building access, and finish walls, ceilings, and trim before furniture makes the project slower and more expensive.",
+      },
+      {
+        h2: "Modern drywall needs clean, even finishing",
+        body: "Newer high-rise walls are not always perfect. Nail pops, settlement cracks, and patched TV mounts can show through a fresh coat unless they are feathered and primed first.",
+        bullets: [
+          "Patch and blend TV mount and art holes",
+          "Repair settlement cracks at seams and corners",
+          "Choose durable sheens for bright waterfront light",
+        ],
+      },
+    ],
+    cost: {
+      intro:
+        "Long Island City condo painting is usually priced by room count, ceiling height, and prep. Typical ranges:",
+      rows: [
+        { item: "Studio or alcove studio", range: "$1,800 - $4,000" },
+        { item: "1-bedroom condo", range: "$3,000 - $6,500" },
+        { item: "2-bedroom condo", range: "$5,000 - $10,000" },
+        { item: "Move-in touchups and patching", range: "$550 - $1,800" },
+      ],
+      note: "Send photos and approximate square footage for a fast ballpark; we confirm the final number in a written, itemized estimate.",
+    },
+    faqs: [
+      {
+        q: "Can you paint before my move-in date?",
+        a: "Yes. Move-in repaints are a common LIC project, and we prioritize scheduling before furniture delivery when possible.",
+      },
+      {
+        q: "Do high-rise condo buildings require a COI?",
+        a: "Most do. We provide COIs and can coordinate insurance wording with the managing agent.",
+      },
+      {
+        q: "Can you patch TV mount holes and repaint the wall?",
+        a: "Yes. We patch, feather, sand, prime, and paint so mount holes and art holes disappear.",
+      },
+      {
+        q: "What paint finish works best in bright waterfront condos?",
+        a: "Usually a high-quality matte or low-sheen eggshell. We avoid shiny finishes on imperfect walls because bright light exposes flaws.",
+      },
+    ],
+    relatedServices: ["interior-painting", "drywall-plaster-repair"],
+    relatedAreas: ["queens"],
+    relatedPages: ["apartment-painting-nyc", "co-op-condo-painting-nyc", "interior-painting-manhattan"],
+  },
+
+  // 25 - LONG-TAIL LOCAL ---------------------------------------------------
+  {
+    slug: "williamsburg-office-painting",
+    keyword: "Williamsburg office painting",
+    icon: "building",
+    title: "Williamsburg Office Painting | Studios, Agencies & Retail Offices",
+    description:
+      "Williamsburg office painting for studios, agencies, creative offices, and retail workspaces. Nights and weekends available, low-odor paint, free estimate.",
+    h1: "Williamsburg office painting",
+    lede: "Creative offices, studios, showrooms, and retail workspaces painted after hours so your team can keep working.",
+    intro: [
+      "Williamsburg workspaces need paint crews that understand both brand presentation and operational downtime. A fresh office should look sharp for clients without closing the studio for a week.",
+      "We phase office painting by room, wall, or weekend block, use low-odor commercial coatings, and protect desks, equipment, floors, inventory, and common areas from dust and overspray.",
+    ],
+    scope: {
+      heading: "What Williamsburg office painting includes",
+      items: [
+        "Evening, weekend, and phased scheduling",
+        "COIs for landlords and building managers",
+        "Protection for desks, equipment, floors, and inventory",
+        "Durable commercial wall coatings and trim paint",
+        "Accent walls, brand colors, meeting rooms, and common areas",
+        "Daily cleanup before staff or clients return",
+      ],
+    },
+    sections: [
+      {
+        h2: "Paint without shutting down the office",
+        body: "We divide the scope into practical phases, then schedule crews around your workday. Conference rooms, phone booths, showrooms, and common areas can often be completed overnight or across a weekend.",
+        bullets: [
+          "Night and weekend scheduling available",
+          "Low-odor coatings for faster return to work",
+          "Clear phase plan before the first drop cloth goes down",
+        ],
+      },
+      {
+        h2: "Commercial finishes that hold up",
+        body: "Office walls take chair scuffs, fingerprints, rolling carts, and constant touch. We recommend durable, washable finishes in high-traffic zones and reserve specialty accent finishes for the walls that need to carry the brand.",
+      },
+    ],
+    cost: {
+      intro:
+        "Williamsburg office painting is priced by square footage, schedule, prep, and whether work happens after hours. Typical ranges:",
+      rows: [
+        { item: "Small studio or office suite", range: "$2,500 - $6,500" },
+        { item: "2,000-5,000 sq ft office", range: "$7,500 - $22,000" },
+        { item: "Accent wall or branded room", range: "$650 - $2,500" },
+        { item: "After-hours scheduling", range: "Quoted by phase" },
+      ],
+      note: "We walk the space, map phases, and provide a written estimate that separates prep, paint, schedule, and optional brand-color work.",
+    },
+    faqs: [
+      {
+        q: "Can you paint our Williamsburg office over a weekend?",
+        a: "Often, yes. Smaller offices and phased areas can usually be finished over a weekend, depending on prep and drying time.",
+      },
+      {
+        q: "Do you match brand colors?",
+        a: "Yes. We can match brand colors from paint codes, samples, or physical materials and provide drawdowns before painting.",
+      },
+      {
+        q: "Will the office smell like paint on Monday?",
+        a: "We use low-odor, low-VOC commercial coatings where possible and ventilate during the work so teams can return quickly.",
+      },
+      {
+        q: "Do you provide COIs for commercial landlords?",
+        a: "Yes. We issue COIs and can name the landlord, property manager, or building ownership entity as required.",
+      },
+    ],
+    relatedServices: ["commercial-painting", "interior-painting"],
+    relatedAreas: ["brooklyn"],
+    relatedPages: ["office-painting-nyc", "commercial-painting-manhattan", "retail-storefront-painting-nyc"],
   },
 ];
 

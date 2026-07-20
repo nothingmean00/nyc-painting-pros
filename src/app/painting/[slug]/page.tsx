@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { faqSchema, breadcrumbs } from "@/lib/schema";
 import { moneyPages, getMoneyPage } from "@/lib/money-pages";
 import { site, services, areas } from "@/lib/site";
+import { conciseDescription } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return moneyPages.map((p) => ({ slug: p.slug }));
@@ -24,13 +25,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getMoneyPage(slug);
   if (!p) return {};
+  const description = conciseDescription(p.description);
   return {
-    title: p.title,
-    description: p.description,
+    title: { absolute: p.title },
+    description,
     alternates: { canonical: `/painting/${p.slug}` },
     openGraph: {
       title: p.title,
-      description: p.description,
+      description,
       url: `${site.url}/painting/${p.slug}`,
     },
   };

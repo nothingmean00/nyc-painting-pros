@@ -1,4 +1,9 @@
 import { site } from "@/lib/site";
+import {
+  IntakeStorageError,
+  markIntakeEmailDelivered,
+  recordIntake,
+} from "@/lib/intakes";
 
 // POST /api/estimate — receives a free-estimate request and emails it to the
 // business. Uses the Resend REST API (no SDK dependency). Configure via env:
@@ -7,8 +12,8 @@ import { site } from "@/lib/site";
 //   ESTIMATE_TO_EMAIL   inbox that receives leads (defaults to site.email)
 //   ESTIMATE_FROM_EMAIL verified Resend sender (defaults to onboarding@resend.dev for testing)
 //
-// Without RESEND_API_KEY the lead is validated and logged server-side (so it is
-// never silently lost) and the form still confirms success.
+// Outside production, missing RESEND_API_KEY logs the validated lead for local
+// testing. In Vercel production, missing email delivery is treated as an error.
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,10 +25,14 @@ type Lead = {
   location?: string;
   service?: string;
   details?: string;
+  page?: string;
+  referrer?: string;
+  submissionId?: string;
   company?: string; // honeypot — real users never fill this
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function escapeHtml(s: string) {
   return s
@@ -52,6 +61,11 @@ export async function POST(request: Request) {
   const location = (body.location ?? "").trim();
   const service = (body.service ?? "").trim();
   const details = (body.details ?? "").trim();
+  const page = (body.page ?? "").trim().slice(0, 300);
+  const referrer = (body.referrer ?? "").trim().slice(0, 300);
+  const intakeId = UUID_RE.test(body.submissionId ?? "")
+    ? body.submissionId!
+    : crypto.randomUUID();
 
   const errors: Record<string, string> = {};
   if (!name) errors.name = "Name is required.";
@@ -62,6 +76,31 @@ export async function POST(request: Request) {
 
   if (Object.keys(errors).length > 0) {
     return Response.json({ ok: false, errors }, { status: 422 });
+  }
+
+  let recorded = false;
+  try {
+    await recordIntake({
+      id: intakeId,
+      name,
+      phone,
+      email,
+      location,
+      service,
+      details,
+      sourcePage: page,
+      referrer,
+    });
+    recorded = true;
+  } catch (error) {
+    console.error("[estimate] Intake storage failed:", error);
+    if (process.env.VERCEL_ENV === "production") {
+      return Response.json(
+        { ok: false, error: "Could not record your request right now." },
+        { status: 503 }
+      );
+    }
+    if (!(error instanceof IntakeStorageError)) throw error;
   }
 
   const to = process.env.ESTIMATE_TO_EMAIL || site.email;
@@ -76,6 +115,8 @@ export async function POST(request: Request) {
     ["Location", location],
     ["Service", service],
     ["Details", details || "—"],
+    ["Source page", page || "Unknown"],
+    ["Referrer", referrer || "Direct / not provided"],
   ];
   const text = lines.map(([k, v]) => `${k}: ${v}`).join("\n");
   const html = `
@@ -92,12 +133,12 @@ export async function POST(request: Request) {
     </table>
     <p style="font-family:sans-serif;color:#5a6b7b">Sent from ${site.domain}</p>`;
 
-  // No key configured — log the lead so it is recoverable, and confirm success.
+  // The database is the source of truth. Email is a secondary notification.
   if (!apiKey) {
     console.warn(
       "[estimate] RESEND_API_KEY not set — lead not emailed. Lead:\n" + text
     );
-    return Response.json({ ok: true, delivered: false });
+    return Response.json({ ok: true, recorded, delivered: false, intakeId });
   }
 
   try {
@@ -120,18 +161,20 @@ export async function POST(request: Request) {
     if (!res.ok) {
       const detail = await res.text();
       console.error("[estimate] Resend send failed:", res.status, detail);
-      return Response.json(
-        { ok: false, error: "Could not send right now." },
-        { status: 502 }
-      );
+      return Response.json({ ok: true, recorded, delivered: false, intakeId });
     }
 
-    return Response.json({ ok: true, delivered: true });
+    if (recorded) {
+      try {
+        await markIntakeEmailDelivered(intakeId);
+      } catch (error) {
+        console.error("[estimate] Could not update email delivery state:", error);
+      }
+    }
+
+    return Response.json({ ok: true, recorded, delivered: true, intakeId });
   } catch (err) {
     console.error("[estimate] Resend request error:", err);
-    return Response.json(
-      { ok: false, error: "Could not send right now." },
-      { status: 502 }
-    );
+    return Response.json({ ok: true, recorded, delivered: false, intakeId });
   }
 }

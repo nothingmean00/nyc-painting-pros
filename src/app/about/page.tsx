@@ -8,9 +8,9 @@ import { breadcrumbs } from "@/lib/schema";
 import { site, processSteps } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About — A Painting Company NYC Can Trust",
+  title: "About — Detail-Focused NYC Painting Company",
   description:
-    "NYC Painting Pros is a licensed, insured painting company serving all five boroughs. Learn how our obsession with prep, premium finishes, and clean job sites delivers a flawless result every time.",
+    "Learn how NYC Painting Pros plans preparation, products, protection, scheduling, and closeout for painting and wall-finish projects across all five boroughs.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,22 +18,22 @@ const values = [
   {
     icon: "shield" as const,
     title: "Trust, in writing",
-    text: "Licensed, insured, and bonded with a written workmanship warranty on every project. No handshake promises.",
+    text: "Written estimates document scope, materials, exclusions, scheduling, and workmanship warranty terms before work begins.",
   },
   {
     icon: "check" as const,
     title: "Prep is everything",
-    text: "We never skip the unglamorous work. 80% of a flawless finish happens before the first finish coat.",
+    text: "We put the unglamorous work in writing: patching, sanding, priming, masking, and surface protection before finish coats.",
   },
   {
     icon: "leaf" as const,
     title: "Healthier finishes",
-    text: "Premium low-VOC and zero-VOC paints as standard, so your space is safe to enjoy the same day.",
+    text: "Low- and zero-VOC options are selected with the room, substrate, finish, and reoccupancy needs in mind.",
   },
   {
     icon: "clock" as const,
     title: "Respect for your time",
-    text: "We show up when we say, communicate daily, and finish on schedule — or we call you ahead.",
+    text: "We confirm the schedule, communicate clearly, and call ahead if building access, weather, or drying time changes the plan.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Our story"
         title="Built on craft, trust, and clean job sites"
-        subtitle="We started NYC Painting Pros to be the painters New Yorkers actually want to recommend — meticulous, communicative, and genuinely respectful of your home."
+        subtitle="NYC Painting Pros is built for homeowners, property managers, and business owners who care about prep, communication, and a clean finish."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
@@ -63,16 +63,16 @@ export default function AboutPage() {
           </h2>
           <div className="mt-5 space-y-4 text-[var(--color-muted)] leading-relaxed text-lg">
             <p>
-              NYC Painting Pros started with a simple frustration: too many
-              painters in this city show up late, cut corners, and leave a mess.
-              We set out to build the opposite — a company New Yorkers could
-              trust with the keys to their home.
+              NYC painting projects fail in predictable places: vague scopes,
+              rushed prep, poor protection, missed building paperwork, and crews
+              that disappear when questions come up. We built the company around
+              those details.
             </p>
             <p>
-              That standard drives every job. Each project runs through a
-              dedicated project manager, every crew is in-house and
-              background-checked, and every finish is backed by our written
-              warranty. No corners, no surprises, no mess left behind.
+              Each project runs through a dedicated project manager, a written
+              scope, daily cleanup, and a final walkthrough. The result is a
+              calmer job and a finish backed by our written workmanship
+              warranty.
             </p>
           </div>
           <a href={site.phoneHref} className="btn btn-dark mt-8">
@@ -112,7 +112,7 @@ export default function AboutPage() {
 
       <section className="container-x py-16 lg:py-24">
         <h2 className="font-display text-3xl sm:text-4xl max-w-2xl">
-          How we deliver a flawless finish, every time
+          How we deliver a careful finish
         </h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
           {processSteps.map((step, i) => (

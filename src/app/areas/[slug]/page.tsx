@@ -9,6 +9,7 @@ import { Guarantees } from "@/components/Trust";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs, faqSchema } from "@/lib/schema";
 import { site, areas, services, faqs } from "@/lib/site";
+import { moneyPages } from "@/lib/money-pages";
 
 export function generateStaticParams() {
   return areas.map((a) => ({ slug: a.slug }));
@@ -26,12 +27,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const a = getArea(slug);
   if (!a) return {};
-  const title = `Painters in ${a.name}, NYC | Interior, Exterior & Commercial`;
+  const title = `Painters in ${a.name} | ${site.name}`;
+  const description = `Painting, wallpaper, wall-finish, and turnover services in ${a.name}. Review local project options and request a detailed estimate.`;
   return {
-    title,
-    description: `${a.name} painters you can trust. ${a.blurb} Licensed, insured, free estimates, ${site.warrantyYears}-year warranty.`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/areas/${a.slug}` },
-    openGraph: { title, description: a.blurb, url: `${site.url}/areas/${a.slug}` },
+    openGraph: { title, description, url: `${site.url}/areas/${a.slug}` },
   };
 }
 
@@ -43,6 +45,9 @@ export default async function AreaPage({
   const { slug } = await params;
   const a = getArea(slug);
   if (!a) notFound();
+  const localProjectPages = moneyPages
+    .filter((p) => p.relatedAreas.includes(a.slug))
+    .slice(0, 6);
 
   return (
     <>
@@ -73,11 +78,11 @@ export default async function AreaPage({
             Local painters who know {a.name}
           </h2>
           <p className="mt-4 text-[var(--color-muted)] leading-relaxed text-lg">
-            We&apos;ve painted hundreds of homes and businesses across {a.name},
-            so we know its building stock inside out — from prep quirks to
-            management-company COI requirements. You get a dedicated project
-            manager, premium low-VOC finishes, and a spotless job site from day
-            one to final walkthrough.
+            We plan {a.name} projects around the details that change the job:
+            building access, COI requirements, surface condition, room-by-room
+            sequencing, and cleanup. You get a dedicated project manager,
+            premium low-VOC finishes, and a documented walkthrough from day one
+            to final touchups.
           </p>
 
           <h3 className="font-display text-2xl mt-12">Services in {a.name}</h3>
@@ -101,6 +106,36 @@ export default async function AreaPage({
               );
             })}
           </div>
+
+          {localProjectPages.length > 0 && (
+            <>
+              <h3 className="font-display text-2xl mt-12">
+                Popular {a.name} painting projects
+              </h3>
+              <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                {localProjectPages.map((p) => {
+                  const I = Icon[p.icon];
+                  return (
+                    <Link
+                      key={p.slug}
+                      href={`/painting/${p.slug}`}
+                      className="flex items-start gap-3 rounded-2xl border border-[var(--color-line)] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)]"
+                    >
+                      <span className="grid place-items-center w-10 h-10 rounded-lg bg-[var(--color-ink)] text-white shrink-0">
+                        <I className="w-5 h-5" />
+                      </span>
+                      <span>
+                        <span className="block font-semibold">{p.h1}</span>
+                        <span className="mt-1 line-clamp-2 block text-sm leading-relaxed text-[var(--color-muted)]">
+                          {p.lede}
+                        </span>
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
           <h3 className="font-display text-2xl mt-12">
             Neighborhoods we cover in {a.name}

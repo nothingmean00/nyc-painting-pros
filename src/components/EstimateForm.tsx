@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { Icon } from "./Icons";
 import { services, site } from "@/lib/site";
@@ -10,6 +11,7 @@ type Status = "idle" | "submitting" | "sent" | "error";
 export function EstimateForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
+  const submissionId = useRef<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,12 +20,23 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
     setError("");
 
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const page =
+      typeof window !== "undefined"
+        ? `${window.location.pathname}${window.location.search}`
+        : "";
+    const referrer = typeof document !== "undefined" ? document.referrer : "";
+    submissionId.current ??= crypto.randomUUID();
 
     try {
       const res = await fetch("/api/estimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          page,
+          referrer,
+          submissionId: submissionId.current,
+        }),
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
@@ -32,7 +45,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
       // Conversion event — see which pages/services actually produce leads.
       track("estimate_submitted", {
         service: String(data.service ?? "unknown"),
-        page: typeof window !== "undefined" ? window.location.pathname : "",
+        page,
       });
       setStatus("sent");
     } catch {
@@ -51,8 +64,8 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
         </div>
         <h3 className="font-display text-2xl mt-4">Request received!</h3>
         <p className="text-[var(--color-muted)] mt-2">
-          Thanks — a project manager will reach out within one business hour
-          (usually much sooner) to confirm the details of your free estimate.
+          Thanks — a project manager will review the details and contact you to
+          confirm the next step for your estimate.
         </p>
       </div>
     );
@@ -64,7 +77,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
         <div>
           <h3 className="font-display text-2xl">Get your free estimate</h3>
           <p className="text-sm text-[var(--color-muted)] mt-1">
-            No obligation. Most quotes back within 24 hours.
+            No obligation. We will confirm whether photos or a walkthrough are needed.
           </p>
         </div>
       )}
@@ -87,10 +100,24 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
       )}
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Full name" name="name" autoComplete="name" required />
-        <Field label="Phone" name="phone" type="tel" autoComplete="tel" required />
+        <Field
+          label="Phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          inputMode="tel"
+          required
+        />
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
-        <Field label="Email" name="email" type="email" autoComplete="email" required />
+        <Field
+          label="Email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          inputMode="email"
+          required
+        />
         <Field label="Neighborhood / ZIP" name="location" required />
       </div>
       <label className="grid gap-1.5">
@@ -117,7 +144,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
         <textarea
           name="details"
           rows={compact ? 2 : 3}
-          placeholder="Rooms, square footage, timeline, colors in mind…"
+          placeholder="Rooms, approximate size, surface condition, timeline, and access details…"
           className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30 resize-none"
         />
       </label>
@@ -137,8 +164,11 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
         )}
       </button>
       <p className="text-xs text-[var(--color-muted)] text-center">
-        By submitting you agree to be contacted about your project. We never
-        share your information.
+        By submitting, you agree to be contacted about your project. See our{" "}
+        <Link href="/privacy" className="underline underline-offset-2 hover:text-[var(--color-green-600)]">
+          privacy policy
+        </Link>
+        .
       </p>
     </form>
   );
@@ -159,12 +189,14 @@ function Field({
   type = "text",
   required,
   autoComplete,
+  inputMode,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   autoComplete?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 }) {
   return (
     <label className="grid gap-1.5">
@@ -174,6 +206,7 @@ function Field({
         name={name}
         required={required}
         autoComplete={autoComplete}
+        inputMode={inputMode}
         className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
       />
     </label>

@@ -122,7 +122,7 @@ export default function BlogIndex() {
       </section>
 
       <CTASection
-        title="Reading is great. A flawless finish is better."
+        title="Turn the plan into a finished room."
         subtitle={`Put our advice to work — get a free estimate or call ${site.phone}.`}
       />
       <div className="h-20" />

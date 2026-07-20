@@ -8,9 +8,9 @@ import { breadcrumbs } from "@/lib/schema";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Painting Services in NYC — Interior, Exterior & Commercial",
+  title: "Painting, Wallpaper & Wall Finish Services in NYC",
   description:
-    "Explore our full range of NYC painting services: interior, exterior, commercial, cabinet refinishing, wallpaper removal and drywall repair. Licensed, insured, warrantied.",
+    "Explore NYC painting, wallpaper installation, decorative wall finishes, cabinet refinishing, repairs, and property turnover programs. Request a detailed estimate.",
   alternates: { canonical: "/services" },
 };
 
@@ -25,8 +25,8 @@ export default function ServicesIndex() {
       />
       <PageHero
         eyebrow="Our services"
-        title="Painting services for every NYC space"
-        subtitle="Whatever the surface, our crews deliver the same standard: meticulous prep, premium finishes, and a spotless job site — backed by a written warranty."
+        title="Painting and wall finishes for every NYC space"
+        subtitle="Interior and exterior painting, wallpaper, decorative finishes, repairs, cabinetry, and repeatable turnover scopes — planned around the surface and the building."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },

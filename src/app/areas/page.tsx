@@ -8,7 +8,7 @@ import { breadcrumbs } from "@/lib/schema";
 import { areas } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Areas We Serve — Painters Across All Five NYC Boroughs",
+  title: "NYC Painting Service Areas",
   description:
     "NYC Painting Pros serves Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Find your neighborhood and book a free estimate today.",
   alternates: { canonical: "/areas" },
@@ -26,7 +26,7 @@ export default function AreasIndex() {
       <PageHero
         eyebrow="Coverage"
         title="Painting all five boroughs of NYC"
-        subtitle="Local, background-checked crews who know your buildings and boards — from Tribeca high-rises to Staten Island family homes."
+        subtitle="Local crews who plan around your buildings, boards, access windows, and surfaces — from Tribeca high-rises to Staten Island family homes."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Areas We Serve", path: "/areas" },

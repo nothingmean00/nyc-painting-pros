@@ -18,6 +18,7 @@ export type Post = {
   readMinutes: number;
   author: string;
   cover: { id: string; alt: string };
+  relatedPages?: string[];
   intro: string[];
   blocks: Block[];
   takeaway?: string;
@@ -336,6 +337,257 @@ export const posts: Post[] = [
     ],
     takeaway:
       "Match sheen to the room's traffic and moisture: flat up high, eggshell for living spaces, satin where it gets wet or busy, semi-gloss on trim. It's the easiest upgrade most people overlook.",
+  },
+
+  {
+    slug: "upper-east-side-apartment-painting-checklist",
+    title: "Upper East Side Apartment Painting Checklist: COIs, Prep, and Timing",
+    excerpt:
+      "Painting an Upper East Side apartment is part finish work and part building coordination. Use this checklist to avoid board delays, elevator issues, and rushed prep.",
+    category: "NYC Living",
+    date: "2026-06-23",
+    readMinutes: 7,
+    author: "NYC Painting Pros Team",
+    cover: { id: "photo-1484154218962-a197022b5858", alt: "A refined apartment living room with bright painted walls" },
+    relatedPages: ["upper-east-side-apartment-painters", "co-op-condo-painting-nyc", "pre-war-apartment-painting-nyc"],
+    intro: [
+      "The fastest way to delay an Upper East Side repaint is to treat it like a simple wall-color change. In many co-op and condo buildings, the approval path matters as much as the paint itself.",
+      "Before the crew arrives, you want five things settled: insurance, access, work hours, surface condition, and room sequencing. This checklist keeps the project moving cleanly.",
+    ],
+    blocks: [
+      {
+        h2: "1. Ask the managing agent for exact COI wording",
+        body: [
+          "Do not guess at the Certificate of Insurance language. Ask the managing agent for the building name, ownership entity, additional insured wording, liability limits, and email address for submission.",
+          "A professional painter should be able to issue the COI quickly once those details are clear.",
+        ],
+      },
+      {
+        h2: "2. Reserve elevator and service access early",
+        body: [
+          "Even a small apartment repaint involves drop cloths, ladders, tools, paint, and debris removal. Buildings may require freight elevator reservations or service entrance use, especially in doorman buildings.",
+        ],
+        bullets: [
+          "Confirm allowed contractor hours",
+          "Reserve elevator windows before the start date",
+          "Ask whether lobby and hallway protection is required",
+        ],
+      },
+      {
+        h2: "3. Decide whether plaster repair belongs in the main scope",
+        body: [
+          "Pre-war Upper East Side walls often have hairline cracks, old patch ridges, and previous water marks. If those repairs are not included in the estimate, the final finish will only look as good as the old wall underneath.",
+        ],
+      },
+      {
+        h2: "4. Sequence rooms for real life",
+        body: [
+          "If you are living in the apartment during the repaint, work room by room. Keep a bedroom, kitchen path, and bathroom path usable whenever possible, and move belongings before the crew arrives so labor goes into painting instead of sorting.",
+        ],
+      },
+    ],
+    takeaway:
+      "For Upper East Side apartment painting, get COI wording first, reserve access early, and put plaster prep in writing before comparing quotes.",
+  },
+
+  {
+    slug: "tribeca-loft-painting-guide",
+    title: "Tribeca Loft Painting Guide: High Ceilings, Brick, and Gallery Walls",
+    excerpt:
+      "Loft painting is unforgiving: tall walls, strong light, brick edges, and long sightlines reveal every shortcut. Here is what to plan before repainting a Tribeca loft.",
+    category: "Lofts",
+    date: "2026-06-20",
+    readMinutes: 7,
+    author: "NYC Painting Pros Team",
+    cover: { id: "photo-1518005020951-eccb494ad742", alt: "A spacious loft interior with high ceilings and large windows" },
+    relatedPages: ["tribeca-loft-painting", "skim-coating-nyc", "interior-painting-manhattan"],
+    intro: [
+      "A Tribeca loft gives paint nowhere to hide. Natural light travels across long walls, ceiling heights amplify small mistakes, and exposed brick or steel makes the transitions more visible.",
+      "That does not mean loft painting has to be complicated. It means the prep, access plan, and sheen choice need to be decided before the first coat goes up.",
+    ],
+    blocks: [
+      {
+        h2: "Start with the light, not the color chip",
+        body: [
+          "Oversized windows can make a color look cooler, brighter, or flatter than it did in the store. Test large samples on multiple walls and look at them in morning, afternoon, and evening light.",
+        ],
+      },
+      {
+        h2: "Long walls need better patch blending",
+        body: [
+          "Patch halos show up fast on broad loft walls. Repairs should be feathered wider than the visible damage, sanded smooth, and primed before finish paint so the sheen stays even.",
+        ],
+        bullets: [
+          "Prime repaired areas before painting",
+          "Avoid high sheen on imperfect long walls",
+          "Paint full wall planes instead of spot-touching visible areas",
+        ],
+      },
+      {
+        h2: "Protect brick and raw materials before sanding",
+        body: [
+          "Exposed brick, stone, steel, and glass are usually the reason the loft feels special. They need protection before sanding or rolling begins, because dust and paint specks are difficult to remove from textured surfaces.",
+        ],
+      },
+      {
+        h2: "Plan access for high ceilings",
+        body: [
+          "High ceilings can require tall ladders, scaffold, or lift access. That affects schedule, cost, and building approval, so it belongs in the original estimate instead of becoming a day-one surprise.",
+        ],
+      },
+    ],
+    takeaway:
+      "A great loft repaint comes down to light testing, wide patch blending, careful protection around brick, and a clear high-ceiling access plan.",
+  },
+
+  {
+    slug: "park-slope-brownstone-painting-plan",
+    title: "A Practical Painting Plan for Park Slope Brownstones",
+    excerpt:
+      "Brownstones need a different painting plan than apartments. Learn how to phase parlor floors, stair halls, plaster, trim, and exterior details without turning the whole house upside down.",
+    category: "Brownstones",
+    date: "2026-06-18",
+    readMinutes: 8,
+    author: "NYC Painting Pros Team",
+    cover: { id: "photo-1522708323590-d24dbb6b0267", alt: "A historic home interior with bright walls and wood floors" },
+    relatedPages: ["park-slope-brownstone-painters", "brownstone-painting-brooklyn", "trim-molding-installation-nyc"],
+    intro: [
+      "Painting a Park Slope brownstone all at once can be disruptive. Painting it without a plan can be worse: crews repeat setup, stair halls stay half-finished, and plaster repairs get separated from the finish work.",
+      "A better plan phases the house by use, access, and surface type. The goal is to make progress without taking over every room at the same time.",
+    ],
+    blocks: [
+      {
+        h2: "Phase by how the house is used",
+        body: [
+          "Start with the rooms that affect daily life most: bedrooms, kitchen-adjacent areas, and primary living spaces. Save lower-priority guest rooms or storage areas for a later phase if budget or schedule is tight.",
+        ],
+      },
+      {
+        h2: "Do stair halls as their own project",
+        body: [
+          "Stair halls are access-heavy and detail-heavy. Railings, spindles, landings, tall walls, and traffic all make them slower than a normal room. Treating the stair as its own phase keeps the rest of the project cleaner.",
+        ],
+      },
+      {
+        h2: "Bundle plaster and trim prep before finish coats",
+        body: [
+          "Brownstone walls and trim usually need more than paint. Crack repair, skim coating, caulking, nail-hole filling, and sanding should happen together so the finish coat goes over a consistent surface.",
+        ],
+        bullets: [
+          "Repair plaster cracks before color decisions are final",
+          "Caulk trim seams after sanding and before finish paint",
+          "Prime patched plaster so it does not flash through",
+        ],
+      },
+      {
+        h2: "Do exterior details when weather cooperates",
+        body: [
+          "Front doors, railings, and facade details need dry weather and the right temperatures. If exterior painting is part of the plan, build in weather flexibility instead of forcing a coating on a bad day.",
+        ],
+      },
+    ],
+    takeaway:
+      "For a Park Slope brownstone, phase the work by daily use, separate stair halls, complete plaster and trim prep before finish coats, and schedule exterior details around weather.",
+  },
+
+  {
+    slug: "paint-before-moving-into-long-island-city-condo",
+    title: "Should You Paint Before Moving Into a Long Island City Condo?",
+    excerpt:
+      "In most LIC condos, painting before furniture arrives saves time, money, and stress. Here is how to line up COIs, elevator access, color choices, and final touchups.",
+    category: "Move-In Planning",
+    date: "2026-06-15",
+    readMinutes: 6,
+    author: "NYC Painting Pros Team",
+    cover: { id: "photo-1505693416388-ac5ce068fe85", alt: "A modern condo bedroom with clean painted walls" },
+    relatedPages: ["long-island-city-condo-painting", "apartment-painting-nyc", "co-op-condo-painting-nyc"],
+    intro: [
+      "If you can paint before moving into a Long Island City condo, do it. Empty rooms are faster to protect, easier to patch, and cheaper to paint than rooms full of furniture and boxes.",
+      "The only catch is coordination. You need the painter, building, elevator schedule, and move-in date to line up in the right order.",
+    ],
+    blocks: [
+      {
+        h2: "Why empty-unit painting is more efficient",
+        body: [
+          "With no furniture in the way, crews can cover floors once, move cleanly, and paint full wall planes without breaking the work into tiny sections. That usually reduces labor and shortens the schedule.",
+        ],
+      },
+      {
+        h2: "Get building approval before your closing or lease start if possible",
+        body: [
+          "Many LIC condo buildings require a COI and elevator reservation before contractor work. Ask for those requirements as soon as you have access dates, not after you pick colors.",
+        ],
+      },
+      {
+        h2: "Patch now, not after the furniture is in",
+        body: [
+          "Pre-move painting is the best time to fix TV mount holes, old art holes, settlement cracks, and scuffed corners. Once furniture arrives, those repairs take longer and create more dust control work.",
+        ],
+        bullets: [
+          "Patch holes from prior owners or tenants",
+          "Repair nail pops before finish paint",
+          "Paint closets before they are filled",
+        ],
+      },
+      {
+        h2: "Hold one touchup visit if movers are coming next",
+        body: [
+          "Movers can scuff corners and door frames even when they are careful. For larger move-in projects, plan a small touchup window after furniture delivery so the final walkthrough happens when the home is actually set up.",
+        ],
+      },
+    ],
+    takeaway:
+      "Painting an LIC condo before move-in is usually faster and cleaner; just secure the COI, elevator access, color approvals, and a post-move touchup plan early.",
+  },
+
+  {
+    slug: "williamsburg-office-painting-without-downtime",
+    title: "How to Paint a Williamsburg Office Without Shutting Down Work",
+    excerpt:
+      "A fresh office should not cost a week of productivity. Here is how to phase rooms, schedule after-hours work, choose low-odor coatings, and protect equipment.",
+    category: "Commercial",
+    date: "2026-06-12",
+    readMinutes: 6,
+    author: "NYC Painting Pros Team",
+    cover: { id: "photo-1497366811353-6870744d04b2", alt: "A modern creative office with desks and clean painted walls" },
+    relatedPages: ["williamsburg-office-painting", "office-painting-nyc", "commercial-painting-manhattan"],
+    intro: [
+      "Office painting gets expensive when it interrupts the workday. For Williamsburg studios, agencies, showrooms, and retail offices, the right plan is usually phased, after-hours, and low-odor.",
+      "The goal is simple: make the space look sharper without leaving staff, clients, or inventory in the middle of a construction zone.",
+    ],
+    blocks: [
+      {
+        h2: "Break the office into paintable zones",
+        body: [
+          "Conference rooms, phone rooms, entry walls, open desk areas, and back-of-house spaces should be scheduled separately. A zone plan lets the business keep operating while one area is protected and painted.",
+        ],
+      },
+      {
+        h2: "Use nights and weekends for client-facing spaces",
+        body: [
+          "Reception areas, showrooms, and meeting rooms are often best handled after hours. That gives paint time to dry before people return and keeps the most visible parts of the office from looking unfinished during the day.",
+        ],
+      },
+      {
+        h2: "Choose coatings for smell and durability",
+        body: [
+          "Low-VOC coatings reduce odor, but offices also need scrub resistance. Hallways, kitchen areas, and high-touch walls should get durable commercial finishes that can handle scuffs and cleaning.",
+        ],
+        bullets: [
+          "Low-odor paint for occupied offices",
+          "Washable finishes in high-traffic zones",
+          "Brand-color drawdowns before accent walls are painted",
+        ],
+      },
+      {
+        h2: "Protect equipment before dust starts",
+        body: [
+          "Computers, displays, inventory, samples, and production gear should be covered or moved before sanding and patching. The protection plan is as important as the paint schedule.",
+        ],
+      },
+    ],
+    takeaway:
+      "To repaint a Williamsburg office without downtime, zone the work, schedule visible areas after hours, use low-odor durable coatings, and protect equipment before prep begins.",
   },
 ];
 

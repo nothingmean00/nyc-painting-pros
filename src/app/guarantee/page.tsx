@@ -9,8 +9,8 @@ import { breadcrumbs, faqSchema } from "@/lib/schema";
 import { site, faqs, processSteps } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Our Guarantee — Licensed, Insured & Warrantied Painting",
-  description: `Why NYC trusts NYC Painting Pros: licensed and insured, a written ${site.warrantyYears}-year workmanship warranty, free itemized estimates, and a spotless job site on every project.`,
+  title: "Workmanship Warranty & Process",
+  description: `See how NYC Painting Pros documents scope, preparation, scheduling, closeout, and its written ${site.warrantyYears}-year workmanship warranty.`,
   alternates: { canonical: "/guarantee" },
 };
 
@@ -51,11 +51,10 @@ export default function GuaranteePage() {
               Our written {site.warrantyYears}-year workmanship warranty
             </h2>
             <p className="mt-3 text-white/75 leading-relaxed max-w-2xl">
-              If anything covered by our workmanship fails within{" "}
-              {site.warrantyYears} years — peeling, flaking, or premature wear
-              from how we applied it — we come back and fix it at no cost to you.
-              It&apos;s in writing on every estimate, because a guarantee you
-              can&apos;t hold isn&apos;t a guarantee.
+              Covered workmanship is documented for {site.warrantyYears} years,
+              together with the claim process and exclusions. Product failure,
+              leaks, substrate movement, impact damage, and normal wear require
+              separate evaluation because they are not application defects.
             </p>
           </div>
         </div>

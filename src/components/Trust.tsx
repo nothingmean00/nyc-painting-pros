@@ -22,9 +22,9 @@ export function Guarantees({ limit }: { limit?: number }) {
 }
 
 const credentials = [
-  "Licensed & insured",
-  "EPA Lead-Safe certified",
-  "Free written estimates",
+  "Detailed written scopes",
+  "Surface-specific preparation",
+  "Building requirements coordinated",
   "Written warranty",
 ] as const;
 

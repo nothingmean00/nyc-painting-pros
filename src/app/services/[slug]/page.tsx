@@ -27,10 +27,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const s = getService(slug);
   if (!s) return {};
-  const title = `${s.name} in NYC | ${s.keyword}`;
+  const title = `${s.name} NYC`;
   return {
     title,
-    description: `${s.intro} Free estimates, licensed & insured, ${site.warrantyYears}-year warranty across all five boroughs.`,
+    description: `${s.short} Request a detailed estimate for work anywhere in New York City's five boroughs.`,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: { title, description: s.short, url: `${site.url}/services/${s.slug}` },
   };
@@ -87,15 +87,15 @@ export default async function ServicePage({
 
           <div className="mt-12 rounded-2xl bg-[var(--color-ink)] text-white p-8">
             <h3 className="font-display text-2xl">
-              Why NYC trusts us for {s.name.toLowerCase()}
+              How we plan {s.name.toLowerCase()}
             </h3>
             <p className="mt-3 text-white/75 leading-relaxed">
-              We treat every job — large or small — with the same standard:
-              meticulous prep, premium coatings, crisp lines, and a spotless
-              finish backed by our written warranty.
+              The written scope identifies surface preparation, materials,
+              access, protection, finish expectations, and closeout so the crew
+              and client are working from the same plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-sm">
-              {["Licensed & insured", "EPA Lead-Safe", "Free written quote", `${site.warrantyYears}-yr warranty`].map(
+              {["Written scope", "Surface-specific prep", "Clear scheduling", `${site.warrantyYears}-yr warranty`].map(
                 (t) => (
                   <span key={t} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5">
                     <Icon.check className="w-3.5 h-3.5 text-[var(--color-green-300)]" /> {t}

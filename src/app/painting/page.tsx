@@ -24,6 +24,10 @@ const groups = [
       "pre-war-apartment-painting-nyc",
       "co-op-condo-painting-nyc",
       "single-room-accent-wall-painting-nyc",
+      "upper-east-side-apartment-painters",
+      "tribeca-loft-painting",
+      "park-slope-brownstone-painters",
+      "long-island-city-condo-painting",
     ],
   },
   {
@@ -48,6 +52,7 @@ const groups = [
     slugs: [
       "commercial-painting-manhattan",
       "office-painting-nyc",
+      "williamsburg-office-painting",
       "retail-storefront-painting-nyc",
       "restaurant-painting-nyc",
     ],

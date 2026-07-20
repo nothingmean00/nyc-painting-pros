@@ -7,7 +7,9 @@ import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { posts, getPost, sortedPosts, unsplash } from "@/lib/blog";
+import { getMoneyPage } from "@/lib/money-pages";
 import { site } from "@/lib/site";
+import { conciseDescription } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -29,14 +31,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getPost(slug);
   if (!p) return {};
+  const description = conciseDescription(p.excerpt);
   return {
-    title: p.title,
-    description: p.excerpt,
+    title: { absolute: p.title },
+    description,
     alternates: { canonical: `/blog/${p.slug}` },
     openGraph: {
       type: "article",
       title: p.title,
-      description: p.excerpt,
+      description,
       url: `${site.url}/blog/${p.slug}`,
       images: [{ url: unsplash(p.cover.id, 1200) }],
       publishedTime: p.date,
@@ -54,6 +57,9 @@ export default async function BlogPost({
   if (!p) notFound();
 
   const related = sortedPosts.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const relatedPaintingPages = (p.relatedPages ?? [])
+    .map((slug) => getMoneyPage(slug))
+    .filter((page): page is NonNullable<typeof page> => Boolean(page));
   const trail = [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
@@ -168,6 +174,31 @@ export default async function BlogPost({
                 <p className="mt-2 text-lg text-[var(--color-ink)] leading-relaxed">
                   {p.takeaway}
                 </p>
+              </div>
+            )}
+
+            {relatedPaintingPages.length > 0 && (
+              <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+                <h2 className="font-display text-2xl">Related NYC painting estimates</h2>
+                <div className="mt-5 grid gap-3">
+                  {relatedPaintingPages.map((page) => (
+                    <Link
+                      key={page.slug}
+                      href={`/painting/${page.slug}`}
+                      className="group flex items-start justify-between gap-4 rounded-xl border border-[var(--color-line)] px-4 py-3 transition-colors hover:border-[var(--color-green)]"
+                    >
+                      <span>
+                        <span className="block font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-green-600)]">
+                          {page.h1}
+                        </span>
+                        <span className="mt-1 line-clamp-2 block text-sm text-[var(--color-muted)]">
+                          {page.lede}
+                        </span>
+                      </span>
+                      <Icon.arrow className="mt-1 h-4 w-4 shrink-0 text-[var(--color-green-600)]" />
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
 

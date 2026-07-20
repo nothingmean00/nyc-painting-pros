@@ -3,6 +3,7 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PublicRouteChrome } from "@/components/PublicRouteChrome";
 import { JsonLd } from "@/components/JsonLd";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -25,7 +26,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | NYC's Most Trusted Painters — Interior, Exterior & Commercial`,
+    default: `${site.name} | Detail-Focused NYC Painters`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -39,6 +40,10 @@ export const metadata: Metadata = {
     "house painters Manhattan",
     "apartment painters Brooklyn",
     "cabinet refinishing NYC",
+    "wallpaper installers NYC",
+    "limewash painters NYC",
+    "decorative wall finishes NYC",
+    "property management painting NYC",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -48,12 +53,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — NYC's Most Trusted Painters`,
+    title: `${site.name} — Detail-Focused NYC Painters`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — NYC's Most Trusted Painters`,
+    title: `${site.name} — Detail-Focused NYC Painters`,
     description: site.description,
   },
   robots: {
@@ -76,9 +81,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
         <JsonLd data={[localBusiness(), websiteSchema()]} />
-        <Header />
+        <PublicRouteChrome>
+          <Header />
+        </PublicRouteChrome>
         <main>{children}</main>
-        <Footer />
+        <PublicRouteChrome>
+          <Footer />
+        </PublicRouteChrome>
         <Analytics />
         <SpeedInsights />
       </body>

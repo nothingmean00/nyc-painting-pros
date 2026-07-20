@@ -3,20 +3,16 @@ import { Icon } from "./Icons";
 import { site } from "@/lib/site";
 
 export function CTASection({
-  title = "Ready for a flawless finish?",
-  subtitle = "Get a free, no-obligation estimate today. Most quotes back within 24 hours.",
+  title = "Ready to plan your project?",
+  subtitle = "Tell us what you are working on and we will recommend the right scope, finish, and next step.",
 }: {
   title?: string;
   subtitle?: string;
 }) {
   return (
     <section className="container-x">
-      <div className="relative overflow-hidden rounded-3xl bg-[var(--color-ink)] text-white px-6 sm:px-12 py-14 sm:py-16 paint-grid">
-        <div
-          className="absolute -right-16 -top-16 w-64 h-64 rounded-full blur-3xl"
-          style={{ background: "var(--color-green)", opacity: 0.25 }}
-        />
-        <div className="relative max-w-2xl">
+      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-ink)] text-white px-6 sm:px-12 py-14 sm:py-16 paint-grid">
+        <div className="max-w-2xl">
           <h2 className="font-display text-3xl sm:text-4xl leading-tight">
             {title}
           </h2>

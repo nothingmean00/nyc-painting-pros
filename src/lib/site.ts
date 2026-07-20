@@ -1,6 +1,6 @@
 // ===========================================================================
 // Central business data — single source of truth for content + SEO schema.
-// 👉 Update the NAP (name/address/phone) + social links with the real values.
+// Verify the NAP, credentials, and social links before each production launch.
 // ===========================================================================
 
 export const site = {
@@ -8,9 +8,9 @@ export const site = {
   legalName: "NYC Painting Pros LLC",
   domain: "nycpaintingpros.com",
   url: "https://nycpaintingpros.com",
-  tagline: "New York's most trusted painters.",
+  tagline: "Detail-focused painting for NYC homes and businesses.",
   description:
-    "NYC Painting Pros delivers flawless interior, exterior, and commercial painting across all five boroughs. Licensed, insured, EPA Lead-Safe certified — backed by a written workmanship warranty.",
+    "NYC Painting Pros delivers careful painting, wall finishes, and turnover services across all five boroughs, with detailed estimates and a written workmanship warranty.",
   // --- NAP (keep identical everywhere: site, Google Business Profile, citations) ---
   phone: "(212) 814-7500",
   phoneHref: "tel:+12128147500",
@@ -43,7 +43,7 @@ export const services = [
   {
     slug: "interior-painting",
     name: "Interior Painting",
-    short: "Walls, ceilings, trim & doors finished to a flawless, even sheen.",
+    short: "Walls, ceilings, trim, and doors finished with clean lines and even coverage.",
     keyword: "interior painters NYC",
     icon: "roller",
     hero: "Interior painting that makes every room feel new",
@@ -52,9 +52,9 @@ export const services = [
     bullets: [
       "Premium low-VOC Benjamin Moore & Sherwin-Williams finishes",
       "Meticulous surface prep: patching, sanding, priming",
-      "Crisp cut-ins and laser-straight trim lines",
+      "Careful cut-ins and clean trim lines",
       "Floors, furniture & fixtures fully masked and protected",
-      "Same-day cleanup — we leave it spotless",
+      "Daily cleanup and an organized handoff",
     ],
     faqs: [
       {
@@ -124,43 +124,43 @@ export const services = [
   {
     slug: "cabinet-refinishing",
     name: "Cabinet Refinishing",
-    short: "Factory-smooth, sprayed cabinet finishes for a fraction of replacement.",
+    short: "Smooth, sprayed cabinet finishes without a full kitchen replacement.",
     keyword: "cabinet refinishing NYC",
     icon: "cabinet",
     hero: "Kitchen cabinets that look factory-new",
     intro:
-      "Skip the $30k replacement. We degrease, sand, prime, and spray your cabinets with a durable conversion finish that cures rock-hard and looks like it came from a showroom.",
+      "When the cabinet boxes and doors are sound, refinishing can update the kitchen without a full replacement. We degrease, sand, prime, and spray a durable cabinet-grade finish.",
     bullets: [
       "Doors removed and sprayed off-site for a dust-free finish",
-      "Bonding primer for guaranteed adhesion on any surface",
+      "Bonding primer selected for the existing surface",
       "Durable, scrubbable cabinet-grade lacquer or enamel",
       "Hundreds of color options + on-site sample boards",
-      "1-week average turnaround for a standard kitchen",
+      "Written sequencing and turnaround plan before work begins",
     ],
     faqs: [
       {
         q: "How much does cabinet refinishing cost vs. replacement?",
-        a: "Refinishing typically runs 30–50% of replacement cost while delivering a comparable finish. Most NYC kitchens fall between $3,500 and $7,500 depending on door count.",
+        a: "Refinishing usually avoids the demolition, new boxes, and installation involved in replacement. Pricing depends on door count, condition, profile, finish system, and whether hardware changes are included, so we quote each kitchen from photos or a walkthrough.",
       },
       {
         q: "Will the finish chip or peel?",
-        a: "Not with our process. Proper degreasing, sanding, and a bonding primer under a catalyzed topcoat create a finish that resists chipping for years — backed by our warranty.",
+        a: "Cabinet finishes still need normal care, but proper degreasing, sanding, compatible primer, and a cabinet-grade topcoat create a substantially more durable result than wall paint brushed over an unprepared surface.",
       },
     ],
   },
   {
     slug: "wallpaper-removal",
     name: "Wallpaper Removal & Skim Coating",
-    short: "Strip old paper and skim walls glass-smooth before painting.",
+    short: "Remove old paper, repair the surface, and prepare walls for paint or new coverings.",
     keyword: "wallpaper removal NYC",
     icon: "wall",
-    hero: "Wallpaper removal & flawless skim coating",
+    hero: "Wallpaper removal with careful wall preparation",
     intro:
-      "Decades-old wallpaper and damaged plaster are no match for our crews. We strip, clean adhesive residue, and skim-coat to a Level 5 smooth surface ready for paint.",
+      "We remove wallpaper, clean residual adhesive, repair the underlying surface, and prepare it for paint or a new wallcovering. The scope is matched to what we find beneath the paper.",
     bullets: [
       "Safe steam & solvent removal that protects plaster",
       "Full adhesive residue removal — no ghosting",
-      "Level 5 skim coating for a glass-smooth finish",
+      "Skim coating where the wall condition calls for it",
       "Plaster and drywall repair for pre-war apartments",
       "Primer-sealed and ready for your new color",
     ],
@@ -172,25 +172,118 @@ export const services = [
     ],
   },
   {
+    slug: "wallpaper-installation",
+    name: "Wallpaper Installation",
+    short: "Measured, prepared, and aligned wallcoverings for apartments, homes, and commercial spaces.",
+    keyword: "wallpaper installers NYC",
+    icon: "wall",
+    hero: "Wallpaper installation planned around the pattern",
+    intro:
+      "From a single powder room to a restaurant feature wall, we assess the surface, calculate usable material, map the pattern, and install residential and commercial wallcoverings with careful seams and clean edges.",
+    bullets: [
+      "Surface assessment, patching, sanding, and wallcovering primer",
+      "Pattern layout planned around doors, corners, and focal walls",
+      "Installation of paper, vinyl, grasscloth, and peel-and-stick products",
+      "Coordination with designers, showrooms, and supplied materials",
+      "Clear material overage guidance before installation day",
+    ],
+    faqs: [
+      {
+        q: "How much extra wallpaper should I order?",
+        a: "The right overage depends on the repeat, roll width, wall dimensions, and number of corners and openings. We review the product specification and room measurements before you order so the quantity is based on the actual layout, not a generic percentage.",
+      },
+      {
+        q: "Do walls need to be perfectly smooth before wallpaper is installed?",
+        a: "They need to be sound, clean, and appropriately smooth for the selected material. Thin papers and reflective finishes reveal more surface texture than heavier coverings. We identify patching, skim coating, and primer needs during the estimate.",
+      },
+      {
+        q: "Can you remove existing wallpaper and install new paper?",
+        a: "Yes. We can combine removal, adhesive cleanup, wall repair, priming, and new installation into one written scope so the condition beneath the old paper is handled correctly.",
+      },
+    ],
+  },
+  {
+    slug: "decorative-finishes",
+    name: "Limewash & Decorative Finishes",
+    short: "Limewash, Roman clay, Venetian plaster, and layered feature-wall finishes.",
+    keyword: "decorative wall finishes NYC",
+    icon: "roller",
+    hero: "Decorative wall finishes with depth and movement",
+    intro:
+      "Limewash, Roman clay, and Venetian-style plaster behave differently from standard paint. We build the finish through approved samples, compatible primers, and layered application so the final movement suits the room and its light.",
+    bullets: [
+      "Limewash, mineral paint, Roman clay, and Venetian-style plaster",
+      "Sample boards reviewed in the room's natural and evening light",
+      "Substrate assessment and product-specific primer systems",
+      "Feature walls, fireplaces, bedrooms, lobbies, and hospitality spaces",
+      "Sheen, movement, color variation, and maintenance discussed up front",
+    ],
+    faqs: [
+      {
+        q: "What is the difference between limewash and Roman clay?",
+        a: "Limewash is brushed in translucent mineral layers and typically has soft tonal variation. Roman clay is trowel-applied and creates a smoother, stone-like movement. The right choice depends on the substrate, room use, desired texture, and maintenance expectations.",
+      },
+      {
+        q: "Can you match a finish from an inspiration photo?",
+        a: "We can use the photo to define direction, then prepare physical samples with the proposed product and color. Hand-applied finishes vary with light, substrate, and application, so the approved sample becomes the practical standard for the project.",
+      },
+      {
+        q: "Are decorative finishes suitable for bathrooms or kitchens?",
+        a: "Some systems are suitable when specified and sealed correctly, while others are better kept away from direct water and heavy grease. We match the product and protective finish to the room rather than treating every decorative coating the same way.",
+      },
+    ],
+  },
+  {
     slug: "drywall-plaster-repair",
     name: "Drywall & Plaster Repair",
-    short: "Cracks, holes & water damage repaired to invisible.",
+    short: "Cracks, holes, and water damage repaired and blended into the surrounding finish.",
     keyword: "drywall repair NYC",
     icon: "patch",
-    hero: "Drywall & plaster repair, painted to invisible",
+    hero: "Drywall and plaster repair prepared for a clean repaint",
     intro:
-      "Settling cracks, water stains, anchor holes, and crumbling pre-war plaster — we repair the substrate properly so the patch disappears completely under the finish coat.",
+      "Settling cracks, water stains, anchor holes, and damaged pre-war plaster need more than filler. We repair and feather the substrate, prime where needed, and repaint to blend with the surrounding surface.",
     bullets: [
       "Pre-war plaster and lath restoration",
       "Water-damage repair and stain-blocking primer",
-      "Hairline crack stabilization that won't return",
+      "Hairline crack stabilization based on the underlying condition",
       "Texture and skim matching for seamless blends",
-      "Painted to a flawless, undetectable finish",
+      "Primed and painted to minimize visible patching",
     ],
     faqs: [
       {
         q: "Will the repaired area be noticeable after painting?",
-        a: "No. We feather, sand, and prime every repair, then paint corner-to-corner where needed so the patch blends invisibly into the surrounding wall.",
+        a: "Our goal is a repair that blends with the surrounding wall. We feather, sand, and prime the patch, then paint corner-to-corner where needed. Existing texture, sheen, fading, and active movement can affect how closely any repair matches.",
+      },
+    ],
+  },
+  {
+    slug: "property-manager-turnovers",
+    name: "Property Manager Turnovers",
+    short: "Repeatable, lease-ready painting and repair scopes for rental portfolios and managed buildings.",
+    keyword: "property management painting NYC",
+    icon: "building",
+    hero: "A repeatable turnover program for managed properties",
+    intro:
+      "We help property managers standardize apartment turns with defined paint systems, photo-based scoping, documented add-ons, and scheduling built around move-outs, inspections, and new-tenant dates.",
+    bullets: [
+      "Standard color and sheen schedules by property or unit type",
+      "Photo-based scoping with itemized repair and paint options",
+      "Patch, prime, repaint, and common touch-up work in one scope",
+      "Occupied-building protection and management coordination",
+      "Completion photos and clear closeout notes for each unit",
+    ],
+    faqs: [
+      {
+        q: "Can you use the same paint standard across several buildings?",
+        a: "Yes. We can document preferred colors, products, sheens, and typical unit scopes so estimates and completed turns stay more consistent across a portfolio.",
+      },
+      {
+        q: "How do you handle repairs discovered after move-out?",
+        a: "We separate standard turnover work from condition-based add-ons such as heavy patching, water staining, or damaged trim. Photos and written approval keep the scope clear before extra work proceeds.",
+      },
+      {
+        q: "Do you work around move-in and leasing deadlines?",
+        a: "Yes. We schedule around the required handoff date and flag drying time, access constraints, or repairs that could affect it before work begins. Larger portfolios can be phased by building, floor, or unit readiness.",
       },
     ],
   },
@@ -294,18 +387,18 @@ export type Area = (typeof areas)[number];
 export const guarantees = [
   {
     icon: "shield",
-    title: "Licensed, bonded & insured",
-    text: "Fully licensed with $2M general liability plus workers' comp. We issue Certificates of Insurance same-day for any building that needs one.",
+    title: "Project paperwork prepared",
+    text: "Estimates document the work, materials, exclusions, and schedule. Building paperwork and insurance documentation are coordinated when the project requires them.",
   },
   {
     icon: "medal",
     title: `${site.warrantyYears}-year workmanship warranty`,
-    text: "Every project is backed in writing. If anything fails because of our work, we come back and make it right — no debate.",
+    text: "Covered workmanship is documented in writing, including the warranty term and how to report an issue after completion.",
   },
   {
     icon: "check",
     title: "Free, itemized estimates",
-    text: "Clear, fixed pricing up front. No hidden fees, no day-of surprises, no pressure to sign.",
+    text: "The written scope separates included work, options, and condition-based repairs so you can compare the complete project, not just a headline price.",
   },
   {
     icon: "leaf",
@@ -314,13 +407,13 @@ export const guarantees = [
   },
   {
     icon: "clock",
-    title: "On time, every time",
-    text: "We arrive when we say we will, protect your floors and furniture, and clean up fully at the end of every day.",
+    title: "A documented schedule",
+    text: "We confirm access, work hours, sequencing, and expected completion before the start, then communicate promptly if conditions change.",
   },
   {
     icon: "phone",
     title: "A real person to talk to",
-    text: "A dedicated project manager on every job who answers the phone and keeps you posted from quote to final walkthrough.",
+    text: "One project contact keeps the estimate, schedule, questions, and final walkthrough organized from start to finish.",
   },
 ] as const;
 
@@ -329,7 +422,7 @@ export type Guarantee = (typeof guarantees)[number];
 export const faqs = [
   {
     q: "Are you licensed and insured?",
-    a: "Yes. NYC Painting Pros is fully licensed, bonded, and carries $2M in general liability plus workers' compensation. We issue Certificates of Insurance the same day for any building that requires one.",
+    a: "We provide the business and insurance documentation required for the agreed scope and can coordinate a Certificate of Insurance when a building requests one. Confirm any project-specific limits or additional-insured language during the estimate.",
   },
   {
     q: "How much does painting cost in NYC?",
@@ -337,11 +430,11 @@ export const faqs = [
   },
   {
     q: "Do you offer free estimates?",
-    a: "Always. We provide a free, no-obligation written estimate, usually within 24 hours. For most projects we can quote from photos and a quick call, or schedule an on-site walkthrough.",
+    a: "Yes. Start with photos and a short project description; we will let you know whether the scope can be estimated remotely or needs an on-site walkthrough.",
   },
   {
     q: "What kind of warranty do you provide?",
-    a: `Every project is backed by our written ${site.warrantyYears}-year workmanship warranty. If anything fails due to our work, we make it right — no questions asked.`,
+    a: `Our written workmanship warranty runs for ${site.warrantyYears} years. The estimate and warranty terms explain covered work, exclusions, and how to report a workmanship issue.`,
   },
   {
     q: "What paint brands do you use?",
@@ -356,19 +449,19 @@ export const faqs = [
 export const processSteps = [
   {
     title: "Free Consultation",
-    text: "Call or book online. We learn your goals, timeline, and budget — then schedule a walkthrough or quote from photos.",
+    text: "Call or book online. We learn the scope, access needs, timeline, and priorities, then decide whether photos or a walkthrough are the right next step.",
   },
   {
     title: "Detailed Written Estimate",
-    text: "You get a clear, itemized quote within 24 hours. Fixed price, no hidden fees, no pressure.",
+    text: "You get a written scope covering preparation, materials, included areas, options, exclusions, schedule, and price.",
   },
   {
     title: "Prep & Protection",
-    text: "We mask, cover, patch, sand, and prime. Proper prep is 80% of a flawless finish — and we never skip it.",
+    text: "We mask, cover, patch, sand, and prime according to the agreed finish level and the condition of each surface.",
   },
   {
-    title: "Flawless Application",
-    text: "Skilled crews apply premium coatings with crisp lines and even coverage, keeping your space clean throughout.",
+    title: "Careful Application",
+    text: "The crew follows the documented product, sheen, color, and coat schedule while keeping the work area organized.",
   },
   {
     title: "Walkthrough & Warranty",

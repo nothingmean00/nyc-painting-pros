@@ -8,6 +8,7 @@ import { site, services } from "@/lib/site";
 
 const nav = [
   { label: "Services", href: "/services" },
+  { label: "Projects & Costs", href: "/painting" },
   { label: "Areas We Serve", href: "/areas" },
   { label: "Our Guarantee", href: "/guarantee" },
   { label: "Blog", href: "/blog" },
@@ -34,7 +35,7 @@ export function Header() {
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         scrolled
           ? "bg-[var(--color-cream)]/90 backdrop-blur-md border-b border-[var(--color-line)]"
-          : "bg-transparent"
+          : "bg-[var(--color-cream)]"
       }`}
     >
       {/* top trust strip */}
@@ -42,7 +43,7 @@ export function Header() {
         <div className="container-x flex items-center justify-between py-1.5">
           <span className="inline-flex items-center gap-2">
             <Icon.shield className="w-4 h-4 text-[var(--color-green-300)]" />
-            Licensed · Insured · EPA Lead-Safe Certified
+            Detailed scopes · Building coordination · Written warranty
           </span>
           <span className="inline-flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5">
@@ -65,7 +66,7 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 text-[0.95rem] font-medium">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 text-[0.95rem] font-medium">
           {nav.map((n) => (
             <Link
               key={n.href}
@@ -106,7 +107,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-[64px] bottom-0 z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[70px] bottom-0 z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
           <div className="container-x py-6 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
