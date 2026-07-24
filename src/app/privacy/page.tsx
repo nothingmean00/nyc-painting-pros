@@ -26,6 +26,10 @@ const sections = [
     body: "The website uses performance and analytics tools to understand page visits, technical performance, and which pages lead to estimate requests. These tools may process device, browser, referrer, and approximate location data according to their own privacy terms.",
   },
   {
+    title: "Project assistant",
+    body: "If you use the Painting Project Assistant, the messages you enter are processed by AI infrastructure providers to generate planning help. Assistant messages are not submitted as an estimate request unless you continue to and submit the estimate form. Do not enter payment information, precise apartment numbers, or other sensitive information in the assistant.",
+  },
+  {
     title: "Sharing and retention",
     body: "We do not sell personal information. We may share information with service providers that help operate the website, deliver email, analyze performance, or complete an agreed project. We retain records only as long as reasonably needed for those purposes and applicable business obligations.",
   },

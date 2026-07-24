@@ -24,7 +24,15 @@ const items = [
   { icon: "clock" as const, label: "Hours", value: site.hours },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ projectBrief?: string | string[] }>;
+}) {
+  const rawBrief = (await searchParams).projectBrief;
+  const projectBrief = (Array.isArray(rawBrief) ? rawBrief[0] : rawBrief)
+    ?.replace(/[<>]/g, "")
+    .slice(0, 1600) ?? "";
   return (
     <>
       <JsonLd
@@ -90,7 +98,7 @@ export default function ContactPage() {
         </div>
 
         <div id="estimate">
-          <EstimateForm />
+          <EstimateForm defaultDetails={projectBrief} />
         </div>
       </section>
       <div className="h-10" />

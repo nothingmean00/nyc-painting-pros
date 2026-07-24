@@ -8,10 +8,17 @@ import { services, site } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
-export function EstimateForm({ compact = false }: { compact?: boolean }) {
+export function EstimateForm({
+  compact = false,
+  defaultDetails = "",
+}: {
+  compact?: boolean;
+  defaultDetails?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
   const submissionId = useRef<string | null>(null);
+  const [projectBrief, setProjectBrief] = useState(defaultDetails);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -143,6 +150,8 @@ export function EstimateForm({ compact = false }: { compact?: boolean }) {
         <span className="text-sm font-medium">Tell us about the project</span>
         <textarea
           name="details"
+          value={projectBrief}
+          onChange={(event) => setProjectBrief(event.target.value)}
           rows={compact ? 2 : 3}
           placeholder="Rooms, approximate size, surface condition, timeline, and access details…"
           className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30 resize-none"

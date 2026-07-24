@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { localBusiness, websiteSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
+import { ChatbotLoader } from "@/components/ChatbotLoader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -87,6 +88,9 @@ export default function RootLayout({
         <main>{children}</main>
         <PublicRouteChrome>
           <Footer />
+        </PublicRouteChrome>
+        <PublicRouteChrome>
+          <ChatbotLoader />
         </PublicRouteChrome>
         <Analytics />
         <SpeedInsights />
