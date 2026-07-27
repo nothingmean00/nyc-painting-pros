@@ -26,6 +26,7 @@ export type MoneyPage = {
     note: string;
   };
   faqs: { q: string; a: string }[];
+  references?: { label: string; href: string }[];
   relatedServices: string[]; // service slugs
   relatedAreas: string[]; // area slugs
   relatedPages?: string[]; // money-page slugs
@@ -250,7 +251,7 @@ export const moneyPages: MoneyPage[] = [
     ],
     relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
-    relatedPages: ["interior-painting-manhattan", "rental-turnover-painting-nyc", "pre-war-apartment-painting-nyc"],
+    relatedPages: ["move-in-apartment-painting-nyc", "move-out-apartment-painting-nyc", "rental-turnover-painting-nyc"],
   },
 
   // 4 ---------------------------------------------------------------------
@@ -1053,7 +1054,7 @@ export const moneyPages: MoneyPage[] = [
     ],
     relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
     relatedAreas: ["manhattan", "brooklyn", "queens", "bronx"],
-    relatedPages: ["apartment-painting-nyc", "co-op-condo-painting-nyc"],
+    relatedPages: ["move-out-apartment-painting-nyc", "apartment-building-lobby-hallway-painting-nyc", "apartment-painting-nyc"],
   },
 
   // 15 --------------------------------------------------------------------
@@ -1200,7 +1201,7 @@ export const moneyPages: MoneyPage[] = [
     ],
     relatedServices: ["drywall-plaster-repair", "wallpaper-removal", "interior-painting"],
     relatedAreas: ["manhattan", "brooklyn"],
-    relatedPages: ["pre-war-apartment-painting-nyc", "drywall-repair-nyc"],
+    relatedPages: ["popcorn-ceiling-removal-nyc", "pre-war-apartment-painting-nyc", "drywall-repair-nyc"],
   },
 
   // 17 — TIER 1 -----------------------------------------------------------
@@ -1867,6 +1868,324 @@ export const moneyPages: MoneyPage[] = [
     relatedServices: ["commercial-painting", "interior-painting"],
     relatedAreas: ["brooklyn"],
     relatedPages: ["office-painting-nyc", "commercial-painting-manhattan", "retail-storefront-painting-nyc"],
+  },
+  {
+    slug: "move-in-apartment-painting-nyc",
+    keyword: "move-in apartment painting NYC",
+    icon: "roller",
+    title: "Move-In Apartment Painting NYC | Paint Before the Boxes Arrive",
+    description:
+      "Move-in apartment painting in NYC for renters, co-op and condo owners. Coordinate access, COIs, colors and a clean handoff before furniture arrives.",
+    h1: "Move-in apartment painting in NYC",
+    lede:
+      "Use the empty-apartment window well: repair and repaint before the movers arrive, with building access, colors, drying time, and handoff planned around your move date.",
+    intro: [
+      "Painting before move-in is usually the cleanest and most efficient way to reset an NYC apartment. Empty rooms give the crew full access to walls, closets, ceilings, doors, and trim without repeatedly shifting furniture or working around unpacked boxes.",
+      "The deadline matters as much as the finish. We work backward from your mover reservation, confirm building hours and Certificate of Insurance requirements, and separate must-finish rooms from optional scope so the apartment is ready when you need the keys.",
+    ],
+    scope: {
+      heading: "What a move-in painting plan can include",
+      items: [
+        "Photo review or walkthrough before possession when access allows",
+        "Building COI and work-hour coordination",
+        "Wall patching, sanding, spot priming, and two finish coats",
+        "Ceilings, closets, doors, baseboards, and trim as selected",
+        "Color and sheen schedule documented room by room",
+        "Final cleanup with drying time before movers arrive",
+      ],
+    },
+    sections: [
+      {
+        h2: "Schedule the paint around your NYC move",
+        body:
+          "The ideal window sits after the prior occupant is out and before movers bring furniture in. We confirm when keys become available, when the building permits work, and when movers need clear access. If the window is tight, the written estimate prioritizes bedrooms and main living areas and identifies work that can wait.",
+        bullets: [
+          "Access and elevator windows confirmed before scheduling",
+          "A room-by-room sequence tied to the move date",
+          "Low-odor products selected with realistic cure time",
+        ],
+      },
+      {
+        h2: "Make color decisions before the crew starts",
+        body:
+          "Empty apartments can look different once furniture and evening lighting arrive. We recommend testing finalists on more than one wall and documenting exact brand, color, sheen, and room assignment. That avoids day-of substitutions and creates a useful record for future touch-ups.",
+      },
+    ],
+    cost: {
+      intro:
+        "Move-in pricing depends on apartment size, wall condition, ceilings and trim, color changes, and the time available before occupancy. Typical planning ranges:",
+      rows: [
+        { item: "Studio walls", range: "$1,400 - $3,200" },
+        { item: "1-bedroom full repaint", range: "$2,800 - $5,500" },
+        { item: "2-bedroom full repaint", range: "$4,500 - $9,000" },
+        { item: "Closets, doors, or trim", range: "Itemized by scope" },
+      ],
+      note:
+        "These are planning ranges, not a guaranteed quote. Photos of every room and the move timeline help us prepare an itemized estimate quickly.",
+    },
+    faqs: [
+      {
+        q: "How far before move-in should the apartment be painted?",
+        a: "Whenever possible, leave at least one clear day after the final coat for drying, ventilation, cleanup, and a walkthrough. Repair-heavy work or major color changes may require a longer window.",
+      },
+      {
+        q: "Can you estimate before I get the keys?",
+        a: "Often. Listing photos, a floor plan, a video walkthrough, and a description of wall condition can establish a preliminary scope. We confirm assumptions once access is available.",
+      },
+      {
+        q: "Do you coordinate a COI with the building?",
+        a: "Yes. Send the building's sample certificate and additional-insured language early so the required insurance documentation can be reviewed before the scheduled start.",
+      },
+      {
+        q: "Should I paint closets before moving in?",
+        a: "If the closets are scuffed, stained, or changing color, the empty-apartment window is the easiest time. We list closets separately so you can decide based on condition and budget.",
+      },
+    ],
+    relatedServices: ["interior-painting", "drywall-plaster-repair"],
+    relatedAreas: ["manhattan", "brooklyn", "queens"],
+    relatedPages: ["apartment-painting-nyc", "co-op-condo-painting-nyc", "move-out-apartment-painting-nyc"],
+  },
+  {
+    slug: "move-out-apartment-painting-nyc",
+    keyword: "move-out apartment painting NYC",
+    icon: "roller",
+    title: "Move-Out Apartment Painting NYC | Patches, Touch-Ups & Repaints",
+    description:
+      "Move-out apartment painting in NYC for renters and owners. Document wall condition, patch damage, match paint where practical, or repaint before handoff.",
+    h1: "Move-out apartment painting in NYC",
+    lede:
+      "A condition-based paint plan for the final handoff: identify what needs patching, what can be touched up, and when a full wall or room repaint is the cleaner answer.",
+    intro: [
+      "Move-out painting is not automatically a full-apartment repaint. The right scope depends on the lease, the existing finish, wall damage, color changes, and what the owner or managing agent expects at handoff.",
+      "We start with photos and a written list of problem areas, then separate patch-and-touch-up work from full wall or room repainting. That gives renters and owners a practical scope without implying that paint alone guarantees a security-deposit outcome.",
+    ],
+    scope: {
+      heading: "What a move-out paint scope can include",
+      items: [
+        "Photo-based review of scuffs, holes, stains, and color changes",
+        "Removal of ordinary anchors with patching and spot priming",
+        "Paint matching assessment for existing walls",
+        "Corner-to-corner repainting where touch-ups would flash",
+        "Doors, trim, closets, and ceilings priced separately",
+        "Cleanup and completion photos for your records",
+      ],
+    },
+    sections: [
+      {
+        h2: "Touch up or repaint? Decide by condition",
+        body:
+          "Touch-ups work best when the original paint is known, the coating is relatively recent, and the surrounding wall has not faded or accumulated wear. Different sheen, batch, application method, or age can make a small patch more visible than the original mark. In those cases, repainting the wall corner to corner produces a more consistent result.",
+        bullets: [
+          "Use the original brand, color, and sheen when available",
+          "Prime patches so filler does not show through",
+          "Repaint full wall planes when a touch-up will flash",
+        ],
+      },
+      {
+        h2: "Plan backward from inspection and key handoff",
+        body:
+          "The useful deadline is not the day the moving truck leaves; it is the inspection or key-return appointment. We confirm access after the furniture is out, building work hours, drying time, and whether the superintendent or owner has provided a written paint standard.",
+      },
+    ],
+    cost: {
+      intro:
+        "Move-out cost is driven by the number of repairs, whether paint can be matched, and how many complete walls or rooms need repainting. Typical planning ranges:",
+      rows: [
+        { item: "Patch and touch-up visit", range: "$450 - $1,200" },
+        { item: "Single room repaint", range: "$550 - $1,500" },
+        { item: "Studio walls", range: "$1,400 - $3,200" },
+        { item: "1-bedroom walls", range: "$2,000 - $4,500" },
+      ],
+      note:
+        "Painting does not guarantee return of a security deposit. We quote the visible paint and repair scope and recommend confirming lease requirements with the owner or manager.",
+    },
+    faqs: [
+      {
+        q: "Will painting guarantee I get my security deposit back?",
+        a: "No. Deposit decisions can involve lease terms, cleaning, damage, rent, and other conditions outside the paint work. We document and complete the agreed painting scope without promising the owner's decision.",
+      },
+      {
+        q: "Can you match the apartment's existing white paint?",
+        a: "Sometimes. A label, leftover can, or building paint schedule helps. Even a correct color can look different when the existing wall has aged, so we test the match and recommend a full-wall repaint if needed.",
+      },
+      {
+        q: "When should I send photos for an estimate?",
+        a: "Send wide photos and close-ups before the move if possible, then update them after furniture and wall-mounted items are removed. Hidden damage can change the final scope.",
+      },
+      {
+        q: "Can you paint after the movers leave but before key return?",
+        a: "Yes, if the building allows access and the window leaves enough time for repairs, coating, drying, cleanup, and inspection. Share both dates when requesting the estimate.",
+      },
+    ],
+    relatedServices: ["interior-painting", "drywall-plaster-repair", "property-manager-turnovers"],
+    relatedAreas: ["manhattan", "brooklyn", "queens", "bronx"],
+    relatedPages: ["rental-turnover-painting-nyc", "apartment-painting-nyc", "move-in-apartment-painting-nyc"],
+  },
+  {
+    slug: "popcorn-ceiling-removal-nyc",
+    keyword: "popcorn ceiling removal NYC",
+    icon: "patch",
+    title: "Popcorn Ceiling Removal NYC | Testing, Skim Coat & Paint",
+    description:
+      "Popcorn and acoustic ceiling removal in NYC with containment, condition assessment, smoothing, primer and paint after required asbestos clearance.",
+    h1: "Popcorn ceiling removal in NYC",
+    lede:
+      "A smooth-ceiling project starts with material clearance, not a scraper: assess the texture, protect the room, remove or cover only when appropriate, then skim, prime, and paint.",
+    intro: [
+      "Popcorn and acoustic textures can hide an uneven substrate, previous repairs, or materials that must not be disturbed without professional testing. The finish underneath is rarely ready for paint immediately after texture comes off.",
+      "Our painting scope begins after any required asbestos investigation or abatement is complete. We then build the room protection, removal or approved resurfacing method, skim-coat level, sanding, primer, and ceiling paint into one written finish plan.",
+    ],
+    scope: {
+      heading: "What the finish phase can include",
+      items: [
+        "Texture and substrate condition review",
+        "Coordination around required asbestos documentation or clearance",
+        "Full room containment and protection",
+        "Texture removal when cleared and technically appropriate",
+        "Skim coating, sanding, and repair of the exposed ceiling",
+        "Compatible primer and flat ceiling finish coats",
+      ],
+    },
+    sections: [
+      {
+        h2: "Test suspect material before it is disturbed",
+        body:
+          "New York City notes that pre-1987 buildings may contain asbestos-containing ceiling materials, and the EPA says laboratory testing by a trained professional is the only way to know whether a suspect material contains asbestos. We do not guess from appearance or scrape a sample. When the project may disturb suspect material, the owner must obtain the appropriate investigation and clearance before our finish work begins.",
+        bullets: [
+          "Do not sand, scrape, or sample suspect texture yourself",
+          "Use a qualified asbestos investigator or inspector",
+          "Use licensed abatement providers when regulated removal is required",
+        ],
+      },
+      {
+        h2: "Removal is only the first part of a smooth ceiling",
+        body:
+          "After texture removal, seams, fasteners, old patches, and surface variation often become visible. The estimate identifies whether localized repair is enough or whether a broader skim coat is needed, followed by controlled sanding, primer, and flat ceiling paint.",
+      },
+    ],
+    cost: {
+      intro:
+        "Pricing depends on square footage, ceiling height, whether the texture has been painted, access, containment, and how much smoothing the exposed surface needs. Typical painting-contractor planning ranges after clearance:",
+      rows: [
+        { item: "Single small room finish scope", range: "$1,200 - $3,000" },
+        { item: "Large living area", range: "$2,500 - $6,000" },
+        { item: "Removal and smoothing", range: "$4 - $10 / sq ft" },
+        { item: "Testing or regulated abatement", range: "By separate specialist" },
+      ],
+      note:
+        "Testing, asbestos investigation, air monitoring, and regulated abatement are not included in these painting ranges and must be handled by appropriately qualified providers.",
+    },
+    faqs: [
+      {
+        q: "Can you tell whether a popcorn ceiling contains asbestos by looking at it?",
+        a: "No. Appearance and building age can raise a question but cannot confirm content. A qualified professional and laboratory analysis are needed before suspect material is disturbed.",
+      },
+      {
+        q: "Do you perform asbestos abatement?",
+        a: "No. We perform the ceiling preparation and painting scope after required investigation or abatement has been completed and documented by appropriately licensed providers.",
+      },
+      {
+        q: "Can a popcorn ceiling be skim coated instead of removed?",
+        a: "Sometimes, depending on material clearance, adhesion, moisture history, stability, and the desired finish. We evaluate the paint-ready approach only after safety and compliance questions are resolved.",
+      },
+      {
+        q: "Will the ceiling be perfectly smooth after removal?",
+        a: "The achievable finish depends on the substrate and selected skim-coat level. We document the proposed preparation and sample or inspect the surface under normal room lighting before final paint.",
+      },
+    ],
+    references: [
+      {
+        label: "NYC Department of Buildings: asbestos project requirements",
+        href: "https://www.nyc.gov/site/buildings/dob/project-requirements-asbestos.page",
+      },
+      {
+        label: "NYC Department of Environmental Protection: asbestos abatement",
+        href: "https://www.nyc.gov/site/dep/environment/asbestos-abatement.page",
+      },
+      {
+        label: "US EPA: identifying asbestos in home materials",
+        href: "https://www.epa.gov/asbestos/how-do-i-know-if-i-have-asbestos-my-home-floor-tile-ceiling-tile-shingles-siding-etc",
+      },
+    ],
+    relatedServices: ["drywall-plaster-repair", "interior-painting", "wallpaper-removal"],
+    relatedAreas: ["manhattan", "brooklyn", "queens", "bronx"],
+    relatedPages: ["skim-coating-nyc", "pre-war-apartment-painting-nyc", "drywall-repair-nyc"],
+  },
+  {
+    slug: "apartment-building-lobby-hallway-painting-nyc",
+    keyword: "apartment building lobby and hallway painting NYC",
+    icon: "building",
+    title: "NYC Apartment Lobby & Hallway Painting | Common Areas",
+    description:
+      "Apartment-building lobby, hallway and stairwell painting in NYC. Phased occupied-building work, durable coatings, repair options and written scopes.",
+    h1: "Apartment building lobby and hallway painting in NYC",
+    lede:
+      "Common-area repainting planned for occupied buildings: lobbies, corridors, stairwells, doors, trim, elevator surrounds, and service areas phased around residents.",
+    intro: [
+      "Apartment common areas take a different kind of wear from private interiors. Cart impacts, luggage, deliveries, hand contact, cleaning equipment, and frequent touch-ups all affect product choice and the amount of wall repair required.",
+      "We help owners, boards, and property managers turn a broad request to 'paint the halls' into a measurable scope by floor and surface, with resident access, dry time, color control, protection, and closeout documentation planned before work begins.",
+    ],
+    scope: {
+      heading: "Common-area surfaces we can scope",
+      items: [
+        "Lobby walls, ceilings, trim, doors, and reception areas",
+        "Residential corridors and elevator lobbies",
+        "Stairwell walls, landings, stringers, doors, and railings",
+        "Elevator frames and other paintable metal after assessment",
+        "Crack, impact, and water-stain preparation",
+        "Floor-by-floor phasing, protection, signage, and daily cleanup",
+      ],
+    },
+    sections: [
+      {
+        h2: "Build a scope the board can compare",
+        body:
+          "Common-area bids are difficult to compare when one includes doors, frames, ceilings, repair allowances, and night work while another lists only wall paint. Our estimate separates surfaces, preparation level, products, colors, optional alternates, schedule, and exclusions so decision-makers can compare the complete project.",
+        bullets: [
+          "Surface counts and floor-by-floor quantities",
+          "Separate base scope and repair allowances",
+          "Product and sheen schedule for each substrate",
+        ],
+      },
+      {
+        h2: "Keep occupied circulation routes usable",
+        body:
+          "Residents, staff, deliveries, and emergency routes still need to move through the building. We phase work to keep paths clear, use low-odor coatings where appropriate, protect floors and elevator thresholds, and coordinate notices and restricted areas with building management.",
+      },
+    ],
+    cost: {
+      intro:
+        "Common-area pricing depends on floor count, wall area, ceiling height, doors and frames, repair level, protection, working hours, and phasing. Typical planning ranges:",
+      rows: [
+        { item: "Small lobby refresh", range: "$2,500 - $7,500" },
+        { item: "Single residential hallway", range: "$2,000 - $6,000" },
+        { item: "Stairwell repaint", range: "$3,500 - $10,000" },
+        { item: "Multi-floor common areas", range: "Quoted by floor and phase" },
+      ],
+      note:
+        "A walkthrough is usually required. We itemize doors, trim, ceilings, metal, repairs, and scheduling options rather than hiding them in one square-foot rate.",
+    },
+    faqs: [
+      {
+        q: "Can you paint hallways while residents remain in the building?",
+        a: "Yes. We phase the project, maintain usable paths, coordinate restricted areas with management, and clean active zones daily. The exact plan depends on corridor width, exits, building rules, and coating dry time.",
+      },
+      {
+        q: "What paint is best for apartment hallways?",
+        a: "The right system depends on substrate, existing coating, cleaning practices, sheen preference, and impact level. We typically compare durable washable wall coatings and tougher systems for doors, frames, trim, and metal.",
+      },
+      {
+        q: "Can you provide alternates for the board to approve?",
+        a: "Yes. The proposal can separate base scope from options such as ceilings, apartment doors, elevator frames, heavier repairs, feature walls, or upgraded coating systems.",
+      },
+      {
+        q: "Do you provide completion photos by floor?",
+        a: "We can include floor-by-floor progress and completion photos in the closeout process when requested in the project scope.",
+      },
+    ],
+    relatedServices: ["commercial-painting", "property-manager-turnovers", "drywall-plaster-repair"],
+    relatedAreas: ["manhattan", "brooklyn", "queens", "bronx"],
+    relatedPages: ["rental-turnover-painting-nyc", "commercial-painting-manhattan", "office-painting-nyc"],
   },
 ];
 

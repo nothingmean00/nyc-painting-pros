@@ -11,6 +11,9 @@ const footerProjectSlugs = [
   "park-slope-brownstone-painters",
   "long-island-city-condo-painting",
   "williamsburg-office-painting",
+  "move-in-apartment-painting-nyc",
+  "popcorn-ceiling-removal-nyc",
+  "apartment-building-lobby-hallway-painting-nyc",
 ];
 
 const footerProjects = footerProjectSlugs

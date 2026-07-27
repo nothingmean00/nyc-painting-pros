@@ -28,6 +28,8 @@ const groups = [
       "tribeca-loft-painting",
       "park-slope-brownstone-painters",
       "long-island-city-condo-painting",
+      "move-in-apartment-painting-nyc",
+      "move-out-apartment-painting-nyc",
     ],
   },
   {
@@ -41,6 +43,7 @@ const groups = [
       "exterior-painting-nyc",
       "new-construction-painting-nyc",
       "rental-turnover-painting-nyc",
+      "popcorn-ceiling-removal-nyc",
     ],
   },
   {
@@ -53,6 +56,7 @@ const groups = [
       "commercial-painting-manhattan",
       "office-painting-nyc",
       "williamsburg-office-painting",
+      "apartment-building-lobby-hallway-painting-nyc",
       "retail-storefront-painting-nyc",
       "restaurant-painting-nyc",
     ],

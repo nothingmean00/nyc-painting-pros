@@ -159,6 +159,30 @@ export default async function MoneyPage({
             <Faq items={p.faqs} />
           </div>
 
+          {p.references && p.references.length > 0 && (
+            <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+              <h2 className="font-display text-2xl">Safety and compliance references</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
+                Use current agency guidance and qualified professionals when the work may disturb regulated material.
+              </p>
+              <ul className="mt-4 space-y-2">
+                {p.references.map((reference) => (
+                  <li key={reference.href}>
+                    <a
+                      href={reference.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-start gap-2 text-sm font-semibold text-[var(--color-green-600)] hover:underline"
+                    >
+                      <Icon.arrow className="mt-0.5 h-4 w-4 shrink-0" />
+                      {reference.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Internal links */}
           {(relatedServices.length > 0 || relatedAreas.length > 0) && (
             <div className="mt-12 rounded-2xl bg-[var(--color-cream-200)]/50 border border-[var(--color-line)] p-7">

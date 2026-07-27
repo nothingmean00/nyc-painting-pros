@@ -22,6 +22,9 @@ const popularSlugs = [
   "brownstone-painting-brooklyn",
   "commercial-painting-manhattan",
   "exterior-painting-nyc",
+  "move-in-apartment-painting-nyc",
+  "popcorn-ceiling-removal-nyc",
+  "apartment-building-lobby-hallway-painting-nyc",
 ];
 
 const neighborhoodSlugs = [
