@@ -17,20 +17,11 @@ export function LoginForm() {
         </p>
       )}
       <label className="grid gap-2">
-        <span className="text-sm font-medium text-slate-700">Admin email</span>
-        <input
-          name="email"
-          type="email"
-          autoComplete="username"
-          required
-          className="h-12 border border-slate-300 bg-white px-4 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
-        />
-      </label>
-      <label className="grid gap-2">
         <span className="text-sm font-medium text-slate-700">Password</span>
         <input
           name="password"
           type="password"
+          autoFocus
           autoComplete="current-password"
           required
           className="h-12 border border-slate-300 bg-white px-4 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"

@@ -7,7 +7,7 @@ import {
   clearAdminSession,
   createAdminSession,
   requireAdmin,
-  verifyAdminCredentials,
+  verifyAdminPassword,
 } from "@/lib/admin-auth";
 import { intakeStatuses, updateIntake } from "@/lib/intakes";
 
@@ -21,12 +21,11 @@ export async function loginAction(
     return { error: "Admin access is not configured." };
   }
 
-  const email = String(formData.get("email") ?? "").slice(0, 200);
   const password = String(formData.get("password") ?? "").slice(0, 300);
 
-  if (!verifyAdminCredentials(email, password)) {
+  if (!verifyAdminPassword(password)) {
     await new Promise((resolve) => setTimeout(resolve, 450));
-    return { error: "Email or password is incorrect." };
+    return { error: "Password is incorrect." };
   }
 
   await createAdminSession();

@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 
 const COOKIE_NAME = "nycpros_admin_session";
 const SESSION_DURATION_SECONDS = 60 * 60 * 12;
+const ADMIN_PASSWORD = "bruh123";
 
 function getSessionKey() {
   const secret = process.env.ADMIN_SESSION_SECRET;
@@ -24,22 +25,13 @@ function secureEqual(candidate: string, expected: string) {
 
 export function adminAuthConfigured() {
   return Boolean(
-    process.env.ADMIN_EMAIL &&
-      process.env.ADMIN_PASSWORD &&
-      process.env.ADMIN_SESSION_SECRET &&
+    process.env.ADMIN_SESSION_SECRET &&
       process.env.ADMIN_SESSION_SECRET.length >= 32
   );
 }
 
-export function verifyAdminCredentials(email: string, password: string) {
-  const expectedEmail = process.env.ADMIN_EMAIL;
-  const expectedPassword = process.env.ADMIN_PASSWORD?.trimEnd();
-  if (!expectedEmail || !expectedPassword) return false;
-
-  return (
-    secureEqual(email.trim().toLowerCase(), expectedEmail.trim().toLowerCase()) &&
-    secureEqual(password, expectedPassword)
-  );
+export function verifyAdminPassword(password: string) {
+  return secureEqual(password, ADMIN_PASSWORD);
 }
 
 export async function createAdminSession() {
