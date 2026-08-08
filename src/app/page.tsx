@@ -11,6 +11,7 @@ import { faqSchema, breadcrumbs } from "@/lib/schema";
 import { site, services, areas, faqs, processSteps } from "@/lib/site";
 import { moneyPages } from "@/lib/money-pages";
 import { sortedPosts, unsplash } from "@/lib/blog";
+import { PropertyCareResources } from "@/components/PropertyCareResources";
 
 const popularSlugs = [
   "apartment-painting-nyc",
@@ -475,6 +476,7 @@ export default function Home() {
         </div>
       </section>
 
+      <PropertyCareResources />
       <CTASection />
       <div className="h-20" />
     </>
