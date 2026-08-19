@@ -27,7 +27,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Detail-Focused NYC Painters`,
+    default: `${site.name} | Homes, Buildings & Businesses`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Detail-Focused NYC Painters`,
+    title: `${site.name} — Painting for Homes, Buildings & Businesses`,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name} — Your space, finished right.` }],
+    images: [{ url: "/og-positioning.png", width: 1200, height: 630, alt: `${site.name} — Painting for homes, buildings and businesses.` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Detail-Focused NYC Painters`,
+    title: `${site.name} — Painting for Homes, Buildings & Businesses`,
     description: site.description,
-    images: ["/og.png"],
+    images: ["/og-positioning.png"],
   },
   robots: {
     index: true,

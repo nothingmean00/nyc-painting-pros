@@ -40,6 +40,33 @@ const trustItems = [
   ["medal", `${site.warrantyYears}-year warranty`, "Written workmanship coverage"],
 ] as const;
 
+const audiences = [
+  {
+    icon: "house",
+    label: "For homeowners",
+    title: "Homes",
+    text: "Apartments, brownstones, condos, cabinets, and specialty finishes—planned around daily life.",
+    href: "/services/interior-painting",
+    link: "Explore residential painting",
+  },
+  {
+    icon: "building",
+    label: "For property teams",
+    title: "Buildings",
+    text: "Repeatable turnovers, common areas, lobbies, and multi-property programs with clear closeout.",
+    href: "/services/property-manager-turnovers",
+    link: "Explore property programs",
+  },
+  {
+    icon: "roller",
+    label: "For organizations",
+    title: "Businesses",
+    text: "Offices, retail, hospitality, and occupied spaces scheduled to minimize operational disruption.",
+    href: "/services/commercial-painting",
+    link: "Explore commercial painting",
+  },
+] as const;
+
 export default function Home() {
   return (
     <>
@@ -51,23 +78,23 @@ export default function Home() {
           <div className="relative z-10 flex flex-col justify-center py-20 pr-0 lg:py-28 lg:pr-16">
             <div className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-green-300)]">
               <span className="h-px w-8 bg-current" />
-              Painting all five boroughs
+              Homes · Buildings · Businesses
             </div>
-            <h1 className="font-display max-w-3xl text-[clamp(3.5rem,7vw,7.4rem)] leading-[.88] tracking-[-0.055em]">
-              Your space,
-              <span className="block text-[var(--color-green-300)]">finished right.</span>
+            <h1 className="font-display max-w-3xl text-[clamp(3.25rem,6.3vw,6.7rem)] leading-[.9] tracking-[-0.055em]">
+              NYC painting for
+              <span className="block text-[var(--color-green-300)]">every kind of space.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/72 sm:text-xl">
-              Detail-focused painting for NYC apartments, brownstones, offices,
-              and managed properties—from careful prep to the final walkthrough.
+              One detail-focused team for homes, managed buildings, and businesses
+              across all five boroughs—from careful prep to final walkthrough.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="btn btn-primary text-base">
                 Request a free estimate <Icon.arrow className="h-5 w-5" />
               </Link>
-              <a href={site.phoneHref} className="btn border border-white/25 bg-white/5 text-base text-white hover:bg-white hover:text-[var(--color-ink)]">
-                <Icon.phone className="h-5 w-5" /> {site.phone}
-              </a>
+              <Link href="/services/property-manager-turnovers" className="btn border border-white/25 bg-white/5 text-base text-white hover:bg-white hover:text-[var(--color-ink)]">
+                Commercial &amp; property teams
+              </Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/65">
               {["Free itemized estimates", "Premium low-VOC options", "One project contact"].map((item) => (
@@ -113,6 +140,37 @@ export default function Home() {
                   <div className="mt-1 text-xs leading-relaxed text-[var(--color-muted)]">{text}</div>
                 </div>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="container-x section-pad !pb-0" aria-labelledby="choose-your-path">
+        <div className="max-w-3xl">
+          <span className="eyebrow">Choose your path</span>
+          <h2 id="choose-your-path" className="section-title mt-4">Built around who you are responsible for.</h2>
+        </div>
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {audiences.map((audience, index) => {
+            const I = Icon[audience.icon];
+            return (
+              <Link
+                key={audience.title}
+                href={audience.href}
+                className={`group relative overflow-hidden rounded-[1.25rem] border p-7 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:p-8 ${index === 1 ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-line)] bg-white"}`}
+              >
+                <div className="flex items-start justify-between gap-5">
+                  <span className={`grid h-12 w-12 place-items-center rounded-xl ${index === 1 ? "bg-white/10 text-[var(--color-green-300)]" : "bg-[var(--color-cream-200)] text-[var(--color-green-600)]"}`}>
+                    <I className="h-6 w-6" />
+                  </span>
+                  <span className={`text-xs font-bold uppercase tracking-[.16em] ${index === 1 ? "text-white/55" : "text-[var(--color-muted)]"}`}>{audience.label}</span>
+                </div>
+                <h3 className="font-display mt-10 text-4xl">{audience.title}</h3>
+                <p className={`mt-4 min-h-20 leading-relaxed ${index === 1 ? "text-white/68" : "text-[var(--color-muted)]"}`}>{audience.text}</p>
+                <span className={`mt-7 inline-flex items-center gap-2 text-sm font-semibold ${index === 1 ? "text-[var(--color-green-300)]" : "text-[var(--color-green-600)]"}`}>
+                  {audience.link} <Icon.arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
             );
           })}
         </div>

@@ -15,7 +15,7 @@ export function Logo({ className = "" }: { className?: string }) {
           </span>
         </span>
         <span className="mt-1.5 text-[0.53rem] font-bold uppercase tracking-[0.22em] text-[var(--color-muted)]">
-          Detail focused · Five boroughs
+          Homes · Buildings · Businesses
         </span>
       </span>
     </span>

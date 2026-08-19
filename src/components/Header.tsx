@@ -7,11 +7,11 @@ import { Icon } from "./Icons";
 import { site, services } from "@/lib/site";
 
 const nav = [
-  { label: "Services", href: "/services" },
+  { label: "Homes", href: "/services/interior-painting" },
+  { label: "Buildings", href: "/services/property-manager-turnovers" },
+  { label: "Businesses", href: "/services/commercial-painting" },
   { label: "Projects & Pricing", href: "/painting" },
   { label: "Service Areas", href: "/areas" },
-  { label: "Our Process", href: "/guarantee" },
-  { label: "About", href: "/about" },
 ];
 
 export function Header() {

@@ -8,9 +8,9 @@ export const site = {
   legalName: "NYC Painting Pros LLC",
   domain: "nycpaintingpros.com",
   url: "https://nycpaintingpros.com",
-  tagline: "Detail-focused painting for NYC homes and businesses.",
+  tagline: "NYC painting for homes, buildings, and businesses.",
   description:
-    "NYC Painting Pros delivers careful painting, wall finishes, and turnover services across all five boroughs, with detailed estimates and a written workmanship warranty.",
+    "NYC Painting Pros serves homeowners, property managers, and businesses across all five boroughs with detailed scopes, careful preparation, and a written workmanship warranty.",
   // --- NAP (keep identical everywhere: site, Google Business Profile, citations) ---
   phone: "(212) 814-7500",
   phoneHref: "tel:+12128147500",
