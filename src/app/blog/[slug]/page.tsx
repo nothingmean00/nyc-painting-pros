@@ -214,9 +214,6 @@ export default async function BlogPost({
                 <Link href="/contact" className="btn btn-primary">
                   Free estimate
                 </Link>
-                <a href={site.phoneHref} className="btn btn-ghost !text-white !border-white/40 hover:!bg-white hover:!text-[var(--color-ink)]">
-                  <Icon.phone className="w-4 h-4" /> Call
-                </a>
               </div>
             </div>
           </div>

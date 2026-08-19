@@ -7,7 +7,6 @@ import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { sortedPosts, unsplash } from "@/lib/blog";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Painting Tips & Guides | NYC Painting Pros Blog",
@@ -123,7 +122,7 @@ export default function BlogIndex() {
 
       <CTASection
         title="Turn the plan into a finished room."
-        subtitle={`Put our advice to work — get a free estimate or call ${site.phone}.`}
+        subtitle="Put our advice to work with a clear, no-obligation project estimate."
       />
       <div className="h-20" />
     </>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Icon } from "@/components/Icons";
 import { CTASection } from "@/components/CTASection";
 import { Guarantees } from "@/components/Trust";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
-import { site, processSteps } from "@/lib/site";
+import { processSteps } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About — Detail-Focused NYC Painting Company",
@@ -59,7 +60,7 @@ export default function AboutPage() {
       <section className="container-x py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <h2 className="font-display text-3xl sm:text-4xl leading-tight">
-            A New York painting company that actually picks up the phone
+            A New York painting company built around clear communication
           </h2>
           <div className="mt-5 space-y-4 text-[var(--color-muted)] leading-relaxed text-lg">
             <p>
@@ -75,9 +76,9 @@ export default function AboutPage() {
               warranty.
             </p>
           </div>
-          <a href={site.phoneHref} className="btn btn-dark mt-8">
-            <Icon.phone className="w-5 h-5" /> Talk to us: {site.phone}
-          </a>
+          <Link href="/contact" className="btn btn-dark mt-8">
+            Start your project <Icon.arrow className="w-5 h-5" />
+          </Link>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {values.map((v) => {

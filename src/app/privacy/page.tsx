@@ -77,10 +77,6 @@ export default function PrivacyPage() {
               Questions about this policy can be sent to{" "}
               <a className="font-semibold text-[var(--color-green-600)]" href={`mailto:${site.email}`}>
                 {site.email}
-              </a>{" "}
-              or discussed by calling{" "}
-              <a className="font-semibold text-[var(--color-green-600)]" href={site.phoneHref}>
-                {site.phone}
               </a>
               . For project inquiries, use the{" "}
               <Link className="font-semibold text-[var(--color-green-600)]" href="/contact">

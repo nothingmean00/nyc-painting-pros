@@ -251,9 +251,9 @@ export default async function MoneyPage({
                 </li>
               ))}
             </ul>
-            <a href={site.phoneHref} className="btn btn-dark w-full mt-5">
-              <Icon.phone className="w-4 h-4" /> {site.phone}
-            </a>
+            <Link href="/contact" className="btn btn-dark w-full mt-5">
+              Request this project estimate <Icon.arrow className="w-4 h-4" />
+            </Link>
           </div>
         </aside>
       </section>

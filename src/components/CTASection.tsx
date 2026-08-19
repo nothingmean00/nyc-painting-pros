@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Icon } from "./Icons";
-import { site } from "@/lib/site";
 
 export function CTASection({
   title = "Ready to plan your project?",
@@ -17,13 +16,10 @@ export function CTASection({
             {title}
           </h2>
           <p className="mt-4 text-white/75 text-lg">{subtitle}</p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-8">
             <Link href="/contact" className="btn btn-primary text-base">
               Get a Free Estimate <Icon.arrow className="w-5 h-5" />
             </Link>
-            <a href={site.phoneHref} className="btn btn-ghost text-base !text-white !border-white/40 hover:!bg-white hover:!text-[var(--color-ink)]">
-              <Icon.phone className="w-5 h-5" /> {site.phone}
-            </a>
           </div>
         </div>
       </div>

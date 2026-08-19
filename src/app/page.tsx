@@ -248,7 +248,7 @@ export default function Home() {
           <div className="lg:sticky lg:top-32 lg:self-start">
             <span className="eyebrow">A better process</span>
             <h2 className="section-title mt-4">Less disruption. More certainty.</h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">You always know what happens next, who to call, and what the finished work includes.</p>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">You always know what happens next, who to contact, and what the finished work includes.</p>
           </div>
           <ol className="border-t border-[var(--color-line)]">
             {processSteps.map((step, index) => (
@@ -291,9 +291,9 @@ export default function Home() {
             <h2 className="section-title mt-4">Tell us what needs painting.</h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)]">Share a few details now. We’ll confirm whether photos are enough for pricing or whether an on-site walkthrough makes more sense.</p>
             <div className="mt-9 rounded-xl border border-[var(--color-line)] bg-white p-6">
-              <p className="text-sm font-semibold">Prefer to speak with someone?</p>
-              <a href={site.phoneHref} className="font-display mt-2 inline-flex items-center gap-3 text-2xl text-[var(--color-green-600)]">
-                <Icon.phone className="h-5 w-5" /> {site.phone}
+              <p className="text-sm font-semibold">Prefer email?</p>
+              <a href={`mailto:${site.email}`} className="font-display mt-2 inline-flex items-center gap-3 text-xl text-[var(--color-green-600)] sm:text-2xl">
+                {site.email}
               </a>
               <p className="mt-2 text-sm text-[var(--color-muted)]">{site.hours}</p>
             </div>

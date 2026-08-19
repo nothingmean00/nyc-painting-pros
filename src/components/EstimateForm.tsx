@@ -58,7 +58,7 @@ export function EstimateForm({
     } catch {
       setStatus("error");
       setError(
-        `We couldn't send that just now. Please call us at ${site.phone}.`
+        `We couldn't send that just now. Please email us at ${site.email}.`
       );
     }
   }

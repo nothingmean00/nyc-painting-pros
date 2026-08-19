@@ -52,12 +52,8 @@ export function Header() {
               <Icon.clock className="w-4 h-4 text-[var(--color-green-300)]" />
               {site.hours}
             </span>
-            <a
-              href={site.phoneHref}
-              className="inline-flex items-center gap-1.5 font-semibold hover:text-[var(--color-green-300)]"
-            >
-              <Icon.phone className="w-4 h-4" />
-              {site.phone}
+            <a href={`mailto:${site.email}`} className="font-semibold hover:text-[var(--color-green-300)]">
+              {site.email}
             </a>
           </span>
         </div>
@@ -82,9 +78,6 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-4">
-            <a href={site.phoneHref} className="hidden xl:inline-flex items-center gap-2 text-sm font-semibold">
-              <Icon.phone className="w-4 h-4 text-[var(--color-green)]" /> {site.phone}
-            </a>
             <Link href="/contact" className="btn btn-primary !py-3">
               Request estimate <Icon.arrow className="w-4 h-4" />
             </Link>
@@ -133,8 +126,8 @@ export function Header() {
               ))}
             </div>
             <div className="mt-4 flex flex-col gap-3">
-              <a href={site.phoneHref} className="btn btn-dark w-full">
-                <Icon.phone className="w-4 h-4" /> {site.phone}
+              <a href={`mailto:${site.email}`} className="btn btn-dark w-full">
+                Email our team
               </a>
               <Link
                 href="/contact"

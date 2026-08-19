@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 const items = [
-  { icon: "phone" as const, label: "Call or text", value: site.phone, href: site.phoneHref },
   { icon: "quote" as const, label: "Email", value: site.email, href: `mailto:${site.email}` },
   {
     icon: "pin" as const,
@@ -53,10 +52,10 @@ export default async function ContactPage({
 
       <section className="container-x py-16 lg:py-24 grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
         <div>
-          <h2 className="font-display text-3xl">Talk to a real person</h2>
+          <h2 className="font-display text-3xl">Send us your project details</h2>
           <p className="mt-3 text-[var(--color-muted)] leading-relaxed">
-            Prefer to talk it through? We&apos;re happy to answer questions, give
-            ballpark pricing, and schedule a walkthrough at your convenience.
+            Use the form or email us directly. A project manager will review the
+            details, answer questions, and coordinate the right next step.
           </p>
           <div className="mt-8 space-y-4">
             {items.map((it) => {

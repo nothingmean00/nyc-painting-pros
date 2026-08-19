@@ -102,14 +102,6 @@ export function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Get in Touch</h3>
           <ul className="space-y-3 text-sm">
-            <li>
-              <a
-                href={site.phoneHref}
-                className="inline-flex items-center gap-2 text-white font-semibold text-base hover:text-[var(--color-green-300)]"
-              >
-                <Icon.phone className="w-4 h-4" /> {site.phone}
-              </a>
-            </li>
             <li className="inline-flex items-center gap-2">
               <Icon.pin className="w-4 h-4 shrink-0 text-[var(--color-green-300)]" />
               {site.address.street}, {site.address.city}, {site.address.region}{" "}
