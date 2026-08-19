@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/PageHero";
 import { Icon } from "@/components/Icons";
 import { EstimateForm } from "@/components/EstimateForm";
 import { JsonLd } from "@/components/JsonLd";
@@ -12,16 +11,6 @@ export const metadata: Metadata = {
     "Request a free, no-obligation estimate for painting, wallpaper, wall finishes, repairs, or property turnovers in New York City.",
   alternates: { canonical: "/contact" },
 };
-
-const items = [
-  { icon: "quote" as const, label: "Email", value: site.email, href: `mailto:${site.email}` },
-  {
-    icon: "pin" as const,
-    label: "Office",
-    value: `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`,
-  },
-  { icon: "clock" as const, label: "Hours", value: site.hours },
-];
 
 export default async function ContactPage({
   searchParams,
@@ -40,67 +29,60 @@ export default async function ContactPage({
           { name: "Contact", path: "/contact" },
         ])}
       />
-      <PageHero
-        eyebrow="Get in touch"
-        title="Let's get your free estimate"
-        subtitle="Tell us about the space, surface condition, access, and timeline. A project manager will review the details and confirm the right next step."
-        crumbs={[
-          { name: "Home", path: "/" },
-          { name: "Contact", path: "/contact" },
-        ]}
-      />
-
-      <section className="container-x py-16 lg:py-24 grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
-        <div>
-          <h2 className="font-display text-3xl">Send us your project details</h2>
-          <p className="mt-3 text-[var(--color-muted)] leading-relaxed">
-            Use the form or email us directly. A project manager will review the
-            details, answer questions, and coordinate the right next step.
+      <section className="container-x pb-8 pt-14 lg:pb-10 lg:pt-20">
+        <div className="max-w-4xl">
+          <span className="eyebrow">Project intake</span>
+          <h1 className="section-title mt-4">Tell us what you&apos;re planning.</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
+            Share the space, scope, timing, and any building requirements. We&apos;ll
+            review everything and confirm the most useful next step.
           </p>
-          <div className="mt-8 space-y-4">
-            {items.map((it) => {
-              const I = Icon[it.icon];
-              const content = (
-                <div className="flex items-start gap-4 card p-5">
-                  <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-green)]/12 text-[var(--color-green-600)] shrink-0">
-                    <I className="w-5 h-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs uppercase tracking-wide text-[var(--color-muted)]">
-                      {it.label}
-                    </span>
-                    <span className="block font-semibold mt-0.5">{it.value}</span>
-                  </span>
-                </div>
-              );
-              return it.href ? (
-                <a key={it.label} href={it.href} className="block hover:opacity-90">
-                  {content}
-                </a>
-              ) : (
-                <div key={it.label}>{content}</div>
-              );
-            })}
-          </div>
-
-          <div className="mt-8 rounded-2xl bg-[var(--color-ink)] text-white p-6">
-            <div className="flex items-center gap-2 text-[var(--color-green-300)]">
-              <Icon.shield className="w-5 h-5" />
-              <span className="font-semibold">Building paperwork coordinated</span>
-            </div>
-            <p className="mt-2 text-sm text-white/70">
-              If your building requires a Certificate of Insurance or specific
-              additional-insured language, include it with your request so we
-              can confirm the project requirements.
-            </p>
-          </div>
-        </div>
-
-        <div id="estimate">
-          <EstimateForm defaultDetails={projectBrief} />
         </div>
       </section>
-      <div className="h-10" />
+
+      <section className="container-x grid items-start gap-8 pb-20 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 lg:pb-28">
+        <div id="estimate" className="min-w-0">
+          <EstimateForm defaultDetails={projectBrief} />
+        </div>
+
+        <aside className="space-y-4 lg:sticky lg:top-32">
+          <div className="rounded-2xl bg-[var(--color-ink)] p-6 text-white">
+            <span className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-300)]">
+              What happens next
+            </span>
+            <ol className="mt-5 space-y-5">
+              {[
+                "We review your project details.",
+                "We confirm whether photos or a walkthrough are needed.",
+                "You receive a clear written scope and estimate.",
+              ].map((step, index) => (
+                <li key={step} className="flex gap-3 text-sm leading-relaxed text-white/75">
+                  <span className="font-display text-lg text-[var(--color-green-300)]">0{index + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="card p-6">
+            <div className="flex items-center gap-2 text-[var(--color-green-600)]">
+              <Icon.shield className="h-5 w-5" />
+              <span className="font-semibold">Building projects</span>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
+              Add COI language, access hours, freight-elevator rules, and required
+              completion dates to the project description.
+            </p>
+          </div>
+
+          <div className="px-2 py-3 text-sm text-[var(--color-muted)]">
+            Prefer email?{" "}
+            <a href={`mailto:${site.email}`} className="font-semibold text-[var(--color-green-600)] hover:underline">
+              {site.email}
+            </a>
+          </div>
+        </aside>
+      </section>
     </>
   );
 }
