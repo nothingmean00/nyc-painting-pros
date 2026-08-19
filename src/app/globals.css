@@ -3,25 +3,25 @@
 
 /* ============================================================
    NYC Painting Pros — design system
-   Navy ink · warm cream · confident amber accent
+   Deep navy · warm plaster · lacquer red accent
    ============================================================ */
 
 @theme {
-  --color-ink: #0b1a2b;
-  --color-ink-700: #15314c;
-  --color-ink-600: #1f4669;
-  --color-cream: #faf6ef;
-  --color-cream-200: #f1e9dc;
+  --color-ink: #101b24;
+  --color-ink-700: #1b2d39;
+  --color-ink-600: #294554;
+  --color-cream: #f7f3eb;
+  --color-cream-200: #ebe2d3;
   --color-paper: #ffffff;
-  --color-green: #16924f;
-  --color-green-600: #0e6f3b;
-  --color-green-300: #7fd6a6;
-  --color-sky: #2f6fb0;
-  --color-muted: #5a6b7b;
-  --color-line: #e6ddce;
+  --color-green: #d45132;
+  --color-green-600: #ac351d;
+  --color-green-300: #f4a28e;
+  --color-sky: #5b7c8c;
+  --color-muted: #607079;
+  --color-line: #ddd3c4;
 
-  --shadow-soft: 0 1px 2px rgba(11, 26, 43, 0.04), 0 8px 30px rgba(11, 26, 43, 0.08);
-  --shadow-lift: 0 20px 60px -20px rgba(11, 26, 43, 0.35);
+  --shadow-soft: 0 1px 2px rgba(16, 27, 36, 0.04), 0 12px 38px rgba(16, 27, 36, 0.07);
+  --shadow-lift: 0 28px 70px -24px rgba(16, 27, 36, 0.38);
 
   --radius-xl: 1.25rem;
 }
@@ -60,6 +60,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-green) 45%, transparent);
+  outline-offset: 3px;
+}
+
 ::selection {
   background: var(--color-green);
   color: #fff;
@@ -71,12 +84,12 @@ body {
   .font-display {
     font-family: var(--font-display), Georgia, serif;
     letter-spacing: -0.02em;
-    font-weight: 600;
+    font-weight: 590;
   }
 
   .container-x {
     width: 100%;
-    max-width: 80rem;
+    max-width: 84rem;
     margin-inline: auto;
     padding-inline: 1.25rem;
   }
@@ -91,8 +104,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-green-600);
   }
@@ -103,8 +116,8 @@ body {
     justify-content: center;
     gap: 0.5rem;
     font-weight: 600;
-    border-radius: 999px;
-    padding: 0.95rem 1.6rem;
+    border-radius: 0.65rem;
+    padding: 0.9rem 1.35rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     white-space: nowrap;
   }
@@ -114,11 +127,11 @@ body {
   .btn-primary {
     background: var(--color-green);
     color: #fff;
-    box-shadow: 0 10px 24px -8px rgba(22, 146, 79, 0.55);
+    box-shadow: 0 12px 26px -10px rgba(212, 81, 50, 0.58);
   }
   .btn-primary:hover {
     background: var(--color-green-600);
-    box-shadow: 0 16px 30px -10px rgba(22, 146, 79, 0.65);
+    box-shadow: 0 18px 36px -12px rgba(212, 81, 50, 0.68);
     transform: translateY(-1px);
   }
   .btn-dark {
@@ -144,6 +157,18 @@ body {
     border: 1px solid var(--color-line);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-soft);
+  }
+
+  .section-pad {
+    padding-block: clamp(5rem, 9vw, 8rem);
+  }
+
+  .section-title {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(2.35rem, 4.5vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 590;
   }
 }
 
@@ -172,9 +197,7 @@ body {
 }
 
 .paint-grid {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.06) 1px,
-    transparent 1px
-  );
-  background-size: 22px 22px;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 32px 32px;
 }

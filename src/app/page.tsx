@@ -1,46 +1,43 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Icon } from "@/components/Icons";
-import { BeforeAfter } from "@/components/BeforeAfter";
+import Link from "next/link";
 import { CTASection } from "@/components/CTASection";
-import { Guarantees } from "@/components/Trust";
-import { Faq } from "@/components/Faq";
 import { EstimateForm } from "@/components/EstimateForm";
+import { Faq } from "@/components/Faq";
+import { Icon } from "@/components/Icons";
 import { JsonLd } from "@/components/JsonLd";
-import { faqSchema, breadcrumbs } from "@/lib/schema";
-import { site, services, areas, faqs, processSteps } from "@/lib/site";
-import { moneyPages } from "@/lib/money-pages";
-import { sortedPosts, unsplash } from "@/lib/blog";
 import { PropertyCareResources } from "@/components/PropertyCareResources";
+import { breadcrumbs, faqSchema } from "@/lib/schema";
+import { areas, faqs, processSteps, services, site } from "@/lib/site";
 
-const popularSlugs = [
-  "apartment-painting-nyc",
-  "kitchen-cabinet-painting-nyc",
-  "skim-coating-nyc",
-  "interior-painting-manhattan",
-  "drywall-repair-nyc",
-  "co-op-condo-painting-nyc",
-  "brownstone-painting-brooklyn",
-  "commercial-painting-manhattan",
-  "exterior-painting-nyc",
-  "move-in-apartment-painting-nyc",
-  "popcorn-ceiling-removal-nyc",
-  "apartment-building-lobby-hallway-painting-nyc",
-];
+const projectImages = [
+  {
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    alt: "Bright, freshly finished New York living space",
+    title: "Apartment interiors",
+    text: "Pre-war rooms, new condos, move-ins, and full-home repaints.",
+    href: "/painting/apartment-painting-nyc",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=1400&q=85",
+    alt: "Refined kitchen with painted cabinetry",
+    title: "Cabinet refinishing",
+    text: "A smooth, durable finish without replacing sound cabinets.",
+    href: "/painting/kitchen-cabinet-painting-nyc",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85",
+    alt: "Warm, polished commercial interior",
+    title: "Commercial spaces",
+    text: "Offices, retail, lobbies, and turns planned around your hours.",
+    href: "/services/commercial-painting",
+  },
+] as const;
 
-const neighborhoodSlugs = [
-  "upper-east-side-apartment-painters",
-  "tribeca-loft-painting",
-  "park-slope-brownstone-painters",
-  "long-island-city-condo-painting",
-  "williamsburg-office-painting",
-];
-
-const trustBadges = [
-  { icon: "shield", label: "Written Scope", sub: "Clear inclusions" },
-  { icon: "leaf", label: "Low-VOC Options", sub: "Product matched" },
-  { icon: "medal", label: `${site.warrantyYears}-Year Warranty`, sub: "In writing" },
-  { icon: "clock", label: "Planned Schedule", sub: "Access coordinated" },
+const trustItems = [
+  ["shield", "Building-ready", "Insurance and access details coordinated"],
+  ["check", "Scope-first", "Prep, products, and exclusions in writing"],
+  ["clock", "Schedule-led", "Clear sequencing and daily cleanup"],
+  ["medal", `${site.warrantyYears}-year warranty`, "Written workmanship coverage"],
 ] as const;
 
 export default function Home() {
@@ -48,288 +45,106 @@ export default function Home() {
     <>
       <JsonLd data={[faqSchema(), breadcrumbs([{ name: "Home", path: "/" }])]} />
 
-      {/* ============================ HERO ============================ */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(120% 90% at 85% -10%, rgba(22,146,79,0.12), transparent 55%), radial-gradient(90% 70% at 0% 0%, rgba(15,110,59,0.07), transparent 50%)",
-          }}
-        />
-        <div className="container-x pt-12 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="reveal">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white border border-[var(--color-line)] px-4 py-1.5 text-sm font-medium shadow-[var(--shadow-soft)]">
-              <Icon.pin className="w-4 h-4 text-[var(--color-green-600)]" />
-              Serving all five boroughs of NYC
-            </span>
-            <h1 className="font-display text-[2.6rem] sm:text-6xl leading-[1.04] mt-6">
-              Detail-focused{" "}
-              <br />
-              {" "}
-              NYC{" "}
-              <span className="relative text-[var(--color-green-600)]">
-                painters
-                <svg
-                  className="absolute -bottom-2 left-0 w-full"
-                  height="12"
-                  viewBox="0 0 200 12"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M2 9C40 3 160 3 198 8"
-                    stroke="var(--color-green)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              .
+      <section className="relative overflow-hidden bg-[var(--color-ink)] text-white">
+        <div className="absolute inset-0 opacity-50 paint-grid" aria-hidden="true" />
+        <div className="container-x relative grid min-h-[760px] items-stretch lg:grid-cols-[1.05fr_.95fr]">
+          <div className="relative z-10 flex flex-col justify-center py-20 pr-0 lg:py-28 lg:pr-16">
+            <div className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-green-300)]">
+              <span className="h-px w-8 bg-current" />
+              Painting all five boroughs
+            </div>
+            <h1 className="font-display max-w-3xl text-[clamp(3.5rem,7vw,7.4rem)] leading-[.88] tracking-[-0.055em]">
+              Your space,
+              <span className="block text-[var(--color-green-300)]">finished right.</span>
             </h1>
-            <p className="mt-6 text-lg text-[var(--color-muted)] max-w-xl leading-relaxed">
-              Painting, wallpaper, decorative finishes, and turnover services
-              across all five boroughs. The scope, preparation, materials, and
-              schedule are documented before work begins.
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/72 sm:text-xl">
+              Detail-focused painting for NYC apartments, brownstones, offices,
+              and managed properties—from careful prep to the final walkthrough.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="btn btn-primary text-base">
-                Get a Free Estimate <Icon.arrow className="w-5 h-5" />
+                Request a free estimate <Icon.arrow className="h-5 w-5" />
               </Link>
-              <a href={site.phoneHref} className="btn btn-ghost text-base">
-                <Icon.phone className="w-5 h-5" /> {site.phone}
+              <a href={site.phoneHref} className="btn border border-white/25 bg-white/5 text-base text-white hover:bg-white hover:text-[var(--color-ink)]">
+                <Icon.phone className="h-5 w-5" /> {site.phone}
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--color-muted)]">
-              {["Free written estimates", "Low-VOC premium paints", "All five boroughs"].map(
-                (t) => (
-                  <span key={t} className="inline-flex items-center gap-2">
-                    <Icon.check className="w-4 h-4 text-[var(--color-green-600)]" />
-                    {t}
-                  </span>
-                )
-              )}
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/65">
+              {["Free itemized estimates", "Premium low-VOC options", "One project contact"].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <Icon.check className="h-4 w-4 text-[var(--color-green-300)]" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="reveal" style={{ animationDelay: "0.12s" }}>
-            <BeforeAfter />
-            <p className="text-center text-sm text-[var(--color-muted)] mt-3">
-              ← Drag to see the transformation →
-            </p>
-          </div>
-        </div>
-
-        {/* trust strip */}
-        <div className="border-y border-[var(--color-line)] bg-white/60">
-          <div className="container-x grid grid-cols-2 lg:grid-cols-4 divide-x divide-[var(--color-line)]">
-            {trustBadges.map((b) => {
-              const I = Icon[b.icon];
-              return (
-                <div key={b.label} className="flex items-center gap-3 py-5 px-4 sm:px-6">
-                  <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-green)]/12 text-[var(--color-green-600)] shrink-0">
-                    <I className="w-6 h-6" />
-                  </span>
-                  <span className="leading-tight">
-                    <span className="block font-semibold text-[0.95rem]">{b.label}</span>
-                    <span className="block text-xs text-[var(--color-muted)]">{b.sub}</span>
-                  </span>
-                </div>
-              );
-            })}
+          <div className="relative min-h-[440px] lg:min-h-full">
+            <div className="absolute inset-0 -right-[50vw]">
+              <Image
+                src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1800&q=88"
+                alt="Professional painter carefully applying a fresh wall finish"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/15 to-transparent lg:from-[var(--color-ink)]/55" />
+            </div>
+            <div className="absolute bottom-8 left-0 max-w-[290px] rounded-xl border border-white/20 bg-[var(--color-ink)]/82 p-5 shadow-2xl backdrop-blur-md lg:-left-8 lg:bottom-12">
+              <div className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-300)]">The NYC difference</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/75">
+                Co-op rules, COIs, freight elevators, occupied spaces—we plan for the details that make city projects different.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ============================ SERVICES ============================ */}
-      <section className="container-x py-20 lg:py-28">
-        <div className="max-w-2xl">
-          <span className="eyebrow">What we do</span>
-          <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-            Expert painting for every NYC space
-          </h2>
-          <p className="mt-4 text-lg text-[var(--color-muted)]">
-            From a single wallpapered room to a commercial repaint or recurring
-            apartment turns, the plan starts with the surface and how the space is used.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
-            const I = Icon[s.icon];
+      <section className="border-b border-[var(--color-line)] bg-white">
+        <div className="container-x grid grid-cols-2 lg:grid-cols-4">
+          {trustItems.map(([icon, title, text], index) => {
+            const I = Icon[icon];
             return (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="card p-7 group hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all duration-300"
-              >
-                <span className="grid place-items-center w-12 h-12 rounded-xl bg-[var(--color-ink)] text-white group-hover:bg-[var(--color-green)] transition-colors">
-                  <I className="w-6 h-6" />
-                </span>
-                <h3 className="font-display text-xl mt-5">{s.name}</h3>
-                <p className="mt-2 text-[var(--color-muted)] leading-relaxed">{s.short}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-green-600)]">
-                  Learn more{" "}
-                  <Icon.arrow className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
+              <div key={title} className={`flex gap-4 px-3 py-7 sm:px-6 ${index % 2 ? "border-l" : ""} ${index > 1 ? "border-t lg:border-t-0" : ""} lg:border-l first:lg:border-l-0`}>
+                <I className="mt-1 h-5 w-5 shrink-0 text-[var(--color-green)]" />
+                <div>
+                  <div className="font-semibold">{title}</div>
+                  <div className="mt-1 text-xs leading-relaxed text-[var(--color-muted)]">{text}</div>
+                </div>
+              </div>
             );
           })}
         </div>
       </section>
 
-      {/* ============================ WHY US (stats) ============================ */}
-      <section className="bg-[var(--color-ink)] text-white">
-        <div className="container-x py-20 lg:py-28 grid lg:grid-cols-2 gap-14 items-center">
+      <section className="container-x section-pad">
+        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
           <div>
-            <span className="eyebrow !text-[var(--color-green-300)]">How we work</span>
-            <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-              Details are decided before the crew arrives
-            </h2>
-            <p className="mt-5 text-white/70 text-lg leading-relaxed">
-              Surface condition, access, protection, product compatibility,
-              sheen, and drying time all affect the result. We document those
-              choices so expectations stay clear from estimate to walkthrough.
+            <span className="eyebrow">What we do</span>
+            <h2 className="section-title mt-4">One crew for the whole finish.</h2>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">
+              Painting is only the visible layer. We handle the repairs, prep,
+              protection, finish selection, and closeout that make the result last.
             </p>
-            <ul className="mt-8 grid sm:grid-cols-2 gap-4">
-              {[
-                "One project contact from estimate to closeout",
-                "Preparation matched to the surface condition",
-                "Daily cleanup and dust-control planning",
-                "Itemized pricing with options and exclusions",
-                "Specified products, colors, sheens, and coat counts",
-                "Written workmanship warranty",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-3">
-                  <Icon.check className="w-5 h-5 text-[var(--color-green-300)] mt-0.5 shrink-0" />
-                  <span className="text-white/85">{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: "shield", t: "Written scope", s: "Prep, products, and exclusions" },
-              { icon: "leaf", t: "Finish options", s: "Low-VOC and specialty systems" },
-              { icon: "medal", t: `${site.warrantyYears}-yr warranty`, s: "Terms documented in writing" },
-              { icon: "pin", t: "Five boroughs", s: "Building access coordinated" },
-            ].map((s) => {
-              const I = Icon[s.icon as keyof typeof Icon];
-              return (
-                <div
-                  key={s.t}
-                  className="rounded-2xl bg-white/[0.06] border border-white/10 p-7 backdrop-blur-sm"
-                >
-                  <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-green)]/20 text-[var(--color-green-300)]">
-                    <I className="w-6 h-6" />
-                  </span>
-                  <div className="font-display text-xl mt-4 text-white">{s.t}</div>
-                  <div className="mt-1 text-sm text-white/65">{s.s}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================ PROCESS ============================ */}
-      <section className="container-x py-20 lg:py-28">
-        <div className="max-w-2xl">
-          <span className="eyebrow">How it works</span>
-          <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-            A calm, predictable process
-          </h2>
-          <p className="mt-4 text-lg text-[var(--color-muted)]">
-            No surprises, no chaos. Here&apos;s exactly what to expect from first
-            call to final walkthrough.
-          </p>
-        </div>
-        <ol className="mt-12 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {processSteps.map((step, i) => (
-            <li key={step.title} className="relative">
-              <div className="font-display text-5xl text-[var(--color-green)]/25">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <h3 className="font-display text-lg mt-2">{step.title}</h3>
-              <p className="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
-                {step.text}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ============================ AREAS ============================ */}
-      <section className="bg-[var(--color-cream-200)]/50 border-y border-[var(--color-line)]">
-        <div className="container-x py-20 lg:py-28">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Where we work</span>
-            <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-              Painting all five boroughs
-            </h2>
-            <p className="mt-4 text-lg text-[var(--color-muted)]">
-              Local crews who know your buildings, your boards, and your block.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {areas.map((a) => (
-              <Link
-                key={a.slug}
-                href={`/areas/${a.slug}`}
-                className="card p-6 group hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
-              >
-                <div className="flex items-center gap-2 text-[var(--color-green-600)]">
-                  <Icon.pin className="w-5 h-5" />
-                  <h3 className="font-display text-xl">{a.name}</h3>
-                </div>
-                <p className="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
-                  {a.blurb}
-                </p>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-green-600)]">
-                  Painters in {a.name} <Icon.arrow className="w-4 h-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================ POPULAR IN NYC ============================ */}
-      <section className="bg-[var(--color-cream-200)]/50 border-y border-[var(--color-line)]">
-        <div className="container-x py-20 lg:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <span className="eyebrow">Popular in NYC</span>
-              <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-                Find your exact project
-              </h2>
-              <p className="mt-4 text-lg text-[var(--color-muted)]">
-                Jump straight to the details and typical cost for the work you
-                need.
-              </p>
-            </div>
-            <Link href="/painting" className="btn btn-ghost">
-              View all services <Icon.arrow className="w-4 h-4" />
+            <Link href="/services" className="btn btn-ghost mt-8">
+              Explore every service <Icon.arrow className="h-4 w-4" />
             </Link>
           </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {popularSlugs.map((slug) => {
-              const p = moneyPages.find((m) => m.slug === slug);
-              if (!p) return null;
-              const I = Icon[p.icon];
+
+          <div className="grid border-t border-[var(--color-line)] sm:grid-cols-2">
+            {services.slice(0, 6).map((service, index) => {
+              const I = Icon[service.icon];
               return (
-                <Link
-                  key={p.slug}
-                  href={`/painting/${p.slug}`}
-                  className="group flex items-center gap-3 rounded-xl bg-white border border-[var(--color-line)] px-4 py-3.5 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)] transition-all"
-                >
-                  <span className="grid place-items-center w-9 h-9 rounded-lg bg-[var(--color-green)]/12 text-[var(--color-green-600)] shrink-0">
-                    <I className="w-5 h-5" />
-                  </span>
-                  <span className="font-medium text-[var(--color-ink)] capitalize">
-                    {p.keyword}
-                  </span>
-                  <Icon.arrow className="w-4 h-4 ml-auto text-[var(--color-muted)] group-hover:text-[var(--color-green-600)] group-hover:translate-x-1 transition-all" />
+                <Link key={service.slug} href={`/services/${service.slug}`} className={`group border-b border-[var(--color-line)] py-7 transition-colors hover:bg-white sm:p-7 ${index % 2 ? "sm:border-l" : ""}`}>
+                  <div className="flex items-start justify-between gap-5">
+                    <span className="grid h-11 w-11 place-items-center rounded-lg bg-[var(--color-cream-200)] text-[var(--color-green-600)] transition-colors group-hover:bg-[var(--color-green)] group-hover:text-white">
+                      <I className="h-5 w-5" />
+                    </span>
+                    <Icon.arrow className="h-5 w-5 text-[var(--color-muted)] transition-transform group-hover:translate-x-1 group-hover:text-[var(--color-green)]" />
+                  </div>
+                  <h3 className="font-display mt-8 text-2xl">{service.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{service.short}</p>
                 </Link>
               );
             })}
@@ -337,138 +152,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================ LOCAL PROJECTS ============================ */}
-      <section className="container-x py-20 lg:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Neighborhood expertise</span>
-            <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-              Built around real NYC buildings
-            </h2>
-            <p className="mt-4 text-lg text-[var(--color-muted)]">
-              Co-op paperwork, high ceilings, brownstone trim, condo move-ins,
-              and office downtime all change the painting plan.
-            </p>
-          </div>
-          <Link href="/painting" className="btn btn-ghost">
-            Compare projects <Icon.arrow className="w-4 h-4" />
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {neighborhoodSlugs.map((slug) => {
-            const p = moneyPages.find((m) => m.slug === slug);
-            if (!p) return null;
-            const I = Icon[p.icon];
-            return (
-              <Link
-                key={p.slug}
-                href={`/painting/${p.slug}`}
-                className="group rounded-2xl border border-[var(--color-line)] bg-white p-5 transition-all hover:-translate-y-1 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)]"
-              >
-                <span className="grid place-items-center w-10 h-10 rounded-lg bg-[var(--color-green)]/12 text-[var(--color-green-600)]">
-                  <I className="w-5 h-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg leading-snug group-hover:text-[var(--color-green-600)]">
-                  {p.h1}
-                </h3>
-                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-[var(--color-muted)]">
-                  {p.lede}
-                </p>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ============================ OUR PROMISE ============================ */}
-      <section className="container-x py-20 lg:py-28">
-        <div className="max-w-2xl">
-          <span className="eyebrow">Our promise</span>
-          <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-            What you can count on
-          </h2>
-          <p className="mt-4 text-lg text-[var(--color-muted)]">
-            We&apos;d rather earn your trust with promises we keep than with
-            numbers on a page. Here&apos;s exactly what every client gets.
-          </p>
-        </div>
-        <div className="mt-12">
-          <Guarantees />
-        </div>
-      </section>
-
-      {/* ============================ FAQ + FORM ============================ */}
-      <section className="container-x pb-20 lg:pb-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <span className="eyebrow">Good to know</span>
-            <h2 className="font-display text-4xl mt-3 leading-tight">
-              Questions, answered
-            </h2>
-            <p className="mt-4 text-[var(--color-muted)]">
-              Still unsure about something? Call us at{" "}
-              <a href={site.phoneHref} className="text-[var(--color-green-600)] font-semibold">
-                {site.phone}
-              </a>{" "}
-              — we&apos;re happy to help.
-            </p>
-            <div className="mt-8">
-              <Faq items={faqs} />
+      <section className="bg-white section-pad">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <span className="eyebrow">Spaces we transform</span>
+              <h2 className="section-title mt-4">Made for how New York lives.</h2>
             </div>
+            <p className="max-w-md text-[var(--color-muted)]">Residential and commercial scopes shaped around the building, schedule, surface, and people using the space.</p>
           </div>
-          <div className="lg:sticky lg:top-28" id="estimate">
-            <EstimateForm />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================ FROM THE BLOG ============================ */}
-      <section className="bg-[var(--color-cream-200)]/50 border-y border-[var(--color-line)]">
-        <div className="container-x py-20 lg:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <span className="eyebrow">From the blog</span>
-              <h2 className="font-display text-4xl sm:text-5xl mt-3 leading-tight">
-                Painting tips for New Yorkers
-              </h2>
-              <p className="mt-4 text-lg text-[var(--color-muted)]">
-                Costs, colors, and the decisions that actually matter — straight
-                from our crews.
-              </p>
-            </div>
-            <Link href="/blog" className="btn btn-ghost">
-              Read the blog <Icon.arrow className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {sortedPosts.slice(0, 3).map((p) => (
-              <Link
-                key={p.slug}
-                href={`/blog/${p.slug}`}
-                className="group card overflow-hidden flex flex-col hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={unsplash(p.cover.id, 800)}
-                    alt={p.cover.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-semibold text-[var(--color-green-600)] uppercase tracking-wide">
-                    {p.category} · {p.readMinutes} min
-                  </span>
-                  <h3 className="font-display text-xl mt-2 leading-snug group-hover:text-[var(--color-green-600)] transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[var(--color-muted)] leading-relaxed line-clamp-2 flex-1">
-                    {p.excerpt}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-green-600)]">
-                    Read more <Icon.arrow className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {projectImages.map((project, index) => (
+              <Link key={project.title} href={project.href} className={`group relative overflow-hidden rounded-[1.25rem] bg-[var(--color-ink)] ${index === 1 ? "md:translate-y-8" : ""}`}>
+                <div className="relative aspect-[4/5]">
+                  <Image src={project.src} alt={project.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-transparent to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+                    <div className="flex items-end justify-between gap-5">
+                      <div>
+                        <h3 className="font-display text-3xl">{project.title}</h3>
+                        <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/70">{project.text}</p>
+                      </div>
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-[var(--color-ink)] transition-transform group-hover:translate-x-1">
+                        <Icon.arrow className="h-5 w-5" />
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -476,9 +185,78 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="container-x section-pad">
+        <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <span className="eyebrow">A better process</span>
+            <h2 className="section-title mt-4">Less disruption. More certainty.</h2>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">You always know what happens next, who to call, and what the finished work includes.</p>
+          </div>
+          <ol className="border-t border-[var(--color-line)]">
+            {processSteps.map((step, index) => (
+              <li key={step.title} className="grid gap-4 border-b border-[var(--color-line)] py-7 sm:grid-cols-[5rem_1fr] sm:py-9">
+                <span className="font-display text-3xl text-[var(--color-green)]">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3 className="font-display text-2xl">{step.title}</h3>
+                  <p className="mt-2 max-w-2xl leading-relaxed text-[var(--color-muted)]">{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-cream-200)] section-pad">
+        <div className="container-x grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+          <div>
+            <span className="eyebrow">Local by design</span>
+            <h2 className="section-title mt-4">Every borough. Every kind of building.</h2>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)]">From Manhattan co-ops to Brooklyn brownstones and Queens homes, we adapt the plan to your property—not the other way around.</p>
+          </div>
+          <div className="divide-y divide-[var(--color-line)] border-y border-[var(--color-line)]">
+            {areas.map((area) => (
+              <Link key={area.slug} href={`/areas/${area.slug}`} className="group flex items-center justify-between gap-5 py-5">
+                <span className="font-display text-2xl sm:text-3xl">{area.name}</span>
+                <span className="flex items-center gap-3 text-sm font-semibold text-[var(--color-muted)] group-hover:text-[var(--color-green-600)]">
+                  View area <Icon.arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x section-pad" id="estimate">
+        <div className="grid items-start gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+          <div>
+            <span className="eyebrow">Start your project</span>
+            <h2 className="section-title mt-4">Tell us what needs painting.</h2>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)]">Share a few details now. We’ll confirm whether photos are enough for pricing or whether an on-site walkthrough makes more sense.</p>
+            <div className="mt-9 rounded-xl border border-[var(--color-line)] bg-white p-6">
+              <p className="text-sm font-semibold">Prefer to speak with someone?</p>
+              <a href={site.phoneHref} className="font-display mt-2 inline-flex items-center gap-3 text-2xl text-[var(--color-green-600)]">
+                <Icon.phone className="h-5 w-5" /> {site.phone}
+              </a>
+              <p className="mt-2 text-sm text-[var(--color-muted)]">{site.hours}</p>
+            </div>
+          </div>
+          <EstimateForm />
+        </div>
+      </section>
+
+      <section className="container-x pb-20 lg:pb-28">
+        <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
+          <div>
+            <span className="eyebrow">Good to know</span>
+            <h2 className="font-display mt-4 text-4xl tracking-tight sm:text-5xl">Straight answers.</h2>
+          </div>
+          <Faq items={faqs} />
+        </div>
+      </section>
+
       <PropertyCareResources />
-      <CTASection />
-      <div className="h-20" />
+      <CTASection title="A better finish starts with a better plan." subtitle="Tell us about your space, timeline, and priorities. We’ll help you define the right scope." />
+      <div className="h-16" />
     </>
   );
 }

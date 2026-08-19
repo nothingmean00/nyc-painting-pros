@@ -8,10 +8,9 @@ import { site, services } from "@/lib/site";
 
 const nav = [
   { label: "Services", href: "/services" },
-  { label: "Projects & Costs", href: "/painting" },
-  { label: "Areas We Serve", href: "/areas" },
-  { label: "Our Guarantee", href: "/guarantee" },
-  { label: "Blog", href: "/blog" },
+  { label: "Projects & Pricing", href: "/painting" },
+  { label: "Service Areas", href: "/areas" },
+  { label: "Our Process", href: "/guarantee" },
   { label: "About", href: "/about" },
 ];
 
@@ -28,13 +27,16 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--color-cream)]/90 backdrop-blur-md border-b border-[var(--color-line)]"
+          ? "bg-[var(--color-cream)]/94 backdrop-blur-xl border-b border-[var(--color-line)] shadow-[0_10px_30px_rgba(16,27,36,.05)]"
           : "bg-[var(--color-cream)]"
       }`}
     >
@@ -43,7 +45,7 @@ export function Header() {
         <div className="container-x flex items-center justify-between py-1.5">
           <span className="inline-flex items-center gap-2">
             <Icon.shield className="w-4 h-4 text-[var(--color-green-300)]" />
-            Detailed scopes · Building coordination · Written warranty
+            Fully insured · Detailed written scopes · 3-year workmanship warranty
           </span>
           <span className="inline-flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5">
@@ -61,12 +63,12 @@ export function Header() {
         </div>
       </div>
 
-      <div className="container-x flex items-center justify-between py-3.5">
+      <div className="container-x flex items-center justify-between py-3">
         <Link href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 text-[0.95rem] font-medium">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[0.9rem] font-semibold">
           {nav.map((n) => (
             <Link
               key={n.href}
@@ -79,13 +81,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-3">
-            <a href={site.phoneHref} className="btn btn-dark">
-              <Icon.phone className="w-4 h-4" />
-              Call Now
+          <div className="hidden sm:flex items-center gap-4">
+            <a href={site.phoneHref} className="hidden xl:inline-flex items-center gap-2 text-sm font-semibold">
+              <Icon.phone className="w-4 h-4 text-[var(--color-green)]" /> {site.phone}
             </a>
-            <Link href="/contact" className="btn btn-primary">
-              Free Estimate
+            <Link href="/contact" className="btn btn-primary !py-3">
+              Request estimate <Icon.arrow className="w-4 h-4" />
             </Link>
           </div>
           <button
@@ -107,7 +108,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-[70px] bottom-0 z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[65px] md:top-[94px] bottom-0 z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
           <div className="container-x py-6 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
