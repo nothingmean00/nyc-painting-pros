@@ -23,10 +23,12 @@ export function EstimateForm({
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
+    const form = e.currentTarget;
+    if (!form.reportValidity()) return;
     setStatus("submitting");
     setError("");
 
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const data = Object.fromEntries(new FormData(form).entries());
     const page =
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}`
@@ -46,6 +48,26 @@ export function EstimateForm({
         }),
       });
       const json = await res.json().catch(() => ({}));
+      if (res.status === 422 && json.errors) {
+        const messages: string[] = [];
+        for (const name of ["name", "phone", "email", "location", "service"]) {
+          const message = json.errors[name];
+          const field = form.elements.namedItem(name);
+          if (
+            typeof message === "string" &&
+            (field instanceof HTMLInputElement || field instanceof HTMLSelectElement)
+          ) {
+            field.setCustomValidity(message);
+            messages.push(message);
+          }
+        }
+        if (messages.length) {
+          setStatus("error");
+          setError(`Please check your details: ${messages.join(" ")}`);
+          form.reportValidity();
+          return;
+        }
+      }
       if (!res.ok || !json.ok) {
         throw new Error(json.error || "Something went wrong.");
       }
@@ -79,7 +101,16 @@ export function EstimateForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="card p-6 sm:p-8 grid gap-4" noValidate>
+    <form
+      onSubmit={onSubmit}
+      onInput={(event) => {
+        const field = event.target;
+        if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) {
+          field.setCustomValidity("");
+        }
+      }}
+      className="card p-6 sm:p-8 grid gap-4"
+    >
       {!compact && (
         <div>
           <h3 className="font-display text-2xl">Get your free estimate</h3>
@@ -147,7 +178,7 @@ export function EstimateForm({
         </select>
       </label>
       <label className="grid gap-1.5">
-        <span className="text-sm font-medium">Tell us about the project</span>
+        <span className="text-sm font-medium">Tell us about the project (optional)</span>
         <textarea
           name="details"
           value={projectBrief}
