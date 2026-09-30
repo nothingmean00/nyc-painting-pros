@@ -8,6 +8,23 @@ import { services, site } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
+type EstimateEvent =
+  | "estimate_started"
+  | "estimate_validation_blocked"
+  | "estimate_attempted"
+  | "estimate_failed"
+  | "estimate_submitted";
+
+// Only fixed categories and the pathname belong in analytics, never form text
+// or query strings (the project assistant can prefill details through the URL).
+function trackEstimate(event: EstimateEvent, properties: Record<string, string> = {}) {
+  try {
+    track(event, { ...properties, page: window.location.pathname });
+  } catch {
+    // Analytics must never change the outcome of an estimate request.
+  }
+}
+
 export function EstimateForm({
   compact = false,
   defaultDetails = "",
@@ -18,13 +35,23 @@ export function EstimateForm({
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
   const submissionId = useRef<string | null>(null);
+  const started = useRef(false);
+  const blockedFields = useRef(new Set<string>());
   const [projectBrief, setProjectBrief] = useState(defaultDetails);
+
+  function trackStart() {
+    if (started.current) return;
+    started.current = true;
+    trackEstimate("estimate_started");
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
     const form = e.currentTarget;
     if (!form.reportValidity()) return;
+    trackStart();
+    trackEstimate("estimate_attempted");
     setStatus("submitting");
     setError("");
 
@@ -48,6 +75,11 @@ export function EstimateForm({
         }),
       });
       const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) {
+        trackEstimate("estimate_failed", {
+          reason: res.status === 422 ? "validation" : res.status === 429 ? "rate_limit" : "server",
+        });
+      }
       if (res.status === 422 && json.errors) {
         const messages: string[] = [];
         for (const name of ["name", "phone", "email", "location", "service"]) {
@@ -69,15 +101,17 @@ export function EstimateForm({
         }
       }
       if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Something went wrong.");
+        setStatus("error");
+        setError(`We couldn't send that just now. Please email us at ${site.email}.`);
+        return;
       }
       // Conversion event — see which pages/services actually produce leads.
-      track("estimate_submitted", {
-        service: String(data.service ?? "unknown"),
-        page,
+      trackEstimate("estimate_submitted", {
+        service: services.find((service) => service.name === data.service)?.name ?? "Other",
       });
       setStatus("sent");
     } catch {
+      trackEstimate("estimate_failed", { reason: "network" });
       setStatus("error");
       setError(
         `We couldn't send that just now. Please email us at ${site.email}.`
@@ -103,8 +137,23 @@ export function EstimateForm({
   return (
     <form
       onSubmit={onSubmit}
+      onInvalid={(event) => {
+        const field = event.target;
+        if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement)) return;
+        if (!["name", "phone", "email", "location", "service"].includes(field.name)) return;
+        trackStart();
+        if (blockedFields.current.has(field.name)) return;
+        blockedFields.current.add(field.name);
+        trackEstimate("estimate_validation_blocked", { field: field.name });
+      }}
       onInput={(event) => {
         const field = event.target;
+        if (
+          (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) &&
+          field.name !== "company"
+        ) {
+          trackStart();
+        }
         if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) {
           field.setCustomValidity("");
         }
