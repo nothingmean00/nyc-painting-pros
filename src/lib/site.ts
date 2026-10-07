@@ -7,7 +7,8 @@ export const site = {
   name: "NYC Painting Pros",
   legalName: "NYC Painting Pros LLC",
   domain: "nycpaintingpros.com",
-  url: "https://nycpaintingpros.com",
+  // Match the production redirect destination for canonicals, sitemap and schema.
+  url: "https://www.nycpaintingpros.com",
   tagline: "NYC painting for homes, buildings, and businesses.",
   description:
     "NYC Painting Pros serves homeowners, property managers, and businesses across all five boroughs with detailed scopes, careful preparation, and a written workmanship warranty.",
