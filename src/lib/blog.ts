@@ -40,6 +40,7 @@ export const posts: Post[] = [
     readMinutes: 7,
     author: "NYC Painting Pros Team",
     cover: { id: "photo-1562259949-e8e7689d7828", alt: "A painter rolling fresh paint onto an apartment wall" },
+    relatedPages: ["apartment-painting-nyc", "single-room-accent-wall-painting-nyc"],
     intro: [
       "It's the first question every New Yorker asks, and the honest answer is: it depends. But \"it depends\" isn't helpful when you're trying to budget. So here's the real breakdown — what actually moves the number, and what you should expect to pay for a quality job in 2026.",
       "Most NYC apartment interiors land between $3 and $9 per square foot of floor area, or roughly $2,500–$9,000 for a typical one- to two-bedroom. Where you fall in that range comes down to five things.",
