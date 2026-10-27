@@ -44,7 +44,8 @@
       "deployment": "dpl_2VxPyA6UPWTSki1SdmHtmoiDKkLL",
       "commit": "6ba5850e1427815eaae895f9eab48b3f811b8791",
       "status": "READY with verified custom-domain alias"
-    }
+    },
+    "otherCheckout": "C:/tmp/nyc-growth-20261021-1550 clean at 6ba5850; no unfinished package. Primary only registered worktree."
   },
   "measurement": {
     "property": "sc-domain:nycpaintingpros.com",
@@ -75,19 +76,22 @@
       "intent": "occupied-apartment-scope-and-return-planning",
       "owner": "nyc-painting-pros-autonomous-growth",
       "url": "https://www.nycpaintingpros.com/painting/apartment-painting-nyc",
-      "state": "validated",
+      "state": "verified-live",
       "reservedAt": "2026-10-27T16:29:47.025187+00:00",
       "researchSources": [
         "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf",
         "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-samples"
       ],
       "baseline": null,
-      "commit": null,
+      "commit": "6b60d9822cb8044c388f43121b09c0b50774b5bb",
       "deployment": {
         "project": "nyc-painting-pros",
-        "state": "not-pushed"
+        "id": "dpl_EVYw4PErsgUJeHeCyoDr9Y6UGXgn",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "6b60d9822cb8044c388f43121b09c0b50774b5bb"
       },
-      "verifiedLiveAt": null,
+      "verifiedLiveAt": "2026-10-27T16:35:32Z",
       "cta": "Existing estimate form -> protected /api/estimate; no submission",
       "reviewsDue": [
         "2026-11-26",
@@ -103,19 +107,22 @@
       "intent": "small-apartment-color-sampling-and-estimate-scope",
       "owner": "nyc-painting-pros-autonomous-growth",
       "url": "https://www.nycpaintingpros.com/blog/paint-colors-small-nyc-apartment-feel-bigger",
-      "state": "validated",
+      "state": "verified-live",
       "reservedAt": "2026-10-27T16:29:47.025187+00:00",
       "researchSources": [
         "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf",
         "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-samples"
       ],
       "baseline": null,
-      "commit": null,
+      "commit": "6b60d9822cb8044c388f43121b09c0b50774b5bb",
       "deployment": {
         "project": "nyc-painting-pros",
-        "state": "not-pushed"
+        "id": "dpl_EVYw4PErsgUJeHeCyoDr9Y6UGXgn",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "6b60d9822cb8044c388f43121b09c0b50774b5bb"
       },
-      "verifiedLiveAt": null,
+      "verifiedLiveAt": "2026-10-27T16:35:32Z",
       "cta": "Existing estimate form -> protected /api/estimate; no submission",
       "reviewsDue": [
         "2026-11-26",
@@ -334,7 +341,9 @@
     "remainingBlogTarget": 4,
     "runNewMoneyShortfall": 1,
     "runNewBlogShortfall": 1,
-    "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay."
+    "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay.",
+    "refreshedMoneyLive": 1,
+    "refreshedBlogsLive": 1
   },
   "validation": {
     "liveBaseline": "All 63 sitemap URLs HTTP 200 and self-canonical on 2026-10-27; robots excludes admin and API",
