@@ -159,6 +159,17 @@ export default async function MoneyPage({
             <Faq items={p.faqs} />
           </div>
 
+          {p.planningLinks && (
+            <section className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+              <h2 className="font-display text-2xl">Plan your apartment painting scope</h2>
+              <ul className="mt-4 space-y-3">
+                {p.planningLinks.map((link) => (
+                  <li key={link.href}><Link href={link.href} className="font-semibold text-[var(--color-green-600)] underline">{link.label}</Link></li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {p.references && p.references.length > 0 && (
             <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
               <h2 className="font-display text-2xl">Safety and compliance references</h2>

@@ -1,0 +1,351 @@
+{
+  "asset": "nyc-painting-pros",
+  "schemaVersion": 1,
+  "week": "2026-10-26",
+  "timezone": "America/New_York",
+  "weeklyTarget": {
+    "money": 4,
+    "blog": 4
+  },
+  "owner": "nyc-painting-pros-autonomous-growth",
+  "reconciliation": {
+    "remoteDefault": "main",
+    "baseCommit": "6ba5850e1427815eaae895f9eab48b3f811b8791",
+    "inventory": {
+      "money": 29,
+      "blog": 11
+    },
+    "priorPendingDeployments": [],
+    "overlap": "Remote design branch has no commits outside main; primary main has user package-lock change preserved. Occupied-apartment intent already covered by apartment-painting-nyc; small-space color intent already covered by existing blog. No new URLs justified in selected cluster.",
+    "historicalRecords": "No prior shared ledger or asset-yield file found in repository. Historical automation memory preserved, not replaced.",
+    "cohortReviews": [
+      {
+        "cohort": "2026-09-23",
+        "checkpointDays": 30,
+        "due": "2026-10-23",
+        "status": "due; outcomes unknown without exact-property GSC or aggregate intake data"
+      },
+      {
+        "cohort": "2026-09-30",
+        "checkpointDays": 30,
+        "due": "2026-10-30",
+        "status": "not yet due"
+      },
+      {
+        "cohort": "2026-10-07",
+        "checkpointDays": 30,
+        "due": "2026-11-06",
+        "status": "not yet due"
+      }
+    ],
+    "older60And90DayCohorts": "No documented cohorts due in available history",
+    "priorProduction": {
+      "project": "nyc-painting-pros",
+      "deployment": "dpl_2VxPyA6UPWTSki1SdmHtmoiDKkLL",
+      "commit": "6ba5850e1427815eaae895f9eab48b3f811b8791",
+      "status": "READY with verified custom-domain alias"
+    }
+  },
+  "measurement": {
+    "property": "sc-domain:nycpaintingpros.com",
+    "checkedAt": "2026-10-27T16:29:47.025187+00:00",
+    "api": {
+      "requestedWindowsDays": [
+        28,
+        90
+      ],
+      "status": "credentials unavailable",
+      "coverage": null
+    },
+    "browser": {
+      "status": "Authenticated Chrome returned no access for exact property; checked 2026-10-27",
+      "coverage": null
+    },
+    "exports": {
+      "status": "no exact-property export found",
+      "coverage": null
+    },
+    "baseline": null
+  },
+  "entries": [
+    {
+      "id": "nyc-painting-pros:2026-10-26:occupied-apartment-scope-and-return-planning",
+      "type": "Money page",
+      "changeType": "refresh",
+      "intent": "occupied-apartment-scope-and-return-planning",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "url": "https://www.nycpaintingpros.com/painting/apartment-painting-nyc",
+      "state": "validated",
+      "reservedAt": "2026-10-27T16:29:47.025187+00:00",
+      "researchSources": [
+        "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf",
+        "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-samples"
+      ],
+      "baseline": null,
+      "commit": null,
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "state": "not-pushed"
+      },
+      "verifiedLiveAt": null,
+      "cta": "Existing estimate form -> protected /api/estimate; no submission",
+      "reviewsDue": [
+        "2026-11-26",
+        "2026-12-26",
+        "2027-01-25"
+      ],
+      "expectedContentMarker": "Plan the handoff as well as the final coat"
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:small-apartment-color-sampling-and-estimate-scope",
+      "type": "Blog",
+      "changeType": "refresh",
+      "intent": "small-apartment-color-sampling-and-estimate-scope",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "url": "https://www.nycpaintingpros.com/blog/paint-colors-small-nyc-apartment-feel-bigger",
+      "state": "validated",
+      "reservedAt": "2026-10-27T16:29:47.025187+00:00",
+      "researchSources": [
+        "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf",
+        "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-samples"
+      ],
+      "baseline": null,
+      "commit": null,
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "state": "not-pushed"
+      },
+      "verifiedLiveAt": null,
+      "cta": "Existing estimate form -> protected /api/estimate; no submission",
+      "reviewsDue": [
+        "2026-11-26",
+        "2026-12-26",
+        "2027-01-25"
+      ],
+      "expectedContentMarker": "Test the color before expanding the painting scope"
+    }
+  ],
+  "inventory": [
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/interior-painting-manhattan",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/interior-painting-brooklyn",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/apartment-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/pre-war-apartment-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/brownstone-painting-brooklyn",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/kitchen-cabinet-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/exterior-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/commercial-painting-manhattan",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/office-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/retail-storefront-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/restaurant-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/new-construction-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/rental-turnover-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/single-room-accent-wall-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/skim-coating-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/cabinet-refinishing-cost-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/trim-molding-installation-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/wood-floor-refinishing-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/upper-east-side-apartment-painters",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/tribeca-loft-painting",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/park-slope-brownstone-painters",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/long-island-city-condo-painting",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/williamsburg-office-painting",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/move-in-apartment-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/move-out-apartment-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/popcorn-ceiling-removal-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/apartment-building-lobby-hallway-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/how-much-does-it-cost-to-paint-an-apartment-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-colors-small-nyc-apartment-feel-bigger",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/prep-steps-professional-paint-job",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/repaint-or-refinish-kitchen-cabinets-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/matte-eggshell-satin-paint-finish-guide",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/upper-east-side-apartment-painting-checklist",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/tribeca-loft-painting-guide",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/park-slope-brownstone-painting-plan",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-before-moving-into-long-island-city-condo",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/williamsburg-office-painting-without-downtime",
+      "newThisWeek": false
+    }
+  ],
+  "weeklyProgress": {
+    "newMoneyLive": 0,
+    "newBlogsLive": 0,
+    "remainingMoneyTarget": 4,
+    "remainingBlogTarget": 4,
+    "runNewMoneyShortfall": 1,
+    "runNewBlogShortfall": 1,
+    "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay."
+  },
+  "validation": {
+    "liveBaseline": "All 63 sitemap URLs HTTP 200 and self-canonical on 2026-10-27; robots excludes admin and API",
+    "reactReview": "Server-rendered optional sections; stable href keys; semantic headings and descriptive crawlable anchors; no client state or dependency added",
+    "install": "npm ci --ignore-scripts passed after minimal lock repair",
+    "build": "passed; 71 routes",
+    "lint": "passed",
+    "typecheck": "standalone tsc --noEmit passed",
+    "rendered": "390x844 and 1440x1000 inspected for both changed pages; no horizontal overflow; CTA visible; zero form submissions",
+    "links": "All 36 distinct internal routes on changed pages return 200",
+    "schema": "Changed-page JSON-LD parses; canonical tags match www host",
+    "images": "Existing images retained; no new asset requested"
+  }
+}

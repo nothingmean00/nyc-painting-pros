@@ -18,6 +18,7 @@ export type Post = {
   readMinutes: number;
   author: string;
   cover: { id: string; alt: string };
+  references?: { label: string; href: string }[];
   relatedPages?: string[];
   intro: string[];
   blocks: Block[];
@@ -94,11 +95,20 @@ export const posts: Post[] = [
     readMinutes: 6,
     author: "NYC Painting Pros Team",
     cover: { id: "photo-1493809842364-78817add7ffb", alt: "A bright, airy living room with light-colored walls" },
+    relatedPages: ["apartment-painting-nyc", "single-room-accent-wall-painting-nyc"],
+    references: [{ label: "Benjamin Moore: how to use paint color samples", href: "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-samples" }],
     intro: [
       "You can't add square footage to a New York apartment, but you can make it feel like you did. Color, sheen, and a few painting tricks change how big a room reads — often more dramatically than furniture ever could.",
       "Here's what actually works in small NYC spaces, based on the rooms we paint every week.",
     ],
     blocks: [
+      {
+        h2: "Test the color before expanding the painting scope",
+        body: [
+          "Start with a short list of colors and view movable samples beside your flooring, sofa, and trim in daylight and under the lamps you actually use. Move each sample between the brightest and darkest walls. A color that works near a window may look quite different at the back of a narrow room.",
+          "Once you choose a direction, decide which surfaces need changing. Matching the trim to the walls adds trim preparation and a separate finish choice; continuing the color onto the ceiling adds another surface. Request those options separately so you can compare a single-room refresh with a broader apartment repaint. Confirm the final paint product and sheen as well as the color name.",
+        ],
+      },
       {
         h2: "Go light, but go warm",
         body: [

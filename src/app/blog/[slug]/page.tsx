@@ -166,6 +166,17 @@ export default async function BlogPost({
               </section>
             ))}
 
+            {p.references && (
+              <section className="mt-10">
+                <h2 className="font-display text-2xl">Color sampling reference</h2>
+                <ul className="mt-4 space-y-3">
+                  {p.references.map((reference) => (
+                    <li key={reference.href}><a href={reference.href} className="text-[var(--color-green-600)] underline">{reference.label}</a></li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             {p.takeaway && (
               <div className="mt-10 rounded-2xl bg-[var(--color-cream-200)]/60 border-l-4 border-[var(--color-green)] p-6">
                 <div className="flex items-center gap-2 text-[var(--color-green-600)] font-semibold text-sm uppercase tracking-wide">

@@ -26,6 +26,7 @@ export type MoneyPage = {
     note: string;
   };
   faqs: { q: string; a: string }[];
+  planningLinks?: { label: string; href: string }[];
   references?: { label: string; href: string }[];
   relatedServices: string[]; // service slugs
   relatedAreas: string[]; // area slugs
@@ -190,10 +191,10 @@ export const moneyPages: MoneyPage[] = [
     description:
       "Apartment painting in NYC done right — studios to large units across all five boroughs. Clear pricing, dust-controlled prep, low-VOC paint, written warranty. Free estimate.",
     h1: "Apartment painting in NYC",
-    lede: "Studios, walk-ups, and high-rises across all five boroughs — painted cleanly, on schedule, and without you having to move out.",
+    lede: "Studios, walk-ups, and high-rises across all five boroughs — with a written painting scope, room sequence, and access plan agreed before work begins.",
     intro: [
       "Painting an NYC apartment is its own art form: small rooms, tight hallways, furniture with nowhere to go, and neighbors on the other side of every wall. We've built our entire process around working cleanly and efficiently in occupied city apartments.",
-      "You get a clear written quote up front, a crew that protects your belongings, and low-VOC paint so you can sleep in your own bed the same night. No surprises, no mess.",
+      "Start with the surfaces you want painted, the condition of the walls, and whether the apartment will be occupied. Your estimate should distinguish painting time from drying, ventilation, and the time needed before rooms return to normal use.",
     ],
     scope: {
       heading: "What apartment painting includes",
@@ -213,12 +214,25 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         h2: "Painting an occupied apartment, the right way",
-        body: "You don't need to move out. We work room-by-room, seal active zones, and keep walkways clear so daily life keeps moving.",
+        body: "Room-by-room work can reduce disruption when there is enough space to separate the work area from everyday activities. A studio, a single bathroom, extensive repairs, or limited ventilation can make that impractical. Agree on a room sequence and whether you need alternative arrangements before booking; staying overnight is not a guaranteed part of the service.",
         bullets: [
-          "Plastic containment to keep dust out of living areas",
-          "Low- and zero-VOC paint for same-day occupancy",
-          "Evening and weekend scheduling available",
+          "Identify where furniture and belongings can go without blocking doors or circulation routes",
+          "Confirm permitted building work hours, elevator access, and daily cleanup responsibilities",
+          "Follow the selected coating labels and ventilation guidance; low-VOC does not establish a same-day return time",
         ],
+      },
+      {
+        h2: "Choose a whole-apartment repaint or a smaller scope",
+        body: "A whole-apartment scope makes sense when connected rooms need a consistent finish or several surfaces need repair. If only one room needs attention, ask for that room as a separate option. Specify walls, ceilings, trim, doors, and closets individually: a walls-only estimate should not be compared with a complete interior repaint as if they were the same job.",
+        bullets: [
+          "Send wide room photos, approximate dimensions, and close-ups of visible damage",
+          "List heavy or fixed furniture that limits wall access; confirm handling responsibilities in writing",
+          "Record the paint brand, product, color, and sheen for each surface after samples are approved",
+        ],
+      },
+      {
+        h2: "Plan the handoff as well as the final coat",
+        body: "Ask which rooms will be unavailable at each stage and how long ventilation must continue under the product instructions. Dry to the touch does not mean fully cured. Confirm when furniture, wall hangings, and routine cleaning can resume. If the layout cannot provide an appropriate work separation and ventilation plan, change the schedule or arrange to be elsewhere rather than relying on a low-odor label.",
       },
     ],
     cost: {
@@ -249,6 +263,8 @@ export const moneyPages: MoneyPage[] = [
         a: "We handle patching, crack repair, and skim coating as part of prep. Heavier plaster or water-damage repair is itemized separately so the quote stays transparent.",
       },
     ],
+    references: [{ label: "EPA: Healthy Indoor Painting Practices", href: "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf" }],
+    planningLinks: [{ label: "Choose and test colors for a small apartment", href: "/blog/paint-colors-small-nyc-apartment-feel-bigger" }, { label: "Compare a single-room or accent-wall estimate", href: "/painting/single-room-accent-wall-painting-nyc" }],
     relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
     relatedPages: ["move-in-apartment-painting-nyc", "move-out-apartment-painting-nyc", "rental-turnover-painting-nyc"],
