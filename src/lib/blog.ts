@@ -3,6 +3,15 @@
 // Cover images are real, verified Unsplash photo IDs (loaded via next/image).
 // ===========================================================================
 
+import { expansionPosts } from "./expansion-posts";
+import { roomPosts } from "./room-posts";
+import { woodworkPosts } from "./woodwork-posts";
+import { decorativePosts } from "./decorative-posts";
+import { projectPosts } from "./project-posts";
+import { repairPosts } from "./repair-posts";
+import { finishGuides } from "./finish-guides";
+import { planningGuides } from "./planning-guides";
+
 export type Block = {
   h2: string;
   body: string[];
@@ -33,6 +42,14 @@ export function unsplash(id: string, w = 1200) {
 }
 
 export const posts: Post[] = [
+  ...expansionPosts,
+  ...roomPosts,
+  ...woodworkPosts,
+  ...decorativePosts,
+  ...projectPosts,
+  ...repairPosts,
+  ...finishGuides,
+  ...planningGuides,
   {
     slug: "how-much-does-it-cost-to-paint-an-apartment-nyc",
     title: "How Much Does It Cost to Paint an Apartment in NYC? (2026 Guide)",

@@ -3,11 +3,17 @@
 // painting search. Each entry is intentionally deep (unique intro, scope, two
 // content sections, a cost-guidance table, and unique FAQs) so none are thin.
 //
-// Cost ranges are typical NYC market ranges for orientation only — every
-// project is quoted individually. Keep them realistic; do not inflate.
+// Existing numeric allowances are editorial planning figures, not a market
+// survey. New scopes explain pricing factors; projects are quoted individually.
 // ===========================================================================
 
 import type { IconName } from "@/components/Icons";
+import { expansionMoneyPages } from "./expansion-money-pages";
+import { roomMoneyPages } from "./room-money-pages";
+import { woodworkMoneyPages } from "./woodwork-money-pages";
+import { decorativeMoneyPages } from "./decorative-money-pages";
+import { projectMoneyPages } from "./project-money-pages";
+import { repairMoneyPages } from "./repair-money-pages";
 
 export type MoneyPage = {
   slug: string;
@@ -34,6 +40,12 @@ export type MoneyPage = {
 };
 
 export const moneyPages: MoneyPage[] = [
+  ...expansionMoneyPages,
+  ...roomMoneyPages,
+  ...woodworkMoneyPages,
+  ...decorativeMoneyPages,
+  ...projectMoneyPages,
+  ...repairMoneyPages,
   // 1 ---------------------------------------------------------------------
   {
     slug: "interior-painting-manhattan",
@@ -43,7 +55,7 @@ export const moneyPages: MoneyPage[] = [
     description:
       "Professional interior painting in Manhattan — pre-war co-ops, condo combinations and high-floor apartments. Dust-controlled prep, premium low-VOC finishes, building paperwork coordination. Free estimate.",
     h1: "Interior painting in Manhattan",
-    lede: "Pre-war co-ops, condo combinations, and high-floor apartments — finished with razor-sharp lines and a job site clean enough to host guests the same night.",
+    lede: "Pre-war co-ops, condo combinations, and high-floor apartments — with defined preparation, careful protection, and a coordinated finish handoff.",
     intro: [
       "Manhattan interiors come with their own rulebook: tight freight-elevator windows, strict building hours, mandatory Certificates of Insurance, and plaster walls that have seen a century of repaints. We handle all of it so your only job is choosing the color.",
       "Whether it's a studio refresh on the Upper East Side or a full pre-sale repaint of a Tribeca loft, our crews protect every floor and fixture, prime properly, and lay down even, durable coats that look flawless under Manhattan's unforgiving natural light.",
@@ -68,7 +80,7 @@ export const moneyPages: MoneyPage[] = [
         h2: "Plaster, prep, and a finish that lasts",
         body: "Pre-war plaster cracks, settles, and telegraphs every shortcut. We don't just paint over it — we stabilize cracks, skim where needed, and prime so the finish coat lands smooth and stays that way.",
         bullets: [
-          "Hairline crack stabilization that won't reappear",
+          "Hairline crack assessment and a defined repair approach",
           "Level skim coating on damaged or previously papered walls",
           "Stain-blocking primer for water marks and old repairs",
         ],
@@ -396,7 +408,7 @@ export const moneyPages: MoneyPage[] = [
     faqs: [
       {
         q: "How fast can you get a Certificate of Insurance?",
-        a: "Same day. Send us your building's COI requirements and additional-insured wording and we'll have a compliant certificate issued right away.",
+        a: "Send the building's required limits and additional-insured wording early. Issuance and acceptance depend on the insurer and building requirements; confirm both before scheduling.",
       },
       {
         q: "Do you work with managing agents and supers directly?",
@@ -473,7 +485,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "What's the best time of year for brownstone exterior painting?",
-        a: "April through November gives the right temperature and humidity for proper curing. We monitor the forecast and only coat when conditions guarantee a lasting finish.",
+        a: "Scheduling depends on the selected coating's temperature, moisture, and weather requirements. Review the forecast and surface conditions before confirming application dates; a calendar month alone does not establish suitability.",
       },
       {
         q: "Do you treat rusted iron railings and gates?",
@@ -640,11 +652,11 @@ export const moneyPages: MoneyPage[] = [
     slug: "commercial-painting-manhattan",
     keyword: "commercial painters Manhattan",
     icon: "building",
-    title: "Commercial Painters in Manhattan | After-Hours, COI Same Day",
+    title: "Commercial Painters in Manhattan | Phased & After-Hours Work",
     description:
       "Commercial painting in Manhattan — offices, lobbies, retail and multi-unit buildings. After-hours scheduling, insurance documentation coordination, durable commercial coatings.",
     h1: "Commercial painting in Manhattan",
-    lede: "Offices, lobbies, retail, and multi-unit buildings — painted after hours so your business never skips a beat.",
+    lede: "Offices, lobbies, retail, and multi-unit buildings — with work phases and access arranged around your operations.",
     intro: [
       "Downtime is the real cost of commercial painting in Manhattan. A closed storefront or a disrupted office floor costs far more than the paint. Our entire commercial process is built to eliminate that downtime.",
       "We work nights and weekends, phase by floor or zone, coordinate COIs and freight access with building management, and use durable, scrubbable commercial coatings that keep looking sharp under heavy traffic.",
@@ -663,7 +675,7 @@ export const moneyPages: MoneyPage[] = [
     sections: [
       {
         h2: "Zero-downtime scheduling",
-        body: "We plan around your operating hours, not the other way around. For offices that means overnight or weekend work; for retail it means painting after close. You come back to finished, dry, ready-to-use space — never a half-done job blocking the floor.",
+        body: "We discuss operating hours, work zones, and possible evening or weekend phases during the estimate. Each handoff identifies completed work and any product-specific return-to-use restrictions. The schedule depends on preparation, coating requirements, and access rather than a blanket overnight completion promise.",
       },
       {
         h2: "Built for property managers and facilities teams",

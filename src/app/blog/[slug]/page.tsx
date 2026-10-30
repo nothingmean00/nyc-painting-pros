@@ -58,7 +58,13 @@ export default async function BlogPost({
   const p = getPost(slug);
   if (!p) notFound();
 
-  const related = sortedPosts.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const relevance = (candidate: typeof p) =>
+    (candidate.relatedPages ?? []).filter((page) => p.relatedPages?.includes(page)).length * 3 +
+    (candidate.category === p.category ? 1 : 0);
+  const related = sortedPosts
+    .filter((x) => x.slug !== p.slug)
+    .sort((a, b) => relevance(b) - relevance(a))
+    .slice(0, 3);
   const relatedPaintingPages = (p.relatedPages ?? [])
     .map((slug) => getMoneyPage(slug))
     .filter((page): page is NonNullable<typeof page> => Boolean(page));

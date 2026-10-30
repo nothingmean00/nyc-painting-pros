@@ -16,6 +16,18 @@ export const metadata: Metadata = {
 
 const groups = [
   {
+    title: "Project planning & access",
+    slugs: ["occupied-apartment-painting-nyc", "stairwell-painting-nyc", "high-ceiling-painting-nyc", "pre-sale-apartment-painting-nyc", "multi-unit-painting-nyc"],
+  },
+  {
+    title: "Decorative wall finishes",
+    slugs: ["limewash-painting-nyc", "venetian-plaster-nyc", "roman-clay-walls-nyc"],
+  },
+  {
+    title: "Rooms & interior details",
+    slugs: ["bathroom-painting-nyc", "kitchen-wall-painting-nyc", "ceiling-painting-nyc", "interior-trim-painting-nyc", "interior-door-painting-nyc", "closet-painting-nyc", "built-in-bookcase-painting-nyc", "wainscoting-painting-nyc"],
+  },
+  {
     title: "Homes & apartments",
     slugs: [
       "apartment-painting-nyc",
@@ -35,6 +47,10 @@ const groups = [
   {
     title: "Specialty & finishing",
     slugs: [
+      "wallpaper-removal-nyc",
+      "wallpaper-installation-nyc",
+      "water-stain-repainting-nyc",
+      "plaster-wall-repair-painting-nyc",
       "kitchen-cabinet-painting-nyc",
       "cabinet-refinishing-cost-nyc",
       "skim-coating-nyc",
@@ -75,7 +91,7 @@ export default function PaintingIndex() {
       <PageHero
         eyebrow="Find your project"
         title="NYC painting services & costs"
-        subtitle="Pick the page that matches your project for specifics, typical cost ranges, and a fast free estimate — whatever you're painting, wherever you are in the five boroughs."
+        subtitle="Find the scope, preparation questions, and pricing factors for your project, then request an itemized estimate across NYC's five boroughs."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "NYC Painting", path: "/painting" },

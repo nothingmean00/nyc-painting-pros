@@ -12,6 +12,7 @@ import { faqSchema, breadcrumbs } from "@/lib/schema";
 import { moneyPages, getMoneyPage } from "@/lib/money-pages";
 import { site, services, areas } from "@/lib/site";
 import { conciseDescription } from "@/lib/metadata";
+import { posts } from "@/lib/blog";
 
 export function generateStaticParams() {
   return moneyPages.map((p) => ({ slug: p.slug }));
@@ -57,6 +58,13 @@ export default async function MoneyPage({
   const relatedPages = (p.relatedPages ?? [])
     .map((rp) => getMoneyPage(rp))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
+  const planningLinks = [...new Map([
+    ...(p.planningLinks ?? []),
+    ...posts.filter((post) => post.relatedPages?.includes(p.slug))
+      .map((post) => ({ label: post.title, href: `/blog/${post.slug}` })),
+  ].map((link) => [link.href, link])).values()];
+  const primaryService = services.find((service) => service.slug === p.relatedServices[0]);
+  const hasPriceRanges = p.cost.rows.some((row) => /\$/.test(row.range));
 
   return (
     <>
@@ -134,15 +142,15 @@ export default async function MoneyPage({
               <table className="w-full text-left">
                 <thead className="bg-[var(--color-cream-200)]/60 text-sm">
                   <tr>
-                    <th className="px-5 py-3 font-semibold">Project</th>
-                    <th className="px-5 py-3 font-semibold text-right">Typical range</th>
+                    <th scope="col" className="px-5 py-3 font-semibold">Project</th>
+                    <th scope="col" className="px-5 py-3 font-semibold">{hasPriceRanges ? "Planning allowance" : "Pricing basis"}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[var(--color-line)]">
                   {p.cost.rows.map((row) => (
                     <tr key={row.item}>
-                      <td className="px-5 py-3.5">{row.item}</td>
-                      <td className="px-5 py-3.5 text-right font-semibold text-[var(--color-ink)] whitespace-nowrap">
+                      <th scope="row" className="px-5 py-3.5 font-medium">{row.item}</th>
+                      <td className="px-5 py-3.5 text-[var(--color-ink)] break-words">
                         {row.range}
                       </td>
                     </tr>
@@ -159,11 +167,11 @@ export default async function MoneyPage({
             <Faq items={p.faqs} />
           </div>
 
-          {p.planningLinks && (
+          {planningLinks.length > 0 && (
             <section className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
-              <h2 className="font-display text-2xl">Plan your apartment painting scope</h2>
+              <h2 className="font-display text-2xl">Guides for this project</h2>
               <ul className="mt-4 space-y-3">
-                {p.planningLinks.map((link) => (
+                {planningLinks.map((link) => (
                   <li key={link.href}><Link href={link.href} className="font-semibold text-[var(--color-green-600)] underline">{link.label}</Link></li>
                 ))}
               </ul>
@@ -172,9 +180,9 @@ export default async function MoneyPage({
 
           {p.references && p.references.length > 0 && (
             <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
-              <h2 className="font-display text-2xl">Safety and compliance references</h2>
+              <h2 className="font-display text-2xl">Project references</h2>
               <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
-                Use current agency guidance and qualified professionals when the work may disturb regulated material.
+                Review the relevant product and agency guidance when planning your project.
               </p>
               <ul className="mt-4 space-y-2">
                 {p.references.map((reference) => (
@@ -246,12 +254,12 @@ export default async function MoneyPage({
 
         {/* Sticky sidebar */}
         <aside className="lg:sticky lg:top-28 space-y-6">
-          <EstimateForm compact />
+          <EstimateForm compact defaultService={primaryService?.name} />
           <div className="card p-6">
             <h3 className="font-semibold">Why choose NYC Painting Pros</h3>
             <ul className="mt-3 space-y-2 text-sm">
               {[
-                "Licensed, bonded & insured",
+                "Project scope agreed in writing",
                 "Building requirements reviewed",
                 `${site.warrantyYears}-year written warranty`,
                 "Free, itemized estimates",
@@ -262,7 +270,7 @@ export default async function MoneyPage({
                 </li>
               ))}
             </ul>
-            <Link href="/contact" className="btn btn-dark w-full mt-5">
+            <Link href={primaryService ? `/contact?service=${primaryService.slug}` : "/contact"} className="btn btn-dark w-full mt-5">
               Request this project estimate <Icon.arrow className="w-4 h-4" />
             </Link>
           </div>
