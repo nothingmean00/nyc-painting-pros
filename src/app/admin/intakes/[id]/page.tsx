@@ -95,6 +95,20 @@ export default async function IntakeDetailPage({
               </p>
             </section>
 
+            {intake.photoCount > 0 && <section className="border border-slate-200 bg-white p-5 sm:p-6">
+              <h2 className="text-sm font-semibold">Project photos ({intake.photoCount})</h2>
+              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {Array.from({ length: intake.photoCount }, (_, index) => (
+                  <a key={index} href={`/admin/intakes/${id}/photos/${index}`} target="_blank" rel="noreferrer" className="block text-sm underline">
+                    {/* Authenticated images must bypass the public image optimizer. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/admin/intakes/${id}/photos/${index}`} alt={`Project photo ${index + 1}`} className="mb-2 aspect-square w-full rounded-lg object-cover" />
+                    Open photo {index + 1}
+                  </a>
+                ))}
+              </div>
+            </section>}
+
             <section className="border border-slate-200 bg-white p-5 sm:p-6">
               <h2 className="text-sm font-semibold">Attribution</h2>
               <dl className="mt-4 grid gap-5 text-sm sm:grid-cols-2">

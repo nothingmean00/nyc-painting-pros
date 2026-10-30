@@ -1,3 +1,5 @@
+import { MAX_REQUEST_BYTES } from "@/lib/project-photos";
+import { validateProjectPhotos } from "@/lib/validate-project-photos";
 import { site } from "@/lib/site";
 import {
   IntakeStorageError,
@@ -19,6 +21,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 type Lead = {
+  photos?: unknown;
   name?: string;
   phone?: string;
   email?: string;
@@ -45,7 +48,24 @@ function escapeHtml(s: string) {
 export async function POST(request: Request) {
   let body: Lead;
   try {
-    body = await request.json();
+    if (Number(request.headers.get("content-length")) > MAX_REQUEST_BYTES) {
+      return Response.json({ ok: false, error: "Your request is too large. Remove a photo or shorten the project details." }, { status: 413 });
+    }
+    const reader = request.body?.getReader();
+    if (!reader) throw new Error("Missing body");
+    const chunks: Uint8Array[] = [];
+    let size = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX_REQUEST_BYTES) {
+        await reader.cancel();
+        return Response.json({ ok: false, error: "Your request is too large. Remove a photo or shorten the project details." }, { status: 413 });
+      }
+      chunks.push(value);
+    }
+    body = JSON.parse(Buffer.concat(chunks).toString("utf8"));
   } catch {
     return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
   }
@@ -88,9 +108,16 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 422 });
   }
 
+  let photos;
+  try {
+    photos = await validateProjectPhotos(body.photos);
+  } catch (error) {
+    return Response.json({ ok: false, error: error instanceof Error ? error.message : "Unable to process photos." }, { status: 422 });
+  }
+
   let recorded = false;
   try {
-    await recordIntake({
+    const intake = await recordIntake({
       id: intakeId,
       name,
       phone,
@@ -98,13 +125,16 @@ export async function POST(request: Request) {
       location,
       service,
       details,
+      photos,
       sourcePage: page,
       referrer,
     });
+    // Retries must not overwrite existing private lead details or photos.
+    if (!intake) return Response.json({ ok: true, recorded: true, intakeId });
     recorded = true;
   } catch (error) {
-    console.error("[estimate] Intake storage failed:", error);
-    if (process.env.VERCEL_ENV === "production") {
+    console.error("[estimate] Intake storage failed.");
+    if (process.env.VERCEL_ENV === "production" || photos.length > 0) {
       return Response.json(
         { ok: false, error: "Could not record your request right now." },
         { status: 503 }
@@ -119,12 +149,14 @@ export async function POST(request: Request) {
 
   const subject = `New estimate request — ${service} (${location})`;
   const lines = [
+    ["Project photos", `${photos.length} attached; sign in to view: ${site.url}/admin/intakes/${intakeId}`],
     ["Name", name],
     ["Phone", phone],
     ["Email", email],
     ["Location", location],
     ["Service", service],
     ["Details", details || "—"],
+    ["Project photos", `${photos.length} attached; view after signing in: ${site.url}/admin/intakes/${intakeId}`],
     ["Source page", page || "Unknown"],
     ["Referrer", referrer || "Direct / not provided"],
   ];
@@ -146,7 +178,7 @@ export async function POST(request: Request) {
   // The database is the source of truth. Email is a secondary notification.
   if (!apiKey) {
     console.warn(
-      "[estimate] RESEND_API_KEY not set — lead not emailed. Lead:\n" + text
+      "[estimate] Email not configured; delivery skipped."
     );
     return Response.json({ ok: true, recorded, delivered: false, intakeId });
   }

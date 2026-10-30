@@ -6,6 +6,9 @@ import { track } from "@vercel/analytics";
 import { Icon } from "./Icons";
 import { services, site } from "@/lib/site";
 
+import { ProjectPhotoPicker } from "./ProjectPhotoPicker";
+import type { ProjectPhoto } from "@/lib/project-photos";
+
 type Status = "idle" | "submitting" | "sent" | "error";
 
 type EstimateEvent =
@@ -40,6 +43,8 @@ export function EstimateForm({
   const started = useRef(false);
   const blockedFields = useRef(new Set<string>());
   const [projectBrief, setProjectBrief] = useState(defaultDetails);
+  const [photos, setPhotos] = useState<ProjectPhoto[]>([]);
+  const [photosBusy, setPhotosBusy] = useState(false);
   const confirmation = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,7 +59,7 @@ export function EstimateForm({
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (status === "submitting") return;
+    if (status === "submitting" || photosBusy) return;
     const form = e.currentTarget;
     if (!form.reportValidity()) return;
     trackStart();
@@ -76,6 +81,7 @@ export function EstimateForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
+          photos,
           page,
           referrer,
           submissionId: submissionId.current,
@@ -109,7 +115,7 @@ export function EstimateForm({
       }
       if (!res.ok || !json.ok) {
         setStatus("error");
-        setError(`We couldn't send that just now. Please email us at ${site.email}.`);
+        setError(typeof json.error === "string" ? json.error : `We couldn't send that just now. Please email us at ${site.email}.`);
         return;
       }
       // Conversion event — see which pages/services actually produce leads.
@@ -173,11 +179,11 @@ export function EstimateForm({
         <div>
           <h3 className="font-display text-2xl">Get your free estimate</h3>
           <p className="text-sm text-[var(--color-muted)] mt-1">
-            No obligation. We will confirm whether photos or a walkthrough are needed.
+            No obligation. Add photos if helpful; we will confirm whether a walkthrough is needed.
           </p>
         </div>
       )}
-      <p className="text-sm text-[var(--color-muted)]">All fields are required except project details.</p>
+      <p className="text-sm text-[var(--color-muted)]">All fields are required except project details and photos.</p>
       {/* Honeypot — hidden from users, catches bots */}
       <input
         type="text"
@@ -248,9 +254,10 @@ export function EstimateForm({
           className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30 resize-none"
         />
       </label>
+      <ProjectPhotoPicker photos={photos} onChange={setPhotos} busy={photosBusy} onBusyChange={setPhotosBusy} disabled={status === "submitting" || photosBusy} />
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || photosBusy}
         className="btn btn-primary w-full text-base disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {status === "submitting" ? (

@@ -1,5 +1,6 @@
 import "server-only";
 
+import type { ProjectPhoto } from "./project-photos";
 import { neon } from "@neondatabase/serverless";
 
 export const intakeStatuses = [
@@ -28,6 +29,7 @@ export type Intake = {
   status: IntakeStatus;
   notes: string;
   emailDelivered: boolean;
+  photoCount: number;
 };
 
 export type NewIntake = Pick<
@@ -41,7 +43,7 @@ export type NewIntake = Pick<
   | "details"
   | "sourcePage"
   | "referrer"
->;
+> & { photos?: ProjectPhoto[] };
 
 type IntakeRow = {
   id: string;
@@ -58,6 +60,7 @@ type IntakeRow = {
   status: IntakeStatus;
   notes: string;
   email_delivered: boolean;
+  photo_count?: number;
 };
 
 type SqlClient = ReturnType<typeof neon>;
@@ -109,6 +112,7 @@ async function ensureSchema() {
           email_delivered boolean NOT NULL DEFAULT false
         )
       `;
+      await sql`ALTER TABLE estimate_intakes ADD COLUMN IF NOT EXISTS photos jsonb NOT NULL DEFAULT '[]'::jsonb`;
       await sql`
         CREATE INDEX IF NOT EXISTS estimate_intakes_created_at_idx
         ON estimate_intakes (created_at DESC)
@@ -144,6 +148,7 @@ function mapIntake(row: IntakeRow): Intake {
     status: row.status,
     notes: row.notes,
     emailDelivered: row.email_delivered,
+    photoCount: row.photo_count ?? 0,
   };
 }
 
@@ -152,26 +157,17 @@ export async function recordIntake(input: NewIntake) {
   const sql = getSql();
   const rows = (await sql`
     INSERT INTO estimate_intakes (
-      id, name, phone, email, location, service, details, source_page, referrer
+      id, name, phone, email, location, service, details, source_page, referrer, photos
     ) VALUES (
       ${input.id}, ${input.name}, ${input.phone}, ${input.email},
       ${input.location}, ${input.service}, ${input.details},
-      ${input.sourcePage}, ${input.referrer}
+      ${input.sourcePage}, ${input.referrer}, ${JSON.stringify(input.photos ?? [])}::jsonb
     )
-    ON CONFLICT (id) DO UPDATE SET
-      name = EXCLUDED.name,
-      phone = EXCLUDED.phone,
-      email = EXCLUDED.email,
-      location = EXCLUDED.location,
-      service = EXCLUDED.service,
-      details = EXCLUDED.details,
-      source_page = EXCLUDED.source_page,
-      referrer = EXCLUDED.referrer,
-      updated_at = now()
-    RETURNING *
+    ON CONFLICT (id) DO NOTHING
+    RETURNING id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count
   `) as IntakeRow[];
 
-  return mapIntake(rows[0]);
+  return rows[0] ? mapIntake(rows[0]) : null;
 }
 
 export async function markIntakeEmailDelivered(id: string) {
@@ -196,7 +192,7 @@ export async function listIntakes({
   const normalizedSearch = search.trim().slice(0, 100);
   const like = `%${normalizedSearch}%`;
   const rows = (await sql`
-    SELECT * FROM estimate_intakes
+    SELECT id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count FROM estimate_intakes
     WHERE (${status} = 'all' OR status = ${status})
       AND (
         ${normalizedSearch} = '' OR
@@ -217,7 +213,7 @@ export async function getIntake(id: string) {
   await ensureSchema();
   const sql = getSql();
   const rows = (await sql`
-    SELECT * FROM estimate_intakes WHERE id = ${id} LIMIT 1
+    SELECT id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count FROM estimate_intakes WHERE id = ${id} LIMIT 1
   `) as IntakeRow[];
 
   return rows[0] ? mapIntake(rows[0]) : null;
@@ -260,8 +256,16 @@ export async function updateIntake({
     UPDATE estimate_intakes
     SET status = ${status}, notes = ${notes.slice(0, 5000)}, updated_at = now()
     WHERE id = ${id}
-    RETURNING *
+    RETURNING id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count
   `) as IntakeRow[];
 
   return rows[0] ? mapIntake(rows[0]) : null;
+}
+
+// Call only after admin authentication. Photo content is excluded from list queries.
+export async function getIntakePhoto(id: string, index: number): Promise<ProjectPhoto | null> {
+  await ensureSchema();
+  const sql = getSql();
+  const rows = (await sql`SELECT photos -> ${index}::int AS photo FROM estimate_intakes WHERE id = ${id} LIMIT 1`) as Array<{ photo: ProjectPhoto | null }>;
+  return rows[0]?.photo ?? null;
 }

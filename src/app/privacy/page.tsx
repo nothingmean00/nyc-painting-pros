@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 
 const sections = [
   {
+    title: "Optional project photos",
+    body: "You can attach up to three photos to an estimate request. We resize images and remove embedded metadata before saving them with your project details. Photos are available to our signed-in team, not published in a public gallery or sent to website analytics. Avoid including people, personal documents, or unrelated sensitive information. You may submit an estimate without photos.",
+  },
+  {
     title: "Information you provide",
     body: "When you request an estimate or contact us, we may receive your name, phone number, email address, project location, service selection, project details, and any photos or documents you choose to send.",
   },
@@ -61,7 +65,7 @@ export default function PrivacyPage() {
       <section className="container-x py-16 lg:py-24">
         <div className="max-w-3xl space-y-10">
           <p className="text-sm text-[var(--color-muted)]">
-            Last updated July 10, 2026
+            Last updated October 30, 2026
           </p>
           {sections.map((section) => (
             <section key={section.title}>
