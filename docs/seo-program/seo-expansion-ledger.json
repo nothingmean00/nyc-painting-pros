@@ -1548,6 +1548,52 @@
         "verifiedCommit": "1e6f597f840ceebe4910a342be570090c75aabf4"
       },
       "verifiedLiveAt": "2026-10-30T15:27:45.136299+00:00"
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:office-move-out-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "office-move-out-painting-nyc",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "trigger": "user-requested immediate execution of updated workflow",
+      "url": "https://www.nycpaintingpros.com/painting/office-move-out-painting-nyc",
+      "state": "validated-pending-release",
+      "reservedAt": "2026-10-30T16:33:24.432640+00:00",
+      "baseline": null,
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "researchSources": [
+        "https://officestation.com/guides/lease-end-office-liquidation-timeline/",
+        "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/how-to-clean-freshly-painted-walls-and-cabinets"
+      ],
+      "cta": "Existing estimate form; Commercial Painting selected on money page; no submissions",
+      "expectedContentMarker": "Office move-out painting in NYC"
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:office-move-out-painting-checklist",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "office-move-out-painting-checklist",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "trigger": "user-requested immediate execution of updated workflow",
+      "url": "https://www.nycpaintingpros.com/blog/office-move-out-painting-checklist",
+      "state": "validated-pending-release",
+      "reservedAt": "2026-10-30T16:33:24.432640+00:00",
+      "baseline": null,
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "researchSources": [
+        "https://officestation.com/guides/lease-end-office-liquidation-timeline/",
+        "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/how-to-clean-freshly-painted-walls-and-cabinets"
+      ],
+      "cta": "Existing estimate form; Commercial Painting selected on money page; no submissions",
+      "expectedContentMarker": "Office Move-Out Painting Checklist: From Removal to Handover"
     }
   ],
   "inventory": [
@@ -2211,6 +2257,130 @@
         "verifiedCommit": "1e6f597f840ceebe4910a342be570090c75aabf4"
       },
       "verifiedLiveAt": "2026-10-30T15:27:45.136299+00:00"
+    },
+    {
+      "id": "nyc-growth-new-pair-20261030",
+      "trigger": "user-requested immediate validation of updated automation",
+      "status": "validated-pending-release",
+      "evidenceUsed": [
+        {
+          "file": "nycpaintingpros.com-28-20261030T163044960Z.json",
+          "property": "sc-domain:nycpaintingpros.com",
+          "generatedAt": "2026-10-30T16:30:44.919Z",
+          "range": {
+            "startDate": "2026-10-02",
+            "endDate": "2026-10-29",
+            "days": 28
+          },
+          "totals": {
+            "clicks": 0,
+            "impressions": 388,
+            "ctr": 0,
+            "position": 15.126288659793815
+          },
+          "observations": [
+            {
+              "page": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
+              "clicks": 0,
+              "impressions": 11,
+              "ctr": 0,
+              "position": 13.090909090909092
+            },
+            {
+              "page": "https://www.nycpaintingpros.com/painting/commercial-painting-manhattan",
+              "clicks": 0,
+              "impressions": 9,
+              "ctr": 0,
+              "position": 7.555555555555555
+            }
+          ],
+          "nearWinners": [
+            {
+              "query": "queens painters",
+              "page": "https://www.nycpaintingpros.com/areas/queens",
+              "clicks": 0,
+              "impressions": 7,
+              "ctr": 0,
+              "position": 12.428571428571429
+            },
+            {
+              "query": "drywall repair",
+              "page": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
+              "clicks": 0,
+              "impressions": 6,
+              "ctr": 0,
+              "position": 15.333333333333334
+            }
+          ]
+        },
+        {
+          "file": "nycpaintingpros.com-90-20261030T163046600Z.json",
+          "property": "sc-domain:nycpaintingpros.com",
+          "generatedAt": "2026-10-30T16:30:46.547Z",
+          "range": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-10-29",
+            "days": 90
+          },
+          "totals": {
+            "clicks": 0,
+            "impressions": 388,
+            "ctr": 0,
+            "position": 15.126288659793815
+          },
+          "observations": [
+            {
+              "page": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
+              "clicks": 0,
+              "impressions": 11,
+              "ctr": 0,
+              "position": 13.090909090909092
+            },
+            {
+              "page": "https://www.nycpaintingpros.com/painting/commercial-painting-manhattan",
+              "clicks": 0,
+              "impressions": 9,
+              "ctr": 0,
+              "position": 7.555555555555555
+            }
+          ],
+          "nearWinners": [
+            {
+              "query": "queens painters",
+              "page": "https://www.nycpaintingpros.com/areas/queens",
+              "clicks": 0,
+              "impressions": 7,
+              "ctr": 0,
+              "position": 12.428571428571429
+            },
+            {
+              "query": "drywall repair",
+              "page": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
+              "clicks": 0,
+              "impressions": 6,
+              "ctr": 0,
+              "position": 15.333333333333334
+            }
+          ]
+        }
+      ],
+      "decision": "Commercial painting Manhattan has 9 impressions at average position 7.56, drywall repair 11 at 13.09. Research and source inventory support a distinct commercial move-out handover scope. Retail candidate rejected as already covered. New office move-out pair extends established commercial painting and repair services, not a new service launch.",
+      "limitations": "New URLs have no measured baseline; impressions do not establish volume or conversion. Reporting lag applies.",
+      "cohortReview": "September 23/30 outcomes remain unmeasured without matching cohort baselines. No uplift claimed.",
+      "newMoney": 1,
+      "newBlogs": 1,
+      "refreshedMoney": 0,
+      "refreshedBlogs": 0,
+      "countsProvisionalUntilVerifiedLive": true,
+      "validation": {
+        "lint": "passed",
+        "typescript": "passed",
+        "productionBuild": "passed; 123 generated routes",
+        "crawl": "115 URLs, 42 blogs and 50 money pages, zero issues",
+        "rendered": "Both routes inspected desktop and 390x844; no horizontal overflow",
+        "cta": "Commercial Painting selected; no submission",
+        "image": "Reused existing office guide image"
+      }
     }
   ]
 }

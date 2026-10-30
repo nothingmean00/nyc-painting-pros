@@ -1,3 +1,4 @@
+import { officeTurnoverPosts } from "./office-turnover-content";
 // ===========================================================================
 // Blog content. Each post is long-form and genuinely useful (SEO + trust).
 // Cover images are real, verified Unsplash photo IDs (loaded via next/image).
@@ -42,6 +43,7 @@ export function unsplash(id: string, w = 1200) {
 }
 
 export const posts: Post[] = [
+  ...officeTurnoverPosts,
   ...expansionPosts,
   ...roomPosts,
   ...woodworkPosts,

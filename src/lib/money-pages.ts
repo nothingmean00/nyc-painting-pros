@@ -7,6 +7,7 @@
 // survey. New scopes explain pricing factors; projects are quoted individually.
 // ===========================================================================
 
+import { officeTurnoverMoneyPages } from "./office-turnover-content";
 import type { IconName } from "@/components/Icons";
 import { expansionMoneyPages } from "./expansion-money-pages";
 import { roomMoneyPages } from "./room-money-pages";
@@ -40,6 +41,7 @@ export type MoneyPage = {
 };
 
 export const moneyPages: MoneyPage[] = [
+  ...officeTurnoverMoneyPages,
   ...expansionMoneyPages,
   ...roomMoneyPages,
   ...woodworkMoneyPages,
@@ -803,7 +805,7 @@ export const moneyPages: MoneyPage[] = [
     ],
     relatedServices: ["commercial-painting", "interior-painting"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
-    relatedPages: ["commercial-painting-manhattan", "retail-storefront-painting-nyc"],
+    relatedPages: ["office-move-out-painting-nyc", "commercial-painting-manhattan", "retail-storefront-painting-nyc"],
   },
 
   // 11 --------------------------------------------------------------------
