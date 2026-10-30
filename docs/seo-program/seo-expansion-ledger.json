@@ -1485,7 +1485,7 @@
       "owner": "nyc-painting-pros-autonomous-growth",
       "execution": "user-requested immediate execution of saved workflow",
       "url": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
-      "state": "validated-pending-release",
+      "state": "verified-live",
       "reservedAt": "2026-10-30T15:22:33.803740+00:00",
       "researchSources": [
         "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf"
@@ -1502,7 +1502,16 @@
         "2027-01-28"
       ],
       "cta": "Existing estimate path; no customer form submission",
-      "expectedContentMarker": "What to send before we confirm a start date"
+      "expectedContentMarker": "What to send before we confirm a start date",
+      "commit": "1e6f597f840ceebe4910a342be570090c75aabf4",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_DndibUUDuMuu4nzA4EqKq2neeYHo",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1e6f597f840ceebe4910a342be570090c75aabf4"
+      },
+      "verifiedLiveAt": "2026-10-30T15:27:45.136299+00:00"
     },
     {
       "id": "nyc-painting-pros:2026-10-26:approval-packet-get-coop-board-approve-painting-project",
@@ -1512,7 +1521,7 @@
       "owner": "nyc-painting-pros-autonomous-growth",
       "execution": "user-requested immediate execution of saved workflow",
       "url": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
-      "state": "validated-pending-release",
+      "state": "verified-live",
       "reservedAt": "2026-10-30T15:22:33.803740+00:00",
       "researchSources": [
         "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf"
@@ -1529,7 +1538,16 @@
         "2027-01-28"
       ],
       "cta": "Existing estimate path; no customer form submission",
-      "expectedContentMarker": "Your painting approval packet at a glance"
+      "expectedContentMarker": "Your painting approval packet at a glance",
+      "commit": "1e6f597f840ceebe4910a342be570090c75aabf4",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_DndibUUDuMuu4nzA4EqKq2neeYHo",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1e6f597f840ceebe4910a342be570090c75aabf4"
+      },
+      "verifiedLiveAt": "2026-10-30T15:27:45.136299+00:00"
     }
   ],
   "inventory": [
@@ -1992,8 +2010,8 @@
     "runNewMoneyShortfall": 1,
     "runNewBlogShortfall": 1,
     "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay.",
-    "refreshedMoneyLive": 1,
-    "refreshedBlogsLive": 1,
+    "refreshedMoneyLive": 2,
+    "refreshedBlogsLive": 2,
     "ownerDirectedNewMoneyLive": 20,
     "ownerDirectedNewBlogsLive": 30,
     "quotaNote": "Owner-directed batch is separate from automation quota; do not replay missed slots or duplicate these intents."
@@ -2011,7 +2029,7 @@
       "internal links",
       "indexability"
     ],
-    "scheduledRunStatus": "Configuration repaired and prerequisites verified; next scheduled publishing execution not yet observed."
+    "scheduledRunStatus": "Immediate user-requested workflow completed and verified live; future scheduler execution remains to be observed."
   },
   "history": [
     {
@@ -2096,7 +2114,7 @@
     {
       "id": "nyc-growth-now-20261030",
       "trigger": "User requested immediate execution of existing saved workflow",
-      "status": "validated-pending-release",
+      "status": "completed-verified-live",
       "evidenceUsed": [
         {
           "file": "nycpaintingpros.com-28-20261030T152052113Z.json",
@@ -2181,8 +2199,18 @@
         "productionBuild": "passed; 121 generated routes",
         "crawl": "113 sitemap URLs; zero issues",
         "rendered": "Both pages inspected at desktop and 390x844; no horizontal overflow",
-        "cta": "Estimate form present and Interior Painting preselected; no submission"
-      }
+        "cta": "Estimate form present and Interior Painting preselected; no submission",
+        "production": "113 URLs; zero issues; changed live markers and reciprocal links verified in browser"
+      },
+      "commit": "1e6f597f840ceebe4910a342be570090c75aabf4",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_DndibUUDuMuu4nzA4EqKq2neeYHo",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1e6f597f840ceebe4910a342be570090c75aabf4"
+      },
+      "verifiedLiveAt": "2026-10-30T15:27:45.136299+00:00"
     }
   ]
 }
