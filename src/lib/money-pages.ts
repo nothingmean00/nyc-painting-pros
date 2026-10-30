@@ -360,19 +360,19 @@ export const moneyPages: MoneyPage[] = [
     slug: "co-op-condo-painting-nyc",
     keyword: "co-op and condo painting NYC",
     icon: "building",
-    title: "Co-op & Condo Painting NYC | Board Approvals & COIs Handled",
+    title: "Co-op & Condo Painting NYC | COI & Building Coordination",
     description:
-      "Co-op and condo painting in NYC with board approvals, Certificates of Insurance, and managing-agent coordination handled for you. Clean, on-schedule, warrantied work.",
+      "Plan your NYC co-op or condo repaint: written scope, building insurance requirements, elevator access, and permitted work hours. Request an itemized estimate.",
     h1: "Co-op & condo painting in NYC",
-    lede: "We speak fluent managing-agent: COIs, board rules, building hours, and elevator logistics — all handled so your project starts smoothly.",
+    lede: "A defined painting scope, building paperwork review, and coordinated access before the start date is confirmed.",
     intro: [
       "Painting in an NYC co-op or condo is half craftsmanship, half paperwork. Boards require insurance certificates, alteration agreements may apply, and work has to fit inside the building's permitted hours. Get any of it wrong and your start date slips.",
-      "We've done this hundreds of times. We produce the documents your board and managing agent need, schedule to building rules, and keep common areas spotless so the project never becomes a complaint at the next board meeting.",
+      "Send the current building work rules with your estimate request. We can coordinate the proposed scope and access arrangements with management; insurance documentation must match the building requirements, and approval remains with the building.",
     ],
     scope: {
       heading: "What co-op & condo projects include",
       items: [
-        "Certificate of Insurance naming building & managing agent",
+        "Review of building insurance requirements before scheduling",
         "Coordination with your managing agent and super",
         "Work scheduled within board-permitted hours",
         "Hallway, elevator and common-area protection",
@@ -381,6 +381,17 @@ export const moneyPages: MoneyPage[] = [
       ],
     },
     sections: [
+      {
+        h2: "What to send before we confirm a start date",
+        body: "Keep the estimate and approval packet together so the proposed work matches what management reviews. If the scope changes after approval, ask management whether the paperwork needs updating before adding the work.",
+        bullets: [
+          "A room-by-room list of walls, ceilings, doors, trim, and repairs to price.",
+          "The current building work rules and the management contact reviewing the project.",
+          "Insurance requirements exactly as supplied by management, for review with the insurer.",
+          "Allowed work hours, elevator booking procedure, and protection requirements for shared spaces.",
+          "Written confirmation that the proposed scope and access dates are accepted before mobilization.",
+        ],
+      },
       {
         h2: "Insurance and board paperwork, handled",
         body: "Most buildings require a COI before anyone lifts a brush, often with specific limits and additional-insured language. Provide the building requirements during the estimate so coverage, wording, and approval timing can be confirmed before scheduling. If your building uses an alteration agreement or has a preferred-vendor process, we'll work within it.",
@@ -420,9 +431,11 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "Will the work disturb my neighbors?",
-        a: "We keep noise within permitted hours, contain dust, and protect common areas. Most neighbors don't even know we're there.",
+        a: "We keep noise within permitted hours, contain dust, and protect common areas. Confirm protection, cleanup, and any neighbor-notification requirements before work starts.",
       },
     ],
+    planningLinks: [{ label: "Prepare your co-op painting approval checklist", href: "/blog/get-coop-board-approve-painting-project" }],
+    references: [{ label: "FirstService Residential: decoration and alteration procedures (page 4)", href: "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf" }],
     relatedServices: ["interior-painting", "drywall-plaster-repair", "commercial-painting"],
     relatedAreas: ["manhattan", "brooklyn", "queens"],
     relatedPages: ["interior-painting-manhattan", "pre-war-apartment-painting-nyc", "apartment-painting-nyc"],

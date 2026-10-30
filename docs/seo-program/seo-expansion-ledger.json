@@ -1476,6 +1476,60 @@
       ],
       "expectedContentMarker": "Multi-Unit Painting NYC | Building Repaint Programs",
       "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:approval-packet-co-op-condo-painting-nyc",
+      "type": "Money page",
+      "changeType": "refresh",
+      "intent": "building-specific approval packet and scheduling",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "execution": "user-requested immediate execution of saved workflow",
+      "url": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
+      "state": "validated-pending-release",
+      "reservedAt": "2026-10-30T15:22:33.803740+00:00",
+      "researchSources": [
+        "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf"
+      ],
+      "baseline": {
+        "days": 28,
+        "clicks": 0,
+        "impressions": 13,
+        "position": 2.9230769230769234
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "cta": "Existing estimate path; no customer form submission",
+      "expectedContentMarker": "What to send before we confirm a start date"
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:approval-packet-get-coop-board-approve-painting-project",
+      "type": "Blog",
+      "changeType": "refresh",
+      "intent": "building-specific approval packet and scheduling",
+      "owner": "nyc-painting-pros-autonomous-growth",
+      "execution": "user-requested immediate execution of saved workflow",
+      "url": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+      "state": "validated-pending-release",
+      "reservedAt": "2026-10-30T15:22:33.803740+00:00",
+      "researchSources": [
+        "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf"
+      ],
+      "baseline": {
+        "days": 28,
+        "clicks": 0,
+        "impressions": 1,
+        "position": 8
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "cta": "Existing estimate path; no customer form submission",
+      "expectedContentMarker": "Your painting approval packet at a glance"
     }
   ],
   "inventory": [
@@ -2035,6 +2089,99 @@
         "links": "All 36 distinct internal routes on changed pages return 200",
         "schema": "Changed-page JSON-LD parses; canonical tags match www host",
         "images": "Existing images retained; no new asset requested"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "nyc-growth-now-20261030",
+      "trigger": "User requested immediate execution of existing saved workflow",
+      "status": "validated-pending-release",
+      "evidenceUsed": [
+        {
+          "file": "nycpaintingpros.com-28-20261030T152052113Z.json",
+          "property": "sc-domain:nycpaintingpros.com",
+          "generatedAt": "2026-10-30T15:20:52.060Z",
+          "range": {
+            "startDate": "2026-10-02",
+            "endDate": "2026-10-29",
+            "days": 28
+          },
+          "totals": {
+            "clicks": 0,
+            "impressions": 388,
+            "ctr": 0,
+            "position": 15.126288659793815
+          },
+          "observations": [
+            {
+              "page": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
+              "clicks": 0,
+              "impressions": 13,
+              "ctr": 0,
+              "position": 2.9230769230769234
+            },
+            {
+              "page": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+              "clicks": 0,
+              "impressions": 1,
+              "ctr": 0,
+              "position": 8
+            }
+          ]
+        },
+        {
+          "file": "nycpaintingpros.com-90-20261030T152054052Z.json",
+          "property": "sc-domain:nycpaintingpros.com",
+          "generatedAt": "2026-10-30T15:20:54.000Z",
+          "range": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-10-29",
+            "days": 90
+          },
+          "totals": {
+            "clicks": 0,
+            "impressions": 388,
+            "ctr": 0,
+            "position": 15.126288659793815
+          },
+          "observations": [
+            {
+              "page": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
+              "clicks": 0,
+              "impressions": 13,
+              "ctr": 0,
+              "position": 2.9230769230769234
+            },
+            {
+              "page": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+              "clicks": 0,
+              "impressions": 1,
+              "ctr": 0,
+              "position": 8
+            }
+          ]
+        }
+      ],
+      "decision": "Cost guide already refreshed today. Co-op/condo page has 13 impressions, zero clicks and average position 2.923; supporting guide 1 impression at position 8. Improve this existing cluster with truthful snippets, approval preparation and reciprocal links; do not create duplicate intent.",
+      "limitations": "Reporting lag applies; equal 28/90 totals do not establish full coverage. No uplift or conversion attribution.",
+      "cohortReview": "September 23 and September 30 cohorts reviewed for evidence availability: current aggregate is available but no matched prior-period/cohort URL baseline; outcomes remain unmeasured.",
+      "newMoney": 0,
+      "newBlogs": 0,
+      "refreshedMoney": 1,
+      "refreshedBlogs": 1,
+      "newPageShortfall": {
+        "money": 1,
+        "blog": 1
+      },
+      "shortfallReason": "Prioritize existing observed search visibility and incomplete decision support over duplicate pages after the 50-URL owner-directed release.",
+      "validation": {
+        "lint": "passed",
+        "typescript": "passed",
+        "productionBuild": "passed; 121 generated routes",
+        "crawl": "113 sitemap URLs; zero issues",
+        "rendered": "Both pages inspected at desktop and 390x844; no horizontal overflow",
+        "cta": "Estimate form present and Interior Painting preselected; no submission"
       }
     }
   ]

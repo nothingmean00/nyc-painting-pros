@@ -295,19 +295,32 @@ export const posts: Post[] = [
 
   {
     slug: "get-coop-board-approve-painting-project",
-    title: "How to Get Your Co-op Board to Approve Your Painting Project",
+    title: "NYC Co-op Painting Approval: COI & Paperwork Checklist",
     excerpt:
-      "COIs, alteration agreements, building hours — the paperwork can be more daunting than the paint. Here's exactly what NYC co-op and condo boards want, and how to sail through approval.",
+      "Prepare your NYC co-op painting request: building rules, insurance documents, scope, work hours, and elevator access. Confirm approval before booking a start.",
     category: "NYC Living",
     date: "2026-03-22",
+    updated: "2026-10-30",
+    relatedPages: ["co-op-condo-painting-nyc"],
+    references: [{ label: "FirstService Residential: decoration and alteration procedures (page 4)", href: "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf" }],
     readMinutes: 5,
     author: "NYC Painting Pros Team",
     cover: { id: "photo-1545324418-cc1a3fa10c00", alt: "A classic New York co-op apartment building facade" },
     intro: [
-      "In a New York co-op or condo, the painting is the easy part — it's the approvals that trip people up. The good news: boards aren't trying to stop your project, they're trying to protect the building. Give them what they need and approval is usually quick.",
-      "Here's the checklist that gets you a yes.",
+      "Painting approval depends on your building and the proposed work. Ask management which decoration or alteration process applies before booking. A cosmetic repaint can still require paperwork; neither a quote nor an insurance certificate is permission to start.",
+      "Use this checklist to prepare a complete request and identify what is still waiting on review. It does not guarantee approval or a particular turnaround time.",
     ],
     blocks: [
+      {
+        h2: "Your painting approval packet at a glance",
+        body: ["Use one project description across the estimate, building submission, and contractor schedule. These are practical items to confirm with your own managing agent."],
+        bullets: [
+          "Scope: rooms, surfaces, preparation, and any repairs, with exclusions written down.",
+          "Documents: the required building form and the current insurance instructions for your contractor to review.",
+          "Access: permitted hours, elevator booking, shared-area protection, and the on-site contact.",
+          "Status: submitted, changes requested, or accepted in writing; record any conditions before confirming the start.",
+        ],
+      },
       {
         h2: "1. The Certificate of Insurance (COI)",
         body: [
@@ -317,7 +330,7 @@ export const posts: Post[] = [
       {
         h2: "2. Check for an alteration agreement",
         body: [
-          "Most interior painting is cosmetic and doesn't trigger an alteration agreement — but some buildings require one for any contractor work. Ask your managing agent early so it doesn't delay your start date.",
+          "Ask which form applies to your exact scope: a decoration or minor-work agreement, an alteration agreement, or another written notification. FirstService Residential describes separate procedures for decorative and alteration work; your own building documents determine the process. Include planned repairs as well as painting when asking management.",
         ],
       },
       {
@@ -329,7 +342,7 @@ export const posts: Post[] = [
       {
         h2: "4. Submit early and in writing",
         body: [
-          "Send the managing agent your painter's COI, the scope of work, and proposed dates well before you want to start. Doing it in writing creates a clean record and speeds the board's sign-off.",
+          "Send the managing agent your painter's COI, the scope of work, and proposed dates well before you want to start. Keep the response with the estimate and ask who confirms acceptance, what remains missing, and when the request will next be reviewed.",
         ],
       },
     ],
