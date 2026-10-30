@@ -10,10 +10,10 @@
   "owner": "nyc-painting-pros-autonomous-growth",
   "reconciliation": {
     "remoteDefault": "main",
-    "baseCommit": "1096995dec160823df5256307f347f96655a66dc",
+    "baseCommit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
     "inventory": {
-      "money": 49,
-      "blog": 41
+      "money": 50,
+      "blog": 42
     },
     "priorPendingDeployments": [],
     "overlap": "Owner-directed October 30 expansion reconciled; compare all current URLs before proposing new intents.",
@@ -41,13 +41,13 @@
     "older60And90DayCohorts": "No documented cohorts due in available history",
     "priorProduction": {
       "project": "nyc-painting-pros",
-      "deployment": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
-      "commit": "1096995dec160823df5256307f347f96655a66dc",
-      "status": "READY; production crawl verified all 113 sitemap URLs"
+      "deployment": "dpl_FZPZsNdq9m7YZDkm3aTgAP8AXrzP",
+      "commit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
+      "status": "READY; 115 live sitemap URLs verified"
     },
     "otherCheckout": "Preserve original checkout changes; use an isolated checkout for automation work.",
-    "checkedAt": "2026-10-30T15:15:20.412669+00:00",
-    "sitemapUrls": 113
+    "checkedAt": "2026-10-30T16:36:21.336686+00:00",
+    "sitemapUrls": 115
   },
   "measurement": {
     "property": "sc-domain:nycpaintingpros.com",
@@ -1557,7 +1557,7 @@
       "owner": "nyc-painting-pros-autonomous-growth",
       "trigger": "user-requested immediate execution of updated workflow",
       "url": "https://www.nycpaintingpros.com/painting/office-move-out-painting-nyc",
-      "state": "validated-pending-release",
+      "state": "verified-live",
       "reservedAt": "2026-10-30T16:33:24.432640+00:00",
       "baseline": null,
       "reviewsDue": [
@@ -1570,7 +1570,17 @@
         "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/how-to-clean-freshly-painted-walls-and-cabinets"
       ],
       "cta": "Existing estimate form; Commercial Painting selected on money page; no submissions",
-      "expectedContentMarker": "Office move-out painting in NYC"
+      "expectedContentMarker": "Office move-out painting in NYC",
+      "commit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_FZPZsNdq9m7YZDkm3aTgAP8AXrzP",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3"
+      },
+      "verifiedLiveAt": "2026-10-30T16:36:21.336686+00:00",
+      "countsTowardAutomationQuota": true
     },
     {
       "id": "nyc-painting-pros:2026-10-26:office-move-out-painting-checklist",
@@ -1580,7 +1590,7 @@
       "owner": "nyc-painting-pros-autonomous-growth",
       "trigger": "user-requested immediate execution of updated workflow",
       "url": "https://www.nycpaintingpros.com/blog/office-move-out-painting-checklist",
-      "state": "validated-pending-release",
+      "state": "verified-live",
       "reservedAt": "2026-10-30T16:33:24.432640+00:00",
       "baseline": null,
       "reviewsDue": [
@@ -1593,7 +1603,17 @@
         "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/how-to-clean-freshly-painted-walls-and-cabinets"
       ],
       "cta": "Existing estimate form; Commercial Painting selected on money page; no submissions",
-      "expectedContentMarker": "Office Move-Out Painting Checklist: From Removal to Handover"
+      "expectedContentMarker": "Office Move-Out Painting Checklist: From Removal to Handover",
+      "commit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_FZPZsNdq9m7YZDkm3aTgAP8AXrzP",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3"
+      },
+      "verifiedLiveAt": "2026-10-30T16:36:21.336686+00:00",
+      "countsTowardAutomationQuota": true
     }
   ],
   "inventory": [
@@ -2046,16 +2066,26 @@
       "type": "Money page",
       "url": "https://www.nycpaintingpros.com/painting/wood-floor-refinishing-nyc",
       "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/office-move-out-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/office-move-out-painting-checklist",
+      "newThisWeek": true
     }
   ],
   "weeklyProgress": {
-    "newMoneyLive": 0,
-    "newBlogsLive": 0,
-    "remainingMoneyTarget": 4,
-    "remainingBlogTarget": 4,
-    "runNewMoneyShortfall": 1,
-    "runNewBlogShortfall": 1,
-    "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay.",
+    "newMoneyLive": 1,
+    "newBlogsLive": 1,
+    "remainingMoneyTarget": 3,
+    "remainingBlogTarget": 3,
+    "runNewMoneyShortfall": 0,
+    "runNewBlogShortfall": 0,
+    "reason": "Immediate execution of updated automation delivered one verified new pair. Earlier refreshes and owner-directed 50-page expansion excluded. Remaining weekly quota is 3+3; no extra catch-up batch authorized.",
     "refreshedMoneyLive": 2,
     "refreshedBlogsLive": 2,
     "ownerDirectedNewMoneyLive": 20,
@@ -2063,9 +2093,9 @@
     "quotaNote": "Owner-directed batch is separate from automation quota; do not replay missed slots or duplicate these intents."
   },
   "validation": {
-    "checkedAt": "2026-10-30T15:15:20.412669+00:00",
-    "contentCommit": "1096995dec160823df5256307f347f96655a66dc",
-    "liveBaseline": "All 113 sitemap URLs verified; 41 blogs and 49 money pages; zero audit issues.",
+    "checkedAt": "2026-10-30T16:36:21.336686+00:00",
+    "contentCommit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
+    "liveBaseline": "115 URLs, 42 blogs, 50 money pages; zero issues",
     "checks": [
       "HTTP status",
       "unique titles and descriptions",
@@ -2075,7 +2105,7 @@
       "internal links",
       "indexability"
     ],
-    "scheduledRunStatus": "Immediate user-requested workflow completed and verified live; future scheduler execution remains to be observed."
+    "scheduledRunStatus": "Updated new-page workflow executed manually on user request and verified end to end; scheduler dispatch remains untested by this manual run."
   },
   "history": [
     {
@@ -2261,7 +2291,7 @@
     {
       "id": "nyc-growth-new-pair-20261030",
       "trigger": "user-requested immediate validation of updated automation",
-      "status": "validated-pending-release",
+      "status": "completed-verified-live",
       "evidenceUsed": [
         {
           "file": "nycpaintingpros.com-28-20261030T163044960Z.json",
@@ -2371,7 +2401,7 @@
       "newBlogs": 1,
       "refreshedMoney": 0,
       "refreshedBlogs": 0,
-      "countsProvisionalUntilVerifiedLive": true,
+      "countsProvisionalUntilVerifiedLive": false,
       "validation": {
         "lint": "passed",
         "typescript": "passed",
@@ -2379,7 +2409,23 @@
         "crawl": "115 URLs, 42 blogs and 50 money pages, zero issues",
         "rendered": "Both routes inspected desktop and 390x844; no horizontal overflow",
         "cta": "Commercial Painting selected; no submission",
-        "image": "Reused existing office guide image"
+        "image": "Reused existing office guide image",
+        "production": "115 URLs; zero issues; both live markers, reciprocal links and Commercial Painting selection verified"
+      },
+      "commit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_FZPZsNdq9m7YZDkm3aTgAP8AXrzP",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "fe6832e90e9ec113d545a18936f1b65e3afae3a3"
+      },
+      "verifiedLiveAt": "2026-10-30T16:36:21.336686+00:00",
+      "weeklyProgress": {
+        "newMoney": 1,
+        "newBlogs": 1,
+        "remainingMoney": 3,
+        "remainingBlogs": 3
       }
     }
   ]
