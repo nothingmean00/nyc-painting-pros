@@ -10,26 +10,26 @@
   "owner": "nyc-painting-pros-autonomous-growth",
   "reconciliation": {
     "remoteDefault": "main",
-    "baseCommit": "6ba5850e1427815eaae895f9eab48b3f811b8791",
+    "baseCommit": "1096995dec160823df5256307f347f96655a66dc",
     "inventory": {
-      "money": 29,
-      "blog": 11
+      "money": 49,
+      "blog": 41
     },
     "priorPendingDeployments": [],
-    "overlap": "Remote design branch has no commits outside main; primary main has user package-lock change preserved. Occupied-apartment intent already covered by apartment-painting-nyc; small-space color intent already covered by existing blog. No new URLs justified in selected cluster.",
+    "overlap": "Owner-directed October 30 expansion reconciled; compare all current URLs before proposing new intents.",
     "historicalRecords": "No prior shared ledger or asset-yield file found in repository. Historical automation memory preserved, not replaced.",
     "cohortReviews": [
       {
         "cohort": "2026-09-23",
         "checkpointDays": 30,
         "due": "2026-10-23",
-        "status": "due; outcomes unknown without exact-property GSC or aggregate intake data"
+        "status": "due; evaluate fresh exact-property evidence; outcomes not yet reviewed"
       },
       {
         "cohort": "2026-09-30",
         "checkpointDays": 30,
         "due": "2026-10-30",
-        "status": "not yet due"
+        "status": "due; evaluate fresh exact-property evidence; outcomes not yet reviewed"
       },
       {
         "cohort": "2026-10-07",
@@ -41,32 +41,28 @@
     "older60And90DayCohorts": "No documented cohorts due in available history",
     "priorProduction": {
       "project": "nyc-painting-pros",
-      "deployment": "dpl_2VxPyA6UPWTSki1SdmHtmoiDKkLL",
-      "commit": "6ba5850e1427815eaae895f9eab48b3f811b8791",
-      "status": "READY with verified custom-domain alias"
+      "deployment": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "status": "READY; production crawl verified all 113 sitemap URLs"
     },
-    "otherCheckout": "C:/tmp/nyc-growth-20261021-1550 clean at 6ba5850; no unfinished package. Primary only registered worktree."
+    "otherCheckout": "Preserve original checkout changes; use an isolated checkout for automation work.",
+    "checkedAt": "2026-10-30T15:15:20.412669+00:00",
+    "sitemapUrls": 113
   },
   "measurement": {
     "property": "sc-domain:nycpaintingpros.com",
-    "checkedAt": "2026-10-27T16:29:47.025187+00:00",
+    "checkedAt": "2026-10-30T15:10:29.5360476Z",
     "api": {
       "requestedWindowsDays": [
         28,
         90
       ],
-      "status": "credentials unavailable",
-      "coverage": null
+      "status": "Verified live",
+      "verifiedWindows": 2,
+      "unavailableWindows": 0
     },
-    "browser": {
-      "status": "Authenticated Chrome returned no access for exact property; checked 2026-10-27",
-      "coverage": null
-    },
-    "exports": {
-      "status": "no exact-property export found",
-      "coverage": null
-    },
-    "baseline": null
+    "baseline": null,
+    "note": "Fresh API access verified; per-page outcome baseline remains unknown until reviewed."
   },
   "entries": [
     {
@@ -130,17 +126,1567 @@
         "2027-01-25"
       ],
       "expectedContentMarker": "Test the color before expanding the painting scope"
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:remove-wallpaper-or-paint-over-it",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "remove-wallpaper-or-paint-over-it",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/remove-wallpaper-or-paint-over-it",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Remove Wallpaper or Paint Over It? A NYC Apartment Decision Guide",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:how-much-wallpaper-to-order-nyc",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "how-much-wallpaper-to-order-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/how-much-wallpaper-to-order-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "How Much Wallpaper Should You Order? Measure Before You Buy",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:bathroom-paint-peeling-what-to-check",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "bathroom-paint-peeling-what-to-check",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/bathroom-paint-peeling-what-to-check",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Bathroom Paint Peeling Again? What to Check Before Repainting",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:kitchen-walls-grease-before-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "kitchen-walls-grease-before-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/kitchen-walls-grease-before-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Painting Kitchen Walls: Plan for Grease, Cabinets, and Tight Access",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:ceiling-paint-flat-finish-side-light",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "ceiling-paint-flat-finish-side-light",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/ceiling-paint-flat-finish-side-light",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Why Ceiling Patches Show: Flat Paint, Side Light, and Surface Prep",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:trim-paint-finish-and-return-to-use",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "trim-paint-finish-and-return-to-use",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/trim-paint-finish-and-return-to-use",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Choosing Trim Paint: Finish, Old Coatings, and Return-to-Use Timing",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:doors-sticking-after-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "doors-sticking-after-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/doors-sticking-after-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Doors Sticking After Painting: Finish Problem or Fit Problem?",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:closet-painting-shelves-and-storage-plan",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "closet-painting-shelves-and-storage-plan",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/closet-painting-shelves-and-storage-plan",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Closet Painting: What to Empty, What to Paint, and When to Reload",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:painted-bookshelves-when-to-put-books-back",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "painted-bookshelves-when-to-put-books-back",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/painted-bookshelves-when-to-put-books-back",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "When Can Books Go Back on Painted Shelves? Plan the Whole Handoff",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:wainscoting-paint-color-boundaries",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "wainscoting-paint-color-boundaries",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/wainscoting-paint-color-boundaries",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Wainscoting Paint Colors: Decide the Boundaries Before the Shade",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:limewash-vs-regular-paint-apartment",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "limewash-vs-regular-paint-apartment",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/limewash-vs-regular-paint-apartment",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Limewash vs. Regular Paint: Which Fits Your Apartment?",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:venetian-plaster-sample-approval",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "venetian-plaster-sample-approval",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/venetian-plaster-sample-approval",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Approving Venetian Plaster: A Sample Checklist That Prevents Surprises",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:decorative-finish-sample-board-checklist",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "decorative-finish-sample-board-checklist",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/decorative-finish-sample-board-checklist",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Decorative Finish Sample Boards: What to Approve Before the Wall",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:living-at-home-during-apartment-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "living-at-home-during-apartment-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/living-at-home-during-apartment-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Can You Stay Home During Painting? Build a Room-by-Room Plan",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:stairwell-painting-access-plan",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "stairwell-painting-access-plan",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/stairwell-painting-access-plan",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Stairwell Painting: Scope the Access Before the Color",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:high-ceiling-painting-estimate-measurements",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "high-ceiling-painting-estimate-measurements",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/high-ceiling-painting-estimate-measurements",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "High-Ceiling Painting Estimates: Photos and Measurements That Matter",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:pre-sale-apartment-painting-priorities",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "pre-sale-apartment-painting-priorities",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/pre-sale-apartment-painting-priorities",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Painting Before Selling a NYC Apartment: What to Prioritize",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:water-stain-returns-after-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "water-stain-returns-after-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/water-stain-returns-after-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Why a Water Stain Returns After Painting\u2014and What to Ask Next",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:plaster-cracks-before-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "plaster-cracks-before-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/plaster-cracks-before-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Plaster Cracks Before Painting: Cosmetic Repair or Further Assessment?",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:multi-unit-painting-scope-matrix",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "multi-unit-painting-scope-matrix",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/multi-unit-painting-scope-matrix",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Multi-Unit Painting: Build a Scope Matrix Before Comparing Bids",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:touch-up-or-repaint-whole-wall",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "touch-up-or-repaint-whole-wall",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/touch-up-or-repaint-whole-wall",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Touch Up or Repaint the Whole Wall? A Practical Decision Guide",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:painting-dark-walls-a-light-color",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "painting-dark-walls-a-light-color",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/painting-dark-walls-a-light-color",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Painting Dark Walls a Light Color: Specify Coverage, Not Guesswork",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:questions-about-primer-before-painting",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "questions-about-primer-before-painting",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/questions-about-primer-before-painting",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Do You Need Primer? Ask What Problem It Is Meant to Solve",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:paint-dry-vs-cured-return-to-use",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "paint-dry-vs-cured-return-to-use",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/paint-dry-vs-cured-return-to-use",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Dry vs. Cured Paint: Plan When the Room Can Really Return to Use",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:paint-color-samples-changing-light",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "paint-color-samples-changing-light",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/paint-color-samples-changing-light",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "How to Test Paint Colors in a NYC Apartment's Changing Light",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:calculate-paint-wall-area",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "calculate-paint-wall-area",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/calculate-paint-wall-area",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "How Much Paint Do You Need? Calculate Wall Area, Not Floor Area",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:compare-nyc-painting-estimates",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "compare-nyc-painting-estimates",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/compare-nyc-painting-estimates",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "How to Compare NYC Painting Estimates Without Missing the Scope",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:painting-project-final-walkthrough-checklist",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "painting-project-final-walkthrough-checklist",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/painting-project-final-walkthrough-checklist",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Painting Project Walkthrough: A Practical Punch-List Checklist",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:paint-maintenance-record-template",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "paint-maintenance-record-template",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/paint-maintenance-record-template",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "The Paint Record Every Apartment Should Keep",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:furniture-protection-painting-handoff",
+      "type": "Blog",
+      "changeType": "new",
+      "intent": "furniture-protection-painting-handoff",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/blog/furniture-protection-painting-handoff",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Before the Painters Arrive: Furniture, Protection, and Room Handoff",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:wallpaper-removal-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "wallpaper-removal-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/wallpaper-removal-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Wallpaper Removal NYC | Wall Repair & Repainting",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:wallpaper-installation-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "wallpaper-installation-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/wallpaper-installation-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Wallpaper Installation NYC | Layout, Prep & Hanging",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:bathroom-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "bathroom-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/bathroom-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Bathroom Painting NYC | Walls, Ceilings & Prep",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:kitchen-wall-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "kitchen-wall-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/kitchen-wall-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Kitchen Wall Painting NYC | Prep, Ceilings & Details",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:ceiling-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "ceiling-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/ceiling-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Ceiling Painting NYC | Repairs, Flat Finishes & Scope",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:interior-trim-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "interior-trim-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/interior-trim-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Interior Trim Painting NYC | Baseboards, Casings & Crown",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:interior-door-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "interior-door-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/interior-door-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Interior Door Painting NYC | Faces, Edges & Frames",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:closet-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "closet-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/closet-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Closet Painting NYC | Walls, Shelves & Storage Planning",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:built-in-bookcase-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "built-in-bookcase-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/built-in-bookcase-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Built-In Bookcase Painting NYC | Shelves, Frames & Cabinets",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:wainscoting-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "wainscoting-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/wainscoting-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Wainscoting Painting NYC | Paneling, Rails & Molding",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:limewash-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "limewash-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/limewash-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Limewash Painting NYC | Sample-Led Interior Finishes",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:venetian-plaster-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "venetian-plaster-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/venetian-plaster-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Venetian Plaster NYC | Interior Samples & Application",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:roman-clay-walls-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "roman-clay-walls-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/roman-clay-walls-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Roman Clay Walls NYC | Samples, Preparation & Finishing",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:occupied-apartment-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "occupied-apartment-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/occupied-apartment-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Occupied Apartment Painting NYC | Phased Repaint Planning",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:stairwell-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "stairwell-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/stairwell-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Stairwell Painting NYC | Access, Protection & Phasing",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:high-ceiling-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "high-ceiling-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/high-ceiling-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "High-Ceiling Painting NYC | Lofts & Double-Height Rooms",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:pre-sale-apartment-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "pre-sale-apartment-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/pre-sale-apartment-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Pre-Sale Apartment Painting NYC | Scope Before Listing",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:water-stain-repainting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "water-stain-repainting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/water-stain-repainting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Water-Stain Repainting NYC | After Leak & Surface Repairs",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:plaster-wall-repair-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "plaster-wall-repair-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/plaster-wall-repair-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Plaster Wall Repair & Painting NYC | Defined Repair Scopes",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
+    },
+    {
+      "id": "nyc-painting-pros:2026-10-26:multi-unit-painting-nyc",
+      "type": "Money page",
+      "changeType": "new",
+      "intent": "multi-unit-painting-nyc",
+      "owner": "owner-directed-release-20261030",
+      "countsTowardAutomationQuota": false,
+      "url": "https://www.nycpaintingpros.com/painting/multi-unit-painting-nyc",
+      "state": "verified-live",
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "baseline": null,
+      "commit": "1096995dec160823df5256307f347f96655a66dc",
+      "deployment": {
+        "project": "nyc-painting-pros",
+        "id": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+        "state": "READY",
+        "alias": "www.nycpaintingpros.com",
+        "verifiedCommit": "1096995dec160823df5256307f347f96655a66dc"
+      },
+      "reviewsDue": [
+        "2026-11-29",
+        "2026-12-29",
+        "2027-01-28"
+      ],
+      "expectedContentMarker": "Multi-Unit Painting NYC | Building Repaint Programs",
+      "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
     }
   ],
   "inventory": [
     {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/interior-painting-manhattan",
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/bathroom-paint-peeling-what-to-check",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/calculate-paint-wall-area",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/ceiling-paint-flat-finish-side-light",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/closet-painting-shelves-and-storage-plan",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/compare-nyc-painting-estimates",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/decorative-finish-sample-board-checklist",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/doors-sticking-after-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/furniture-protection-painting-handoff",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/high-ceiling-painting-estimate-measurements",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/how-much-does-it-cost-to-paint-an-apartment-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/how-much-wallpaper-to-order-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/kitchen-walls-grease-before-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/limewash-vs-regular-paint-apartment",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/living-at-home-during-apartment-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/matte-eggshell-satin-paint-finish-guide",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/multi-unit-painting-scope-matrix",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-before-moving-into-long-island-city-condo",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-color-samples-changing-light",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-colors-small-nyc-apartment-feel-bigger",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-dry-vs-cured-return-to-use",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/paint-maintenance-record-template",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/painted-bookshelves-when-to-put-books-back",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/painting-dark-walls-a-light-color",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/painting-project-final-walkthrough-checklist",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/park-slope-brownstone-painting-plan",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/plaster-cracks-before-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/pre-sale-apartment-painting-priorities",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/prep-steps-professional-paint-job",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/questions-about-primer-before-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/remove-wallpaper-or-paint-over-it",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/repaint-or-refinish-kitchen-cabinets-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/stairwell-painting-access-plan",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/touch-up-or-repaint-whole-wall",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/tribeca-loft-painting-guide",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/trim-paint-finish-and-return-to-use",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/upper-east-side-apartment-painting-checklist",
+      "newThisWeek": false
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/venetian-plaster-sample-approval",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/wainscoting-paint-color-boundaries",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/water-stain-returns-after-painting",
+      "newThisWeek": true
+    },
+    {
+      "type": "Blog",
+      "url": "https://www.nycpaintingpros.com/blog/williamsburg-office-painting-without-downtime",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/interior-painting-brooklyn",
+      "url": "https://www.nycpaintingpros.com/painting/apartment-building-lobby-hallway-painting-nyc",
       "newThisWeek": false
     },
     {
@@ -150,13 +1696,8 @@
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/pre-war-apartment-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
-      "newThisWeek": false
+      "url": "https://www.nycpaintingpros.com/painting/bathroom-painting-nyc",
+      "newThisWeek": true
     },
     {
       "type": "Money page",
@@ -165,12 +1706,27 @@
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/kitchen-cabinet-painting-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/built-in-bookcase-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/cabinet-refinishing-cost-nyc",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/exterior-painting-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/ceiling-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/closet-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/co-op-condo-painting-nyc",
       "newThisWeek": false
     },
     {
@@ -180,82 +1736,57 @@
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/office-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/retail-storefront-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/restaurant-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/new-construction-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/rental-turnover-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/single-room-accent-wall-painting-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/skim-coating-nyc",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
       "url": "https://www.nycpaintingpros.com/painting/drywall-repair-nyc",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/cabinet-refinishing-cost-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/exterior-painting-nyc",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/trim-molding-installation-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/high-ceiling-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/interior-door-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/interior-painting-brooklyn",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/wood-floor-refinishing-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/interior-painting-manhattan",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/upper-east-side-apartment-painters",
+      "url": "https://www.nycpaintingpros.com/painting/interior-trim-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/kitchen-cabinet-painting-nyc",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/tribeca-loft-painting",
-      "newThisWeek": false
+      "url": "https://www.nycpaintingpros.com/painting/kitchen-wall-painting-nyc",
+      "newThisWeek": true
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/park-slope-brownstone-painters",
-      "newThisWeek": false
+      "url": "https://www.nycpaintingpros.com/painting/limewash-painting-nyc",
+      "newThisWeek": true
     },
     {
       "type": "Money page",
       "url": "https://www.nycpaintingpros.com/painting/long-island-city-condo-painting",
-      "newThisWeek": false
-    },
-    {
-      "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/williamsburg-office-painting",
       "newThisWeek": false
     },
     {
@@ -270,67 +1801,132 @@
     },
     {
       "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/multi-unit-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/new-construction-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/occupied-apartment-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/office-painting-nyc",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/park-slope-brownstone-painters",
+      "newThisWeek": false
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/plaster-wall-repair-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
       "url": "https://www.nycpaintingpros.com/painting/popcorn-ceiling-removal-nyc",
       "newThisWeek": false
     },
     {
       "type": "Money page",
-      "url": "https://www.nycpaintingpros.com/painting/apartment-building-lobby-hallway-painting-nyc",
+      "url": "https://www.nycpaintingpros.com/painting/pre-sale-apartment-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/pre-war-apartment-painting-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/how-much-does-it-cost-to-paint-an-apartment-nyc",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/rental-turnover-painting-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/paint-colors-small-nyc-apartment-feel-bigger",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/restaurant-painting-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/prep-steps-professional-paint-job",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/retail-storefront-painting-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/repaint-or-refinish-kitchen-cabinets-nyc",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/roman-clay-walls-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/single-room-accent-wall-painting-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/get-coop-board-approve-painting-project",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/skim-coating-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/matte-eggshell-satin-paint-finish-guide",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/stairwell-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/tribeca-loft-painting",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/upper-east-side-apartment-painting-checklist",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/trim-molding-installation-nyc",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/tribeca-loft-painting-guide",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/upper-east-side-apartment-painters",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/park-slope-brownstone-painting-plan",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/venetian-plaster-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/wainscoting-painting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/wallpaper-installation-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/wallpaper-removal-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/water-stain-repainting-nyc",
+      "newThisWeek": true
+    },
+    {
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/williamsburg-office-painting",
       "newThisWeek": false
     },
     {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/paint-before-moving-into-long-island-city-condo",
-      "newThisWeek": false
-    },
-    {
-      "type": "Blog",
-      "url": "https://www.nycpaintingpros.com/blog/williamsburg-office-painting-without-downtime",
+      "type": "Money page",
+      "url": "https://www.nycpaintingpros.com/painting/wood-floor-refinishing-nyc",
       "newThisWeek": false
     }
   ],
@@ -343,18 +1939,103 @@
     "runNewBlogShortfall": 1,
     "reason": "Selected commercial and supporting informational intents already have established URLs. Refreshing useful existing coverage instead of creating overlapping pages. No missed-slot replay.",
     "refreshedMoneyLive": 1,
-    "refreshedBlogsLive": 1
+    "refreshedBlogsLive": 1,
+    "ownerDirectedNewMoneyLive": 20,
+    "ownerDirectedNewBlogsLive": 30,
+    "quotaNote": "Owner-directed batch is separate from automation quota; do not replay missed slots or duplicate these intents."
   },
   "validation": {
-    "liveBaseline": "All 63 sitemap URLs HTTP 200 and self-canonical on 2026-10-27; robots excludes admin and API",
-    "reactReview": "Server-rendered optional sections; stable href keys; semantic headings and descriptive crawlable anchors; no client state or dependency added",
-    "install": "npm ci --ignore-scripts passed after minimal lock repair",
-    "build": "passed; 71 routes",
-    "lint": "passed",
-    "typecheck": "standalone tsc --noEmit passed",
-    "rendered": "390x844 and 1440x1000 inspected for both changed pages; no horizontal overflow; CTA visible; zero form submissions",
-    "links": "All 36 distinct internal routes on changed pages return 200",
-    "schema": "Changed-page JSON-LD parses; canonical tags match www host",
-    "images": "Existing images retained; no new asset requested"
-  }
+    "checkedAt": "2026-10-30T15:15:20.412669+00:00",
+    "contentCommit": "1096995dec160823df5256307f347f96655a66dc",
+    "liveBaseline": "All 113 sitemap URLs verified; 41 blogs and 49 money pages; zero audit issues.",
+    "checks": [
+      "HTTP status",
+      "unique titles and descriptions",
+      "canonical URLs",
+      "H1",
+      "JSON-LD",
+      "internal links",
+      "indexability"
+    ],
+    "scheduledRunStatus": "Configuration repaired and prerequisites verified; next scheduled publishing execution not yet observed."
+  },
+  "history": [
+    {
+      "recordedAt": "2026-10-30T15:15:20.412669+00:00",
+      "reconciliation": {
+        "remoteDefault": "main",
+        "baseCommit": "1096995dec160823df5256307f347f96655a66dc",
+        "inventory": {
+          "money": 49,
+          "blog": 41
+        },
+        "priorPendingDeployments": [],
+        "overlap": "Owner-directed October 30 expansion reconciled; compare all current URLs before proposing new intents.",
+        "historicalRecords": "No prior shared ledger or asset-yield file found in repository. Historical automation memory preserved, not replaced.",
+        "cohortReviews": [
+          {
+            "cohort": "2026-09-23",
+            "checkpointDays": 30,
+            "due": "2026-10-23",
+            "status": "due; evaluate fresh exact-property evidence; outcomes not yet reviewed"
+          },
+          {
+            "cohort": "2026-09-30",
+            "checkpointDays": 30,
+            "due": "2026-10-30",
+            "status": "due; evaluate fresh exact-property evidence; outcomes not yet reviewed"
+          },
+          {
+            "cohort": "2026-10-07",
+            "checkpointDays": 30,
+            "due": "2026-11-06",
+            "status": "not yet due"
+          }
+        ],
+        "older60And90DayCohorts": "No documented cohorts due in available history",
+        "priorProduction": {
+          "project": "nyc-painting-pros",
+          "deployment": "dpl_AezYbbBmaWYSRAFZbkgTT86Z8iJL",
+          "commit": "1096995dec160823df5256307f347f96655a66dc",
+          "status": "READY; production crawl verified all 113 sitemap URLs"
+        },
+        "otherCheckout": "Preserve original checkout changes; use an isolated checkout for automation work.",
+        "checkedAt": "2026-10-30T15:15:20.412669+00:00",
+        "sitemapUrls": 113
+      },
+      "measurement": {
+        "property": "sc-domain:nycpaintingpros.com",
+        "checkedAt": "2026-10-27T16:29:47.025187+00:00",
+        "api": {
+          "requestedWindowsDays": [
+            28,
+            90
+          ],
+          "status": "credentials unavailable",
+          "coverage": null
+        },
+        "browser": {
+          "status": "Authenticated Chrome returned no access for exact property; checked 2026-10-27",
+          "coverage": null
+        },
+        "exports": {
+          "status": "no exact-property export found",
+          "coverage": null
+        },
+        "baseline": null
+      },
+      "validation": {
+        "liveBaseline": "All 63 sitemap URLs HTTP 200 and self-canonical on 2026-10-27; robots excludes admin and API",
+        "reactReview": "Server-rendered optional sections; stable href keys; semantic headings and descriptive crawlable anchors; no client state or dependency added",
+        "install": "npm ci --ignore-scripts passed after minimal lock repair",
+        "build": "passed; 71 routes",
+        "lint": "passed",
+        "typecheck": "standalone tsc --noEmit passed",
+        "rendered": "390x844 and 1440x1000 inspected for both changed pages; no horizontal overflow; CTA visible; zero form submissions",
+        "links": "All 36 distinct internal routes on changed pages return 200",
+        "schema": "Changed-page JSON-LD parses; canonical tags match www host",
+        "images": "Existing images retained; no new asset requested"
+      }
+    }
+  ]
 }
