@@ -252,7 +252,7 @@ export default async function MoneyPage({
             <ul className="mt-3 space-y-2 text-sm">
               {[
                 "Licensed, bonded & insured",
-                "EPA Lead-Safe certified",
+                "Building requirements reviewed",
                 `${site.warrantyYears}-year written warranty`,
                 "Free, itemized estimates",
               ].map((t) => (

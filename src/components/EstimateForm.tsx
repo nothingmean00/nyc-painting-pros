@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { Icon } from "./Icons";
@@ -28,9 +28,11 @@ function trackEstimate(event: EstimateEvent, properties: Record<string, string> 
 export function EstimateForm({
   compact = false,
   defaultDetails = "",
+  defaultService = "",
 }: {
   compact?: boolean;
   defaultDetails?: string;
+  defaultService?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
@@ -38,6 +40,11 @@ export function EstimateForm({
   const started = useRef(false);
   const blockedFields = useRef(new Set<string>());
   const [projectBrief, setProjectBrief] = useState(defaultDetails);
+  const confirmation = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === "sent") confirmation.current?.focus();
+  }, [status]);
 
   function trackStart() {
     if (started.current) return;
@@ -121,7 +128,7 @@ export function EstimateForm({
 
   if (status === "sent") {
     return (
-      <div className="card p-8 text-center">
+      <div ref={confirmation} tabIndex={-1} role="status" className="card p-8 text-center outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)]">
         <div className="mx-auto w-14 h-14 rounded-full bg-[var(--color-green)]/15 text-[var(--color-green-600)] grid place-items-center">
           <Icon.check className="w-7 h-7" />
         </div>
@@ -159,6 +166,8 @@ export function EstimateForm({
         }
       }}
       className="card p-6 sm:p-8 grid gap-4"
+      aria-label="Request a painting estimate"
+      aria-busy={status === "submitting"}
     >
       {!compact && (
         <div>
@@ -168,6 +177,7 @@ export function EstimateForm({
           </p>
         </div>
       )}
+      <p className="text-sm text-[var(--color-muted)]">All fields are required except project details.</p>
       {/* Honeypot — hidden from users, catches bots */}
       <input
         type="text"
@@ -212,7 +222,7 @@ export function EstimateForm({
         <select
           name="service"
           className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
-          defaultValue=""
+          defaultValue={services.some((service) => service.name === defaultService) ? defaultService : ""}
           required
         >
           <option value="" disabled>
@@ -228,6 +238,7 @@ export function EstimateForm({
       </label>
       <label className="grid gap-1.5">
         <span className="text-sm font-medium">Tell us about the project (optional)</span>
+        <span className="text-sm text-[var(--color-muted)]">Include walls, ceilings or trim, repairs, whether the space is occupied, and your preferred dates. Approximate details are fine.</span>
         <textarea
           name="details"
           value={projectBrief}

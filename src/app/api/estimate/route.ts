@@ -50,6 +50,16 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
   }
 
+  // JSON can be null, an array, or contain non-string fields. Reject malformed
+  // input before trimming fields or touching storage and email delivery.
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
+  }
+  const textFields = ["name", "phone", "email", "location", "service", "details", "page", "referrer", "submissionId", "company"] as const;
+  if (textFields.some((field) => body[field] !== undefined && typeof body[field] !== "string")) {
+    return Response.json({ ok: false, error: "Invalid field format." }, { status: 400 });
+  }
+
   // Honeypot: silently accept bot submissions without doing anything.
   if (body.company && body.company.trim() !== "") {
     return Response.json({ ok: true });

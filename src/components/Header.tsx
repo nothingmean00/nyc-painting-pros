@@ -45,7 +45,7 @@ export function Header() {
         <div className="container-x flex items-center justify-between py-1.5">
           <span className="inline-flex items-center gap-2">
             <Icon.shield className="w-4 h-4 text-[var(--color-green-300)]" />
-            Fully insured · Detailed written scopes · 3-year workmanship warranty
+            Building paperwork coordinated · Detailed written scopes · 3-year workmanship warranty
           </span>
           <span className="inline-flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5">

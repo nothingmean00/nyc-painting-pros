@@ -4,9 +4,11 @@ import { Icon } from "./Icons";
 export function CTASection({
   title = "Ready to plan your project?",
   subtitle = "Tell us what you are working on and we will recommend the right scope, finish, and next step.",
+  href = "/contact",
 }: {
   title?: string;
   subtitle?: string;
+  href?: string;
 }) {
   return (
     <section className="container-x">
@@ -17,7 +19,7 @@ export function CTASection({
           </h2>
           <p className="mt-4 text-white/75 text-lg">{subtitle}</p>
           <div className="mt-8">
-            <Link href="/contact" className="btn btn-primary text-base">
+            <Link href={href} className="btn btn-primary text-base">
               Get a Free Estimate <Icon.arrow className="w-5 h-5" />
             </Link>
           </div>

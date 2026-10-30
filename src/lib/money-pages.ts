@@ -41,7 +41,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "roller",
     title: "Interior Painters in Manhattan | Apartments, Co-ops & Condos",
     description:
-      "Professional interior painting in Manhattan — pre-war co-ops, condo combinations and high-floor apartments. Dust-controlled prep, premium low-VOC finishes, COIs same day. Free estimate.",
+      "Professional interior painting in Manhattan — pre-war co-ops, condo combinations and high-floor apartments. Dust-controlled prep, premium low-VOC finishes, building paperwork coordination. Free estimate.",
     h1: "Interior painting in Manhattan",
     lede: "Pre-war co-ops, condo combinations, and high-floor apartments — finished with razor-sharp lines and a job site clean enough to host guests the same night.",
     intro: [
@@ -55,14 +55,14 @@ export const moneyPages: MoneyPage[] = [
         "Patching, sanding and priming of plaster and drywall",
         "Crisp cut-ins at trim, crown molding and ceilings",
         "Two coats of premium low-VOC Benjamin Moore or Sherwin-Williams",
-        "Building COI issued same day; work within board-approved hours",
+        "Building insurance requirements reviewed; work within approved hours",
         "Daily clean-up and a spotless final walkthrough",
       ],
     },
     sections: [
       {
         h2: "Built for Manhattan buildings and boards",
-        body: "Most Manhattan co-ops and condos require a Certificate of Insurance naming the building and managing agent before work begins. We issue them the same day, schedule around your building's permitted work hours, and coordinate freight-elevator and COI logistics with your managing agent directly — so the project starts on time without back-and-forth.",
+        body: "Most Manhattan co-ops and condos require a Certificate of Insurance naming the building and managing agent before work begins. Confirm the required limits and wording before scheduling. We coordinate permitted work hours, freight-elevator access, and paperwork with building management; approval timing depends on the building and insurer.",
       },
       {
         h2: "Plaster, prep, and a finish that lasts",
@@ -88,7 +88,7 @@ export const moneyPages: MoneyPage[] = [
     faqs: [
       {
         q: "Do you provide Certificates of Insurance for Manhattan buildings?",
-        a: "Yes — same day. We carry $2M general liability plus workers' comp and can name your building and managing agent as additional insured before the first day of work.",
+        a: "Share the required limits and additional-insured wording during the estimate. Confirm the documentation and building acceptance before work begins.",
       },
       {
         q: "Can you work within my co-op's permitted hours?",
@@ -174,7 +174,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "Is the paint safe for kids and pets?",
-        a: "We use low-VOC and zero-VOC lines as standard, so rooms are safe to use the same day with proper ventilation.",
+        a: "Low- and zero-VOC options are available. Reoccupancy depends on the selected products, ventilation, preparation, and household needs; follow product instructions rather than assuming same-day use.",
       },
     ],
     relatedServices: ["interior-painting", "wallpaper-removal", "drywall-plaster-repair"],
@@ -371,7 +371,7 @@ export const moneyPages: MoneyPage[] = [
     sections: [
       {
         h2: "Insurance and board paperwork, handled",
-        body: "Most buildings require a COI before anyone lifts a brush, often with specific limits and additional-insured language. We carry $2M general liability plus workers' comp and issue compliant certificates the same day. If your building uses an alteration agreement or has a preferred-vendor process, we'll work within it.",
+        body: "Most buildings require a COI before anyone lifts a brush, often with specific limits and additional-insured language. Provide the building requirements during the estimate so coverage, wording, and approval timing can be confirmed before scheduling. If your building uses an alteration agreement or has a preferred-vendor process, we'll work within it.",
       },
       {
         h2: "Respectful of the whole building, not just your unit",
@@ -496,7 +496,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "cabinet",
     title: "Kitchen Cabinet Painting NYC | Factory-Smooth Refinishing",
     description:
-      "Kitchen cabinet painting and refinishing in NYC — sprayed, factory-smooth finishes for a fraction of replacement. Durable catalyzed topcoats, dust-free process, warranty.",
+      "Kitchen cabinet painting and refinishing in NYC. Compare preparation, finish systems, door handling, and written warranty terms in a detailed estimate.",
     h1: "Kitchen cabinet painting & refinishing in NYC",
     lede: "A showroom-smooth kitchen for a fraction of replacement — degreased, sanded, primed, and sprayed with a finish that cures rock-hard.",
     intro: [
@@ -521,7 +521,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         h2: "A clean process in an occupied home",
-        body: "Doors and drawers are finished off-site in a controlled environment for a dust-free result; boxes are finished in place behind containment.",
+        body: "Confirm where doors and drawers will be finished, how cabinet boxes and adjacent surfaces will be protected, and the product-specific drying and handling schedule before work starts.",
         bullets: [
           "Off-site door spraying = no overspray in your kitchen",
           "Dust barriers and masking protect counters and appliances",
@@ -594,7 +594,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         h2: "Lead-safe work on older buildings",
-        body: "Most pre-1978 NYC buildings contain lead paint. We're EPA Lead-Safe (RRP) certified and follow containment and disposal rules that protect your family, neighbors, and our crews.",
+        body: "Older buildings may have lead-based paint. Before disturbing painted surfaces, establish the applicable requirements and verify the performing firm's current certification. The scope should identify containment, cleanup, and any specialist assessment needed.",
         bullets: [
           "Certified lead-safe scraping and containment",
           "Proper debris capture and disposal",
@@ -619,7 +619,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "Are you lead-safe certified for older buildings?",
-        a: "Yes — EPA Lead-Safe (RRP) certified. We follow all containment and disposal practices required for pre-1978 buildings.",
+        a: "Verify the performing firm's current EPA RRP certification before scheduling covered work. Share the building age and any existing lead reports so the assessment and scope address the actual conditions.",
       },
       {
         q: "How long will an exterior paint job last?",
@@ -642,7 +642,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "building",
     title: "Commercial Painters in Manhattan | After-Hours, COI Same Day",
     description:
-      "Commercial painting in Manhattan — offices, lobbies, retail and multi-unit buildings. After-hours scheduling, $2M insurance, COIs same day, durable commercial coatings.",
+      "Commercial painting in Manhattan — offices, lobbies, retail and multi-unit buildings. After-hours scheduling, insurance documentation coordination, durable commercial coatings.",
     h1: "Commercial painting in Manhattan",
     lede: "Offices, lobbies, retail, and multi-unit buildings — painted after hours so your business never skips a beat.",
     intro: [
@@ -653,7 +653,7 @@ export const moneyPages: MoneyPage[] = [
       heading: "What commercial projects include",
       items: [
         "After-hours, overnight and weekend scheduling",
-        "$2M general liability + workers' comp; COI same day",
+        "Insurance limits and COI requirements reviewed before scheduling",
         "Phased work to keep the business operating",
         "Durable, scrubbable commercial-grade coatings",
         "Single point of contact and written progress updates",
@@ -667,7 +667,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         h2: "Built for property managers and facilities teams",
-        body: "We make the paperwork and reporting easy: same-day COIs, a single contact, and clear progress updates so you can keep stakeholders informed.",
+        body: "We make the paperwork and reporting easy: COI coordination, a single contact, and clear progress updates so you can keep stakeholders informed.",
         bullets: [
           "Certificates of Insurance naming building & management",
           "Scope and timeline documented up front",
@@ -692,7 +692,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "How fast can you provide a Certificate of Insurance?",
-        a: "Same day. We carry $2M general liability plus workers' comp and name your building and management company as additional insured.",
+        a: "Timing depends on the insurer and building requirements. Send the requested limits, certificate-holder details, and additional-insured wording early; confirm acceptance before scheduling work.",
       },
       {
         q: "Do you handle multi-floor or multi-site rollouts?",
@@ -715,7 +715,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "building",
     title: "Office Painting NYC | After-Hours Commercial Painters",
     description:
-      "Office painting in NYC with after-hours and weekend scheduling, same-day COIs, and durable low-odor coatings. Keep your team working while we repaint. Free walkthrough.",
+      "Office painting in NYC with after-hours and weekend scheduling, COI coordination, and durable low-odor coatings. Keep your team working while we repaint. Free walkthrough.",
     h1: "Office painting in NYC",
     lede: "Repaint your workspace overnight or over a weekend — low-odor, fully dry, and ready for Monday.",
     intro: [
@@ -1061,7 +1061,7 @@ export const moneyPages: MoneyPage[] = [
       },
       {
         q: "Can you provide COIs for our buildings?",
-        a: "Same day. We carry $2M general liability plus workers' comp and name your building and management company as additional insured.",
+        a: "Timing depends on the insurer and building requirements. Send the requested limits, certificate-holder details, and additional-insured wording early; confirm acceptance before scheduling work.",
       },
       {
         q: "Do you use durable paint for rentals?",

@@ -7,6 +7,7 @@ export type Block = {
   h2: string;
   body: string[];
   bullets?: string[];
+  table?: { headings: string[]; rows: string[][] };
 };
 
 export type Post = {
@@ -15,6 +16,7 @@ export type Post = {
   excerpt: string;
   category: string;
   date: string; // ISO
+  updated?: string;
   readMinutes: number;
   author: string;
   cover: { id: string; alt: string };
@@ -38,13 +40,14 @@ export const posts: Post[] = [
       "A clear, no-nonsense breakdown of NYC apartment painting costs — what drives the price, realistic ranges by apartment size, and how to avoid the quotes that look cheap but aren't.",
     category: "Cost & Planning",
     date: "2026-05-28",
+    updated: "2026-10-30",
     readMinutes: 7,
     author: "NYC Painting Pros Team",
     cover: { id: "photo-1562259949-e8e7689d7828", alt: "A painter rolling fresh paint onto an apartment wall" },
     relatedPages: ["apartment-painting-nyc", "single-room-accent-wall-painting-nyc"],
     intro: [
       "It's the first question every New Yorker asks, and the honest answer is: it depends. But \"it depends\" isn't helpful when you're trying to budget. So here's the real breakdown — what actually moves the number, and what you should expect to pay for a quality job in 2026.",
-      "Most NYC apartment interiors land between $3 and $9 per square foot of floor area, or roughly $2,500–$9,000 for a typical one- to two-bedroom. Where you fall in that range comes down to five things.",
+      "For early planning, this guide uses a broad allowance of $3–$9 per square foot of floor area. These editorial budgeting ranges are not a market survey or a binding quote. A walls-only refresh and a full repaint with ceilings, trim, and repairs are different scopes; compare the included work before comparing totals.",
     ],
     blocks: [
       {
@@ -54,7 +57,7 @@ export const posts: Post[] = [
         ],
         bullets: [
           "Surface prep — patching, sanding, and skim coating old plaster is labor, and labor is most of the bill.",
-          "Ceilings and trim — painting them doubles the surfaces and the time versus walls alone.",
+          "Ceilings and trim — each adds surface preparation and application work beyond walls alone; the amount depends on the room and trim detail.",
           "Ceiling height — pre-war 10-foot ceilings need more paint, more cutting-in, and sometimes scaffolding.",
           "Number of coats and color change — going dark-over-light or covering bold colors often needs primer plus two coats.",
           "Condition — cracked plaster, water stains, and previously papered walls all add prep time.",
@@ -63,14 +66,31 @@ export const posts: Post[] = [
       {
         h2: "Realistic ranges by apartment size",
         body: [
-          "These are typical NYC ranges for a quality two-coat job including standard prep. Heavy repairs or high-end finishes push higher.",
-          "Studio (walls only): $1,400–$3,200. One-bedroom (walls, ceilings, trim): $2,800–$5,500. Two-bedroom full repaint: $4,500–$9,000. A single room or accent wall usually runs $550–$1,500.",
+          "Use these existing planning allowances to start a scope conversation, not to judge a quote on apartment size alone. The scopes below differ, so their prices are not directly comparable. Confirm materials, protection, repair allowances, coats, taxes, and exclusions in the written estimate.",
         ],
+        table: {
+          headings: ["Project", "Planning allowance", "Scope to confirm"],
+          rows: [
+            ["Studio", "$1,400–$3,200", "Walls only; ask about closets and ceilings"],
+            ["One-bedroom", "$2,800–$5,500", "Walls, ceilings, and trim; identify doors separately"],
+            ["Two-bedroom", "$4,500–$9,000", "Full repaint; list every room and included surface"],
+            ["Single room or accent wall", "$550–$1,500", "Minimum visit, repairs, and number of colors"],
+          ],
+        },
       },
       {
-        h2: "Why the cheapest quote is rarely the cheapest job",
+        h2: "Floor area is not paintable wall area",
+        body: ["An 800-square-foot apartment describes its floor footprint, not the area of its walls and ceilings. A floor-area allowance of $3–$9 produces a broad $2,400–$7,200 planning envelope; it is arithmetic, not a quote for your apartment. Ceiling height, partitions, trim, and surface condition still determine the work.", "Ask whether a per-square-foot quote uses floor area or measured painted surface area. Do not compare the two rates directly. For a reliable comparison, ask each painter to price the same room-by-room list."],
+      },
+      {
+        h2: "Compare estimates with the same checklist",
+        body: ["A useful estimate lets you see what changes when you add a ceiling, remove a room, or choose more extensive repairs. Ask for optional work separately rather than accepting an undefined all-in scope."],
+        bullets: ["Surfaces: walls, ceilings, doors, trim, closets, and radiators listed as included or excluded.", "Preparation: nail holes, cracks, stains, adhesive removal, and skim coating described separately.", "Finish system: paint line, sheen, primer where needed, color changes, and coat schedule.", "Logistics: furniture moving, floor protection, daily cleanup, access hours, and occupied-room sequencing.", "Commercial terms: materials, tax treatment, payment milestones, change approvals, and written warranty exclusions."],
+      },
+      {
+        h2: "What a lower quote may leave out",
         body: [
-          "A lowball quote almost always means skipped prep. The paint looks fine for a few weeks, then the patches telegraph, the lines aren't crisp, and the trim shows brush marks. You end up paying twice.",
+          "A lower quote may reflect a smaller scope, different materials, simpler logistics, or lower overhead. Price alone cannot tell you the quality. Ask what preparation and finish standard are included, and how unexpected repairs will be priced and approved.",
           "When you compare quotes, make sure they specify the same scope: how many coats, whether trim and ceilings are included, what prep is covered, and what paint line. A $4 and a $7 per-square-foot quote are often quoting two completely different jobs.",
         ],
       },
@@ -82,7 +102,7 @@ export const posts: Post[] = [
       },
     ],
     takeaway:
-      "Budget $3–$9 per square foot for a quality NYC apartment repaint, get itemized written quotes, and compare scope — not just the bottom-line number.",
+      "Use a broad allowance to plan, then request an itemized estimate for your actual rooms, surfaces, repairs, and building access. Agree on additions in writing before work begins.",
   },
 
   {
@@ -274,7 +294,7 @@ export const posts: Post[] = [
       {
         h2: "1. The Certificate of Insurance (COI)",
         body: [
-          "This is non-negotiable in almost every building. Your painter must provide a COI naming the building and managing agent as additional insured, with the liability limits your building requires (often $1–2M). A professional company issues these same-day; if a contractor can't, that's a red flag.",
+          "Ask management for its current insurance requirements, including limits, certificate-holder details, and additional-insured wording. Share them with the contractor before agreeing on dates. Issuance and building review take time; a same-day certificate is not a substitute for confirming that the documentation meets the building's requirements.",
         ],
       },
       {
@@ -297,7 +317,7 @@ export const posts: Post[] = [
       },
     ],
     takeaway:
-      "A same-day COI, a written scope, and respect for building hours are 90% of board approval. Hire a painter who handles this paperwork for you and the rest is easy.",
+      "Obtain the building's requirements early, submit the proposed scope and insurance documentation, and confirm approval and permitted hours before scheduling work.",
   },
 
   {

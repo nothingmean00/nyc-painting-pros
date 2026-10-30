@@ -83,11 +83,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-5 focus:py-3 focus:text-black focus:shadow-lg">Skip to content</a>
         <JsonLd data={[localBusiness(), websiteSchema()]} />
         <PublicRouteChrome>
           <Header />
         </PublicRouteChrome>
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <PublicRouteChrome>
           <Footer />
         </PublicRouteChrome>

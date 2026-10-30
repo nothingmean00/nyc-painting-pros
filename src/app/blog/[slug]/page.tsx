@@ -20,6 +20,7 @@ function formatDate(iso: string) {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
@@ -43,6 +44,7 @@ export async function generateMetadata({
       url: `${site.url}/blog/${p.slug}`,
       images: [{ url: unsplash(p.cover.id, 1200) }],
       publishedTime: p.date,
+      modifiedTime: p.updated ?? p.date,
     },
   };
 }
@@ -73,7 +75,7 @@ export default async function BlogPost({
     description: p.excerpt,
     image: unsplash(p.cover.id, 1200),
     datePublished: p.date,
-    dateModified: p.date,
+    dateModified: p.updated ?? p.date,
     author: { "@type": "Organization", name: site.name, url: site.url },
     publisher: { "@id": `${site.url}/#business` },
     mainEntityOfPage: `${site.url}/blog/${p.slug}`,
@@ -99,7 +101,7 @@ export default async function BlogPost({
               <span className="inline-flex items-center rounded-full bg-[var(--color-green)]/12 text-[var(--color-green-600)] px-3 py-1 font-semibold text-xs uppercase tracking-wide">
                 {p.category}
               </span>
-              <span>{formatDate(p.date)}</span>
+              <span>{p.updated ? `Updated ${formatDate(p.updated)}` : formatDate(p.date)}</span>
               <span>· {p.readMinutes} min read</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl mt-4 leading-[1.08]">
@@ -140,8 +142,15 @@ export default async function BlogPost({
               </p>
             ))}
 
-            {p.blocks.map((block) => (
-              <section key={block.h2} className="mt-10">
+            <nav aria-label="Article sections" className="mt-8 rounded-xl border border-[var(--color-line)] p-5">
+              <p className="font-semibold">In this guide</p>
+              <ul className="mt-3 space-y-2">
+                {p.blocks.map((block, index) => <li key={block.h2}><a className="underline underline-offset-4 text-[var(--color-green-600)]" href={`#section-${index + 1}`}>{block.h2}</a></li>)}
+              </ul>
+            </nav>
+
+            {p.blocks.map((block, index) => (
+              <section id={`section-${index + 1}`} key={block.h2} className="mt-10 scroll-mt-36">
                 <h2 className="font-display text-2xl sm:text-3xl leading-snug">
                   {block.h2}
                 </h2>
@@ -153,6 +162,15 @@ export default async function BlogPost({
                     {para}
                   </p>
                 ))}
+                {block.table && (
+                  <div className="mt-5 overflow-x-auto rounded-xl border border-[var(--color-line)]" role="region" aria-label={block.h2} tabIndex={0}>
+                    <table className="w-full text-left text-sm">
+                      <caption className="sr-only">{block.h2}</caption>
+                      <thead className="bg-[var(--color-cream-200)]"><tr>{block.table.headings.map((heading) => <th key={heading} scope="col" className="p-4">{heading}</th>)}</tr></thead>
+                      <tbody>{block.table.rows.map((row) => <tr key={row[0]} className="border-t border-[var(--color-line)]">{row.map((cell, cellIndex) => cellIndex === 0 ? <th key={cellIndex} scope="row" className="p-4 font-medium">{cell}</th> : <td key={cellIndex} className="p-4">{cell}</td>)}</tr>)}</tbody>
+                    </table>
+                  </div>
+                )}
                 {block.bullets && (
                   <ul className="mt-5 space-y-3">
                     {block.bullets.map((b) => (
@@ -168,7 +186,7 @@ export default async function BlogPost({
 
             {p.references && (
               <section className="mt-10">
-                <h2 className="font-display text-2xl">Color sampling reference</h2>
+                <h2 className="font-display text-2xl">Sources and further reading</h2>
                 <ul className="mt-4 space-y-3">
                   {p.references.map((reference) => (
                     <li key={reference.href}><a href={reference.href} className="text-[var(--color-green-600)] underline">{reference.label}</a></li>

@@ -49,7 +49,7 @@ export const services = [
     icon: "roller",
     hero: "Interior painting that makes every room feel new",
     intro:
-      "From a single accent wall to a full pre-sale repaint, our interior crews deliver clean lines, even coverage, and a dust-free job site you'd be happy to host guests in the same evening.",
+      "From a single accent wall to a full pre-sale repaint, we plan surface preparation, protection, finish coats, and cleanup around the rooms you need to use. Drying, ventilation, and reoccupancy are discussed for the selected products.",
     bullets: [
       "Premium low-VOC Benjamin Moore & Sherwin-Williams finishes",
       "Meticulous surface prep: patching, sanding, priming",
@@ -64,7 +64,7 @@ export const services = [
       },
       {
         q: "Do I need to move out while you paint?",
-        a: "No. We work room-by-room, seal off active zones with plastic, and use low-VOC paints so most clients stay in their home throughout the project.",
+        a: "That depends on the preparation, products, ventilation, and household needs. Ask for a room-by-room plan and follow the product instructions for drying and ventilation. Low-VOC paint alone does not establish when a room is ready to occupy.",
       },
     ],
   },
@@ -106,8 +106,8 @@ export const services = [
       "Retail storefronts, office build-outs, restaurant interiors, and multi-unit residential — we work nights and weekends to keep your business open and your tenants happy.",
     bullets: [
       "After-hours & weekend scheduling to avoid downtime",
-      "Fully licensed, bonded & insured ($2M liability)",
-      "Certificates of Insurance issued same day",
+      "Project-specific insurance documentation reviewed before scheduling",
+      "Certificate of Insurance requirements coordinated with building management",
       "Durable, scrubbable commercial-grade coatings",
       "Single point of contact + written progress reporting",
     ],
@@ -118,7 +118,7 @@ export const services = [
       },
       {
         q: "Do you provide Certificates of Insurance?",
-        a: "Yes, same day. We carry $2M general liability plus workers' comp and can name your building and management company as additional insured.",
+        a: "Share your building's insurance requirements and additional-insured wording during the estimate. Confirm the required limits, documentation, and approval timing before setting a start date.",
       },
     ],
   },
@@ -132,7 +132,7 @@ export const services = [
     intro:
       "When the cabinet boxes and doors are sound, refinishing can update the kitchen without a full replacement. We degrease, sand, prime, and spray a durable cabinet-grade finish.",
     bullets: [
-      "Doors removed and sprayed off-site for a dust-free finish",
+      "Door removal and spray-finishing arrangements confirmed in the scope",
       "Bonding primer selected for the existing surface",
       "Durable, scrubbable cabinet-grade lacquer or enamel",
       "Hundreds of color options + on-site sample boards",
@@ -404,7 +404,7 @@ export const guarantees = [
   {
     icon: "leaf",
     title: "Premium, low-VOC finishes",
-    text: "Benjamin Moore & Sherwin-Williams as standard, with low- and zero-VOC lines so your space is safe to use the same day.",
+    text: "Benjamin Moore and Sherwin-Williams options matched to the surface and finish. Drying, ventilation, and reoccupancy follow the selected product's instructions and project conditions.",
   },
   {
     icon: "clock",
@@ -427,7 +427,7 @@ export const faqs = [
   },
   {
     q: "How much does painting cost in NYC?",
-    a: "Most interior apartment projects range from $3–$9 per square foot depending on prep, ceiling height, and finish level. We give a clear, itemized written estimate up front — no hidden fees, no surprises.",
+    a: "Our planning guide uses a broad $3–$9 per square foot of floor area allowance, not a binding quote. The written estimate depends on included surfaces, repairs, products, ceiling height, and access. Compare the scope as well as the total.",
   },
   {
     q: "Do you offer free estimates?",
@@ -443,7 +443,7 @@ export const faqs = [
   },
   {
     q: "Do you work in pre-1978 buildings?",
-    a: "Yes — and we're EPA Lead-Safe (RRP) certified to do it correctly. We follow all lead-safe work practices to protect your family and our crews in older NYC buildings.",
+    a: "Tell us the building age and whether the work will disturb existing paint. For work covered by EPA's Renovation, Repair and Painting requirements, verify the performing firm's current certification and the lead-safe scope before scheduling. Do not assume ordinary painting preparation is appropriate for older painted surfaces.",
   },
 ] as const;
 

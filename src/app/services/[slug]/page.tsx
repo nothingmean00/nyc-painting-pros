@@ -116,7 +116,7 @@ export default async function ServicePage({
         </div>
 
         <div className="lg:sticky lg:top-28 space-y-6">
-          <EstimateForm compact />
+          <EstimateForm key={s.slug} compact defaultService={s.name} />
           <div className="card p-6">
             <h3 className="font-semibold">Available across NYC</h3>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -162,7 +162,7 @@ export default async function ServicePage({
         </div>
       </section>
 
-      <CTASection title={`Need ${s.name.toLowerCase()} in NYC?`} />
+      <CTASection title={`Need ${s.name.toLowerCase()} in NYC?`} href={`/contact?service=${s.slug}`} />
       <div className="h-20" />
     </>
   );
