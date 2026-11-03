@@ -71,9 +71,13 @@ Copy `.env.example` to `.env.local` and set:
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxx          # free key from resend.com
-ESTIMATE_TO_EMAIL=hello@nycpaintingpros.com   # where leads are delivered
+ESTIMATE_TO_EMAIL=                 # optional comma-separated extra recipients
 ESTIMATE_FROM_EMAIL=estimates@nycpaintingpros.com  # a Resend-verified sender
 ```
+
+Every estimate notification goes to `hello@nycpaintingpros.com` and
+`abielsoares@nycpaintingpros.com`. `ESTIMATE_TO_EMAIL` adds extra recipients;
+duplicate and blank addresses are removed.
 
 For a quick test you can use `onboarding@resend.dev` as the sender. For
 production, verify your domain in Resend and use an address on it. On Vercel,

@@ -11,7 +11,7 @@ import {
 // business. Uses the Resend REST API (no SDK dependency). Configure via env:
 //
 //   RESEND_API_KEY      required to actually send email
-//   ESTIMATE_TO_EMAIL   inbox that receives leads (defaults to site.email)
+//   ESTIMATE_TO_EMAIL   optional comma-separated additional lead recipients
 //   ESTIMATE_FROM_EMAIL verified Resend sender (defaults to onboarding@resend.dev for testing)
 //
 // Outside production, missing RESEND_API_KEY logs the validated lead for local
@@ -143,7 +143,18 @@ export async function POST(request: Request) {
     if (!(error instanceof IntakeStorageError)) throw error;
   }
 
-  const to = process.env.ESTIMATE_TO_EMAIL || site.email;
+  // Always notify both intake owners and preserve configured extra recipients.
+  const to = Array.from(
+    new Set(
+      [
+        site.email,
+        "abielsoares@nycpaintingpros.com",
+        ...(process.env.ESTIMATE_TO_EMAIL || "").split(","),
+      ]
+        .map((address) => address.trim().toLowerCase())
+        .filter(Boolean)
+    )
+  );
   const from = process.env.ESTIMATE_FROM_EMAIL || "onboarding@resend.dev";
   const apiKey = process.env.RESEND_API_KEY;
 
@@ -192,7 +203,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: `${site.name} <${from}>`,
-        to: [to],
+        to,
         reply_to: email,
         subject,
         text,
