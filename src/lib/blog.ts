@@ -1,3 +1,4 @@
+import { railingPosts } from "./railing-content";
 import { officeTurnoverPosts } from "./office-turnover-content";
 // ===========================================================================
 // Blog content. Each post is long-form and genuinely useful (SEO + trust).
@@ -43,6 +44,7 @@ export function unsplash(id: string, w = 1200) {
 }
 
 export const posts: Post[] = [
+  ...railingPosts,
   ...officeTurnoverPosts,
   ...expansionPosts,
   ...roomPosts,

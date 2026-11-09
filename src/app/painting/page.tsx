@@ -57,6 +57,7 @@ const groups = [
       "drywall-repair-nyc",
       "brownstone-painting-brooklyn",
       "exterior-painting-nyc",
+      "exterior-metal-railing-painting-nyc",
       "new-construction-painting-nyc",
       "rental-turnover-painting-nyc",
       "popcorn-ceiling-removal-nyc",

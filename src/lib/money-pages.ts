@@ -1,3 +1,4 @@
+import { railingPages } from "./railing-content";
 // ===========================================================================
 // "Money pages" — high commercial-intent landing pages built to capture NYC
 // painting search. Each entry is intentionally deep (unique intro, scope, two
@@ -41,6 +42,7 @@ export type MoneyPage = {
 };
 
 export const moneyPages: MoneyPage[] = [
+  ...railingPages,
   ...officeTurnoverMoneyPages,
   ...expansionMoneyPages,
   ...roomMoneyPages,
