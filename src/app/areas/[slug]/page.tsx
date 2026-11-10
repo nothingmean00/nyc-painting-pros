@@ -1,3 +1,4 @@
+import { socialMetadata } from "@/lib/metadata";
 import { areaPlanning } from "@/lib/area-planning";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -34,7 +35,7 @@ export async function generateMetadata({
     title: { absolute: title },
     description,
     alternates: { canonical: `/areas/${a.slug}` },
-    openGraph: { title, description, url: `${site.url}/areas/${a.slug}` },
+    ...socialMetadata(title, description, `/areas/${a.slug}`),
   };
 }
 

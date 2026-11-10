@@ -1,3 +1,4 @@
+import { detailPosts } from "./detail-content";
 import { railingPosts } from "./railing-content";
 import { officeTurnoverPosts } from "./office-turnover-content";
 // ===========================================================================
@@ -44,6 +45,7 @@ export function unsplash(id: string, w = 1200) {
 }
 
 export const posts: Post[] = [
+  ...detailPosts,
   ...railingPosts,
   ...officeTurnoverPosts,
   ...expansionPosts,

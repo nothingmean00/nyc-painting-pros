@@ -38,6 +38,7 @@ export async function generateMetadata({
     title: { absolute: p.title },
     description,
     alternates: { canonical: `/blog/${p.slug}` },
+    twitter: { card: "summary_large_image", title: p.title, description, images: [unsplash(p.cover.id, 1200)] },
     openGraph: {
       type: "article",
       title: p.title,
@@ -297,7 +298,7 @@ export default async function BlogPost({
         </div>
       </section>
 
-      <CTASection />
+      <CTASection href={relatedPaintingPages[0] ? `/contact?project=${relatedPaintingPages[0].slug}` : "/contact"} />
       <div className="h-20" />
     </>
   );

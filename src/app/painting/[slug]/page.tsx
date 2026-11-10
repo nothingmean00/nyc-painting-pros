@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { faqSchema, breadcrumbs } from "@/lib/schema";
 import { moneyPages, getMoneyPage } from "@/lib/money-pages";
 import { site, services, areas } from "@/lib/site";
-import { conciseDescription } from "@/lib/metadata";
+import { conciseDescription, socialMetadata } from "@/lib/metadata";
 import { posts } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -32,11 +32,7 @@ export async function generateMetadata({
     title: { absolute: p.title },
     description,
     alternates: { canonical: `/painting/${p.slug}` },
-    openGraph: {
-      title: p.title,
-      description,
-      url: `${site.url}/painting/${p.slug}`,
-    },
+    ...socialMetadata(p.title, description, `/painting/${p.slug}`),
   };
 }
 
@@ -56,7 +52,7 @@ export default async function MoneyPage({
   ];
   const relatedServices = services.filter((s) => p.relatedServices.includes(s.slug));
   const relatedAreas = areas.filter((a) => p.relatedAreas.includes(a.slug));
-  const relatedPages = (p.relatedPages ?? [])
+  const relatedPages = [...new Set([...(p.relatedPages ?? []), ...moneyPages.filter((page) => page.relatedPages?.includes(p.slug)).map((page) => page.slug)])]
     .map((rp) => getMoneyPage(rp))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
   const planningLinks = [...new Map([
@@ -262,7 +258,7 @@ export default async function MoneyPage({
 
         {/* Sticky sidebar */}
         <aside className="lg:sticky lg:top-28 space-y-6">
-          <EstimateForm compact defaultService={primaryService?.name} defaultDetails={`Project: ${p.h1}`} />
+          <EstimateForm key={p.slug} compact defaultService={primaryService?.name} defaultDetails={`Project: ${p.h1}`} />
           <div className="card p-6">
             <h3 className="font-semibold">Why choose NYC Painting Pros</h3>
             <ul className="mt-3 space-y-2 text-sm">
@@ -321,7 +317,7 @@ export default async function MoneyPage({
         </div>
       </section>
 
-      <CTASection title={`Get a free estimate for ${p.keyword.toLowerCase()}`} />
+      <CTASection title={`Get a free estimate for ${p.keyword.toLowerCase()}`} href={`/contact?project=${p.slug}`} />
       <div className="h-20" />
     </>
   );

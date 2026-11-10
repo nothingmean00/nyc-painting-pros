@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import Link from "next/link";
 import { getMoneyPage } from "@/lib/money-pages";
 import type { Metadata } from "next";
@@ -7,12 +8,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { site, services } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "Contact & Free Estimate",
   description:
     "Request a free, no-obligation estimate for painting, wallpaper, wall finishes, repairs, or property turnovers in New York City.",
   alternates: { canonical: "/contact" },
-};
+}, "/contact");
 
 export default async function ContactPage({
   searchParams,

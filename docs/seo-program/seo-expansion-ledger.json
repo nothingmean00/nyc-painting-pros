@@ -2458,5 +2458,108 @@
     ],
     "evidenceRecord": "C:/Portfolio/seo-agency/jobs/manual-painting-research-20261110.json",
     "limitations": "No verified conversion aggregate. Overlapping 28/90-day exports have identical totals; no trend or uplift inferred. Prices are existing planning allowances, not researched market rates."
+  },
+  "ownerRequestedExpansion": {
+    "occurrence": "manual-painting-10-pairs-20261110",
+    "state": "validated_before_publication",
+    "reservedAt": "2026-11-10T15:22:56.808Z",
+    "baseCommit": "67f1cd4f28554f47797f3124172af04b896f4677",
+    "authorization": "User explicitly requested ten new money pages, ten new blogs and platform-wide SEO optimization",
+    "baselineInventory": {
+      "money": 51,
+      "blogs": 43,
+      "sitemap": 117
+    },
+    "targetInventory": {
+      "money": 61,
+      "blogs": 53,
+      "sitemap": 137
+    },
+    "pairs": [
+      {
+        "money": "radiator-cover-painting-nyc",
+        "blog": "radiator-cover-painting-before-heating-season",
+        "parent": "apartment-painting-nyc",
+        "intent": "Removable cover finish, material and heat coordination; not radiator/plumbing repair"
+      },
+      {
+        "money": "interior-window-trim-painting-nyc",
+        "blog": "window-trim-painting-scope-checklist",
+        "parent": "interior-trim-painting-nyc",
+        "intent": "Interior casing, stool and apron boundaries; operating window excluded unless separately scoped"
+      },
+      {
+        "money": "stair-riser-painting-nyc",
+        "blog": "paint-stair-risers-without-refinishing-treads",
+        "parent": "stairwell-painting-nyc",
+        "intent": "Vertical riser faces and tread protection; different from tall stairwell walls"
+      },
+      {
+        "money": "bathroom-vanity-painting-nyc",
+        "blog": "paint-or-replace-bathroom-vanity",
+        "parent": "kitchen-cabinet-painting-nyc",
+        "intent": "Vanity condition, bathroom access and cabinet finish; not plumbing or countertop replacement"
+      },
+      {
+        "money": "kitchen-island-painting-nyc",
+        "blog": "painting-kitchen-island-different-color",
+        "parent": "kitchen-cabinet-painting-nyc",
+        "intent": "Standalone island scope with seating panels, toe kicks and two-tone boundaries"
+      },
+      {
+        "money": "built-in-desk-painting-nyc",
+        "blog": "painted-desk-return-to-work-plan",
+        "parent": "built-in-bookcase-painting-nyc",
+        "intent": "Worktop versus storage finishes, electronics removal, sustained contact and loading"
+      },
+      {
+        "money": "wall-repair-after-electrical-work-nyc",
+        "blog": "painting-after-rewiring-wall-repair-handoff",
+        "parent": "drywall-repair-nyc",
+        "intent": "Trade handoff, mapped openings, patch finishing and wall repaint extent; no electrical work"
+      },
+      {
+        "money": "wallpaper-accent-wall-installation-nyc",
+        "blog": "wallpaper-feature-wall-pattern-placement",
+        "parent": "wallpaper-installation-nyc",
+        "intent": "Single feature-wall layout, focal motif, returns and product-specific installation"
+      },
+      {
+        "money": "wood-paneling-painting-nyc",
+        "blog": "paint-wood-paneling-keep-or-fill-grooves",
+        "parent": "wainscoting-painting-nyc",
+        "intent": "Full-height wood/veneer panel rooms, groove decision and sample approval; not lower-wall molding schemes"
+      },
+      {
+        "money": "retail-fitting-room-painting-nyc",
+        "blog": "fitting-room-painting-store-reopening-checklist",
+        "parent": "retail-storefront-painting-nyc",
+        "intent": "Changing-room sequencing, mirror-light sample review and fixture reinstatement; not full storefront"
+      }
+    ],
+    "evidence": "Fresh Nov10 exact-property GSC reused, manufacturer references and existing service scope reviewed",
+    "limitations": "GSC supports adjacent clusters; no new-keyword volume or ranking guarantee inferred. Specific scopes extend existing services.",
+    "validationSummary": {
+      "money": 61,
+      "blogs": 53,
+      "newMoney": 10,
+      "newBlogs": 10,
+      "crawlPages": 137,
+      "maxClickDepth": 2,
+      "errors": 0,
+      "buildRoutes": 145,
+      "mobileDesktop": "20 new routes at each viewport; no overflow",
+      "technicalChanges": [
+        "Reciprocal parent/child and blog links",
+        "Service hubs include specific project pages",
+        "Complete project hub with fallback for new entries",
+        "Guide topic navigation",
+        "About and warranty discoverable through footer",
+        "Route-specific Open Graph and Twitter metadata",
+        "Meaningful new money-page sitemap lastmod",
+        "Contextual bottom estimate links"
+      ],
+      "liveRecord": "C:/Portfolio/seo-agency/jobs/manual-painting-10-pairs-20261110.json"
+    }
   }
 }

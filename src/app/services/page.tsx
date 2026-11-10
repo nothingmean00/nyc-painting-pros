@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -7,12 +8,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { services } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "Painting, Wallpaper & Wall Finish Services in NYC",
   description:
     "Explore NYC painting, wallpaper installation, decorative wall finishes, cabinet refinishing, repairs, and property turnover programs. Request a detailed estimate.",
   alternates: { canonical: "/services" },
-};
+}, "/services");
 
 export default function ServicesIndex() {
   return (

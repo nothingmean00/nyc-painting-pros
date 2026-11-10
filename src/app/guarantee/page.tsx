@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Icon } from "@/components/Icons";
@@ -8,11 +9,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs, faqSchema } from "@/lib/schema";
 import { site, faqs, processSteps } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "Workmanship Warranty & Process",
   description: `See how NYC Painting Pros documents scope, preparation, scheduling, closeout, and its written ${site.warrantyYears}-year workmanship warranty.`,
   alternates: { canonical: "/guarantee" },
-};
+}, "/guarantee");
 
 export default function GuaranteePage() {
   return (

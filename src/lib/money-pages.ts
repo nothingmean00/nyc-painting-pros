@@ -1,3 +1,4 @@
+import { detailMoneyPages } from "./detail-content";
 import { railingPages } from "./railing-content";
 // ===========================================================================
 // "Money pages" — high commercial-intent landing pages built to capture NYC
@@ -18,6 +19,7 @@ import { projectMoneyPages } from "./project-money-pages";
 import { repairMoneyPages } from "./repair-money-pages";
 
 export type MoneyPage = {
+  updated?: string;
   slug: string;
   keyword: string;
   icon: IconName;
@@ -42,6 +44,7 @@ export type MoneyPage = {
 };
 
 export const moneyPages: MoneyPage[] = [
+  ...detailMoneyPages,
   ...railingPages,
   ...officeTurnoverMoneyPages,
   ...expansionMoneyPages,

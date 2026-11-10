@@ -129,6 +129,9 @@ export function Footer() {
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link href="/about" className="hover:text-white transition-colors">About our process</Link>
+            <Link href="/guarantee" className="hover:text-white transition-colors">Workmanship warranty</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Painting guides</Link>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>

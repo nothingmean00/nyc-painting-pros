@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Money pages — highest commercial intent, prioritized for crawl.
     ...moneyPages.map((p) => ({
       url: `${site.url}/painting/${p.slug}`,
+      ...(p.updated ? { lastModified: new Date(p.updated) } : {}),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),

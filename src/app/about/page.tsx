@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -8,12 +9,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { processSteps } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "About — Detail-Focused NYC Painting Company",
   description:
     "Learn how NYC Painting Pros plans preparation, products, protection, scheduling, and closeout for painting and wall-finish projects across all five boroughs.",
   alternates: { canonical: "/about" },
-};
+}, "/about");
 
 const values = [
   {

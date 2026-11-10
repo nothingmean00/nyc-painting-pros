@@ -1,3 +1,5 @@
+import { withRouteSocial } from "@/lib/metadata";
+import { detailMoneyPages } from "@/lib/detail-content";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -7,14 +9,15 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { moneyPages } from "@/lib/money-pages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "NYC Painting Services & Costs | Find Your Project",
   description:
-    "Browse NYC painting services by project type and location — apartment, brownstone, co-op, cabinet, commercial, office, retail and more. Costs, details, and free estimates.",
+    "Compare NYC painting scopes for apartments, cabinets, brownstones, offices and detailed finish projects. Review preparation, pricing factors and request an estimate.",
   alternates: { canonical: "/painting" },
-};
+}, "/painting");
 
 const groups = [
+  { title: "Detailed painting & finishing scopes", slugs: detailMoneyPages.map((page) => page.slug) },
   {
     title: "Project planning & access",
     slugs: ["occupied-apartment-painting-nyc", "stairwell-painting-nyc", "high-ceiling-painting-nyc", "pre-sale-apartment-painting-nyc", "multi-unit-painting-nyc"],
@@ -72,6 +75,7 @@ const groups = [
     slugs: [
       "commercial-painting-manhattan",
       "office-painting-nyc",
+      "office-move-out-painting-nyc",
       "williamsburg-office-painting",
       "apartment-building-lobby-hallway-painting-nyc",
       "retail-storefront-painting-nyc",
@@ -79,6 +83,10 @@ const groups = [
     ],
   },
 ];
+
+const groupedSlugs = new Set(groups.flatMap((group) => group.slugs));
+const additionalPages = moneyPages.filter((page) => !groupedSlugs.has(page.slug));
+const completeGroups = additionalPages.length ? [...groups, { title: "More project scopes", slugs: additionalPages.map((page) => page.slug) }] : groups;
 
 export default function PaintingIndex() {
   return (
@@ -98,9 +106,12 @@ export default function PaintingIndex() {
           { name: "NYC Painting", path: "/painting" },
         ]}
       />
+      <nav aria-label="Project categories" className="container-x flex flex-wrap gap-3 pt-8">
+        {completeGroups.map((group, index) => <a key={group.title} href={"#project-group-" + index} className="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-semibold hover:border-[var(--color-green)]">{group.title}</a>)}
+      </nav>
       <section className="container-x py-16 lg:py-24 space-y-14">
-        {groups.map((group) => (
-          <div key={group.title}>
+        {completeGroups.map((group, index) => (
+          <div key={group.title} id={"project-group-" + index} className="scroll-mt-36">
             <h2 className="font-display text-2xl sm:text-3xl mb-6">{group.title}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {group.slugs.map((slug) => {

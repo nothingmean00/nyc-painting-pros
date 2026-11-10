@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,12 +9,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { sortedPosts, unsplash } from "@/lib/blog";
 
-export const metadata: Metadata = {
-  title: "Painting Tips & Guides | NYC Painting Pros Blog",
+export const metadata: Metadata = withRouteSocial({
+  title: { absolute: "NYC Painting Guides | Costs, Prep & Project Planning" },
   description:
     "Practical painting advice for New Yorkers — apartment painting costs, color ideas, prep secrets, cabinet refinishing, co-op approvals and more, from NYC's painting pros.",
   alternates: { canonical: "/blog" },
-};
+}, "/blog");
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -26,6 +27,7 @@ function formatDate(iso: string) {
 
 export default function BlogIndex() {
   const [featured, ...rest] = sortedPosts;
+  const categories = [...new Set(rest.map((post) => post.category))];
 
   return (
     <>
@@ -82,9 +84,13 @@ export default function BlogIndex() {
           </div>
         </Link>
 
-        {/* Rest grid */}
-        <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((p) => (
+        <nav aria-label="Guide topics" className="mt-10 flex flex-wrap gap-3">
+          {categories.map((category, index) => <a key={category} href={"#guide-topic-" + index} className="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-semibold">{category}</a>)}
+        </nav>
+        {categories.map((category, index) => <section key={category} id={"guide-topic-" + index} className="mt-12 scroll-mt-36">
+          <h2 className="font-display text-3xl">{category}</h2>
+          <div className="mt-6 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {rest.filter((post) => post.category === category).map((p) => (
             <Link
               key={p.slug}
               href={`/blog/${p.slug}`}
@@ -119,6 +125,7 @@ export default function BlogIndex() {
             </Link>
           ))}
         </div>
+        </section>)}
       </section>
 
       <CTASection

@@ -1,3 +1,5 @@
+import { moneyPages } from "@/lib/money-pages";
+import { conciseDescription, socialMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,11 +30,12 @@ export async function generateMetadata({
   const s = getService(slug);
   if (!s) return {};
   const title = `${s.name} NYC`;
+  const description = conciseDescription(`${s.short} Request a detailed estimate for work anywhere in New York City's five boroughs.`);
   return {
     title,
-    description: `${s.short} Request a detailed estimate for work anywhere in New York City's five boroughs.`,
+    description,
     alternates: { canonical: `/services/${s.slug}` },
-    openGraph: { title, description: s.short, url: `${site.url}/services/${s.slug}` },
+    ...socialMetadata(`${title} | ${site.name}`, description, `/services/${s.slug}`),
   };
 }
 
@@ -46,6 +49,7 @@ export default async function ServicePage({
   if (!s) notFound();
 
   const others = services.filter((x) => x.slug !== s.slug);
+  const projects = moneyPages.filter((page) => page.relatedServices[0] === s.slug);
 
   return (
     <>
@@ -134,6 +138,15 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {projects.length > 0 && <section className="container-x pb-16">
+        <h2 className="font-display text-3xl">Find the right {s.name.toLowerCase()} scope</h2>
+        <p className="mt-3 text-[var(--color-muted)]">Compare specific project surfaces, preparation and pricing factors before requesting an estimate.</p>
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => <Link key={project.slug} href={"/painting/" + project.slug} className="card p-5 hover:border-[var(--color-green)]">
+            <h3 className="font-display text-xl">{project.h1}</h3><p className="mt-3 text-sm text-[var(--color-muted)]">{project.lede}</p>
+          </Link>)}
+        </div>
+      </section>}
       {/* other services */}
       <section className="bg-[var(--color-cream-200)]/50 border-y border-[var(--color-line)]">
         <div className="container-x py-16">

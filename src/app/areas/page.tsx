@@ -1,3 +1,4 @@
+import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -7,12 +8,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { areas } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withRouteSocial({
   title: "NYC Painting Service Areas",
   description:
     "NYC Painting Pros serves Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Find your neighborhood and book a free estimate today.",
   alternates: { canonical: "/areas" },
-};
+}, "/areas");
 
 export default function AreasIndex() {
   return (
