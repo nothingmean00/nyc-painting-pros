@@ -55,76 +55,168 @@ export const posts: Post[] = [
   ...finishGuides,
   ...planningGuides,
   {
-    slug: "how-much-does-it-cost-to-paint-an-apartment-nyc",
-    title: "How Much Does It Cost to Paint an Apartment in NYC? (2026 Guide)",
-    excerpt:
-      "A clear, no-nonsense breakdown of NYC apartment painting costs — what drives the price, realistic ranges by apartment size, and how to avoid the quotes that look cheap but aren't.",
-    category: "Cost & Planning",
-    date: "2026-05-28",
-    updated: "2026-10-30",
-    readMinutes: 7,
-    author: "NYC Painting Pros Team",
-    cover: { id: "photo-1562259949-e8e7689d7828", alt: "A painter rolling fresh paint onto an apartment wall" },
-    relatedPages: ["apartment-painting-nyc", "single-room-accent-wall-painting-nyc"],
-    intro: [
-      "It's the first question every New Yorker asks, and the honest answer is: it depends. But \"it depends\" isn't helpful when you're trying to budget. So here's the real breakdown — what actually moves the number, and what you should expect to pay for a quality job in 2026.",
-      "For early planning, this guide uses a broad allowance of $3–$9 per square foot of floor area. These editorial budgeting ranges are not a market survey or a binding quote. A walls-only refresh and a full repaint with ceilings, trim, and repairs are different scopes; compare the included work before comparing totals.",
-    ],
-    blocks: [
-      {
-        h2: "The five things that drive your price",
-        body: [
-          "Two identical-looking apartments can quote thousands apart. These are the factors that explain why:",
-        ],
-        bullets: [
-          "Surface prep — patching, sanding, and skim coating old plaster is labor, and labor is most of the bill.",
-          "Ceilings and trim — each adds surface preparation and application work beyond walls alone; the amount depends on the room and trim detail.",
-          "Ceiling height — pre-war 10-foot ceilings need more paint, more cutting-in, and sometimes scaffolding.",
-          "Number of coats and color change — going dark-over-light or covering bold colors often needs primer plus two coats.",
-          "Condition — cracked plaster, water stains, and previously papered walls all add prep time.",
-        ],
-      },
-      {
-        h2: "Realistic ranges by apartment size",
-        body: [
-          "Use these existing planning allowances to start a scope conversation, not to judge a quote on apartment size alone. The scopes below differ, so their prices are not directly comparable. Confirm materials, protection, repair allowances, coats, taxes, and exclusions in the written estimate.",
-        ],
-        table: {
-          headings: ["Project", "Planning allowance", "Scope to confirm"],
-          rows: [
-            ["Studio", "$1,400–$3,200", "Walls only; ask about closets and ceilings"],
-            ["One-bedroom", "$2,800–$5,500", "Walls, ceilings, and trim; identify doors separately"],
-            ["Two-bedroom", "$4,500–$9,000", "Full repaint; list every room and included surface"],
-            ["Single room or accent wall", "$550–$1,500", "Minimum visit, repairs, and number of colors"],
-          ],
-        },
-      },
-      {
-        h2: "Floor area is not paintable wall area",
-        body: ["An 800-square-foot apartment describes its floor footprint, not the area of its walls and ceilings. A floor-area allowance of $3–$9 produces a broad $2,400–$7,200 planning envelope; it is arithmetic, not a quote for your apartment. Ceiling height, partitions, trim, and surface condition still determine the work.", "Ask whether a per-square-foot quote uses floor area or measured painted surface area. Do not compare the two rates directly. For a reliable comparison, ask each painter to price the same room-by-room list."],
-      },
-      {
-        h2: "Compare estimates with the same checklist",
-        body: ["A useful estimate lets you see what changes when you add a ceiling, remove a room, or choose more extensive repairs. Ask for optional work separately rather than accepting an undefined all-in scope."],
-        bullets: ["Surfaces: walls, ceilings, doors, trim, closets, and radiators listed as included or excluded.", "Preparation: nail holes, cracks, stains, adhesive removal, and skim coating described separately.", "Finish system: paint line, sheen, primer where needed, color changes, and coat schedule.", "Logistics: furniture moving, floor protection, daily cleanup, access hours, and occupied-room sequencing.", "Commercial terms: materials, tax treatment, payment milestones, change approvals, and written warranty exclusions."],
-      },
-      {
-        h2: "What a lower quote may leave out",
-        body: [
-          "A lower quote may reflect a smaller scope, different materials, simpler logistics, or lower overhead. Price alone cannot tell you the quality. Ask what preparation and finish standard are included, and how unexpected repairs will be priced and approved.",
-          "When you compare quotes, make sure they specify the same scope: how many coats, whether trim and ceilings are included, what prep is covered, and what paint line. A $4 and a $7 per-square-foot quote are often quoting two completely different jobs.",
-        ],
-      },
-      {
-        h2: "How to get an accurate number for your apartment",
-        body: [
-          "The fastest way is a few clear photos of each room plus rough dimensions — most reputable painters can give a tight ballpark from that, then confirm with a short walkthrough. Insist on a written, itemized estimate so you can see exactly what's included and adjust scope if you want to save.",
-        ],
-      },
-    ],
-    takeaway:
-      "Use a broad allowance to plan, then request an itemized estimate for your actual rooms, surfaces, repairs, and building access. Agree on additions in writing before work begins.",
+  "slug": "how-much-does-it-cost-to-paint-an-apartment-nyc",
+  "title": "NYC Apartment Painting Cost: Scope, Ranges & Quote Checklist",
+  "excerpt": "Compare studio, one-bedroom and two-bedroom planning allowances, then check walls, ceilings, prep, materials and access before requesting an itemized quote.",
+  "category": "Cost & Planning",
+  "date": "2026-05-28",
+  "updated": "2026-11-10",
+  "readMinutes": 8,
+  "author": "NYC Painting Pros Team",
+  "cover": {
+    "id": "photo-1562259949-e8e7689d7828",
+    "alt": "A painter rolling fresh paint onto an apartment wall"
   },
+  "relatedPages": [
+    "apartment-painting-nyc",
+    "co-op-condo-painting-nyc",
+    "single-room-accent-wall-painting-nyc"
+  ],
+  "intro": [
+    "Our rough planning allowances run from $1,400–$3,200 for a studio walls-only scope, $2,800–$5,500 for a one-bedroom with walls, ceilings and trim, and $4,500–$9,000 for a two-bedroom full repaint. Use them for early budgeting, not as a market average or a quote for your apartment.",
+    "Choose the scope before using a number. A walls-only repaint, a full repaint and a repair-heavy project include different work. Confirm each room, surface, preparation task, material and access assumption in a written estimate."
+  ],
+  "blocks": [
+    {
+      "h2": "The five things that drive your price",
+      "body": [
+        "Two identical-looking apartments can quote thousands apart. These are the factors that explain why:"
+      ],
+      "bullets": [
+        "Surface prep — patching, sanding, and skim coating old plaster is labor, and labor is most of the bill.",
+        "Ceilings and trim — each adds surface preparation and application work beyond walls alone; the amount depends on the room and trim detail.",
+        "Ceiling height — pre-war 10-foot ceilings need more paint, more cutting-in, and sometimes scaffolding.",
+        "Number of coats and color change — going dark-over-light or covering bold colors often needs primer plus two coats.",
+        "Condition — cracked plaster, water stains, and previously papered walls all add prep time."
+      ]
+    },
+    {
+      "h2": "Planning allowances by apartment scope",
+      "body": [
+        "These are the same planning allowances shown on our apartment painting service page. The rows have different inclusions; they should not be treated as equivalent packages or promised prices. Materials, tax treatment, protection, repairs and exclusions must be confirmed in the actual quote."
+      ],
+      "table": {
+        "headings": [
+          "Project",
+          "Planning allowance",
+          "Scope to confirm"
+        ],
+        "rows": [
+          [
+            "Studio",
+            "$1,400–$3,200",
+            "Walls only; ask about closets and ceilings"
+          ],
+          [
+            "One-bedroom",
+            "$2,800–$5,500",
+            "Walls, ceilings, and trim; identify doors separately"
+          ],
+          [
+            "Two-bedroom",
+            "$4,500–$9,000",
+            "Full repaint; list every room and included surface"
+          ],
+          [
+            "Single room or accent wall",
+            "$550–$1,500",
+            "Minimum visit, repairs, and number of colors"
+          ]
+        ]
+      }
+    },
+    {
+      "h2": "Floor area is not paintable wall area",
+      "body": [
+        "An 800-square-foot apartment describes its floor footprint, not the area of its walls and ceilings. A floor-area allowance of $3–$9 produces a broad $2,400–$7,200 planning envelope; it is arithmetic, not a quote for your apartment. Ceiling height, partitions, trim, and surface condition still determine the work.",
+        "Ask whether a per-square-foot quote uses floor area or measured painted surface area. Do not compare the two rates directly. For a reliable comparison, ask each painter to price the same room-by-room list."
+      ]
+    },
+    {
+      "h2": "Worked comparison: two quotes for the same 800-square-foot apartment",
+      "body": [
+        "This is a fictional scope comparison, not a customer project or a market-price example. Both painters are looking at the same apartment, but the first proposal covers walls in two rooms and the second adds ceilings, trim and substantial repairs. A lower total alone does not identify the better value."
+      ],
+      "table": {
+        "headings": [
+          "Compare this",
+          "Proposal A",
+          "Proposal B"
+        ],
+        "rows": [
+          [
+            "Walls",
+            "Bedroom and living room",
+            "Bedroom and living room"
+          ],
+          [
+            "Ceilings and trim",
+            "Excluded",
+            "Included; confirm exact boundaries"
+          ],
+          [
+            "Preparation",
+            "Small nail holes",
+            "Nail holes plus specified crack repairs"
+          ],
+          [
+            "Materials",
+            "Ask which products and who supplies them",
+            "Products listed; verify quantity and scope"
+          ],
+          [
+            "Fair next step",
+            "Request the missing options separately",
+            "Request a walls-only alternative if useful"
+          ]
+        ]
+      },
+      "bullets": [
+        "Ask both painters to price the same final room-and-surface list.",
+        "Write “unknown” beside omissions instead of treating them as included.",
+        "Keep optional repairs separate until their extent and approval process are clear."
+      ]
+    },
+    {
+      "h2": "Compare estimates with the same checklist",
+      "body": [
+        "A useful estimate lets you see what changes when you add a ceiling, remove a room, or choose more extensive repairs. Ask for optional work separately rather than accepting an undefined all-in scope."
+      ],
+      "bullets": [
+        "Surfaces: walls, ceilings, doors, trim, closets, and radiators listed as included or excluded.",
+        "Preparation: nail holes, cracks, stains, adhesive removal, and skim coating described separately.",
+        "Finish system: paint line, sheen, primer where needed, color changes, and coat schedule.",
+        "Logistics: furniture moving, floor protection, daily cleanup, access hours, and occupied-room sequencing.",
+        "Commercial terms: materials, tax treatment, payment milestones, change approvals, and written warranty exclusions."
+      ]
+    },
+    {
+      "h2": "What a lower quote may leave out",
+      "body": [
+        "A lower quote may reflect a smaller scope, different materials, simpler logistics, or lower overhead. Price alone cannot tell you the quality. Ask what preparation and finish standard are included, and how unexpected repairs will be priced and approved.",
+        "When you compare quotes, make sure they specify the same scope: how many coats, whether trim and ceilings are included, what prep is covered, and what paint line. A $4 and a $7 per-square-foot quote are often quoting two completely different jobs."
+      ]
+    },
+    {
+      "h2": "How to get an accurate number for your apartment",
+      "body": [
+        "Send one wide image of each room, close-ups of visible damage, approximate dimensions and ceiling height if known. State whether the apartment is occupied and which ceilings, doors, trim and closets you want included. Do not include people or private documents in project photos.",
+        "Share the building’s current work rules and your preferred timing. Photos may establish the next questions rather than a final price; the team will confirm whether a walkthrough is needed. A submitted request does not reserve a work date."
+      ]
+    }
+  ],
+  "takeaway": "Use a broad allowance to plan, then request an itemized estimate for your actual rooms, surfaces, repairs, and building access. Agree on additions in writing before work begins.",
+  "references": [
+    {
+      "label": "NYC DCWP: hiring a home improvement contractor",
+      "href": "https://home4.nyc.gov/site/dca/consumers/shopping-services-home-improvement.page"
+    },
+    {
+      "label": "EPA: lead-safe renovation information for consumers",
+      "href": "https://www.epa.gov/lead/renovation-repair-and-painting-rrp-program-consumers"
+    }
+  ]
+},
 
   {
     slug: "paint-colors-small-nyc-apartment-feel-bigger",

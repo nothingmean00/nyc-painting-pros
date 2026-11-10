@@ -1,3 +1,4 @@
+import { ApartmentScopePlanner } from "@/components/ApartmentScopePlanner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -86,6 +87,11 @@ export default async function MoneyPage({
       />
       <PageHero eyebrow="NYC painting" title={p.h1} subtitle={p.lede} crumbs={trail} />
 
+      <nav aria-label="Project sections" className="container-x flex flex-wrap gap-3 pt-6">
+        <Link href={"/contact?project=" + p.slug} className="btn btn-primary">Request this project estimate</Link>
+        <a href="#project-scope" className="btn btn-ghost">What to include</a>
+        <a href="#project-cost" className="btn btn-ghost">Planning costs</a>
+      </nav>
       <section className="container-x py-16 lg:py-24 grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-start">
         <article className="min-w-0">
           {/* Intro */}
@@ -96,7 +102,7 @@ export default async function MoneyPage({
           </div>
 
           {/* Scope */}
-          <div className="mt-12">
+          <div id="project-scope" className="mt-12 scroll-mt-32">
             <h2 className="font-display text-3xl">{p.scope.heading}</h2>
             <ul className="mt-6 grid sm:grid-cols-2 gap-4">
               {p.scope.items.map((item) => (
@@ -109,6 +115,8 @@ export default async function MoneyPage({
               ))}
             </ul>
           </div>
+
+          {p.slug === "apartment-painting-nyc" && <ApartmentScopePlanner />}
 
           {/* Content sections */}
           {p.sections.map((sec) => (
@@ -131,7 +139,7 @@ export default async function MoneyPage({
           ))}
 
           {/* Cost table */}
-          <div className="mt-12">
+          <div id="project-cost" className="mt-12 scroll-mt-32">
             <h2 className="font-display text-3xl">
               {p.keyword.charAt(0).toUpperCase() + p.keyword.slice(1)} cost
             </h2>
@@ -254,7 +262,7 @@ export default async function MoneyPage({
 
         {/* Sticky sidebar */}
         <aside className="lg:sticky lg:top-28 space-y-6">
-          <EstimateForm compact defaultService={primaryService?.name} />
+          <EstimateForm compact defaultService={primaryService?.name} defaultDetails={`Project: ${p.h1}`} />
           <div className="card p-6">
             <h3 className="font-semibold">Why choose NYC Painting Pros</h3>
             <ul className="mt-3 space-y-2 text-sm">
@@ -270,7 +278,7 @@ export default async function MoneyPage({
                 </li>
               ))}
             </ul>
-            <Link href={primaryService ? `/contact?service=${primaryService.slug}` : "/contact"} className="btn btn-dark w-full mt-5">
+            <Link href={`/contact?project=${p.slug}`} className="btn btn-dark w-full mt-5">
               Request this project estimate <Icon.arrow className="w-4 h-4" />
             </Link>
           </div>

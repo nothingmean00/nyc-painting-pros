@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { getMoneyPage } from "@/lib/money-pages";
 import type { Metadata } from "next";
 import { Icon } from "@/components/Icons";
 import { EstimateForm } from "@/components/EstimateForm";
@@ -15,14 +17,15 @@ export const metadata: Metadata = {
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ projectBrief?: string | string[]; service?: string | string[] }>;
+  searchParams: Promise<{ project?: string | string[]; projectBrief?: string | string[]; service?: string | string[] }>;
 }) {
   const query = await searchParams;
   const rawBrief = query.projectBrief;
-  const selectedService = services.find((service) => service.slug === query.service)?.name ?? "";
+  const project = typeof query.project === "string" ? getMoneyPage(query.project) : undefined;
+  const selectedService = services.find((service) => service.slug === (query.service ?? project?.relatedServices[0]))?.name ?? "";
   const projectBrief = (Array.isArray(rawBrief) ? rawBrief[0] : rawBrief)
     ?.replace(/[<>]/g, "")
-    .slice(0, 1600) ?? "";
+    .slice(0, 1600) ?? (project ? `Project: ${project.h1}` : "");
   return (
     <>
       <JsonLd
@@ -34,6 +37,7 @@ export default async function ContactPage({
       <section className="container-x pb-8 pt-14 lg:pb-10 lg:pt-20">
         <div className="max-w-4xl">
           <span className="eyebrow">Project intake</span>
+          {project && <p className="mt-4 text-sm">Your project: <Link href={`/painting/${project.slug}`} className="font-semibold underline">{project.h1}</Link></p>}
           <h1 className="section-title mt-4">Tell us what you&apos;re planning.</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
             Share the space, scope, timing, and any building requirements. We&apos;ll

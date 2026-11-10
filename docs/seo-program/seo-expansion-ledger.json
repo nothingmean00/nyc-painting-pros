@@ -610,7 +610,7 @@
         "2026-12-29",
         "2027-01-28"
       ],
-      "expectedContentMarker": "Why a Water Stain Returns After Painting\u2014and What to Ask Next",
+      "expectedContentMarker": "Why a Water Stain Returns After Painting—and What to Ask Next",
       "provenance": "Owner-directed expansion; reconciled from verified production audit, not a scheduled automation run."
     },
     {
@@ -2428,5 +2428,35 @@
         "remainingBlogs": 3
       }
     }
-  ]
+  ],
+  "manualResearchRefresh": {
+    "occurrence": "manual-painting-research-20261110",
+    "date": "2026-11-10",
+    "state": "implemented_pending_production_verification",
+    "newUrls": 0,
+    "refreshedMoney": 3,
+    "refreshedBlogs": 2,
+    "refreshedAreas": 2,
+    "sharedTemplates": [
+      "money pages: contextual estimate navigation",
+      "blogs: early related project link",
+      "contact: project context"
+    ],
+    "baseline": {
+      "clicks": 14,
+      "impressions": 2949,
+      "ctr": 0.004747371990505256,
+      "position": 15.403865717192268,
+      "window": "2026-10-13 to 2026-11-09"
+    },
+    "indexing": "Five priority URLs inspected: PASS, fetch successful, matching canonicals",
+    "intent": "Improve proven landing pages, scope comparison and estimate handoff; no new overlapping pages",
+    "reviewDates": [
+      "2026-12-10",
+      "2027-01-09",
+      "2027-02-08"
+    ],
+    "evidenceRecord": "C:/Portfolio/seo-agency/jobs/manual-painting-research-20261110.json",
+    "limitations": "No verified conversion aggregate. Overlapping 28/90-day exports have identical totals; no trend or uplift inferred. Prices are existing planning allowances, not researched market rates."
+  }
 }

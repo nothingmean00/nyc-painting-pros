@@ -200,91 +200,146 @@ export const moneyPages: MoneyPage[] = [
 
   // 3 ---------------------------------------------------------------------
   {
-    slug: "apartment-painting-nyc",
-    keyword: "apartment painting NYC",
-    icon: "roller",
-    title: "Apartment Painting NYC | Cost, Timeline & Free Estimate",
-    description:
-      "Apartment painting in NYC done right — studios to large units across all five boroughs. Clear pricing, dust-controlled prep, low-VOC paint, written warranty. Free estimate.",
-    h1: "Apartment painting in NYC",
-    lede: "Studios, walk-ups, and high-rises across all five boroughs — with a written painting scope, room sequence, and access plan agreed before work begins.",
-    intro: [
-      "Painting an NYC apartment is its own art form: small rooms, tight hallways, furniture with nowhere to go, and neighbors on the other side of every wall. We've built our entire process around working cleanly and efficiently in occupied city apartments.",
-      "Start with the surfaces you want painted, the condition of the walls, and whether the apartment will be occupied. Your estimate should distinguish painting time from drying, ventilation, and the time needed before rooms return to normal use.",
-    ],
-    scope: {
-      heading: "What apartment painting includes",
-      items: [
-        "Move and protect furniture; mask floors and fixtures",
-        "Patch nail holes, cracks and dings; sand and spot-prime",
-        "Cut-in and roll walls, ceilings and trim",
-        "Two coats of premium low-VOC paint",
-        "Closets, doors and radiator covers on request",
-        "Same-day clean-up — we haul our own debris",
-      ],
-    },
-    sections: [
-      {
-        h2: "How much does it cost to paint an apartment in NYC?",
-        body: "The biggest cost drivers are square footage, ceiling height, and how much prep and trim work is involved. A simple one-coat refresh costs far less than a repair-heavy repaint with ceilings and trim. We itemize everything so you can see exactly what drives the number and adjust scope if you want.",
-      },
-      {
-        h2: "Painting an occupied apartment, the right way",
-        body: "Room-by-room work can reduce disruption when there is enough space to separate the work area from everyday activities. A studio, a single bathroom, extensive repairs, or limited ventilation can make that impractical. Agree on a room sequence and whether you need alternative arrangements before booking; staying overnight is not a guaranteed part of the service.",
-        bullets: [
-          "Identify where furniture and belongings can go without blocking doors or circulation routes",
-          "Confirm permitted building work hours, elevator access, and daily cleanup responsibilities",
-          "Follow the selected coating labels and ventilation guidance; low-VOC does not establish a same-day return time",
-        ],
-      },
-      {
-        h2: "Choose a whole-apartment repaint or a smaller scope",
-        body: "A whole-apartment scope makes sense when connected rooms need a consistent finish or several surfaces need repair. If only one room needs attention, ask for that room as a separate option. Specify walls, ceilings, trim, doors, and closets individually: a walls-only estimate should not be compared with a complete interior repaint as if they were the same job.",
-        bullets: [
-          "Send wide room photos, approximate dimensions, and close-ups of visible damage",
-          "List heavy or fixed furniture that limits wall access; confirm handling responsibilities in writing",
-          "Record the paint brand, product, color, and sheen for each surface after samples are approved",
-        ],
-      },
-      {
-        h2: "Plan the handoff as well as the final coat",
-        body: "Ask which rooms will be unavailable at each stage and how long ventilation must continue under the product instructions. Dry to the touch does not mean fully cured. Confirm when furniture, wall hangings, and routine cleaning can resume. If the layout cannot provide an appropriate work separation and ventilation plan, change the schedule or arrange to be elsewhere rather than relying on a low-odor label.",
-      },
-    ],
-    cost: {
-      intro: "Typical NYC apartment painting ranges, to orient your budget:",
-      rows: [
-        { item: "Studio (walls only)", range: "$1,400 – $3,200" },
-        { item: "1-bedroom (walls, ceilings, trim)", range: "$2,800 – $5,500" },
-        { item: "2-bedroom full repaint", range: "$4,500 – $9,000" },
-        { item: "Single room", range: "$550 – $1,500" },
-      ],
-      note: "Ranges are for orientation only — we quote your apartment individually after photos or a quick walkthrough. The estimate is free and itemized.",
-    },
-    faqs: [
-      {
-        q: "How long does it take to paint an NYC apartment?",
-        a: "A studio is often one day; a 1–2 bedroom typically takes 2–4 working days including prep and two coats. We confirm timing in your written estimate.",
-      },
-      {
-        q: "Do you move furniture?",
-        a: "Yes. We move and cover furniture within the apartment and put everything back. For very large pieces we'll agree on a plan in advance.",
-      },
-      {
-        q: "Can you paint on a weekend?",
-        a: "We offer evening and weekend scheduling where your building allows it, which is ideal for occupied apartments and tight timelines.",
-      },
-      {
-        q: "What if my walls have a lot of damage?",
-        a: "We handle patching, crack repair, and skim coating as part of prep. Heavier plaster or water-damage repair is itemized separately so the quote stays transparent.",
-      },
-    ],
-    references: [{ label: "EPA: Healthy Indoor Painting Practices", href: "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf" }],
-    planningLinks: [{ label: "Choose and test colors for a small apartment", href: "/blog/paint-colors-small-nyc-apartment-feel-bigger" }, { label: "Compare a single-room or accent-wall estimate", href: "/painting/single-room-accent-wall-painting-nyc" }],
-    relatedServices: ["property-manager-turnovers", "interior-painting", "drywall-plaster-repair"],
-    relatedAreas: ["manhattan", "brooklyn", "queens"],
-    relatedPages: ["move-in-apartment-painting-nyc", "move-out-apartment-painting-nyc", "rental-turnover-painting-nyc"],
+  "slug": "apartment-painting-nyc",
+  "keyword": "apartment painting NYC",
+  "icon": "roller",
+  "title": "Apartment Painters NYC | Compare Scope, Costs & Timing",
+  "description": "Plan an NYC apartment repaint: compare walls-only and full-room scopes, occupied-home logistics, prep and planning costs. Request a written estimate.",
+  "h1": "Apartment painting in NYC",
+  "lede": "Studios, walk-ups, and high-rises across all five boroughs — with a written painting scope, room sequence, and access plan agreed before work begins.",
+  "intro": [
+    "Choose the rooms and surfaces first, then compare the preparation and access plan. A vacant studio refresh and an occupied one-bedroom with ceilings, doors and damaged plaster need different scopes, even when their floor areas are similar.",
+    "Start with the surfaces you want painted, the condition of the walls, and whether the apartment will be occupied. Your estimate should distinguish painting time from drying, ventilation, and the time needed before rooms return to normal use."
+  ],
+  "scope": {
+    "heading": "Agree what your apartment painting includes",
+    "items": [
+      "Move and protect furniture; mask floors and fixtures",
+      "Patch nail holes, cracks and dings; sand and spot-prime",
+      "Cut-in and roll walls, ceilings and trim",
+      "Two coats of premium low-VOC paint",
+      "Closets, doors and radiator covers on request",
+      "Same-day clean-up — we haul our own debris"
+    ]
   },
+  "sections": [
+    {
+      "h2": "Painting an occupied apartment, the right way",
+      "body": "Room-by-room work can reduce disruption when there is enough space to separate the work area from everyday activities. A studio, a single bathroom, extensive repairs, or limited ventilation can make that impractical. Agree on a room sequence and whether you need alternative arrangements before booking; staying overnight is not a guaranteed part of the service.",
+      "bullets": [
+        "Identify where furniture and belongings can go without blocking doors or circulation routes",
+        "Confirm permitted building work hours, elevator access, and daily cleanup responsibilities",
+        "Follow the selected coating labels and ventilation guidance; low-VOC does not establish a same-day return time"
+      ]
+    },
+    {
+      "h2": "Worked scope: one occupied bedroom and living room",
+      "body": "Illustrative planning example, not a completed customer project or a price quote. The resident wants walls repainted, keeps the existing ceiling color and has a large sofa that cannot leave the apartment. The useful estimate lists each room, wall repairs and furniture handling; it does not silently add ceilings or assume both rooms can close at once.",
+      "bullets": [
+        "Base scope: the two rooms’ walls, the agreed preparation, protection, coating system and cleanup.",
+        "Separate options: ceilings, trim, doors and closets, each with its own preparation and price.",
+        "Access decision: agree where the sofa moves, which room remains usable and how the work area is separated.",
+        "Handoff: confirm ventilation, handling and cleaning guidance for the selected products before agreeing on move-back dates."
+      ]
+    },
+    {
+      "h2": "Choose a whole-apartment repaint or a smaller scope",
+      "body": "A whole-apartment scope makes sense when connected rooms need a consistent finish or several surfaces need repair. If only one room needs attention, ask for that room as a separate option. Specify walls, ceilings, trim, doors, and closets individually: a walls-only estimate should not be compared with a complete interior repaint as if they were the same job.",
+      "bullets": [
+        "Send wide room photos, approximate dimensions, and close-ups of visible damage",
+        "List heavy or fixed furniture that limits wall access; confirm handling responsibilities in writing",
+        "Record the paint brand, product, color, and sheen for each surface after samples are approved"
+      ]
+    },
+    {
+      "h2": "Plan the handoff as well as the final coat",
+      "body": "Ask which rooms will be unavailable at each stage and how long ventilation must continue under the product instructions. Dry to the touch does not mean fully cured. Confirm when furniture, wall hangings, and routine cleaning can resume. If the layout cannot provide an appropriate work separation and ventilation plan, change the schedule or arrange to be elsewhere rather than relying on a low-odor label."
+    }
+  ],
+  "cost": {
+    "intro": "Use these rough budgeting allowances to start a scope discussion; they are not fixed offers or surveyed market averages. Each row describes a different scope; room size alone does not establish a price.",
+    "rows": [
+      {
+        "item": "Studio (walls only)",
+        "range": "$1,400 – $3,200"
+      },
+      {
+        "item": "1-bedroom (walls, ceilings, trim)",
+        "range": "$2,800 – $5,500"
+      },
+      {
+        "item": "2-bedroom full repaint",
+        "range": "$4,500 – $9,000"
+      },
+      {
+        "item": "Single room",
+        "range": "$550 – $1,500"
+      }
+    ],
+    "note": "Ask for a written quote specifying materials, tax treatment, preparation, protection, included surfaces and exclusions. The cost guide uses these same apartment allowances. Repairs, height and access can change the quote."
+  },
+  "faqs": [
+    {
+      "q": "How long does it take to paint an NYC apartment?",
+      "a": "Timing depends on rooms, repairs, coats, product instructions and permitted building hours. Ask for separate preparation, application and handoff milestones. A completion date does not by itself mean every surface is ready for furniture or cleaning."
+    },
+    {
+      "q": "Do you move furniture?",
+      "a": "Yes. We move and cover furniture within the apartment and put everything back. For very large pieces we'll agree on a plan in advance."
+    },
+    {
+      "q": "Can you paint on a weekend?",
+      "a": "We offer evening and weekend scheduling where your building allows it, which is ideal for occupied apartments and tight timelines."
+    },
+    {
+      "q": "What if my walls have a lot of damage?",
+      "a": "We handle patching, crack repair, and skim coating as part of prep. Heavier plaster or water-damage repair is itemized separately so the quote stays transparent."
+    }
+  ],
+  "references": [
+    {
+      "label": "EPA: Healthy Indoor Painting Practices",
+      "href": "https://www.epa.gov/sites/production/files/2015-09/documents/inpaint5.pdf"
+    },
+    {
+      "label": "NYC DCWP: hiring a home improvement contractor",
+      "href": "https://home4.nyc.gov/site/dca/consumers/shopping-services-home-improvement.page"
+    },
+    {
+      "label": "EPA: lead-safe renovation information for consumers",
+      "href": "https://www.epa.gov/lead/renovation-repair-and-painting-rrp-program-consumers"
+    }
+  ],
+  "planningLinks": [
+    {
+      "label": "Apartment painting costs and a same-scope quote comparison",
+      "href": "/blog/how-much-does-it-cost-to-paint-an-apartment-nyc"
+    },
+    {
+      "label": "Choose and test colors for a small apartment",
+      "href": "/blog/paint-colors-small-nyc-apartment-feel-bigger"
+    },
+    {
+      "label": "Compare a single-room or accent-wall estimate",
+      "href": "/painting/single-room-accent-wall-painting-nyc"
+    }
+  ],
+  "relatedServices": [
+    "interior-painting",
+    "drywall-plaster-repair",
+    "property-manager-turnovers"
+  ],
+  "relatedAreas": [
+    "manhattan",
+    "brooklyn",
+    "queens"
+  ],
+  "relatedPages": [
+    "move-in-apartment-painting-nyc",
+    "move-out-apartment-painting-nyc",
+    "rental-turnover-painting-nyc"
+  ]
+},
 
   // 4 ---------------------------------------------------------------------
   {
@@ -361,89 +416,145 @@ export const moneyPages: MoneyPage[] = [
 
   // 5 ---------------------------------------------------------------------
   {
-    slug: "co-op-condo-painting-nyc",
-    keyword: "co-op and condo painting NYC",
-    icon: "building",
-    title: "Co-op & Condo Painting NYC | COI & Building Coordination",
-    description:
-      "Plan your NYC co-op or condo repaint: written scope, building insurance requirements, elevator access, and permitted work hours. Request an itemized estimate.",
-    h1: "Co-op & condo painting in NYC",
-    lede: "A defined painting scope, building paperwork review, and coordinated access before the start date is confirmed.",
-    intro: [
-      "Painting in an NYC co-op or condo is half craftsmanship, half paperwork. Boards require insurance certificates, alteration agreements may apply, and work has to fit inside the building's permitted hours. Get any of it wrong and your start date slips.",
-      "Send the current building work rules with your estimate request. We can coordinate the proposed scope and access arrangements with management; insurance documentation must match the building requirements, and approval remains with the building.",
-    ],
-    scope: {
-      heading: "What co-op & condo projects include",
-      items: [
-        "Review of building insurance requirements before scheduling",
-        "Coordination with your managing agent and super",
-        "Work scheduled within board-permitted hours",
-        "Hallway, elevator and common-area protection",
-        "Quiet, tidy crews respectful of neighbors",
-        "Premium low-VOC finishes and written warranty",
-      ],
-    },
-    sections: [
-      {
-        h2: "What to send before we confirm a start date",
-        body: "Keep the estimate and approval packet together so the proposed work matches what management reviews. If the scope changes after approval, ask management whether the paperwork needs updating before adding the work.",
-        bullets: [
-          "A room-by-room list of walls, ceilings, doors, trim, and repairs to price.",
-          "The current building work rules and the management contact reviewing the project.",
-          "Insurance requirements exactly as supplied by management, for review with the insurer.",
-          "Allowed work hours, elevator booking procedure, and protection requirements for shared spaces.",
-          "Written confirmation that the proposed scope and access dates are accepted before mobilization.",
-        ],
-      },
-      {
-        h2: "Insurance and board paperwork, handled",
-        body: "Most buildings require a COI before anyone lifts a brush, often with specific limits and additional-insured language. Provide the building requirements during the estimate so coverage, wording, and approval timing can be confirmed before scheduling. If your building uses an alteration agreement or has a preferred-vendor process, we'll work within it.",
-      },
-      {
-        h2: "Respectful of the whole building, not just your unit",
-        body: "Neighbors notice everything in a co-op. We protect shared hallways and elevators, contain dust, keep noise to permitted hours, and clean common areas daily.",
-        bullets: [
-          "Floor and wall protection from the freight elevator to your door",
-          "Debris removed daily — never left in the hallway or trash room",
-          "Crews briefed on building etiquette and quiet hours",
-        ],
-      },
-    ],
-    cost: {
-      intro: "Co-op/condo interior pricing follows unit size and prep, similar to other apartments:",
-      rows: [
-        { item: "1-bedroom unit", range: "$2,800 – $5,800" },
-        { item: "2-bedroom unit", range: "$4,500 – $9,500" },
-        { item: "3-bedroom / combination", range: "$8,000 – $18,000" },
-        { item: "Certificate of Insurance", range: "Included, no fee" },
-      ],
-      note: "COIs and managing-agent coordination are included at no extra charge. Every unit is quoted individually with a free, itemized estimate.",
-    },
-    faqs: [
-      {
-        q: "How fast can you get a Certificate of Insurance?",
-        a: "Send the building's required limits and additional-insured wording early. Issuance and acceptance depend on the insurer and building requirements; confirm both before scheduling.",
-      },
-      {
-        q: "Do you work with managing agents and supers directly?",
-        a: "Yes. We coordinate elevator reservations, building hours, and access with your managing agent and super so you don't have to play middleman.",
-      },
-      {
-        q: "Can you work around an alteration agreement?",
-        a: "We can. Send us the agreement and any building rules; we'll schedule and document the work to comply.",
-      },
-      {
-        q: "Will the work disturb my neighbors?",
-        a: "We keep noise within permitted hours, contain dust, and protect common areas. Confirm protection, cleanup, and any neighbor-notification requirements before work starts.",
-      },
-    ],
-    planningLinks: [{ label: "Prepare your co-op painting approval checklist", href: "/blog/get-coop-board-approve-painting-project" }],
-    references: [{ label: "FirstService Residential: decoration and alteration procedures (page 4)", href: "https://learn.fsresidential.com/hubfs/Media/New%20York/First%20Edition/2024%20Q2%20First%20Edition.pdf" }],
-    relatedServices: ["interior-painting", "drywall-plaster-repair", "commercial-painting"],
-    relatedAreas: ["manhattan", "brooklyn", "queens"],
-    relatedPages: ["interior-painting-manhattan", "pre-war-apartment-painting-nyc", "apartment-painting-nyc"],
+  "slug": "co-op-condo-painting-nyc",
+  "keyword": "co-op and condo painting NYC",
+  "icon": "building",
+  "title": "Co-op & Condo Painting NYC | COI & Building Coordination",
+  "description": "Plan your NYC co-op or condo repaint: written scope, building insurance requirements, elevator access, and permitted work hours. Request an itemized estimate.",
+  "h1": "Co-op & condo painting in NYC",
+  "lede": "A defined painting scope, building paperwork review, and coordinated access before the start date is confirmed.",
+  "intro": [
+    "Before choosing a painting date, obtain the current work rules from your managing agent. A building may treat a cosmetic repaint differently from repairs or a larger alteration. Confirm the process for your exact scope instead of assuming every co-op or condo uses the same approval packet.",
+    "Send the current building work rules with your estimate request. We can coordinate the proposed scope and access arrangements with management; insurance documentation must match the building requirements, and approval remains with the building."
+  ],
+  "scope": {
+    "heading": "What co-op & condo projects include",
+    "items": [
+      "Review of building insurance requirements before scheduling",
+      "Coordination with your managing agent and super",
+      "Work scheduled within board-permitted hours",
+      "Hallway, elevator and common-area protection",
+      "Quiet, tidy crews respectful of neighbors",
+      "Premium low-VOC finishes and written warranty"
+    ]
   },
+  "sections": [
+    {
+      "h2": "What to send before we confirm a start date",
+      "body": "Keep the estimate and approval packet together so the proposed work matches what management reviews. If the scope changes after approval, ask management whether the paperwork needs updating before adding the work.",
+      "bullets": [
+        "A room-by-room list of walls, ceilings, doors, trim, and repairs to price.",
+        "The current building work rules and the management contact reviewing the project.",
+        "Insurance requirements exactly as supplied by management, for review with the insurer.",
+        "Allowed work hours, elevator booking procedure, and protection requirements for shared spaces.",
+        "Written confirmation that the proposed scope and access dates are accepted before mobilization."
+      ]
+    },
+    {
+      "h2": "Insurance and board paperwork, handled",
+      "body": "Most buildings require a COI before anyone lifts a brush, often with specific limits and additional-insured language. Provide the building requirements during the estimate so coverage, wording, and approval timing can be confirmed before scheduling. If your building uses an alteration agreement or has a preferred-vendor process, we'll work within it."
+    },
+    {
+      "h2": "Respectful of the whole building, not just your unit",
+      "body": "Neighbors notice everything in a co-op. We protect shared hallways and elevators, contain dust, keep noise to permitted hours, and clean common areas daily.",
+      "bullets": [
+        "Floor and wall protection from the freight elevator to your door",
+        "Debris removed daily — never left in the hallway or trash room",
+        "Crews briefed on building etiquette and quiet hours"
+      ]
+    },
+    {
+      "h2": "A five-part handoff from estimate to approved access",
+      "body": "Keep a simple status list with the person responsible for each step. An insurance certificate being issued is a different milestone from management accepting the paperwork or an elevator slot being reserved.",
+      "bullets": [
+        "Scope: resident and painter agree on rooms, surfaces, repairs and exclusions.",
+        "Rules: management identifies the applicable paperwork, hours and shared-space protection.",
+        "Insurance: the performing business and insurer review the requested limits and wording.",
+        "Acceptance: management confirms the proposed documentation and scope are accepted.",
+        "Access: confirm keys, elevator arrangements, permitted dates, cleanup and the final walkthrough."
+      ]
+    }
+  ],
+  "cost": {
+    "intro": "Co-op/condo interior pricing follows unit size and prep, similar to other apartments:",
+    "rows": [
+      {
+        "item": "1-bedroom unit",
+        "range": "$2,800 – $5,800"
+      },
+      {
+        "item": "2-bedroom unit",
+        "range": "$4,500 – $9,500"
+      },
+      {
+        "item": "3-bedroom / combination",
+        "range": "$8,000 – $18,000"
+      },
+      {
+        "item": "Insurance and building coordination",
+        "range": "Confirm the required documents and any separate building charges"
+      }
+    ],
+    "note": "Ask which coordination tasks are included in the painting estimate and which charges, deposits or requirements come from the building. Approval and insurance timing must be confirmed for the actual project."
+  },
+  "faqs": [
+    {
+      "q": "How fast can you get a Certificate of Insurance?",
+      "a": "Send the building's required limits and additional-insured wording early. Issuance and acceptance depend on the insurer and building requirements; confirm both before scheduling."
+    },
+    {
+      "q": "Do you work with managing agents and supers directly?",
+      "a": "Yes. We coordinate elevator reservations, building hours, and access with your managing agent and super so you don't have to play middleman."
+    },
+    {
+      "q": "Can you work around an alteration agreement?",
+      "a": "We can. Send us the agreement and any building rules; we'll schedule and document the work to comply."
+    },
+    {
+      "q": "Will the work disturb my neighbors?",
+      "a": "We keep noise within permitted hours, contain dust, and protect common areas. Confirm protection, cleanup, and any neighbor-notification requirements before work starts."
+    }
+  ],
+  "planningLinks": [
+    {
+      "label": "Prepare your co-op painting approval checklist",
+      "href": "/blog/get-coop-board-approve-painting-project"
+    },
+    {
+      "label": "Compare painting estimates using the same scope",
+      "href": "/blog/compare-nyc-painting-estimates"
+    },
+    {
+      "label": "Apartment costs and surface choices",
+      "href": "/blog/how-much-does-it-cost-to-paint-an-apartment-nyc"
+    }
+  ],
+  "references": [
+    {
+      "label": "NYC DCWP: hiring a home improvement contractor",
+      "href": "https://home4.nyc.gov/site/dca/consumers/shopping-services-home-improvement.page"
+    },
+    {
+      "label": "EPA: lead-safe renovation information for consumers",
+      "href": "https://www.epa.gov/lead/renovation-repair-and-painting-rrp-program-consumers"
+    }
+  ],
+  "relatedServices": [
+    "interior-painting",
+    "drywall-plaster-repair",
+    "commercial-painting"
+  ],
+  "relatedAreas": [
+    "manhattan",
+    "brooklyn",
+    "queens"
+  ],
+  "relatedPages": [
+    "interior-painting-manhattan",
+    "pre-war-apartment-painting-nyc",
+    "apartment-painting-nyc"
+  ]
+},
 
   // 6 ---------------------------------------------------------------------
   {
@@ -520,76 +631,131 @@ export const moneyPages: MoneyPage[] = [
 
   // 7 ---------------------------------------------------------------------
   {
-    slug: "kitchen-cabinet-painting-nyc",
-    keyword: "kitchen cabinet painting NYC",
-    icon: "cabinet",
-    title: "Kitchen Cabinet Painting NYC | Factory-Smooth Refinishing",
-    description:
-      "Kitchen cabinet painting and refinishing in NYC. Compare preparation, finish systems, door handling, and written warranty terms in a detailed estimate.",
-    h1: "Kitchen cabinet painting & refinishing in NYC",
-    lede: "A showroom-smooth kitchen for a fraction of replacement — degreased, sanded, primed, and sprayed with a finish that cures rock-hard.",
-    intro: [
-      "Replacing NYC kitchen cabinets can run $20–40k and weeks of demolition. Refinishing them — done correctly — delivers a comparable, factory-smooth look for a fraction of the cost and a fraction of the disruption.",
-      "The catch is that 'done correctly' matters enormously. Cabinets are touched, scrubbed, and splashed daily, so adhesion and durability are everything. We degrease, sand, prime with a bonding primer, and spray a catalyzed topcoat that resists chips and yellowing for years.",
-    ],
-    scope: {
-      heading: "What cabinet refinishing includes",
-      items: [
-        "Label, remove and transport doors and drawers",
-        "Thorough degreasing and sanding for adhesion",
-        "Bonding primer on every surface",
-        "Sprayed, self-leveling catalyzed topcoat (not brushed)",
-        "Boxes finished in place with dust containment",
-        "Reinstall, adjust hardware, and final inspection",
-      ],
-    },
-    sections: [
-      {
-        h2: "Why sprayed, catalyzed finishes beat a brush-and-roll",
-        body: "Brushing cabinets leaves stroke marks and a softer film that chips at the edges. We spray for a glass-smooth, self-leveling surface and use catalyzed (conversion) coatings engineered for cabinetry — the same category of finish used on factory cabinets — so it holds up to daily kitchen abuse.",
-      },
-      {
-        h2: "A clean process in an occupied home",
-        body: "Confirm where doors and drawers will be finished, how cabinet boxes and adjacent surfaces will be protected, and the product-specific drying and handling schedule before work starts.",
-        bullets: [
-          "Off-site door spraying = no overspray in your kitchen",
-          "Dust barriers and masking protect counters and appliances",
-          "Most kitchens are back in service within about a week",
-        ],
-      },
-    ],
-    cost: {
-      intro: "Cabinet refinishing is priced largely by door and drawer count:",
-      rows: [
-        { item: "Small kitchen (≤15 doors)", range: "$3,500 – $5,000" },
-        { item: "Standard kitchen (15–30 doors)", range: "$5,000 – $7,500" },
-        { item: "Large / two-tone kitchen", range: "$7,500 – $12,000" },
-        { item: "Vanity or bathroom cabinet", range: "$650 – $1,800" },
-      ],
-      note: "Compared with $20–40k for replacement, refinishing typically runs 30–50% of the cost. Every kitchen is quoted individually and the estimate is free.",
-    },
-    faqs: [
-      {
-        q: "How much cheaper is refinishing than replacing cabinets?",
-        a: "Refinishing typically costs 30–50% of replacement while delivering a comparable factory-smooth look — and without the demolition, dust, and weeks of downtime.",
-      },
-      {
-        q: "Will the finish chip or peel?",
-        a: "Not with our process. Proper degreasing, sanding, a bonding primer, and a catalyzed sprayed topcoat create a hard, durable film that resists chipping — and it's backed by our warranty.",
-      },
-      {
-        q: "Can you change the color of my cabinets?",
-        a: "Yes — any color. White and off-white are most popular, but we spray any hue and can do two-tone (different islands or uppers/lowers).",
-      },
-      {
-        q: "How long does a cabinet project take?",
-        a: "A standard kitchen averages about a week from door removal to reinstall, depending on coats and cure time.",
-      },
-    ],
-    relatedServices: ["cabinet-refinishing", "interior-painting"],
-    relatedAreas: ["manhattan", "brooklyn", "queens"],
-    relatedPages: ["cabinet-refinishing-cost-nyc", "apartment-painting-nyc"],
+  "slug": "kitchen-cabinet-painting-nyc",
+  "keyword": "kitchen cabinet painting NYC",
+  "icon": "cabinet",
+  "title": "Kitchen Cabinet Painting NYC | Scope, Prep & Refinishing",
+  "description": "Kitchen cabinet painting and refinishing in NYC. Compare preparation, finish systems, door handling, and written warranty terms in a detailed estimate.",
+  "h1": "Kitchen cabinet painting & refinishing in NYC",
+  "lede": "Compare cabinet condition, door and drawer counts, finish options and kitchen downtime before requesting a refinishing estimate.",
+  "intro": [
+    "Cabinet painting is worth evaluating when the layout works and the boxes and doors are structurally sound. Paint changes the finish; it does not correct swollen panels, loose joints or a layout you want to replace. Flag those issues in the first photos so repairs or alternatives can be discussed.",
+    "A useful proposal names the surface material, preparation, primer and cabinet-grade topcoat, plus where doors and boxes will be finished. Confirm the sample finish and application method rather than relying on a promise of a factory result."
+  ],
+  "scope": {
+    "heading": "What cabinet refinishing includes",
+    "items": [
+      "Count and identify doors, drawer fronts, exposed frames and sides",
+      "Assess the existing surface and agree on repairs before coating",
+      "Specify cleaning, preparation and a compatible primer/topcoat system",
+      "Agree on removal, labeling, finishing location and reinstallation",
+      "Define protection and access arrangements for the kitchen",
+      "Record hardware work, excluded interiors and aftercare separately"
+    ]
   },
+  "sections": [
+    {
+      "h2": "Decide whether painting fits the cabinets you have",
+      "body": "Photograph a full cabinet run, an open door showing its edge, existing wear and any damaged area. Identify whether the surface is solid wood, veneer, laminate or an unknown coating. Compatibility and condition need review before a finish system is selected.",
+      "bullets": [
+        "Sound cabinets and a workable layout: discuss a finish update.",
+        "Peeling veneer, swelling or loose components: resolve the repair question before pricing paint.",
+        "New pulls or hinges: count them and identify hole changes as a separate task."
+      ]
+    },
+    {
+      "h2": "Compare exactly which cabinet surfaces are included",
+      "body": "A quote for door faces alone is not the same as doors, drawer fronts, frames and exposed sides. Cabinet interiors, shelf tops, toe kicks, crown molding and both sides of doors should be named as included, excluded or optional.",
+      "bullets": [
+        "Count doors and drawer fronts separately; do not use kitchen floor area as a substitute.",
+        "Identify glass panels, open shelving, islands and different-color sections.",
+        "Ask whether hardware removal, replacement, adjustment and reinstallation are included."
+      ]
+    },
+    {
+      "h2": "Separate finishing time from kitchen return-to-use",
+      "body": "Agree on door removal, preparation, coating, reinstallation and aftercare milestones. Ask which appliances and storage areas remain accessible at each stage. Dry-to-touch, recoat, careful handling and full cure are different milestones; follow the chosen product’s current instructions.",
+      "bullets": [
+        "Confirm where spraying or other application happens and what protection is needed.",
+        "Record when doors may be handled, shelves loaded and surfaces cleaned.",
+        "Keep the product name, color, sheen and care instructions with the handoff record."
+      ]
+    }
+  ],
+  "cost": {
+    "intro": "The planning allowances below are starting points for a scope discussion, not fixed prices. Confirm how the quote counts doors and drawer fronts and whether materials, interiors, repairs and hardware are included.",
+    "rows": [
+      {
+        "item": "Small kitchen (up to 15 doors; confirm drawers)",
+        "range": "$3,500 – $5,000"
+      },
+      {
+        "item": "Standard kitchen (16–30 doors; confirm drawers)",
+        "range": "$5,000 – $7,500"
+      },
+      {
+        "item": "Large / two-tone kitchen",
+        "range": "$7,500 – $12,000"
+      },
+      {
+        "item": "Vanity or bathroom cabinet",
+        "range": "$650 – $1,800"
+      }
+    ],
+    "note": "Compare refinishing and replacement using your actual scopes. No universal savings percentage applies: condition, layout changes, new hardware and installation can change the comparison."
+  },
+  "faqs": [
+    {
+      "q": "Is painting always cheaper than replacing cabinets?",
+      "a": "Painting can avoid new cabinet boxes and installation when the existing units are suitable. Compare actual proposals; damaged cabinets or a layout change may make replacement the more useful option."
+    },
+    {
+      "q": "Can every cabinet finish be painted?",
+      "a": "Material, existing coating and condition affect preparation and compatibility. Send photographs of faces, edges and damage. Confirm the selected system and any adhesion assessment before authorizing the full job."
+    },
+    {
+      "q": "Will a painted finish ever chip or peel?",
+      "a": "No coating is damage-proof. Preparation, product compatibility, application and care affect performance. Review the written workmanship warranty and exclusions, and follow the product-specific aftercare instructions."
+    },
+    {
+      "q": "How long will my kitchen be unavailable?",
+      "a": "Ask for a sequence showing which areas are usable during each stage. Removal, application, reinstallation and cure time vary; a universal one-week return-to-use promise would not cover every product or kitchen."
+    }
+  ],
+  "relatedServices": [
+    "cabinet-refinishing",
+    "interior-painting"
+  ],
+  "relatedAreas": [
+    "manhattan",
+    "brooklyn",
+    "queens"
+  ],
+  "relatedPages": [
+    "cabinet-refinishing-cost-nyc",
+    "apartment-painting-nyc"
+  ],
+  "references": [
+    {
+      "label": "Benjamin Moore: cabinet preparation and finishing",
+      "href": "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/paint-kitchen-cabinets"
+    },
+    {
+      "label": "Benjamin Moore: dry time, cure time and cleaning",
+      "href": "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/how-to-clean-freshly-painted-walls-and-cabinets"
+    }
+  ],
+  "planningLinks": [
+    {
+      "label": "Compare the complete painting estimate",
+      "href": "/blog/compare-nyc-painting-estimates"
+    },
+    {
+      "label": "Understand loading and curing for painted shelving",
+      "href": "/blog/painted-bookshelves-when-to-put-books-back"
+    }
+  ]
+},
 
   // 8 ---------------------------------------------------------------------
   {

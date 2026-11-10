@@ -1,3 +1,4 @@
+import { areaPlanning } from "@/lib/area-planning";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -27,8 +28,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const a = getArea(slug);
   if (!a) return {};
-  const title = `Painters in ${a.name} | ${site.name}`;
-  const description = `Painting, wallpaper, wall-finish, and turnover services in ${a.name}. Review local project options and request a detailed estimate.`;
+  const title = areaPlanning[a.slug]?.title ?? `Painters in ${a.name} | ${site.name}`;
+  const description = areaPlanning[a.slug]?.description ?? `Painting, wallpaper, wall-finish, and turnover services in ${a.name}. Review local project options and request a detailed estimate.`;
   return {
     title: { absolute: title },
     description,
@@ -45,9 +46,10 @@ export default async function AreaPage({
   const { slug } = await params;
   const a = getArea(slug);
   if (!a) notFound();
-  const localProjectPages = moneyPages
-    .filter((p) => p.relatedAreas.includes(a.slug))
-    .slice(0, 6);
+  const planning = areaPlanning[a.slug];
+  const localProjectPages = planning
+    ? planning.projects.map((slug) => moneyPages.find((p) => p.slug === slug)).filter((p): p is NonNullable<typeof p> => Boolean(p))
+    : moneyPages.filter((p) => p.relatedAreas.includes(a.slug)).sort((x, y) => Number(y.slug.includes(a.slug)) - Number(x.slug.includes(a.slug))).slice(0, 6);
 
   return (
     <>
@@ -85,6 +87,14 @@ export default async function AreaPage({
             to final touchups.
           </p>
 
+          {planning && <section className="mt-10 space-y-5" aria-label="Plan a local painting project">
+            <h2 className="font-display text-3xl">Start with your space and scope</h2>
+            {planning.scenarios.map((scenario) => <div key={scenario.title} className="card p-6">
+              <h3 className="font-display text-xl">{scenario.title}</h3>
+              <p className="mt-3 leading-relaxed text-[var(--color-muted)]">{scenario.body}</p>
+              <Link href={scenario.href} className="mt-4 inline-block font-semibold underline text-[var(--color-green-600)]">{scenario.label}</Link>
+            </div>)}
+          </section>}
           <h3 className="font-display text-2xl mt-12">Services in {a.name}</h3>
           <div className="mt-6 grid sm:grid-cols-2 gap-4">
             {services.map((s) => {
@@ -154,7 +164,7 @@ export default async function AreaPage({
         </div>
 
         <div className="lg:sticky lg:top-28 space-y-6">
-          <EstimateForm compact />
+          <EstimateForm compact defaultDetails={`Project location: ${a.name}`} />
           <div className="card p-6">
             <h3 className="font-semibold">Other boroughs</h3>
             <div className="mt-3 flex flex-wrap gap-2">

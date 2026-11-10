@@ -312,6 +312,18 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="container-x py-14">
+        <p className="eyebrow">Before you request a quote</p>
+        <h2 className="section-title mt-4">Compare the scope, then compare the price.</h2>
+        <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">Decide which surfaces, repairs and building requirements belong in your project. These guides help you ask for estimates you can compare.</p>
+        <div className="mt-7 grid gap-4 sm:grid-cols-3">
+          {[
+            ["/blog/how-much-does-it-cost-to-paint-an-apartment-nyc", "Apartment painting costs", "Planning ranges and a sample scope comparison."],
+            ["/painting/co-op-condo-painting-nyc", "Co-op and condo planning", "Separate building requirements, documents and approval."],
+            ["/painting/kitchen-cabinet-painting-nyc", "Cabinet painting scope", "Check condition, count surfaces and plan finish care."],
+          ].map(([href, title, text]) => <Link key={href} href={href} className="card p-6 hover:border-[var(--color-green)]"><h3 className="font-display text-xl">{title}</h3><p className="mt-3 text-[var(--color-muted)]">{text}</p><span className="mt-4 inline-block font-semibold underline">Read the guide</span></Link>)}
+        </div>
+      </section>
       <PropertyCareResources />
       <CTASection title="A better finish starts with a better plan." subtitle="Tell us about your space, timeline, and priorities. We’ll help you define the right scope." />
       <div className="h-16" />

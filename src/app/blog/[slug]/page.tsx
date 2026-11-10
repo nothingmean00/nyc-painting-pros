@@ -1,3 +1,4 @@
+import { ApartmentScopePlanner } from "@/components/ApartmentScopePlanner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -68,6 +69,7 @@ export default async function BlogPost({
   const relatedPaintingPages = (p.relatedPages ?? [])
     .map((slug) => getMoneyPage(slug))
     .filter((page): page is NonNullable<typeof page> => Boolean(page));
+  const isCostGuide = p.slug === "how-much-does-it-cost-to-paint-an-apartment-nyc";
   const trail = [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
@@ -116,6 +118,8 @@ export default async function BlogPost({
             <p className="mt-5 text-xl text-[var(--color-muted)] leading-relaxed">
               {p.excerpt}
             </p>
+            {isCostGuide && <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-white p-5"><h2 className="font-semibold">The short answer</h2><p className="mt-2 leading-relaxed">{p.intro[0]}</p></div>}
+            {relatedPaintingPages[0] && <p className="mt-5 text-sm">Planning this project? <Link href={"/painting/" + relatedPaintingPages[0].slug} className="font-semibold underline text-[var(--color-green-600)]">{relatedPaintingPages[0].h1}</Link></p>}
             <p className="mt-5 text-sm text-[var(--color-muted)]">
               By {p.author}
             </p>
@@ -139,7 +143,7 @@ export default async function BlogPost({
         {/* Body */}
         <div className="container-x py-12 lg:py-16">
           <div className="max-w-3xl mx-auto">
-            {p.intro.map((para) => (
+            {(isCostGuide ? p.intro.slice(1) : p.intro).map((para) => (
               <p
                 key={para.slice(0, 24)}
                 className="text-lg leading-relaxed text-[var(--color-ink)] [&:not(:first-child)]:mt-5 first:text-xl first:text-[var(--color-ink)]"
@@ -148,8 +152,10 @@ export default async function BlogPost({
               </p>
             ))}
 
+
+
             <nav aria-label="Article sections" className="mt-8 rounded-xl border border-[var(--color-line)] p-5">
-              <p className="font-semibold">In this guide</p>
+              <p className="font-semibold">In this guide</p>{isCostGuide && <a href="#scope-planner" className="mt-3 inline-block underline text-[var(--color-green-600)]">Build your apartment scope brief</a>}
               <ul className="mt-3 space-y-2">
                 {p.blocks.map((block, index) => <li key={block.h2}><a className="underline underline-offset-4 text-[var(--color-green-600)]" href={`#section-${index + 1}`}>{block.h2}</a></li>)}
               </ul>
@@ -189,6 +195,8 @@ export default async function BlogPost({
                 )}
               </section>
             ))}
+
+            {isCostGuide && <ApartmentScopePlanner />}
 
             {p.references && (
               <section className="mt-10">
