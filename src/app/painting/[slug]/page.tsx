@@ -265,7 +265,7 @@ export default async function MoneyPage({
               {[
                 "Project scope agreed in writing",
                 "Building requirements reviewed",
-                `${site.warrantyYears}-year written warranty`,
+                "Final walkthrough and care details",
                 "Free, itemized estimates",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-2">

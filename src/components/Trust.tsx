@@ -25,7 +25,7 @@ const credentials = [
   "Detailed written scopes",
   "Surface-specific preparation",
   "Building requirements coordinated",
-  "Written warranty",
+  "Final walkthrough",
 ] as const;
 
 export function CredentialStrip({ tone = "light" }: { tone?: "light" | "dark" }) {

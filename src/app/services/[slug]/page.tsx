@@ -99,7 +99,7 @@ export default async function ServicePage({
               and client are working from the same plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-sm">
-              {["Written scope", "Surface-specific prep", "Clear scheduling", `${site.warrantyYears}-yr warranty`].map(
+              {["Written scope", "Surface-specific prep", "Clear scheduling", "Final walkthrough"].map(
                 (t) => (
                   <span key={t} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5">
                     <Icon.check className="w-3.5 h-3.5 text-[var(--color-green-300)]" /> {t}

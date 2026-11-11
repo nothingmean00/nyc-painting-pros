@@ -134,7 +134,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "roller",
     title: "Interior Painters in Brooklyn | Brownstones, Lofts & Apartments",
     description:
-      "Interior painting in Brooklyn — Park Slope brownstones to Williamsburg lofts. Meticulous prep, premium low-VOC finishes, tidy crews, written warranty. Free estimate.",
+      "Interior painting in Brooklyn — Park Slope brownstones to Williamsburg lofts. Meticulous prep, premium low-VOC finishes, tidy crews, detailed written scopes. Free estimate.",
     h1: "Interior painting in Brooklyn",
     lede: "From Park Slope brownstones to Williamsburg lofts, our Brooklyn crews handle historic detail and modern open-plan spaces with the same obsessive care.",
     intro: [
@@ -351,7 +351,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "patch",
     title: "Pre-War Apartment Painting NYC | Plaster Repair & Skim Coating",
     description:
-      "Pre-war apartment painting in NYC with expert plaster repair and Level 5 skim coating. Restore cracked, century-old walls to glass-smooth. Licensed, insured, warrantied.",
+      "Pre-war apartment painting in NYC with expert plaster repair and Level 5 skim coating. Restore cracked, century-old walls to glass-smooth. Detailed scopes and careful preparation.",
     h1: "Pre-war apartment painting & plaster restoration",
     lede: "Century-old plaster, settled cracks, and decades of repaints — restored to a glass-smooth finish that honors the apartment's character.",
     intro: [
@@ -438,7 +438,7 @@ export const moneyPages: MoneyPage[] = [
       "Work scheduled within board-permitted hours",
       "Hallway, elevator and common-area protection",
       "Quiet, tidy crews respectful of neighbors",
-      "Premium low-VOC finishes and written warranty"
+      "Premium low-VOC finishes and a final walkthrough"
     ]
   },
   "sections": [
@@ -566,7 +566,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "house",
     title: "Brownstone Painting in Brooklyn | Interior, Facade & Trim",
     description:
-      "Brownstone painting in Brooklyn — interiors, facades, cornices, doors and ironwork. Landmark-aware color matching and weatherproof systems. Licensed, insured, warrantied.",
+      "Brownstone painting in Brooklyn — interiors, facades, cornices, doors and ironwork. Landmark-aware color matching and weatherproof systems. Detailed scopes and careful preparation.",
     h1: "Brownstone painting in Brooklyn",
     lede: "Parlor-floor interiors, weatherproofed facades, and front doors that turn heads — done with restoration-grade care.",
     intro: [
@@ -638,7 +638,7 @@ export const moneyPages: MoneyPage[] = [
   "keyword": "kitchen cabinet painting NYC",
   "icon": "cabinet",
   "title": "Kitchen Cabinet Painting NYC | Scope, Prep & Refinishing",
-  "description": "Kitchen cabinet painting and refinishing in NYC. Compare preparation, finish systems, door handling, and written warranty terms in a detailed estimate.",
+  "description": "Kitchen cabinet painting and refinishing in NYC. Compare preparation, finish systems, door handling, and care instructions in a detailed estimate.",
   "h1": "Kitchen cabinet painting & refinishing in NYC",
   "lede": "Compare cabinet condition, door and drawer counts, finish options and kitchen downtime before requesting a refinishing estimate.",
   "intro": [
@@ -718,7 +718,7 @@ export const moneyPages: MoneyPage[] = [
     },
     {
       "q": "Will a painted finish ever chip or peel?",
-      "a": "No coating is damage-proof. Preparation, product compatibility, application and care affect performance. Review the written workmanship warranty and exclusions, and follow the product-specific aftercare instructions."
+      "a": "No coating is damage-proof. Preparation, product compatibility, application and care affect performance. Review the agreed scope and exclusions, and follow the product-specific aftercare instructions."
     },
     {
       "q": "How long will my kitchen be unavailable?",
@@ -1161,7 +1161,7 @@ export const moneyPages: MoneyPage[] = [
         bullets: [
           "Level 5 skim for high-end, high-light interiors",
           "Sprayed trim, doors and millwork for a factory look",
-          "Documented specs, colors, and warranty",
+          "Documented specs, colors, and care details",
         ],
       },
     ],
@@ -1425,7 +1425,7 @@ export const moneyPages: MoneyPage[] = [
     icon: "patch",
     title: "Drywall & Sheetrock Repair NYC | Holes, Cracks & Water Damage",
     description:
-      "Drywall and sheetrock repair in NYC — holes, cracks, water damage and anchor holes patched and painted to invisible. Fast, clean, warrantied. Free estimate.",
+      "Drywall and sheetrock repair in NYC — holes, cracks, water damage and anchor holes patched and painted to invisible. Careful prep and clean job sites. Free estimate.",
     h1: "Drywall & sheetrock repair in NYC",
     lede: "Holes, cracks, water stains, and anchor damage — repaired and painted so the patch disappears completely.",
     intro: [

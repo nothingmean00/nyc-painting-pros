@@ -1,17 +1,16 @@
 import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { Icon } from "@/components/Icons";
 import { CTASection } from "@/components/CTASection";
 import { Guarantees } from "@/components/Trust";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs, faqSchema } from "@/lib/schema";
-import { site, faqs, processSteps } from "@/lib/site";
+import { faqs, processSteps } from "@/lib/site";
 
 export const metadata: Metadata = withRouteSocial({
-  title: "Workmanship Warranty & Process",
-  description: `See how NYC Painting Pros documents scope, preparation, scheduling, closeout, and its written ${site.warrantyYears}-year workmanship warranty.`,
+  title: "Our Painting Process",
+  description: "See how NYC Painting Pros documents scope, preparation, scheduling, and the final walkthrough for painting projects.",
   alternates: { canonical: "/guarantee" },
 }, "/guarantee");
 
@@ -23,17 +22,17 @@ export default function GuaranteePage() {
           faqSchema(faqs),
           breadcrumbs([
             { name: "Home", path: "/" },
-            { name: "Our Guarantee", path: "/guarantee" },
+            { name: "Our Process", path: "/guarantee" },
           ]),
         ]}
       />
       <PageHero
-        eyebrow="Our guarantee"
-        title="Promises we put in writing"
-        subtitle="We'd rather earn your trust with commitments we keep than with numbers on a page. Here's exactly what every NYC Painting Pros client can count on."
+        eyebrow="Our process"
+        title="A clear process from estimate to handoff"
+        subtitle="See how we plan the scope, prepare surfaces, coordinate the schedule, and review completed work with you."
         crumbs={[
           { name: "Home", path: "/" },
-          { name: "Our Guarantee", path: "/guarantee" },
+          { name: "Our Process", path: "/guarantee" },
         ]}
       />
 
@@ -41,31 +40,11 @@ export default function GuaranteePage() {
         <Guarantees />
       </section>
 
-      {/* The written warranty highlight */}
-      <section className="container-x pb-16 lg:pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-[var(--color-ink)] text-white p-8 sm:p-12 grid lg:grid-cols-[auto_1fr] gap-8 items-center">
-          <div className="grid place-items-center w-24 h-24 rounded-2xl bg-[var(--color-green)]/20 text-[var(--color-green-300)] shrink-0">
-            <Icon.medal className="w-12 h-12" />
-          </div>
-          <div>
-            <h2 className="font-display text-3xl">
-              Our written {site.warrantyYears}-year workmanship warranty
-            </h2>
-            <p className="mt-3 text-white/75 leading-relaxed max-w-2xl">
-              Covered workmanship is documented for {site.warrantyYears} years,
-              together with the claim process and exclusions. Product failure,
-              leaks, substrate movement, impact damage, and normal wear require
-              separate evaluation because they are not application defects.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* How we earn it */}
       <section className="bg-[var(--color-cream-200)]/50 border-y border-[var(--color-line)]">
         <div className="container-x py-16 lg:py-24">
           <h2 className="font-display text-3xl sm:text-4xl max-w-2xl">
-            How we earn that guarantee on every job
+            How we organize every painting project
           </h2>
           <ol className="mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
             {processSteps.map((step, i) => (

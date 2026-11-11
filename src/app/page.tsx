@@ -37,7 +37,7 @@ const trustItems = [
   ["shield", "Building-ready", "Insurance and access details coordinated"],
   ["check", "Scope-first", "Prep, products, and exclusions in writing"],
   ["clock", "Schedule-led", "Clear sequencing and daily cleanup"],
-  ["medal", `${site.warrantyYears}-year warranty`, "Written workmanship coverage"],
+  ["medal", "Final walkthrough", "Completed work reviewed together"],
 ] as const;
 
 const audiences = [

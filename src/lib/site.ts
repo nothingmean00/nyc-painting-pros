@@ -11,7 +11,7 @@ export const site = {
   url: "https://www.nycpaintingpros.com",
   tagline: "NYC painting for homes, buildings, and businesses.",
   description:
-    "Painting for NYC homes, managed buildings and businesses across all five boroughs. Detailed scopes, careful preparation and a written workmanship warranty.",
+    "Painting for NYC homes, managed buildings and businesses across all five boroughs. Detailed scopes, careful preparation and a final walkthrough.",
   // --- NAP (keep identical everywhere: site, Google Business Profile, citations) ---
   phone: "(212) 814-7500",
   phoneHref: "tel:+12128147500",
@@ -26,7 +26,6 @@ export const site = {
   geo: { lat: 40.7257, lng: -74.0055 },
   hours: "Mon–Sat 7:00am–7:00pm",
   // --- Owner-controlled policies (these are promises you set, not invented metrics) ---
-  warrantyYears: 3,
   // 👉 Once you have a real, public Google Business Profile review rating, you can
   //    add a verified reviews widget. Do NOT hard-code ratings/counts here — fake
   //    review markup violates Google policy and risks a manual penalty.
@@ -393,8 +392,8 @@ export const guarantees = [
   },
   {
     icon: "medal",
-    title: `${site.warrantyYears}-year workmanship warranty`,
-    text: "Covered workmanship is documented in writing, including the warranty term and how to report an issue after completion.",
+    title: "A final walkthrough",
+    text: "We review the completed surfaces with you against the agreed scope and record any remaining touch-ups before handoff.",
   },
   {
     icon: "check",
@@ -434,8 +433,8 @@ export const faqs = [
     a: "Yes. Start with photos and a short project description; we will let you know whether the scope can be estimated remotely or needs an on-site walkthrough.",
   },
   {
-    q: "What kind of warranty do you provide?",
-    a: `Our written workmanship warranty runs for ${site.warrantyYears} years. The estimate and warranty terms explain covered work, exclusions, and how to report a workmanship issue.`,
+    q: "What happens at the final walkthrough?",
+    a: "We review the completed surfaces together against the written scope, note any remaining touch-ups, and share the product, color, sheen, and care information for your project.",
   },
   {
     q: "What paint brands do you use?",
@@ -465,7 +464,7 @@ export const processSteps = [
     text: "The crew follows the documented product, sheen, color, and coat schedule while keeping the work area organized.",
   },
   {
-    title: "Walkthrough & Warranty",
-    text: "We inspect together, touch up anything you flag, and back the whole job with our written warranty.",
+    title: "Final Walkthrough",
+    text: "We inspect the completed work together against the agreed scope, record remaining touch-ups, and share finish and care details.",
   },
 ] as const;

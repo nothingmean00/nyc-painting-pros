@@ -20,7 +20,7 @@ const values = [
   {
     icon: "shield" as const,
     title: "Trust, in writing",
-    text: "Written estimates document scope, materials, exclusions, scheduling, and workmanship warranty terms before work begins.",
+    text: "Written estimates document scope, materials, exclusions, and scheduling before work begins.",
   },
   {
     icon: "check" as const,
@@ -73,8 +73,7 @@ export default function AboutPage() {
             <p>
               Each project runs through a dedicated project manager, a written
               scope, daily cleanup, and a final walkthrough. The result is a
-              calmer job and a finish backed by our written workmanship
-              warranty.
+              calmer job with clear expectations from preparation through handoff.
             </p>
           </div>
           <Link href="/contact" className="btn btn-dark mt-8">

@@ -47,19 +47,17 @@ All business content lives in one file: **`src/lib/site.ts`**.
 
 1. **Phone / email / address** (`site.phone`, `phoneHref`, `email`, `address`,
    `geo`) — must match your Google Business Profile exactly (NAP consistency).
-2. **`warrantyYears`** — set it to the warranty you actually offer (or remove the
-   warranty messaging if you don't offer one).
-3. **`guarantees`** — confirm every promise is true for your business. You must
+2. **`guarantees`** — confirm every promise is true for your business. You must
    genuinely be licensed/insured/EPA Lead-Safe before claiming it.
-4. **Social links** in `site.social` — paste real profile URLs, or leave blank
+3. **Social links** in `site.social` — paste real profile URLs, or leave blank
    (`""`) and they're omitted from the page and schema automatically.
-5. **Estimate form delivery** — the form already POSTs to a real endpoint
+4. **Estimate form delivery** — the form already POSTs to a real endpoint
    (`/api/estimate`). To receive leads by email, set the env vars below (see
    "Estimate form" section). Until then, leads are validated and logged
    server-side so none are lost.
-6. **Before/after** — `src/components/BeforeAfter.tsx` uses stylized panels;
+5. **Before/after** — `src/components/BeforeAfter.tsx` uses stylized panels;
    drop in real project photos (`<img>`) when available.
-7. Point `site.url` / `domain` at the live domain before building for prod.
+6. Point `site.url` / `domain` at the live domain before building for prod.
 
 ## Estimate form (`/api/estimate`)
 

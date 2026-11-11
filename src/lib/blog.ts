@@ -189,7 +189,7 @@ export const posts: Post[] = [
         "Preparation: nail holes, cracks, stains, adhesive removal, and skim coating described separately.",
         "Finish system: paint line, sheen, primer where needed, color changes, and coat schedule.",
         "Logistics: furniture moving, floor protection, daily cleanup, access hours, and occupied-room sequencing.",
-        "Commercial terms: materials, tax treatment, payment milestones, change approvals, and written warranty exclusions."
+        "Commercial terms: materials, tax treatment, payment milestones, change approvals, and project exclusions."
       ]
     },
     {
