@@ -63,6 +63,11 @@ test('estimate handler stores photos atomically and emails only private admin re
     assert.equal((await POST(request({ ...validLead, details: 'x'.repeat(2_600_000) }))).status, 413);
     assert.equal(saved.length, 2);
     const retry = loader({ '@/lib/intakes': { recordIntake: async () => null, markIntakeEmailDelivered: async () => {}, IntakeStorageError: class extends Error {} } })('src/app/api/estimate/route.ts');
+    assert.equal((await POST(request({ ...validLead, phone: '' }))).status, 200);
+    assert.equal(saved[2].phone, '');
+    assert.ok(mails[2].text.includes('contact by email'));
+    assert.equal((await POST(request({ ...validLead, phone: '', email: '' }))).status, 422);
+    assert.equal(saved.length, 3);
     const count = mails.length;
     assert.equal((await retry.POST(request(validLead))).status, 200);
     assert.equal(mails.length, count);

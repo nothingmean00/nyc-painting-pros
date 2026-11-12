@@ -99,7 +99,6 @@ export async function POST(request: Request) {
 
   const errors: Record<string, string> = {};
   if (!name) errors.name = "Name is required.";
-  if (!phone) errors.phone = "Phone is required.";
   if (!email || !EMAIL_RE.test(email)) errors.email = "A valid email is required.";
   if (!location) errors.location = "Neighborhood or ZIP is required.";
   if (!service) errors.service = "Please choose a service.";
@@ -162,7 +161,7 @@ export async function POST(request: Request) {
   const lines = [
     ["Project photos", `${photos.length} attached; sign in to view: ${site.url}/admin/intakes/${intakeId}`],
     ["Name", name],
-    ["Phone", phone],
+    ["Phone", phone || "Not provided — contact by email"],
     ["Email", email],
     ["Location", location],
     ["Service", service],

@@ -71,7 +71,7 @@ export default async function IntakeDetailPage({
               <dl className="grid sm:grid-cols-2">
                 <div className="border-b border-slate-100 p-5 sm:border-r">
                   <dt className="flex items-center gap-2 text-xs font-medium uppercase text-slate-500"><Phone className="size-4" /> Phone</dt>
-                  <dd className="mt-2"><a href={`tel:${intake.phone}`} className="font-semibold text-emerald-700 hover:underline">{intake.phone}</a></dd>
+                  <dd className="mt-2">{intake.phone ? <a href={`tel:${intake.phone}`} className="font-semibold text-emerald-700 hover:underline">{intake.phone}</a> : "Not provided — contact by email"}</dd>
                 </div>
                 <div className="border-b border-slate-100 p-5">
                   <dt className="flex items-center gap-2 text-xs font-medium uppercase text-slate-500"><Mail className="size-4" /> Email</dt>

@@ -12,6 +12,7 @@ import type { ProjectPhoto } from "@/lib/project-photos";
 type Status = "idle" | "submitting" | "sent" | "error";
 
 type EstimateEvent =
+  | "estimate_viewed"
   | "estimate_started"
   | "estimate_validation_blocked"
   | "estimate_attempted"
@@ -22,7 +23,7 @@ type EstimateEvent =
 // or query strings (the project assistant can prefill details through the URL).
 function trackEstimate(event: EstimateEvent, properties: Record<string, string> = {}) {
   try {
-    track(event, { ...properties, page: window.location.pathname });
+    track(event, { ...properties, page: window.location.pathname, form_version: "simplified-v1" });
   } catch {
     // Analytics must never change the outcome of an estimate request.
   }
@@ -46,6 +47,20 @@ export function EstimateForm({
   const [photos, setPhotos] = useState<ProjectPhoto[]>([]);
   const [photosBusy, setPhotosBusy] = useState(false);
   const confirmation = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const element = formRef.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        trackEstimate("estimate_viewed");
+        observer.disconnect();
+      }
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (status === "sent") confirmation.current?.focus();
@@ -143,12 +158,14 @@ export function EstimateForm({
           Thanks — a project manager will review the details and contact you to
           confirm the next step for your estimate.
         </p>
+        <p className="mt-4 text-sm text-[var(--color-muted)]">We will confirm whether photos or a walkthrough are needed before preparing your written estimate. This request does not book work or commit you to a purchase.</p>
       </div>
     );
   }
 
   return (
     <form
+      ref={formRef}
       onSubmit={onSubmit}
       onInvalid={(event) => {
         const field = event.target;
@@ -183,7 +200,7 @@ export function EstimateForm({
           </p>
         </div>
       )}
-      <p className="text-sm text-[var(--color-muted)]">All fields are required except project details and photos.</p>
+      <p className="text-sm text-[var(--color-muted)]">Start with four required details. Phone, project notes and photos are optional.</p>
       {/* Honeypot — hidden from users, catches bots */}
       <input
         type="text"
@@ -204,12 +221,12 @@ export function EstimateForm({
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Full name" name="name" autoComplete="name" required />
         <Field
-          label="Phone"
+          label="Phone (optional)"
           name="phone"
           type="tel"
           autoComplete="tel"
           inputMode="tel"
-          required
+          hint="Add a number if you would like us to call about your estimate."
         />
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
@@ -224,7 +241,7 @@ export function EstimateForm({
         <Field label="Neighborhood / ZIP" name="location" required />
       </div>
       <label className="grid gap-1.5">
-        <span className="text-sm font-medium">Project type</span>
+        <span className="text-sm font-medium">Project type (required)</span>
         <select
           name="service"
           className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
@@ -239,9 +256,12 @@ export function EstimateForm({
               {s.name}
             </option>
           ))}
-          <option value="Other">Something else</option>
+          <option value="Other">Not sure / something else</option>
         </select>
       </label>
+      <details open={defaultDetails ? true : undefined} className="rounded-xl border border-[var(--color-line)] p-4">
+      <summary className="cursor-pointer font-medium text-sm">Add project details or photos (optional)</summary>
+      <div className="grid gap-4 pt-4">
       <label className="grid gap-1.5">
         <span className="text-sm font-medium">Tell us about the project (optional)</span>
         <span className="text-sm text-[var(--color-muted)]">Include walls, ceilings or trim, repairs, whether the space is occupied, and your preferred dates. Approximate details are fine.</span>
@@ -255,6 +275,9 @@ export function EstimateForm({
         />
       </label>
       <ProjectPhotoPicker photos={photos} onChange={setPhotos} busy={photosBusy} onBusyChange={setPhotosBusy} disabled={status === "submitting" || photosBusy} />
+      </div>
+      </details>
+      <p className="text-sm text-[var(--color-muted)]">We will review your request and contact you about the next step. No payment or booking is required.</p>
       <button
         type="submit"
         disabled={status === "submitting" || photosBusy}
@@ -266,7 +289,7 @@ export function EstimateForm({
           </>
         ) : (
           <>
-            Get My Free Estimate <Icon.arrow className="w-5 h-5" />
+            Request My Free Estimate <Icon.arrow className="w-5 h-5" />
           </>
         )}
       </button>
@@ -297,6 +320,7 @@ function Field({
   required,
   autoComplete,
   inputMode,
+  hint,
 }: {
   label: string;
   name: string;
@@ -304,10 +328,12 @@ function Field({
   required?: boolean;
   autoComplete?: string;
   inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+  hint?: string;
 }) {
   return (
     <label className="grid gap-1.5">
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-sm font-medium">{label}{required ? " (required)" : ""}</span>
+      {hint && <span className="text-xs text-[var(--color-muted)]">{hint}</span>}
       <input
         type={type}
         name={name}
