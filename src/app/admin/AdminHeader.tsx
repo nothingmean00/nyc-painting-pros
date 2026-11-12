@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ExternalLink, LogOut, Paintbrush } from "lucide-react";
+import { ExternalLink, LogOut } from "lucide-react";
+import { Logo } from "@/components/Logo";
 import { logoutAction } from "./actions";
 
 export function AdminHeader() {
@@ -7,11 +8,8 @@ export function AdminHeader() {
     <header className="border-b border-slate-800 bg-slate-950 text-white">
       <div className="mx-auto flex min-h-16 max-w-[90rem] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/admin" className="flex min-w-0 items-center gap-3">
-          <span className="grid size-9 shrink-0 place-items-center bg-emerald-500 text-slate-950">
-            <Paintbrush className="size-5" />
-          </span>
           <span className="min-w-0">
-            <span className="block truncate text-sm font-semibold">NYC Painting Pros</span>
+            <span className="block rounded bg-[var(--color-cream)] px-2 py-1"><Logo /></span>
             <span className="block text-xs text-slate-400">Intake operations</span>
           </span>
         </Link>

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { Paintbrush } from "lucide-react";
+import { Logo } from "@/components/Logo";
 import { adminAuthConfigured, isAdminAuthenticated } from "@/lib/admin-auth";
 import { LoginForm } from "./LoginForm";
 
@@ -12,9 +12,7 @@ export default async function AdminLoginPage() {
   return (
     <main className="grid min-h-screen place-items-center px-5 py-12">
       <div className="w-full max-w-md border border-slate-200 bg-white p-7 shadow-xl shadow-slate-950/5 sm:p-9">
-        <span className="grid size-12 place-items-center bg-emerald-500 text-slate-950">
-          <Paintbrush className="size-6" />
-        </span>
+        <Logo />
         <p className="mt-7 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
           Private workspace
         </p>

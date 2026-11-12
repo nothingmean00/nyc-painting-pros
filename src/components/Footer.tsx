@@ -25,9 +25,9 @@ export function Footer() {
     <footer className="bg-[var(--color-ink)] text-[var(--color-cream)]/80 mt-24">
       <div className="container-x py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-5">
         <div>
-          <div className="bg-[var(--color-cream)] inline-flex rounded-xl px-3 py-2">
+          <Link href="/" aria-label="NYC Painting Pros home" className="bg-[var(--color-cream)] inline-flex max-w-full rounded-xl px-3 py-2">
             <Logo />
-          </div>
+          </Link>
           <p className="mt-4 text-sm leading-relaxed max-w-xs">
             {site.description}
           </p>

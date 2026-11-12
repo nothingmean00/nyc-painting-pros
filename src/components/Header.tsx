@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "./Logo";
 import { Icon } from "./Icons";
 import { site, services } from "@/lib/site";
 
@@ -61,15 +61,7 @@ export function Header() {
 
       <div className="container-x flex items-center justify-between py-3">
         <Link href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
-          <Image
-            src="/brand/header-logo.webp"
-            alt="NYC Painting Pros"
-            width={840}
-            height={186}
-            sizes="210px"
-            preload
-            className="block h-[44px] w-[190px] object-contain sm:w-[210px]"
-          />
+          <Logo preload />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[0.9rem] font-semibold">
