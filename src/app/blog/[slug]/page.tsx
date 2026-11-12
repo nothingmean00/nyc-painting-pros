@@ -1,3 +1,4 @@
+import { PhotoCredit } from "@/components/PhotoCredit";
 import { ApartmentScopePlanner } from "@/components/ApartmentScopePlanner";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -130,7 +131,7 @@ export default async function BlogPost({
         {/* Cover */}
         <div className="container-x mt-8">
           <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden border border-[var(--color-line)]">
-            <Image
+            <Image unoptimized
               src={unsplash(p.cover.id, 1600)}
               alt={p.cover.alt}
               fill
@@ -139,6 +140,7 @@ export default async function BlogPost({
               priority
             />
           </div>
+          <PhotoCredit photo={p.cover} />
         </div>
 
         {/* Body */}
@@ -270,13 +272,13 @@ export default async function BlogPost({
           <h2 className="font-display text-3xl">Keep reading</h2>
           <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (
+              <div key={r.slug} className="flex flex-col">
               <Link
-                key={r.slug}
                 href={`/blog/${r.slug}`}
                 className="group card overflow-hidden flex flex-col hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
+                  <Image unoptimized
                     src={unsplash(r.cover.id, 800)}
                     alt={r.cover.alt}
                     fill
@@ -293,6 +295,8 @@ export default async function BlogPost({
                   </h3>
                 </div>
               </Link>
+              <PhotoCredit photo={r.cover} />
+              </div>
             ))}
           </div>
         </div>

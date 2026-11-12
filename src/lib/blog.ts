@@ -1,3 +1,4 @@
+import { blogImages, type BlogPhoto } from "./blog-images";
 import { detailPosts } from "./detail-content";
 import { railingPosts } from "./railing-content";
 import { officeTurnoverPosts } from "./office-turnover-content";
@@ -31,7 +32,7 @@ export type Post = {
   updated?: string;
   readMinutes: number;
   author: string;
-  cover: { id: string; alt: string };
+  cover: BlogPhoto;
   references?: { label: string; href: string }[];
   relatedPages?: string[];
   intro: string[];
@@ -41,7 +42,12 @@ export type Post = {
 
 // Helper: build a sized Unsplash URL from a photo ID.
 export function unsplash(id: string, w = 1200) {
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+  const url = new URL(id.startsWith("https://images.unsplash.com/") ? id : `https://images.unsplash.com/${id}`);
+  url.searchParams.set("auto", "format");
+  url.searchParams.set("fit", "crop");
+  url.searchParams.set("w", String(w));
+  url.searchParams.set("q", "80");
+  return url.toString();
 }
 
 export const posts: Post[] = [
@@ -749,6 +755,11 @@ export const posts: Post[] = [
       "To repaint a Williamsburg office without downtime, zone the work, schedule visible areas after hours, use low-odor durable coatings, and protect equipment before prep begins.",
   },
 ];
+
+// Apply editorial covers to imported and inline posts alike.
+for (const post of posts) {
+  if (blogImages[post.slug]) post.cover = blogImages[post.slug];
+}
 
 export function getPost(slug: string) {
   return posts.find((p) => p.slug === slug);

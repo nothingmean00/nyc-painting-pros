@@ -1,3 +1,4 @@
+import { PhotoCredit } from "@/components/PhotoCredit";
 import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -49,12 +50,13 @@ export default function BlogIndex() {
 
       <section className="container-x py-16 lg:py-24">
         {/* Featured post */}
+        <div>
         <Link
           href={`/blog/${featured.slug}`}
           className="group grid lg:grid-cols-2 gap-8 lg:gap-12 items-center card overflow-hidden hover:shadow-[var(--shadow-lift)] transition-all"
         >
           <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[340px] overflow-hidden">
-            <Image
+            <Image unoptimized
               src={unsplash(featured.cover.id, 1200)}
               alt={featured.cover.alt}
               fill
@@ -83,6 +85,8 @@ export default function BlogIndex() {
             </span>
           </div>
         </Link>
+        <PhotoCredit photo={featured.cover} />
+        </div>
 
         <nav aria-label="Guide topics" className="mt-10 flex flex-wrap gap-3">
           {categories.map((category, index) => <a key={category} href={"#guide-topic-" + index} className="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-semibold">{category}</a>)}
@@ -91,13 +95,13 @@ export default function BlogIndex() {
           <h2 className="font-display text-3xl">{category}</h2>
           <div className="mt-6 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {rest.filter((post) => post.category === category).map((p) => (
+            <div key={p.slug} className="flex flex-col">
             <Link
-              key={p.slug}
               href={`/blog/${p.slug}`}
               className="group card overflow-hidden flex flex-col hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
+                <Image unoptimized
                   src={unsplash(p.cover.id, 800)}
                   alt={p.cover.alt}
                   fill
@@ -123,6 +127,8 @@ export default function BlogIndex() {
                 </span>
               </div>
             </Link>
+            <PhotoCredit photo={p.cover} />
+            </div>
           ))}
         </div>
         </section>)}
