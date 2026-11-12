@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Logo } from "./Logo";
+import Image from "next/image";
 import { Icon } from "./Icons";
 import { site, services } from "@/lib/site";
 
@@ -61,7 +61,15 @@ export function Header() {
 
       <div className="container-x flex items-center justify-between py-3">
         <Link href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
-          <Logo />
+          <Image
+            src="/brand/header-logo.webp"
+            alt="NYC Painting Pros"
+            width={840}
+            height={186}
+            sizes="210px"
+            preload
+            className="block h-[44px] w-[190px] object-contain sm:w-[210px]"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[0.9rem] font-semibold">
@@ -101,7 +109,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] md:top-[94px] bottom-0 z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden absolute inset-x-0 top-full h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
           <div className="container-x py-6 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
