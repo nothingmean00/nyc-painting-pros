@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Icon } from "./Icons";
 
 export function CTASection({
-  title = "Ready to plan your project?",
-  subtitle = "Tell us what you are working on and we will recommend the right scope, finish, and next step.",
+  title = "Need a painting estimate?",
+  subtitle = "Tell us what needs painting and when. Photos are helpful, but you can send your request without them.",
   href = "/contact",
 }: {
   title?: string;
@@ -12,7 +12,7 @@ export function CTASection({
 }) {
   return (
     <section className="container-x">
-      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-ink)] text-white px-6 sm:px-12 py-14 sm:py-16 paint-grid">
+      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-ink)] text-white px-6 sm:px-12 py-14 sm:py-16">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl sm:text-4xl leading-tight">
             {title}

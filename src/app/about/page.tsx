@@ -49,9 +49,9 @@ export default function AboutPage() {
         ])}
       />
       <PageHero
-        eyebrow="Our story"
-        title="Built on craft, trust, and clean job sites"
-        subtitle="NYC Painting Pros is built for homeowners, property managers, and business owners who care about prep, communication, and a clean finish."
+        eyebrow="About NYC Painting Pros"
+        title="What to expect when you hire us"
+        subtitle="Painting and wall repairs for homes, apartment buildings and businesses across New York City."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
@@ -61,19 +61,18 @@ export default function AboutPage() {
       <section className="container-x py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <h2 className="font-display text-3xl sm:text-4xl leading-tight">
-            A New York painting company built around clear communication
+            Agree on the work before it starts
           </h2>
           <div className="mt-5 space-y-4 text-[var(--color-muted)] leading-relaxed text-lg">
             <p>
-              NYC painting projects fail in predictable places: vague scopes,
-              rushed prep, poor protection, missed building paperwork, and crews
-              that disappear when questions come up. We built the company around
-              those details.
+              Your estimate should say which rooms and surfaces are included,
+              what repairs are needed, and which paint and finish will be used.
+              We discuss building paperwork and access hours before scheduling.
             </p>
             <p>
-              Each project runs through a dedicated project manager, a written
-              scope, daily cleanup, and a final walkthrough. The result is a
-              calmer job with clear expectations from preparation through handoff.
+              You have a project contact for questions during the work.
+              We protect the work area, clean up each day, and review the finished
+              surfaces with you at the final walkthrough.
             </p>
           </div>
           <Link href="/contact" className="btn btn-dark mt-8">

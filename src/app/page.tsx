@@ -12,7 +12,7 @@ import { areas, faqs, processSteps, services, site } from "@/lib/site";
 const projectImages = [
   {
     src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
-    alt: "Bright, freshly finished New York living space",
+    alt: "Bright living room with white walls",
     title: "Apartment interiors",
     text: "Pre-war rooms, new condos, move-ins, and full-home repaints.",
     href: "/painting/apartment-painting-nyc",
@@ -34,9 +34,9 @@ const projectImages = [
 ] as const;
 
 const trustItems = [
-  ["shield", "Building-ready", "Insurance and access details coordinated"],
-  ["check", "Scope-first", "Prep, products, and exclusions in writing"],
-  ["clock", "Schedule-led", "Clear sequencing and daily cleanup"],
+  ["shield", "Building paperwork", "Insurance and access details coordinated"],
+  ["check", "Written estimates", "Prep, products, and exclusions in writing"],
+  ["clock", "Work schedule", "Work hours agreed before the job starts"],
   ["medal", "Final walkthrough", "Completed work reviewed together"],
 ] as const;
 
@@ -53,13 +53,13 @@ const audiences = [
     icon: "building",
     label: "For property teams",
     title: "Buildings",
-    text: "Repeatable turnovers, common areas, lobbies, and multi-property programs with clear closeout.",
+    text: "Rental turnovers, hallways and lobbies, with access and work hours agreed in advance.",
     href: "/services/property-manager-turnovers",
-    link: "Explore property programs",
+    link: "Painting for property managers",
   },
   {
     icon: "roller",
-    label: "For organizations",
+    label: "For business owners",
     title: "Businesses",
     text: "Offices, retail, hospitality, and occupied spaces scheduled to minimize operational disruption.",
     href: "/services/commercial-painting",
@@ -85,8 +85,8 @@ export default function Home() {
               <span className="block text-[var(--color-green-300)]">every kind of space.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/72 sm:text-xl">
-              One detail-focused team for homes, managed buildings, and businesses
-              across all five boroughs—from careful prep to final walkthrough.
+              Interior and exterior painting across all five boroughs. Tell us
+              what needs painting, and we will put the preparation, materials and price in writing.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="btn btn-primary text-base">
@@ -110,7 +110,7 @@ export default function Home() {
             <div className="absolute inset-0 -right-[50vw]">
               <Image
                 src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1800&q=88"
-                alt="Professional painter carefully applying a fresh wall finish"
+                alt="Paint roller applying paint to a wall"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -119,7 +119,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/15 to-transparent lg:from-[var(--color-ink)]/55" />
             </div>
             <div className="absolute bottom-8 left-0 max-w-[290px] rounded-xl border border-white/20 bg-[var(--color-ink)]/82 p-5 shadow-2xl backdrop-blur-md lg:-left-8 lg:bottom-12">
-              <div className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-300)]">The NYC difference</div>
+              <div className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-300)]">Building access</div>
               <p className="mt-2 text-sm leading-relaxed text-white/75">
                 Co-op rules, COIs, freight elevators, occupied spaces—we plan for the details that make city projects different.
               </p>
@@ -147,8 +147,8 @@ export default function Home() {
 
       <section className="container-x section-pad !pb-0" aria-labelledby="choose-your-path">
         <div className="max-w-3xl">
-          <span className="eyebrow">Choose your path</span>
-          <h2 id="choose-your-path" className="section-title mt-4">Built around who you are responsible for.</h2>
+          <span className="eyebrow">Painting services</span>
+          <h2 id="choose-your-path" className="section-title mt-4">What needs painting?</h2>
         </div>
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {audiences.map((audience, index) => {
@@ -180,10 +180,10 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
           <div>
             <span className="eyebrow">What we do</span>
-            <h2 className="section-title mt-4">One crew for the whole finish.</h2>
+            <h2 className="section-title mt-4">Painting, repairs and wall finishes.</h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">
-              Painting is only the visible layer. We handle the repairs, prep,
-              protection, finish selection, and closeout that make the result last.
+              Your estimate can include wall repairs, wallpaper removal, cabinet
+              refinishing and surface preparation, along with the painting.
             </p>
             <Link href="/services" className="btn btn-ghost mt-8">
               Explore every service <Icon.arrow className="h-4 w-4" />
@@ -214,8 +214,8 @@ export default function Home() {
         <div className="container-x">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-3xl">
-              <span className="eyebrow">Spaces we transform</span>
-              <h2 className="section-title mt-4">Made for how New York lives.</h2>
+              <span className="eyebrow">Project ideas</span>
+              <h2 className="section-title mt-4">Apartments, kitchens and workspaces.</h2>
             </div>
             <p className="max-w-md text-[var(--color-muted)]">Residential and commercial scopes shaped around the building, schedule, surface, and people using the space.</p>
           </div>
@@ -246,8 +246,8 @@ export default function Home() {
       <section className="container-x section-pad">
         <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <span className="eyebrow">A better process</span>
-            <h2 className="section-title mt-4">Less disruption. More certainty.</h2>
+            <span className="eyebrow">How it works</span>
+            <h2 className="section-title mt-4">From estimate to final walkthrough.</h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-[var(--color-muted)]">You always know what happens next, who to contact, and what the finished work includes.</p>
           </div>
           <ol className="border-t border-[var(--color-line)]">
@@ -267,9 +267,9 @@ export default function Home() {
       <section className="bg-[var(--color-cream-200)] section-pad">
         <div className="container-x grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
           <div>
-            <span className="eyebrow">Local by design</span>
-            <h2 className="section-title mt-4">Every borough. Every kind of building.</h2>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)]">From Manhattan co-ops to Brooklyn brownstones and Queens homes, we adapt the plan to your property—not the other way around.</p>
+            <span className="eyebrow">Areas we serve</span>
+            <h2 className="section-title mt-4">Painting across all five boroughs.</h2>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)]">Choose your borough for information about local painting projects and building access.</p>
           </div>
           <div className="divide-y divide-[var(--color-line)] border-y border-[var(--color-line)]">
             {areas.map((area) => (
@@ -306,7 +306,7 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
           <div>
             <span className="eyebrow">Good to know</span>
-            <h2 className="font-display mt-4 text-4xl tracking-tight sm:text-5xl">Straight answers.</h2>
+            <h2 className="font-display mt-4 text-4xl tracking-tight sm:text-5xl">Common questions.</h2>
           </div>
           <Faq items={faqs} />
         </div>
@@ -325,7 +325,7 @@ export default function Home() {
         </div>
       </section>
       <PropertyCareResources />
-      <CTASection title="A better finish starts with a better plan." subtitle="Tell us about your space, timeline, and priorities. We’ll help you define the right scope." />
+      <CTASection title="Need a painting estimate?" subtitle="Tell us which rooms or surfaces need work and when you would like to start." />
       <div className="h-16" />
     </>
   );
