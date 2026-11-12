@@ -2565,7 +2565,7 @@
   "ownerDirectedNeighborhoodExpansion": {
     "id": "nyc-painting-pros:owner:2026-11-12:neighborhood-coverage",
     "owner": "owner-directed",
-    "status": "validated-awaiting-publication",
+    "status": "verified-live",
     "countsTowardScheduledQuota": false,
     "reservedAt": "2026-11-12T11:50:37.986Z",
     "existing": [
@@ -2584,7 +2584,7 @@
         "intent": "Rental colors, stair access and room sequencing",
         "url": "/areas/alphabet-city",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2600,7 +2600,10 @@
           "occupied-apartment-painting-nyc",
           "move-out-apartment-painting-nyc"
         ],
-        "guide": "living-at-home-during-apartment-painting"
+        "guide": "living-at-home-during-apartment-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-battery-park-city",
@@ -2608,7 +2611,7 @@
         "intent": "Building access before the move-in handoff",
         "url": "/areas/battery-park-city",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2624,7 +2627,10 @@
           "move-in-apartment-painting-nyc",
           "apartment-painting-nyc"
         ],
-        "guide": "get-coop-board-approve-painting-project"
+        "guide": "get-coop-board-approve-painting-project",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-carnegie-hill",
@@ -2632,7 +2638,7 @@
         "intent": "Wall finishes and detailed woodwork",
         "url": "/areas/carnegie-hill",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2648,7 +2654,10 @@
           "interior-trim-painting-nyc",
           "plaster-wall-repair-painting-nyc"
         ],
-        "guide": "trim-paint-finish-and-return-to-use"
+        "guide": "trim-paint-finish-and-return-to-use",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-chelsea",
@@ -2656,7 +2665,7 @@
         "intent": "Wall preparation under the room’s actual lighting",
         "url": "/areas/chelsea",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2672,7 +2681,10 @@
           "apartment-painting-nyc",
           "commercial-painting-manhattan"
         ],
-        "guide": "paint-color-samples-changing-light"
+        "guide": "paint-color-samples-changing-light",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-columbus-circle",
@@ -2680,7 +2692,7 @@
         "intent": "Tall walls, glazing and equipment access",
         "url": "/areas/columbus-circle",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2696,7 +2708,10 @@
           "co-op-condo-painting-nyc",
           "ceiling-painting-nyc"
         ],
-        "guide": "high-ceiling-painting-estimate-measurements"
+        "guide": "high-ceiling-painting-estimate-measurements",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-east-village",
@@ -2704,7 +2719,7 @@
         "intent": "Repairs before covering the old finish",
         "url": "/areas/east-village",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2720,7 +2735,10 @@
           "plaster-wall-repair-painting-nyc",
           "apartment-painting-nyc"
         ],
-        "guide": "remove-wallpaper-or-paint-over-it"
+        "guide": "remove-wallpaper-or-paint-over-it",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-flatiron-district",
@@ -2728,7 +2746,7 @@
         "intent": "Office zones and reopening conditions",
         "url": "/areas/flatiron-district",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2744,7 +2762,10 @@
           "commercial-painting-manhattan",
           "office-move-out-painting-nyc"
         ],
-        "guide": "office-move-out-painting-checklist"
+        "guide": "office-move-out-painting-checklist",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-financial-district",
@@ -2752,7 +2773,7 @@
         "intent": "Residential, tenant and building-managed scopes",
         "url": "/areas/financial-district",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2768,7 +2789,10 @@
           "office-move-out-painting-nyc",
           "apartment-building-lobby-hallway-painting-nyc"
         ],
-        "guide": "office-move-out-painting-checklist"
+        "guide": "office-move-out-painting-checklist",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-gramercy-park",
@@ -2776,7 +2800,7 @@
         "intent": "Protecting furnished rooms and retained woodwork",
         "url": "/areas/gramercy-park",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2792,7 +2816,10 @@
           "interior-trim-painting-nyc",
           "single-room-accent-wall-painting-nyc"
         ],
-        "guide": "furniture-protection-painting-handoff"
+        "guide": "furniture-protection-painting-handoff",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-greenwich-village",
@@ -2800,7 +2827,7 @@
         "intent": "Preserving details while defining the repair finish",
         "url": "/areas/greenwich-village",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2816,7 +2843,10 @@
           "skim-coating-nyc",
           "interior-trim-painting-nyc"
         ],
-        "guide": "plaster-cracks-before-painting"
+        "guide": "plaster-cracks-before-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-harlem",
@@ -2824,7 +2854,7 @@
         "intent": "Individual homes and shared-building schedules",
         "url": "/areas/harlem",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2840,7 +2870,10 @@
           "pre-war-apartment-painting-nyc",
           "stairwell-painting-nyc"
         ],
-        "guide": "multi-unit-painting-scope-matrix"
+        "guide": "multi-unit-painting-scope-matrix",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-hells-kitchen",
@@ -2848,7 +2881,7 @@
         "intent": "Working hours and occupied-space access",
         "url": "/areas/hells-kitchen",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2864,7 +2897,10 @@
           "office-painting-nyc",
           "retail-storefront-painting-nyc"
         ],
-        "guide": "paint-dry-vs-cured-return-to-use"
+        "guide": "paint-dry-vs-cured-return-to-use",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-herald-square",
@@ -2872,7 +2908,7 @@
         "intent": "Retail fixtures, stock and delivery access",
         "url": "/areas/herald-square",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2888,7 +2924,10 @@
           "retail-fitting-room-painting-nyc",
           "commercial-painting-manhattan"
         ],
-        "guide": "fitting-room-painting-store-reopening-checklist"
+        "guide": "fitting-room-painting-store-reopening-checklist",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-hudson-heights",
@@ -2896,7 +2935,7 @@
         "intent": "Window-side walls, samples and radiator covers",
         "url": "/areas/hudson-heights",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2912,7 +2951,10 @@
           "radiator-cover-painting-nyc",
           "occupied-apartment-painting-nyc"
         ],
-        "guide": "ceiling-paint-flat-finish-side-light"
+        "guide": "ceiling-paint-flat-finish-side-light",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-inwood",
@@ -2920,7 +2962,7 @@
         "intent": "Room inventories and furniture return",
         "url": "/areas/inwood",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2936,7 +2978,10 @@
           "closet-painting-nyc",
           "move-in-apartment-painting-nyc"
         ],
-        "guide": "closet-painting-shelves-and-storage-plan"
+        "guide": "closet-painting-shelves-and-storage-plan",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-koreatown",
@@ -2944,7 +2989,7 @@
         "intent": "Restaurant and business repainting between operating periods",
         "url": "/areas/koreatown",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2960,7 +3005,10 @@
           "commercial-painting-manhattan",
           "kitchen-wall-painting-nyc"
         ],
-        "guide": "kitchen-walls-grease-before-painting"
+        "guide": "kitchen-walls-grease-before-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-lenox-hill",
@@ -2968,7 +3016,7 @@
         "intent": "Kitchen cabinet finishes and household downtime",
         "url": "/areas/lenox-hill",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -2984,7 +3032,10 @@
           "cabinet-refinishing-cost-nyc",
           "kitchen-wall-painting-nyc"
         ],
-        "guide": "repaint-or-refinish-kitchen-cabinets-nyc"
+        "guide": "repaint-or-refinish-kitchen-cabinets-nyc",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-lower-east-side",
@@ -2992,7 +3043,7 @@
         "intent": "Color changes and end-of-tenancy scope",
         "url": "/areas/lower-east-side",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3008,7 +3059,10 @@
           "single-room-accent-wall-painting-nyc",
           "rental-turnover-painting-nyc"
         ],
-        "guide": "painting-dark-walls-a-light-color"
+        "guide": "painting-dark-walls-a-light-color",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-madison-square",
@@ -3016,7 +3070,7 @@
         "intent": "Paint samples for homes and workspaces around the park",
         "url": "/areas/madison-square",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3032,7 +3086,10 @@
           "apartment-painting-nyc",
           "single-room-accent-wall-painting-nyc"
         ],
-        "guide": "paint-color-samples-changing-light"
+        "guide": "paint-color-samples-changing-light",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-marble-hill",
@@ -3040,7 +3097,7 @@
         "intent": "Confirm the address, access route and responsible party",
         "url": "/areas/marble-hill",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3056,7 +3113,10 @@
           "rental-turnover-painting-nyc",
           "stairwell-painting-nyc"
         ],
-        "guide": "compare-nyc-painting-estimates"
+        "guide": "compare-nyc-painting-estimates",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-midtown",
@@ -3064,7 +3124,7 @@
         "intent": "A clear commercial scope from reception to back office",
         "url": "/areas/midtown",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3080,7 +3140,10 @@
           "commercial-painting-manhattan",
           "office-move-out-painting-nyc"
         ],
-        "guide": "compare-nyc-painting-estimates"
+        "guide": "compare-nyc-painting-estimates",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-murray-hill",
@@ -3088,7 +3151,7 @@
         "intent": "Move-in painting before furniture fills the room",
         "url": "/areas/murray-hill",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3104,7 +3167,10 @@
           "closet-painting-nyc",
           "interior-door-painting-nyc"
         ],
-        "guide": "paint-dry-vs-cured-return-to-use"
+        "guide": "paint-dry-vs-cured-return-to-use",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-nolita",
@@ -3112,7 +3178,7 @@
         "intent": "Feature walls and wallpaper material planning",
         "url": "/areas/nolita",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3128,7 +3194,10 @@
           "wallpaper-installation-nyc",
           "skim-coating-nyc"
         ],
-        "guide": "wallpaper-feature-wall-pattern-placement"
+        "guide": "wallpaper-feature-wall-pattern-placement",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-soho",
@@ -3136,7 +3205,7 @@
         "intent": "Open rooms, tall walls and finish boundaries",
         "url": "/areas/soho",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3152,7 +3221,10 @@
           "commercial-painting-manhattan",
           "skim-coating-nyc"
         ],
-        "guide": "touch-up-or-repaint-whole-wall"
+        "guide": "touch-up-or-repaint-whole-wall",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-stuyvesant-town",
@@ -3160,7 +3232,7 @@
         "intent": "Resident permission and the boundary with maintenance",
         "url": "/areas/stuyvesant-town",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3176,7 +3248,10 @@
           "single-room-accent-wall-painting-nyc",
           "water-stain-repainting-nyc"
         ],
-        "guide": "water-stain-returns-after-painting"
+        "guide": "water-stain-returns-after-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-turtle-bay",
@@ -3184,7 +3259,7 @@
         "intent": "Small offices and apartments with controlled entry",
         "url": "/areas/turtle-bay",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3200,7 +3275,10 @@
           "co-op-condo-painting-nyc",
           "occupied-apartment-painting-nyc"
         ],
-        "guide": "painting-project-final-walkthrough-checklist"
+        "guide": "painting-project-final-walkthrough-checklist",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-union-square",
@@ -3208,7 +3286,7 @@
         "intent": "Mixed-use spaces and staged return to normal use",
         "url": "/areas/union-square",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3224,7 +3302,10 @@
           "single-room-accent-wall-painting-nyc",
           "office-painting-nyc"
         ],
-        "guide": "matte-eggshell-satin-paint-finish-guide"
+        "guide": "matte-eggshell-satin-paint-finish-guide",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-upper-west-side",
@@ -3232,7 +3313,7 @@
         "intent": "Plaster repairs, trim and lived-in rooms",
         "url": "/areas/upper-west-side",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3248,7 +3329,10 @@
           "plaster-wall-repair-painting-nyc",
           "built-in-bookcase-painting-nyc"
         ],
-        "guide": "painted-bookshelves-when-to-put-books-back"
+        "guide": "painted-bookshelves-when-to-put-books-back",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-washington-heights",
@@ -3256,7 +3340,7 @@
         "intent": "Room repairs and practical access planning",
         "url": "/areas/washington-heights",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3272,7 +3356,10 @@
           "apartment-painting-nyc",
           "stairwell-painting-nyc"
         ],
-        "guide": "plaster-cracks-before-painting"
+        "guide": "plaster-cracks-before-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       },
       {
         "id": "nyc-painting-pros:owner:2026-11-12:area-yorkville",
@@ -3280,7 +3367,7 @@
         "intent": "Trim, doors and the small surfaces a quote can miss",
         "url": "/areas/yorkville",
         "baseline": "New URL; no measured page performance",
-        "status": "validated-awaiting-publication",
+        "status": "verified-live",
         "reviewDates": [
           "2026-12-12",
           "2027-01-11",
@@ -3296,7 +3383,10 @@
           "interior-window-trim-painting-nyc",
           "radiator-cover-painting-nyc"
         ],
-        "guide": "doors-sticking-after-painting"
+        "guide": "doors-sticking-after-painting",
+        "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+        "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+        "verifiedLiveAt": "2026-11-12T07:06:55-05:00"
       }
     ],
     "research": {
@@ -3347,6 +3437,24 @@
         "money": 0,
         "blog": 0
       }
+    },
+    "commit": "430a2cc50fb08bfd1962b14762730319d5840563",
+    "deployment": "dpl_6frJYjP68DRzBrUNnYxheUvGfjwZ",
+    "verifiedLiveAt": "2026-11-12T07:06:55-05:00",
+    "counts": {
+      "newMoney": 30,
+      "newBlog": 0,
+      "existingLocationsReused": 7
+    },
+    "liveValidation": {
+      "base": "https://www.nycpaintingpros.com",
+      "checkedAt": "2026-11-12T12:06:55.429Z",
+      "sitemapRoutes": 167,
+      "newNeighborhoods": 30,
+      "uniqueTitles": 30,
+      "uniqueDescriptions": 30,
+      "minimumInboundLinks": 6,
+      "routeLinkSchemaCanonicalCtaRobots": "PASS"
     }
   }
 }
