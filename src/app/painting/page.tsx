@@ -1,9 +1,8 @@
 import { withRouteSocial } from "@/lib/metadata";
 import { detailMoneyPages } from "@/lib/detail-content";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ProjectFinder } from "@/components/ProjectFinder";
 import { PageHero } from "@/components/PageHero";
-import { Icon } from "@/components/Icons";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
@@ -106,41 +105,13 @@ export default function PaintingIndex() {
           { name: "NYC Painting", path: "/painting" },
         ]}
       />
-      <nav aria-label="Project categories" className="container-x flex flex-wrap gap-3 pt-8">
-        {completeGroups.map((group, index) => <a key={group.title} href={"#project-group-" + index} className="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-semibold hover:border-[var(--color-green)]">{group.title}</a>)}
-      </nav>
-      <section className="container-x py-16 lg:py-24 space-y-14">
-        {completeGroups.map((group, index) => (
-          <div key={group.title} id={"project-group-" + index} className="scroll-mt-36">
-            <h2 className="font-display text-2xl sm:text-3xl mb-6">{group.title}</h2>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {group.slugs.map((slug) => {
-                const p = moneyPages.find((m) => m.slug === slug);
-                if (!p) return null;
-                const I = Icon[p.icon];
-                return (
-                  <Link
-                    key={p.slug}
-                    href={`/painting/${p.slug}`}
-                    className="card p-6 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all"
-                  >
-                    <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-ink)] text-white group-hover:bg-[var(--color-green)] transition-colors">
-                      <I className="w-5 h-5" />
-                    </span>
-                    <h3 className="font-display text-lg mt-4">{p.h1}</h3>
-                    <p className="mt-1.5 text-sm text-[var(--color-muted)] leading-relaxed line-clamp-2">
-                      {p.lede}
-                    </p>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-green-600)]">
-                      View details <Icon.arrow className="w-4 h-4" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </section>
+      <ProjectFinder groups={completeGroups.map((group) => ({
+        title: group.title,
+        projects: group.slugs.flatMap((slug) => {
+          const page = moneyPages.find((item) => item.slug === slug);
+          return page ? [{ slug: page.slug, title: page.h1, description: page.lede, keyword: page.keyword, icon: page.icon }] : [];
+        }),
+      }))} />
       <CTASection />
       <div className="h-20" />
     </>
