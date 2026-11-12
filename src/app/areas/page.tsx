@@ -1,3 +1,4 @@
+import { NeighborhoodCoverage } from "@/components/NeighborhoodCoverage";
 import { withRouteSocial } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -67,6 +68,7 @@ export default function AreasIndex() {
           ))}
         </div>
       </section>
+      <NeighborhoodCoverage all />
       <CTASection />
       <div className="h-20" />
     </>

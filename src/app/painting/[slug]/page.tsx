@@ -1,3 +1,4 @@
+import { NeighborhoodCoverage } from "@/components/NeighborhoodCoverage";
 import { ApartmentScopePlanner } from "@/components/ApartmentScopePlanner";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -317,6 +318,7 @@ export default async function MoneyPage({
         </div>
       </section>
 
+      <NeighborhoodCoverage project={p.slug} />
       <CTASection title={`Get a free estimate for ${p.keyword.toLowerCase()}`} href={`/contact?project=${p.slug}`} />
       <div className="h-20" />
     </>

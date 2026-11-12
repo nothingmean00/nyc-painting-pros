@@ -1,3 +1,6 @@
+import { neighborhoods } from "@/lib/neighborhoods";
+import { NeighborhoodPage } from "@/components/NeighborhoodPage";
+import { NeighborhoodCoverage } from "@/components/NeighborhoodCoverage";
 import { socialMetadata } from "@/lib/metadata";
 import { areaPlanning } from "@/lib/area-planning";
 import type { Metadata } from "next";
@@ -14,7 +17,7 @@ import { site, areas, services, faqs } from "@/lib/site";
 import { moneyPages } from "@/lib/money-pages";
 
 export function generateStaticParams() {
-  return areas.map((a) => ({ slug: a.slug }));
+  return [...areas, ...neighborhoods].map((a) => ({ slug: a.slug }));
 }
 
 function getArea(slug: string) {
@@ -27,6 +30,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const n = neighborhoods.find((item) => item.slug === slug);
+  if (n) {
+    const title = 'Painters in ' + n.name + ' | NYC Painting Pros';
+    const description = 'Painting in ' + n.name + ': ' + n.focus.toLowerCase() + '. Compare project scopes, preparation and access needs. Request an itemized estimate.';
+    return { title: { absolute: title }, description, alternates: { canonical: '/areas/' + n.slug }, ...socialMetadata(title, description, '/areas/' + n.slug) };
+  }
   const a = getArea(slug);
   if (!a) return {};
   const title = areaPlanning[a.slug]?.title ?? `Painters in ${a.name} | ${site.name}`;
@@ -45,6 +54,8 @@ export default async function AreaPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const neighborhood = neighborhoods.find((item) => item.slug === slug);
+  if (neighborhood) return <NeighborhoodPage neighborhood={neighborhood} />;
   const a = getArea(slug);
   if (!a) notFound();
   const planning = areaPlanning[a.slug];
@@ -196,6 +207,7 @@ export default async function AreaPage({
         </div>
       </section>
 
+      {a.slug === "manhattan" && <NeighborhoodCoverage all />}
       <CTASection title={`Get a free estimate in ${a.name}`} />
       <div className="h-20" />
     </>

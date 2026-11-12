@@ -2561,5 +2561,792 @@
       ],
       "liveRecord": "C:/Portfolio/seo-agency/jobs/manual-painting-10-pairs-20261110.json"
     }
+  },
+  "ownerDirectedNeighborhoodExpansion": {
+    "id": "nyc-painting-pros:owner:2026-11-12:neighborhood-coverage",
+    "owner": "owner-directed",
+    "status": "validated-awaiting-publication",
+    "countsTowardScheduledQuota": false,
+    "reservedAt": "2026-11-12T11:50:37.986Z",
+    "existing": [
+      "/areas/bronx",
+      "/areas/brooklyn",
+      "/areas/manhattan",
+      "/areas/queens",
+      "/areas/staten-island",
+      "/painting/upper-east-side-apartment-painters",
+      "/painting/tribeca-loft-painting"
+    ],
+    "entries": [
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-alphabet-city",
+        "type": "Money page",
+        "intent": "Rental colors, stair access and room sequencing",
+        "url": "/areas/alphabet-city",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "single-room-accent-wall-painting-nyc",
+          "occupied-apartment-painting-nyc",
+          "move-out-apartment-painting-nyc"
+        ],
+        "guide": "living-at-home-during-apartment-painting"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-battery-park-city",
+        "type": "Money page",
+        "intent": "Building access before the move-in handoff",
+        "url": "/areas/battery-park-city",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "co-op-condo-painting-nyc",
+          "move-in-apartment-painting-nyc",
+          "apartment-painting-nyc"
+        ],
+        "guide": "get-coop-board-approve-painting-project"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-carnegie-hill",
+        "type": "Money page",
+        "intent": "Wall finishes and detailed woodwork",
+        "url": "/areas/carnegie-hill",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://s-media.nyc.gov/agencies/lpc/lp/0861.pdf",
+        "researchSources": [
+          "https://s-media.nyc.gov/agencies/lpc/lp/0861.pdf"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "pre-war-apartment-painting-nyc",
+          "interior-trim-painting-nyc",
+          "plaster-wall-repair-painting-nyc"
+        ],
+        "guide": "trim-paint-finish-and-return-to-use"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-chelsea",
+        "type": "Money page",
+        "intent": "Wall preparation under the room’s actual lighting",
+        "url": "/areas/chelsea",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "skim-coating-nyc",
+          "apartment-painting-nyc",
+          "commercial-painting-manhattan"
+        ],
+        "guide": "paint-color-samples-changing-light"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-columbus-circle",
+        "type": "Money page",
+        "intent": "Tall walls, glazing and equipment access",
+        "url": "/areas/columbus-circle",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "high-ceiling-painting-nyc",
+          "co-op-condo-painting-nyc",
+          "ceiling-painting-nyc"
+        ],
+        "guide": "high-ceiling-painting-estimate-measurements"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-east-village",
+        "type": "Money page",
+        "intent": "Repairs before covering the old finish",
+        "url": "/areas/east-village",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "wallpaper-removal-nyc",
+          "plaster-wall-repair-painting-nyc",
+          "apartment-painting-nyc"
+        ],
+        "guide": "remove-wallpaper-or-paint-over-it"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-flatiron-district",
+        "type": "Money page",
+        "intent": "Office zones and reopening conditions",
+        "url": "/areas/flatiron-district",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.flatironnomad.nyc/the-district/overview/",
+        "researchSources": [
+          "https://www.flatironnomad.nyc/the-district/overview/"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "office-painting-nyc",
+          "commercial-painting-manhattan",
+          "office-move-out-painting-nyc"
+        ],
+        "guide": "office-move-out-painting-checklist"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-financial-district",
+        "type": "Money page",
+        "intent": "Residential, tenant and building-managed scopes",
+        "url": "/areas/financial-district",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "co-op-condo-painting-nyc",
+          "office-move-out-painting-nyc",
+          "apartment-building-lobby-hallway-painting-nyc"
+        ],
+        "guide": "office-move-out-painting-checklist"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-gramercy-park",
+        "type": "Money page",
+        "intent": "Protecting furnished rooms and retained woodwork",
+        "url": "/areas/gramercy-park",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "occupied-apartment-painting-nyc",
+          "interior-trim-painting-nyc",
+          "single-room-accent-wall-painting-nyc"
+        ],
+        "guide": "furniture-protection-painting-handoff"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-greenwich-village",
+        "type": "Money page",
+        "intent": "Preserving details while defining the repair finish",
+        "url": "/areas/greenwich-village",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "pre-war-apartment-painting-nyc",
+          "skim-coating-nyc",
+          "interior-trim-painting-nyc"
+        ],
+        "guide": "plaster-cracks-before-painting"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-harlem",
+        "type": "Money page",
+        "intent": "Individual homes and shared-building schedules",
+        "url": "/areas/harlem",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "multi-unit-painting-nyc",
+          "pre-war-apartment-painting-nyc",
+          "stairwell-painting-nyc"
+        ],
+        "guide": "multi-unit-painting-scope-matrix"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-hells-kitchen",
+        "type": "Money page",
+        "intent": "Working hours and occupied-space access",
+        "url": "/areas/hells-kitchen",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "occupied-apartment-painting-nyc",
+          "office-painting-nyc",
+          "retail-storefront-painting-nyc"
+        ],
+        "guide": "paint-dry-vs-cured-return-to-use"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-herald-square",
+        "type": "Money page",
+        "intent": "Retail fixtures, stock and delivery access",
+        "url": "/areas/herald-square",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://34thstreet.org/the-neighborhood",
+        "researchSources": [
+          "https://34thstreet.org/the-neighborhood"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "retail-storefront-painting-nyc",
+          "retail-fitting-room-painting-nyc",
+          "commercial-painting-manhattan"
+        ],
+        "guide": "fitting-room-painting-store-reopening-checklist"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-hudson-heights",
+        "type": "Money page",
+        "intent": "Window-side walls, samples and radiator covers",
+        "url": "/areas/hudson-heights",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://en.wikipedia.org/wiki/Hudson_Heights%2C_Manhattan",
+        "researchSources": [
+          "https://en.wikipedia.org/wiki/Hudson_Heights%2C_Manhattan"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "ceiling-painting-nyc",
+          "radiator-cover-painting-nyc",
+          "occupied-apartment-painting-nyc"
+        ],
+        "guide": "ceiling-paint-flat-finish-side-light"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-inwood",
+        "type": "Money page",
+        "intent": "Room inventories and furniture return",
+        "url": "/areas/inwood",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "apartment-painting-nyc",
+          "closet-painting-nyc",
+          "move-in-apartment-painting-nyc"
+        ],
+        "guide": "closet-painting-shelves-and-storage-plan"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-koreatown",
+        "type": "Money page",
+        "intent": "Restaurant and business repainting between operating periods",
+        "url": "/areas/koreatown",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.mta.info/document/811",
+        "researchSources": [
+          "https://www.mta.info/document/811"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "restaurant-painting-nyc",
+          "commercial-painting-manhattan",
+          "kitchen-wall-painting-nyc"
+        ],
+        "guide": "kitchen-walls-grease-before-painting"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-lenox-hill",
+        "type": "Money page",
+        "intent": "Kitchen cabinet finishes and household downtime",
+        "url": "/areas/lenox-hill",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "kitchen-cabinet-painting-nyc",
+          "cabinet-refinishing-cost-nyc",
+          "kitchen-wall-painting-nyc"
+        ],
+        "guide": "repaint-or-refinish-kitchen-cabinets-nyc"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-lower-east-side",
+        "type": "Money page",
+        "intent": "Color changes and end-of-tenancy scope",
+        "url": "/areas/lower-east-side",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "move-out-apartment-painting-nyc",
+          "single-room-accent-wall-painting-nyc",
+          "rental-turnover-painting-nyc"
+        ],
+        "guide": "painting-dark-walls-a-light-color"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-madison-square",
+        "type": "Money page",
+        "intent": "Paint samples for homes and workspaces around the park",
+        "url": "/areas/madison-square",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://madisonsquarepark.org/park/visit/",
+        "researchSources": [
+          "https://madisonsquarepark.org/park/visit/"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "office-painting-nyc",
+          "apartment-painting-nyc",
+          "single-room-accent-wall-painting-nyc"
+        ],
+        "guide": "paint-color-samples-changing-light"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-marble-hill",
+        "type": "Money page",
+        "intent": "Confirm the address, access route and responsible party",
+        "url": "/areas/marble-hill",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://cbbronx.cityofnewyork.us/cb8/wp-content/uploads/sites/3/2024/01/FY2025_BX08_Preliminary-SON-Budget-Requests-Submission-October-2023.pdf",
+        "researchSources": [
+          "https://cbbronx.cityofnewyork.us/cb8/wp-content/uploads/sites/3/2024/01/FY2025_BX08_Preliminary-SON-Budget-Requests-Submission-October-2023.pdf"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "apartment-painting-nyc",
+          "rental-turnover-painting-nyc",
+          "stairwell-painting-nyc"
+        ],
+        "guide": "compare-nyc-painting-estimates"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-midtown",
+        "type": "Money page",
+        "intent": "A clear commercial scope from reception to back office",
+        "url": "/areas/midtown",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "office-painting-nyc",
+          "commercial-painting-manhattan",
+          "office-move-out-painting-nyc"
+        ],
+        "guide": "compare-nyc-painting-estimates"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-murray-hill",
+        "type": "Money page",
+        "intent": "Move-in painting before furniture fills the room",
+        "url": "/areas/murray-hill",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "move-in-apartment-painting-nyc",
+          "closet-painting-nyc",
+          "interior-door-painting-nyc"
+        ],
+        "guide": "paint-dry-vs-cured-return-to-use"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-nolita",
+        "type": "Money page",
+        "intent": "Feature walls and wallpaper material planning",
+        "url": "/areas/nolita",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://en.wikipedia.org/wiki/Manhattan_Community_Board_2",
+        "researchSources": [
+          "https://en.wikipedia.org/wiki/Manhattan_Community_Board_2"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "wallpaper-accent-wall-installation-nyc",
+          "wallpaper-installation-nyc",
+          "skim-coating-nyc"
+        ],
+        "guide": "wallpaper-feature-wall-pattern-placement"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-soho",
+        "type": "Money page",
+        "intent": "Open rooms, tall walls and finish boundaries",
+        "url": "/areas/soho",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "high-ceiling-painting-nyc",
+          "commercial-painting-manhattan",
+          "skim-coating-nyc"
+        ],
+        "guide": "touch-up-or-repaint-whole-wall"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-stuyvesant-town",
+        "type": "Money page",
+        "intent": "Resident permission and the boundary with maintenance",
+        "url": "/areas/stuyvesant-town",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "occupied-apartment-painting-nyc",
+          "single-room-accent-wall-painting-nyc",
+          "water-stain-repainting-nyc"
+        ],
+        "guide": "water-stain-returns-after-painting"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-turtle-bay",
+        "type": "Money page",
+        "intent": "Small offices and apartments with controlled entry",
+        "url": "/areas/turtle-bay",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "office-painting-nyc",
+          "co-op-condo-painting-nyc",
+          "occupied-apartment-painting-nyc"
+        ],
+        "guide": "painting-project-final-walkthrough-checklist"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-union-square",
+        "type": "Money page",
+        "intent": "Mixed-use spaces and staged return to normal use",
+        "url": "/areas/union-square",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nycvotes.org/why-vote/reports-and-data/community-profiles/",
+        "researchSources": [
+          "https://www.nycvotes.org/why-vote/reports-and-data/community-profiles/"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "commercial-painting-manhattan",
+          "single-room-accent-wall-painting-nyc",
+          "office-painting-nyc"
+        ],
+        "guide": "matte-eggshell-satin-paint-finish-guide"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-upper-west-side",
+        "type": "Money page",
+        "intent": "Plaster repairs, trim and lived-in rooms",
+        "url": "/areas/upper-west-side",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "pre-war-apartment-painting-nyc",
+          "plaster-wall-repair-painting-nyc",
+          "built-in-bookcase-painting-nyc"
+        ],
+        "guide": "painted-bookshelves-when-to-put-books-back"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-washington-heights",
+        "type": "Money page",
+        "intent": "Room repairs and practical access planning",
+        "url": "/areas/washington-heights",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "plaster-wall-repair-painting-nyc",
+          "apartment-painting-nyc",
+          "stairwell-painting-nyc"
+        ],
+        "guide": "plaster-cracks-before-painting"
+      },
+      {
+        "id": "nyc-painting-pros:owner:2026-11-12:area-yorkville",
+        "type": "Money page",
+        "intent": "Trim, doors and the small surfaces a quote can miss",
+        "url": "/areas/yorkville",
+        "baseline": "New URL; no measured page performance",
+        "status": "validated-awaiting-publication",
+        "reviewDates": [
+          "2026-12-12",
+          "2027-01-11",
+          "2027-02-10"
+        ],
+        "source": "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page",
+        "researchSources": [
+          "https://www.nyc.gov/site/communityboards/about/manhattan-boards.page"
+        ],
+        "cta": "Location-prefilled estimate form",
+        "relatedProjects": [
+          "interior-door-painting-nyc",
+          "interior-window-trim-painting-nyc",
+          "radiator-cover-painting-nyc"
+        ],
+        "guide": "doors-sticking-after-painting"
+      }
+    ],
+    "research": {
+      "property": "sc-domain:nycpaintingpros.com",
+      "source": "Search Console API",
+      "extractedAt": "2026-11-12T11:49:53.884Z",
+      "windows": [
+        {
+          "days": 28,
+          "start": "2026-10-15",
+          "end": "2026-11-11"
+        },
+        {
+          "days": 90,
+          "start": "2026-08-14",
+          "end": "2026-11-11"
+        }
+      ],
+      "evidenceUse": "Owner supplied coverage list. Existing Upper East Side page has 23 impressions and average position 12 in bounded near-winner rows; preserved URL. Apartment pricing, co-op/condo and skim-coat pages appear in topPages; selected contextual links to those existing clusters where relevant. No new-location demand, ranking or uplift inferred. Identical returned property totals for these two windows are recorded without growth interpretation.",
+      "propertyTotalsEachWindow": {
+        "clicks": 16,
+        "impressions": 3439
+      },
+      "overlap": "Five boroughs and two named neighborhood money pages reused; thirty missing neighborhood URLs. Madison Square refers to the park area, not Madison Square Garden. No And More URL. No new physical offices or location-specific track records claimed."
+    },
+    "validation": {
+      "sitemapUrls": 167,
+      "newNeighborhoodPages": 30,
+      "uniqueTitles": 30,
+      "uniqueDescriptions": 30,
+      "minimumInboundLinks": 6,
+      "renderedViewportChecks": 60,
+      "overflowFailures": 0,
+      "checks": [
+        "lint",
+        "TypeScript",
+        "production build",
+        "all sitemap routes HTTP 200",
+        "internal-link crawl",
+        "reciprocal project and guide links",
+        "canonical",
+        "robots",
+        "FAQ and Service and Breadcrumb schema",
+        "location-prefilled estimate forms"
+      ],
+      "homepage": "Source and stock photos unchanged",
+      "scheduledQuotaContribution": {
+        "money": 0,
+        "blog": 0
+      }
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { NeighborhoodCoverage } from "@/components/NeighborhoodCoverage";
 import { PhotoCredit } from "@/components/PhotoCredit";
 import { ApartmentScopePlanner } from "@/components/ApartmentScopePlanner";
 import type { Metadata } from "next";
@@ -302,6 +303,7 @@ export default async function BlogPost({
         </div>
       </section>
 
+      <NeighborhoodCoverage guide={p.slug} />
       <CTASection href={relatedPaintingPages[0] ? `/contact?project=${relatedPaintingPages[0].slug}` : "/contact"} />
       <div className="h-20" />
     </>

@@ -1,3 +1,4 @@
+import { neighborhoods } from "@/lib/neighborhoods";
 import type { MetadataRoute } from "next";
 import { site, services, areas } from "@/lib/site";
 import { moneyPages } from "@/lib/money-pages";
@@ -29,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    ...neighborhoods.map((n) => ({ url: `${site.url}/areas/${n.slug}`, lastModified: new Date("2026-11-12T12:00:00Z"), changeFrequency: "monthly" as const, priority: 0.7 })),
     ...posts.map((p) => ({
       url: `${site.url}/blog/${p.slug}`,
       lastModified: new Date(p.updated ?? p.date),
