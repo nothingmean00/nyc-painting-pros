@@ -112,6 +112,12 @@ export function Footer() {
               {site.hours}
             </li>
             <li>
+              <a href={site.phoneHref} className="inline-flex items-center gap-2 hover:text-[var(--color-green-300)]">
+                <Icon.phone className="w-4 h-4 shrink-0 text-[var(--color-green-300)]" />
+                {site.phone}
+              </a>
+            </li>
+            <li>
               <a href={`mailto:${site.email}`} className="hover:text-[var(--color-green-300)]">
                 {site.email}
               </a>

@@ -13,8 +13,8 @@ export const site = {
   description:
     "Painting for NYC homes, managed buildings and businesses across all five boroughs. Detailed scopes, careful preparation and a final walkthrough.",
   // --- NAP (keep identical everywhere: site, Google Business Profile, citations) ---
-  phone: "(212) 814-7500",
-  phoneHref: "tel:+12128147500",
+  phone: "(929) 407-5635",
+  phoneHref: "tel:+19294075635",
   email: "hello@nycpaintingpros.com",
   address: {
     street: "121 Varick St, Suite 400",

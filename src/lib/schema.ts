@@ -15,6 +15,7 @@ export function localBusiness() {
     legalName: site.legalName,
     url: site.url,
     email: site.email,
+    telephone: site.phone,
     image: `${site.url}/og-positioning.png`,
     logo: `${site.url}/brand/header-logo.webp`,
     priceRange: "$$",

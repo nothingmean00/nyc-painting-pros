@@ -83,6 +83,12 @@ export default async function ContactPage({
           </div>
 
           <div className="px-2 py-3 text-sm text-[var(--color-muted)]">
+            <p className="mb-3">
+              Prefer a call?{" "}
+              <a href={site.phoneHref} className="font-semibold text-[var(--color-green-600)] hover:underline">
+                {site.phone}
+              </a>
+            </p>
             Prefer email?{" "}
             <a href={`mailto:${site.email}`} className="font-semibold text-[var(--color-green-600)] hover:underline">
               {site.email}
