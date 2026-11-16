@@ -22,7 +22,7 @@ export default async function AdminLoginPage() {
         </p>
         {!configured && (
           <p className="mt-6 border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-800">
-            Set a 32-character ADMIN_SESSION_SECRET to enable signed admin sessions.
+            Set ADMIN_PASSWORD and a 32-character ADMIN_SESSION_SECRET to enable signed admin sessions.
           </p>
         )}
         <div className="mt-7">
