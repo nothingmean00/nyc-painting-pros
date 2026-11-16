@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: "Call-link clicks",
-    body: "When you click a call link, we record the business number selected, the page, the button location and the time our server receives the click. This helps us count call-link activity. It does not tell us whether a call connected. We do not collect your phone number or record call audio through this feature.",
+    body: "When you reveal our phone number or click a call link, we record the business number selected, the page, the button location and the time our server receives the click. This helps us count phone-button activity. It does not tell us whether a call connected. We do not collect your phone number or record call audio through this feature.",
   },
   {
     title: "Project assistant",

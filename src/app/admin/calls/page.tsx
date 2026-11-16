@@ -7,7 +7,7 @@ import type { CallPlacement } from "@/lib/call-events";
 export const dynamic = "force-dynamic";
 
 const placements: Record<CallPlacement, string> = {
-  header: "Header", "mobile-header": "Mobile header", "mobile-menu": "Mobile menu", footer: "Footer", contact: "Contact page",
+  header: "Desktop header", "mobile-header": "Mobile header", "mobile-menu": "Mobile menu", footer: "Footer", contact: "Contact page",
 };
 
 const formatDate = (value: string) => new Intl.DateTimeFormat("en-US", {
@@ -26,7 +26,7 @@ export default async function CallClicksPage() {
     <section aria-labelledby="call-click-heading" className="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-8">
       <p className="text-xs font-semibold uppercase tracking-[.16em] text-emerald-700">Website activity</p>
       <h1 id="call-click-heading" className="mt-2 text-3xl font-semibold tracking-normal sm:text-4xl">Call clicks</h1>
-      <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">Clicks on the website’s call links, recorded when received by the server. Times are shown in New York. A click does not confirm that a call connected, and no caller phone number or call audio is collected.</p>
+      <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">Phone-number reveals and call-link clicks, recorded when received by the server. Times are shown in New York. A click does not confirm that a call connected, and no caller phone number or call audio is collected.</p>
       {report?.mode === "local-preview" && <p className="mt-5 border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-900">Local preview log. Published website activity is stored separately in the production database.</p>}
       {!report ? <p role="alert" className="mt-8 border border-amber-200 bg-amber-50 p-6 text-amber-900">Call tracking storage is unavailable. Check the project’s DATABASE_URL connection. The call buttons still open the phone app.</p> : <>
         <section aria-label="Call click totals" className="mt-8 grid grid-cols-3 border border-slate-200 bg-white">

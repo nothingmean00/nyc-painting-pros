@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import type { CallPlacement } from "@/lib/call-events";
 import { site } from "@/lib/site";
+import { trackCallClick } from "@/lib/track-call-click";
 
 export function CallLink({ placement, className, children, onClick }: {
   placement: CallPlacement;
@@ -17,14 +18,7 @@ export function CallLink({ placement, className, children, onClick }: {
     className={className}
     onClick={() => {
       // Count explicit activations only. Never hold up the phone app for analytics.
-      try {
-        void fetch("/api/call-click", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id: crypto.randomUUID(), page: window.location.pathname, placement }),
-          keepalive: true,
-        }).catch(() => {});
-      } catch { /* Calling still works when tracking is unavailable. */ }
+      trackCallClick(placement);
       onClick?.();
     }}
   >{children}</a>;

@@ -4,7 +4,7 @@ Date: November 16, 2026. Local preview: http://localhost:4176/. Private report: 
 
 ## Scope and visual truth
 
-Use option 1’s header only; retain the completed option 2 page layouts, copy, original roller photograph and brand logo. Add explicit click-to-call actions and a private count/time report.
+Use option 1’s header only; retain the completed option 2 page layouts, copy, original roller photograph and brand logo. Add a desktop phone-number reveal, mobile call links and a private count/time report.
 
 Header source: `C:/Users/malik/.codex/generated_images/01a1cbf7-61f2-7ef1-b00f-afb334e7df9c/exec-9ea9dade-fc3a-43bf-ad70-00c2bfbfaa3c.png` (1036 × 1518).
 
@@ -32,7 +32,7 @@ The prior full-site QA report is archived as `../nyc-painting-pros-blue-research
 
 ## Functional evidence
 
-- Call links use the confirmed public number `(929) 407-5635` (`tel:+19294075635`). Header, mobile header/menu, footer and contact links share the same tracking component.
+- Desktop header reveals `(929) 407-5635` as selectable text. Mobile header/menu, footer and contact links retain `tel:+19294075635`. Both controls use the same tracking helper.
 - Rendering does not send an event. Explicit activation sends a keepalive request without cancelling or delaying the telephone link. A tracking failure does not block dialing.
 - The endpoint validates origin, content type, a bounded body, event UUID, public pathname and placement. No query string is stored. Destination and timestamp are assigned by the server.
 - PostgreSQL stores events durably with `ON CONFLICT (id) DO NOTHING`; retries do not inflate counts. The private report shows all-time, New York today and last-seven-days totals, plus the most recent 100 events with seconds and timezone.
@@ -64,3 +64,14 @@ Vercel lists sensitive DATABASE_URL settings for the existing project. Those pro
 - [x] Build, lint, tests, responsive checks and combined design comparison passed.
 
 final result: passed
+
+
+## Desktop reveal correction — November 16, 2026
+
+The desktop “Call us” control is now a semantic button without a telephone href. Its first activation reveals the number in place and records one timestamped event. The revealed number does not open an application, navigate, or record further events when clicked again. Mobile calling behavior is retained. Admin and privacy copy now explicitly include number reveals.
+
+Verified through a real in-app-browser click at 1440 × 900: the label changed to the correct number, the URL stayed unchanged, and the control had no href. A second click created no extra event. The preview log contained exactly one new header event with a server timestamp and the correct page/destination. Only that verified synthetic event was removed; the pre-existing preview entry was preserved. At 1024 pixels the revealed number fit without horizontal overflow.
+
+Evidence in the same output directory: `desktop-before-reveal.jpg`, `desktop-after-reveal.jpg` (both 1425 × 891 output pixels at the same CSS viewport), and `desktop-reveal-comparison.jpg` (before left, after right). The focused comparison was opened as a combined image; typography, spacing, palette and the surrounding navigation remain consistent. This is a behavior correction to the existing header, so no new image or visual direction was needed. No actionable P0/P1/P2 findings remain.
+
+The five focused tracking tests, ESLint, TypeScript and optimized production build passed after the change.

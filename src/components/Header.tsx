@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { Icon } from "./Icons";
 import { CallLink } from "./CallLink";
+import { PhoneReveal } from "./PhoneReveal";
 import { Phone } from "lucide-react";
 import { site, services } from "@/lib/site";
 
@@ -60,7 +61,7 @@ export function Header() {
           <div className="flex shrink-0 items-center gap-5">
             <span className="hidden xl:inline">{site.hours}</span>
             <a href={`mailto:${site.email}`} className="hover:underline">{site.email}</a>
-            <CallLink placement="header" className="inline-flex min-h-6 items-center gap-2 font-semibold underline-offset-4 hover:underline"><Phone className="size-3.5" aria-hidden="true" />Call us</CallLink>
+            <PhoneReveal placement="header" className="inline-flex min-h-6 items-center gap-2 font-semibold underline-offset-4" />
           </div>
         </div>
       </div>
