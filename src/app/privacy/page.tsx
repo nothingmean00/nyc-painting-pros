@@ -31,6 +31,10 @@ const sections = [
     body: "The website uses performance and analytics tools to understand page visits, technical performance, and which pages lead to estimate requests. These tools may process device, browser, referrer, and approximate location data according to their own privacy terms.",
   },
   {
+    title: "Call-link clicks",
+    body: "When you click a call link, we record the business number selected, the page, the button location and the time our server receives the click. This helps us count call-link activity. It does not tell us whether a call connected. We do not collect your phone number or record call audio through this feature.",
+  },
+  {
     title: "Project assistant",
     body: "If you use the Painting Project Assistant, the messages you enter are processed by AI infrastructure providers to generate planning help. Assistant messages are not submitted as an estimate request unless you continue to and submit the estimate form. Do not enter payment information, precise apartment numbers, or other sensitive information in the assistant.",
   },
@@ -66,7 +70,7 @@ export default function PrivacyPage() {
       <section className="container-x py-16 lg:py-24">
         <div className="max-w-3xl space-y-10">
           <p className="text-sm text-[var(--color-muted)]">
-            Last updated October 30, 2026
+            Last updated November 16, 2026
           </p>
           {sections.map((section) => (
             <section key={section.title}>

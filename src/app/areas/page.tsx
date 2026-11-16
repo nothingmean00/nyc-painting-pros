@@ -40,7 +40,7 @@ export default function AreasIndex() {
             <Link
               key={a.slug}
               href={`/areas/${a.slug}`}
-              className="card p-8 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all"
+              className="card p-8 group transition-all"
             >
               <div className="flex items-center gap-2 text-[var(--color-green-600)]">
                 <Icon.pin className="w-6 h-6" />
@@ -55,7 +55,7 @@ export default function AreasIndex() {
                 {a.neighborhoods.slice(0, 6).map((n) => (
                   <span
                     key={n}
-                    className="text-xs rounded-full bg-[var(--color-cream)] border border-[var(--color-line)] px-2.5 py-1 text-[var(--color-muted)]"
+                    className="text-xs rounded-none bg-[var(--color-cream)] border border-[var(--color-line)] px-2.5 py-1 text-[var(--color-muted)]"
                   >
                     {n}
                   </span>

@@ -34,28 +34,26 @@ export default function ServicesIndex() {
         ]}
       />
       <section className="container-x py-16 lg:py-24">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="editorial-list">
           {services.map((s) => {
             const I = Icon[s.icon];
             return (
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="card p-8 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all"
+                className="group block"
               >
-                <div className="flex items-start gap-5">
-                  <span className="grid place-items-center w-14 h-14 rounded-2xl bg-[var(--color-ink)] text-white group-hover:bg-[var(--color-green)] transition-colors shrink-0">
-                    <I className="w-7 h-7" />
-                  </span>
-                  <div>
+                <div className="grid gap-4 md:grid-cols-[3rem_.9fr_1.1fr] md:gap-6">
+                  <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-7 h-7" /></span>
+                  <div className="md:col-span-2 grid gap-4 md:grid-cols-[.85fr_1.15fr]">
                     <h2 className="font-display text-2xl">{s.name}</h2>
-                    <p className="mt-2 text-[var(--color-muted)] leading-relaxed">
+                    <div><p className="text-[var(--color-muted)] leading-relaxed">
                       {s.intro}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1.5 font-semibold text-[var(--color-green-600)]">
                       Learn more{" "}
                       <Icon.arrow className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
+                    </span></div>
                   </div>
                 </div>
               </Link>

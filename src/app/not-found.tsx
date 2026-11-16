@@ -24,7 +24,7 @@ export default function NotFound() {
           <Link
             key={s.slug}
             href={`/services/${s.slug}`}
-            className="text-sm rounded-full border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)]"
+            className="text-sm rounded-none border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)]"
           >
             {s.name}
           </Link>

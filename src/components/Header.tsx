@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Icon } from "./Icons";
+import { CallLink } from "./CallLink";
+import { Phone } from "lucide-react";
 import { site, services } from "@/lib/site";
 
 const nav = [
@@ -16,15 +18,8 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const mobileMenu = useRef<HTMLDivElement>(null);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -32,39 +27,49 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+      if (event.key !== "Tab") return;
+      const links = mobileMenu.current?.querySelectorAll<HTMLAnchorElement>("a[href]");
+      const last = links?.[links.length - 1];
+      if (event.shiftKey && document.activeElement === menuButton.current) {
+        event.preventDefault(); last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); menuButton.current?.focus();
+      }
+    };
+    const onResize = () => { if (window.innerWidth >= 1024) setOpen(false); };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--color-cream)]/94 backdrop-blur-xl border-b border-[var(--color-line)] shadow-[0_10px_30px_rgba(16,27,36,.05)]"
-          : "bg-[var(--color-cream)]"
-      }`}
-    >
-      {/* top trust strip */}
-      <div className="hidden md:block bg-[var(--color-ink)] text-[var(--color-cream)]/90 text-[0.8rem]">
-        <div className="container-x flex items-center justify-between py-1.5">
-          <span className="inline-flex items-center gap-2">
-            <Icon.shield className="w-4 h-4 text-[var(--color-green-300)]" />
-            Building paperwork coordinated · Detailed written scopes · Final walkthrough
-          </span>
-          <span className="inline-flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5">
-              <Icon.clock className="w-4 h-4 text-[var(--color-green-300)]" />
-              {site.hours}
-            </span>
-            <a href={`mailto:${site.email}`} className="font-semibold hover:text-[var(--color-green-300)]">
-              {site.email}
-            </a>
-          </span>
+    <header className="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[var(--color-cream)]">
+      <div className="header-utility hidden lg:block bg-[var(--color-ink)] text-white">
+        <div className="container-x flex min-h-8 items-center justify-between gap-5 py-1 text-xs">
+          <span>Building paperwork coordinated · Detailed written scopes · Final walkthrough</span>
+          <div className="flex shrink-0 items-center gap-5">
+            <span className="hidden xl:inline">{site.hours}</span>
+            <a href={`mailto:${site.email}`} className="hover:underline">{site.email}</a>
+            <CallLink placement="header" className="inline-flex min-h-6 items-center gap-2 font-semibold underline-offset-4 hover:underline"><Phone className="size-3.5" aria-hidden="true" />Call us</CallLink>
+          </div>
         </div>
       </div>
-
-      <div className="container-x flex items-center justify-between py-3">
-        <Link href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
+      <div className="container-x flex items-center justify-between gap-4 py-5">
+        <Link href="/" className="min-w-0" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
           <Logo preload />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[0.9rem] font-semibold">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-4 xl:gap-7 font-display text-base">
           {nav.map((n) => (
             <Link
               key={n.href}
@@ -76,17 +81,20 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <CallLink placement="mobile-header" className="lg:hidden inline-flex min-h-11 items-center gap-1.5 border border-[var(--color-ink)] px-2.5 text-sm font-semibold"><Phone className="size-4" aria-hidden="true" />Call</CallLink>
           <div className="hidden sm:flex items-center gap-4">
-            <Link href="/contact" className="btn btn-primary !py-3">
+            <Link href="/contact" className="btn btn-primary !py-3 text-sm">
               Request estimate <Icon.arrow className="w-4 h-4" />
             </Link>
           </div>
           <button
+            ref={menuButton}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden p-2 -mr-2 text-[var(--color-ink)]"
+            className="lg:hidden min-h-11 min-w-11 p-2 -mr-2 text-[var(--color-ink)]"
             aria-label="Toggle menu"
             aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
               {open ? (
@@ -101,7 +109,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden absolute inset-x-0 top-full h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
+        <div id="mobile-navigation" ref={mobileMenu} role="navigation" aria-label="Mobile navigation" className="lg:hidden absolute inset-x-0 top-full h-[calc(100dvh-84px)] z-40 bg-[var(--color-cream)] border-t border-[var(--color-line)] overflow-y-auto">
           <div className="container-x py-6 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
@@ -126,6 +134,7 @@ export function Header() {
               ))}
             </div>
             <div className="mt-4 flex flex-col gap-3">
+              <CallLink placement="mobile-menu" className="btn btn-ghost w-full" onClick={() => setOpen(false)}><Phone className="size-4" aria-hidden="true" />Call our team</CallLink>
               <a href={`mailto:${site.email}`} className="btn btn-dark w-full">
                 Email our team
               </a>

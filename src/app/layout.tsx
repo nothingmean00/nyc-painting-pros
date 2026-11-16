@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,11 +16,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const display = DM_Serif_Display({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  axes: ["opsz"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1a2b",
+  themeColor: "#243c50",
   colorScheme: "light",
 };
 
@@ -80,9 +80,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${display.variable}`}>
       <body>
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-5 focus:py-3 focus:text-black focus:shadow-lg">Skip to content</a>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-none focus:bg-white focus:px-5 focus:py-3 focus:text-black focus:shadow-lg">Skip to content</a>
         <JsonLd data={[localBusiness(), websiteSchema()]} />
         <PublicRouteChrome>
           <Header />

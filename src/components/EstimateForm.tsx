@@ -150,7 +150,7 @@ export function EstimateForm({
   if (status === "sent") {
     return (
       <div ref={confirmation} tabIndex={-1} role="status" className="card p-8 text-center outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)]">
-        <div className="mx-auto w-14 h-14 rounded-full bg-[var(--color-green)]/15 text-[var(--color-green-600)] grid place-items-center">
+        <div className="mx-auto w-14 h-14 rounded-none bg-[var(--color-green)]/15 text-[var(--color-green-600)] grid place-items-center">
           <Icon.check className="w-7 h-7" />
         </div>
         <h3 className="font-display text-2xl mt-4">Request received!</h3>
@@ -188,7 +188,7 @@ export function EstimateForm({
           field.setCustomValidity("");
         }
       }}
-      className="card p-6 sm:p-8 grid gap-4"
+      className="estimate-form p-5 sm:p-8 grid gap-5"
       aria-label="Request a painting estimate"
       aria-busy={status === "submitting"}
     >
@@ -213,7 +213,7 @@ export function EstimateForm({
       {status === "error" && (
         <p
           role="alert"
-          className="rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3"
+          className="rounded-none bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3"
         >
           {error}
         </p>
@@ -244,7 +244,7 @@ export function EstimateForm({
         <span className="text-sm font-medium">Project type (required)</span>
         <select
           name="service"
-          className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
+          className="rounded-none border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
           defaultValue={services.some((service) => service.name === defaultService) ? defaultService : ""}
           required
         >
@@ -259,7 +259,7 @@ export function EstimateForm({
           <option value="Other">Not sure / something else</option>
         </select>
       </label>
-      <details open={defaultDetails ? true : undefined} className="rounded-xl border border-[var(--color-line)] p-4">
+      <details open={defaultDetails ? true : undefined} className="rounded-none border border-[var(--color-line)] p-4">
       <summary className="cursor-pointer font-medium text-sm">Add project details or photos (optional)</summary>
       <div className="grid gap-4 pt-4">
       <label className="grid gap-1.5">
@@ -271,7 +271,7 @@ export function EstimateForm({
           onChange={(event) => setProjectBrief(event.target.value)}
           rows={compact ? 2 : 3}
           placeholder="Rooms, approximate size, surface condition, timeline, and access details…"
-          className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30 resize-none"
+          className="rounded-none border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30 resize-none"
         />
       </label>
       <ProjectPhotoPicker photos={photos} onChange={setPhotos} busy={photosBusy} onBusyChange={setPhotosBusy} disabled={status === "submitting" || photosBusy} />
@@ -340,7 +340,7 @@ function Field({
         required={required}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
+        className="rounded-none border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
       />
     </label>
   );

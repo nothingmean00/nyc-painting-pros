@@ -38,7 +38,7 @@ export function ProjectPhotoPicker({ photos, onChange, disabled, busy, onBusyCha
     <legend className="text-sm font-medium mb-2">Project photos (optional)</legend>
     <p id={helpId} className="text-sm text-[var(--color-muted)]">Add up to 3 JPEG, PNG, or WebP photos, up to 20 MB each. We resize them for upload. Show the room or surface; avoid people and personal documents.</p>
     <input aria-label="Add project photos" aria-describedby={helpId} type="file" accept="image/jpeg,image/png,image/webp" multiple disabled={disabled || busy || photos.length >= MAX_PHOTOS}
-      className="block w-full min-w-0 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-stone-100 file:px-3 file:py-3 file:font-medium"
+      className="block w-full min-w-0 text-sm file:mr-3 file:rounded-none file:border-0 file:bg-stone-100 file:px-3 file:py-3 file:font-medium"
       onChange={async (event) => {
         const files = Array.from(event.currentTarget.files ?? []);
         event.currentTarget.value = "";
@@ -58,7 +58,7 @@ export function ProjectPhotoPicker({ photos, onChange, disabled, busy, onBusyCha
       {photos.map((photo, index) => <li key={index} className="min-w-0">
         {/* Data URLs are local previews, never sent to analytics. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`data:image/jpeg;base64,${photo.content}`} alt={`Selected project photo ${index + 1}`} className="aspect-square w-full rounded-lg object-cover" />
+        <img src={`data:image/jpeg;base64,${photo.content}`} alt={`Selected project photo ${index + 1}`} className="aspect-square w-full rounded-none object-cover" />
         <button type="button" onClick={() => { onChange(photos.filter((_, i) => i !== index)); setError(""); }} className="mt-1 min-h-11 text-sm underline" aria-label={`Remove photo ${index + 1}`}>Remove</button>
       </li>)}
     </ul>}

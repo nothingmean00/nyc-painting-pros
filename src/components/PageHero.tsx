@@ -12,16 +12,9 @@ export function PageHero({
   crumbs: { name: string; path: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-[var(--color-line)]">
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(100% 80% at 80% -20%, rgba(22,146,79,0.12), transparent 55%)",
-        }}
-      />
-      <div className="container-x pt-10 pb-12 lg:pt-14 lg:pb-16">
-        <nav className="flex flex-wrap items-center gap-1.5 text-sm text-[var(--color-muted)]">
+    <section className="border-b border-[var(--color-line)]">
+      <div className="container-x pt-8 pb-12 lg:pt-10 lg:pb-16">
+        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-[var(--color-muted)]">
           {crumbs.map((c, i) => (
             <span key={c.path} className="inline-flex items-center gap-1.5">
               {i > 0 && <span className="opacity-50">/</span>}
@@ -30,13 +23,13 @@ export function PageHero({
                   {c.name}
                 </Link>
               ) : (
-                <span className="text-[var(--color-ink)]">{c.name}</span>
+                <span aria-current="page" className="text-[var(--color-ink)]">{c.name}</span>
               )}
             </span>
           ))}
         </nav>
         {eyebrow && <span className="eyebrow mt-6 block">{eyebrow}</span>}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl mt-3 leading-[1.05] max-w-3xl">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl mt-5 leading-[1.05] max-w-4xl">
           {title}
         </h1>
         {subtitle && (

@@ -84,9 +84,7 @@ export default function AboutPage() {
             const I = Icon[v.icon];
             return (
               <div key={v.title} className="card p-6">
-                <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-green)]/12 text-[var(--color-green-600)]">
-                  <I className="w-6 h-6" />
-                </span>
+                <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-6 h-6" /></span>
                 <h3 className="font-display text-lg mt-4">{v.title}</h3>
                 <p className="mt-1.5 text-sm text-[var(--color-muted)] leading-relaxed">
                   {v.text}

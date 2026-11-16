@@ -53,7 +53,7 @@ export default function BlogIndex() {
         <div>
         <Link
           href={`/blog/${featured.slug}`}
-          className="group grid lg:grid-cols-2 gap-8 lg:gap-12 items-center card overflow-hidden hover:shadow-[var(--shadow-lift)] transition-all"
+          className="group grid lg:grid-cols-2 gap-8 lg:gap-12 items-center card overflow-hidden transition-all"
         >
           <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[340px] overflow-hidden">
             <Image unoptimized
@@ -67,7 +67,7 @@ export default function BlogIndex() {
           </div>
           <div className="p-7 lg:pr-12 lg:py-10">
             <div className="flex items-center gap-3 text-sm text-[var(--color-muted)]">
-              <span className="inline-flex items-center rounded-full bg-[var(--color-green)]/12 text-[var(--color-green-600)] px-3 py-1 font-semibold text-xs uppercase tracking-wide">
+              <span className="inline-flex items-center rounded-none bg-[var(--color-green)]/12 text-[var(--color-green-600)] px-3 py-1 font-semibold text-xs uppercase tracking-wide">
                 {featured.category}
               </span>
               <span>{formatDate(featured.date)}</span>
@@ -89,7 +89,7 @@ export default function BlogIndex() {
         </div>
 
         <nav aria-label="Guide topics" className="mt-10 flex flex-wrap gap-3">
-          {categories.map((category, index) => <a key={category} href={"#guide-topic-" + index} className="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-semibold">{category}</a>)}
+          {categories.map((category, index) => <a key={category} href={"#guide-topic-" + index} className="rounded-none border border-[var(--color-line)] px-4 py-2 text-sm font-semibold">{category}</a>)}
         </nav>
         {categories.map((category, index) => <section key={category} id={"guide-topic-" + index} className="mt-12 scroll-mt-36">
           <h2 className="font-display text-3xl">{category}</h2>
@@ -98,7 +98,7 @@ export default function BlogIndex() {
             <div key={p.slug} className="flex flex-col">
             <Link
               href={`/blog/${p.slug}`}
-              className="group card overflow-hidden flex flex-col hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
+              className="group card overflow-hidden flex flex-col transition-all"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image unoptimized

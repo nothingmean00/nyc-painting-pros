@@ -26,7 +26,7 @@ export function PropertyCareResources() {
           {resources.map((resource) => {
             const ResourceIcon = Icon[resource.icon];
             return (
-              <a key={resource.href} href={resource.href} className="group rounded-2xl border border-[var(--color-line)] bg-white p-6 transition-all hover:-translate-y-1 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)]">
+              <a key={resource.href} href={resource.href} className="group rounded-none border border-[var(--color-line)] bg-white p-6 transition-all hover:border-[var(--color-green)] ">
                 <ResourceIcon className="h-6 w-6 text-[var(--color-green-600)]" />
                 <h3 className="mt-4 font-display text-xl">{resource.title}</h3>
                 <p className="mt-2 leading-relaxed text-[var(--color-muted)]">{resource.body}</p>

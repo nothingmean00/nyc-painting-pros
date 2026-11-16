@@ -81,19 +81,17 @@ export default async function ServicePage({
           <ul className="mt-6 grid sm:grid-cols-2 gap-4">
             {s.bullets.map((b) => (
               <li key={b} className="flex items-start gap-3">
-                <span className="grid place-items-center w-6 h-6 rounded-full bg-[var(--color-green)]/15 text-[var(--color-green-600)] mt-0.5 shrink-0">
-                  <Icon.check className="w-4 h-4" />
-                </span>
+                <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><Icon.check className="w-4 h-4" /></span>
                 <span className="text-[var(--color-ink)]">{b}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-12 rounded-2xl bg-[var(--color-ink)] text-white p-8">
+          <div className="editorial-note mt-12">
             <h3 className="font-display text-2xl">
               How we plan {s.name.toLowerCase()}
             </h3>
-            <p className="mt-3 text-white/75 leading-relaxed">
+            <p className="mt-3 text-[var(--color-muted)] leading-relaxed">
               The written scope identifies surface preparation, materials,
               access, protection, finish expectations, and closeout so the crew
               and client are working from the same plan.
@@ -101,8 +99,8 @@ export default async function ServicePage({
             <div className="mt-6 flex flex-wrap gap-2 text-sm">
               {["Written scope", "Surface-specific prep", "Clear scheduling", "Final walkthrough"].map(
                 (t) => (
-                  <span key={t} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5">
-                    <Icon.check className="w-3.5 h-3.5 text-[var(--color-green-300)]" /> {t}
+                  <span key={t} className="inline-flex items-center gap-1.5 rounded-none border border-[var(--color-line)] px-3 py-1.5">
+                    <Icon.check className="w-3.5 h-3.5 text-[var(--color-green-600)]" /> {t}
                   </span>
                 )
               )}
@@ -128,7 +126,7 @@ export default async function ServicePage({
                 <Link
                   key={a.slug}
                   href={`/areas/${a.slug}`}
-                  className="text-sm rounded-full border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)] transition-colors"
+                  className="text-sm rounded-none border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)] transition-colors"
                 >
                   {a.name}
                 </Link>
@@ -155,10 +153,8 @@ export default async function ServicePage({
             {others.map((o) => {
               const I = Icon[o.icon];
               return (
-                <Link key={o.slug} href={`/services/${o.slug}`} className="card p-6 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all">
-                  <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-ink)] text-white group-hover:bg-[var(--color-green)] transition-colors">
-                    <I className="w-5 h-5" />
-                  </span>
+                <Link key={o.slug} href={`/services/${o.slug}`} className="card p-6 group transition-all">
+                  <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-5 h-5" /></span>
                   <h3 className="font-display text-lg mt-4">{o.name}</h3>
                   <p className="mt-1.5 text-sm text-[var(--color-muted)]">{o.short}</p>
                 </Link>

@@ -109,7 +109,7 @@ export default async function BlogPost({
 
           <div className="max-w-3xl mt-6">
             <div className="flex items-center gap-3 text-sm text-[var(--color-muted)]">
-              <span className="inline-flex items-center rounded-full bg-[var(--color-green)]/12 text-[var(--color-green-600)] px-3 py-1 font-semibold text-xs uppercase tracking-wide">
+              <span className="inline-flex items-center rounded-none bg-[var(--color-green)]/12 text-[var(--color-green-600)] px-3 py-1 font-semibold text-xs uppercase tracking-wide">
                 {p.category}
               </span>
               <span>{p.updated ? `Updated ${formatDate(p.updated)}` : formatDate(p.date)}</span>
@@ -121,7 +121,7 @@ export default async function BlogPost({
             <p className="mt-5 text-xl text-[var(--color-muted)] leading-relaxed">
               {p.excerpt}
             </p>
-            {isCostGuide && <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-white p-5"><h2 className="font-semibold">The short answer</h2><p className="mt-2 leading-relaxed">{p.intro[0]}</p></div>}
+            {isCostGuide && <div className="mt-6 rounded-none border border-[var(--color-line)] bg-white p-5"><h2 className="font-semibold">The short answer</h2><p className="mt-2 leading-relaxed">{p.intro[0]}</p></div>}
             {relatedPaintingPages[0] && <p className="mt-5 text-sm">Planning this project? <Link href={"/painting/" + relatedPaintingPages[0].slug} className="font-semibold underline text-[var(--color-green-600)]">{relatedPaintingPages[0].h1}</Link></p>}
             <p className="mt-5 text-sm text-[var(--color-muted)]">
               By {p.author}
@@ -131,7 +131,7 @@ export default async function BlogPost({
 
         {/* Cover */}
         <div className="container-x mt-8">
-          <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden border border-[var(--color-line)]">
+          <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-none overflow-hidden border border-[var(--color-line)]">
             <Image unoptimized
               src={unsplash(p.cover.id, 1600)}
               alt={p.cover.alt}
@@ -158,7 +158,7 @@ export default async function BlogPost({
 
 
 
-            <nav aria-label="Article sections" className="mt-8 rounded-xl border border-[var(--color-line)] p-5">
+            <nav aria-label="Article sections" className="mt-8 rounded-none border border-[var(--color-line)] p-5">
               <p className="font-semibold">In this guide</p>{isCostGuide && <a href="#scope-planner" className="mt-3 inline-block underline text-[var(--color-green-600)]">Build your apartment scope brief</a>}
               <ul className="mt-3 space-y-2">
                 {p.blocks.map((block, index) => <li key={block.h2}><a className="underline underline-offset-4 text-[var(--color-green-600)]" href={`#section-${index + 1}`}>{block.h2}</a></li>)}
@@ -179,7 +179,7 @@ export default async function BlogPost({
                   </p>
                 ))}
                 {block.table && (
-                  <div className="mt-5 overflow-x-auto rounded-xl border border-[var(--color-line)]" role="region" aria-label={block.h2} tabIndex={0}>
+                  <div className="mt-5 overflow-x-auto rounded-none border border-[var(--color-line)]" role="region" aria-label={block.h2} tabIndex={0}>
                     <table className="w-full text-left text-sm">
                       <caption className="sr-only">{block.h2}</caption>
                       <thead className="bg-[var(--color-cream-200)]"><tr>{block.table.headings.map((heading) => <th key={heading} scope="col" className="p-4">{heading}</th>)}</tr></thead>
@@ -214,7 +214,7 @@ export default async function BlogPost({
             )}
 
             {p.takeaway && (
-              <div className="mt-10 rounded-2xl bg-[var(--color-cream-200)]/60 border-l-4 border-[var(--color-green)] p-6">
+              <div className="mt-10 rounded-none bg-[var(--color-cream-200)]/60 border-l-4 border-[var(--color-green)] p-6">
                 <div className="flex items-center gap-2 text-[var(--color-green-600)] font-semibold text-sm uppercase tracking-wide">
                   <Icon.check className="w-4 h-4" /> The takeaway
                 </div>
@@ -225,14 +225,14 @@ export default async function BlogPost({
             )}
 
             {relatedPaintingPages.length > 0 && (
-              <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+              <div className="mt-10 rounded-none border border-[var(--color-line)] bg-white p-6">
                 <h2 className="font-display text-2xl">Related NYC painting estimates</h2>
                 <div className="mt-5 grid gap-3">
                   {relatedPaintingPages.map((page) => (
                     <Link
                       key={page.slug}
                       href={`/painting/${page.slug}`}
-                      className="group flex items-start justify-between gap-4 rounded-xl border border-[var(--color-line)] px-4 py-3 transition-colors hover:border-[var(--color-green)]"
+                      className="group flex items-start justify-between gap-4 rounded-none border border-[var(--color-line)] px-4 py-3 transition-colors hover:border-[var(--color-green)]"
                     >
                       <span>
                         <span className="block font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-green-600)]">
@@ -250,10 +250,10 @@ export default async function BlogPost({
             )}
 
             {/* Author / CTA card */}
-            <div className="mt-12 rounded-2xl bg-[var(--color-ink)] text-white p-7 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
+            <div className="editorial-note mt-12 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
               <div>
                 <h3 className="font-display text-2xl">Got a project in mind?</h3>
-                <p className="mt-1 text-white/70">
+                <p className="mt-1 text-[var(--color-muted)]">
                   Free, no-obligation estimates across all five boroughs.
                 </p>
               </div>
@@ -276,7 +276,7 @@ export default async function BlogPost({
               <div key={r.slug} className="flex flex-col">
               <Link
                 href={`/blog/${r.slug}`}
-                className="group card overflow-hidden flex flex-col hover:shadow-[var(--shadow-lift)] hover:-translate-y-1 transition-all"
+                className="group card overflow-hidden flex flex-col transition-all"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image unoptimized

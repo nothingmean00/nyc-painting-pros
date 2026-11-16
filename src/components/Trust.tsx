@@ -9,9 +9,7 @@ export function Guarantees({ limit }: { limit?: number }) {
         const I = Icon[g.icon as IconName];
         return (
           <div key={g.title} className="card p-7 flex flex-col h-full">
-            <span className="grid place-items-center w-12 h-12 rounded-xl bg-[var(--color-green)]/12 text-[var(--color-green-600)]">
-              <I className="w-6 h-6" />
-            </span>
+            <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-6 h-6" /></span>
             <h3 className="font-display text-xl mt-5">{g.title}</h3>
             <p className="mt-2 text-[var(--color-muted)] leading-relaxed">{g.text}</p>
           </div>

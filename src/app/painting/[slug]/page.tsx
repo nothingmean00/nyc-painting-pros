@@ -104,9 +104,7 @@ export default async function MoneyPage({
             <ul className="mt-6 grid sm:grid-cols-2 gap-4">
               {p.scope.items.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="grid place-items-center w-6 h-6 rounded-full bg-[var(--color-green)]/15 text-[var(--color-green-600)] mt-0.5 shrink-0">
-                    <Icon.check className="w-4 h-4" />
-                  </span>
+                  <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><Icon.check className="w-4 h-4" /></span>
                   <span className="text-[var(--color-ink)]">{item}</span>
                 </li>
               ))}
@@ -143,7 +141,7 @@ export default async function MoneyPage({
             <p className="mt-4 text-[var(--color-muted)] leading-relaxed text-lg">
               {p.cost.intro}
             </p>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white">
+            <div className="mt-6 overflow-hidden rounded-none border border-[var(--color-line)] bg-white">
               <table className="w-full text-left">
                 <thead className="bg-[var(--color-cream-200)]/60 text-sm">
                   <tr>
@@ -173,7 +171,7 @@ export default async function MoneyPage({
           </div>
 
           {planningLinks.length > 0 && (
-            <section className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+            <section className="mt-10 rounded-none border border-[var(--color-line)] bg-white p-6">
               <h2 className="font-display text-2xl">Guides for this project</h2>
               <ul className="mt-4 space-y-3">
                 {planningLinks.map((link) => (
@@ -184,7 +182,7 @@ export default async function MoneyPage({
           )}
 
           {p.references && p.references.length > 0 && (
-            <div className="mt-10 rounded-2xl border border-[var(--color-line)] bg-white p-6">
+            <div className="mt-10 rounded-none border border-[var(--color-line)] bg-white p-6">
               <h2 className="font-display text-2xl">Project references</h2>
               <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
                 Review the relevant product and agency guidance when planning your project.
@@ -209,7 +207,7 @@ export default async function MoneyPage({
 
           {/* Internal links */}
           {(relatedServices.length > 0 || relatedAreas.length > 0) && (
-            <div className="mt-12 rounded-2xl bg-[var(--color-cream-200)]/50 border border-[var(--color-line)] p-7">
+            <div className="mt-12 rounded-none bg-[var(--color-cream-200)]/50 border border-[var(--color-line)] p-7">
               <h2 className="font-display text-2xl">Related painting services & areas</h2>
               <div className="mt-5 grid sm:grid-cols-2 gap-6">
                 {relatedServices.length > 0 && (
@@ -294,11 +292,9 @@ export default async function MoneyPage({
                   <Link
                     key={rp.slug}
                     href={`/painting/${rp.slug}`}
-                    className="card p-6 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all"
+                    className="card p-6 group transition-all"
                   >
-                    <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-ink)] text-white group-hover:bg-[var(--color-green)] transition-colors">
-                      <I className="w-5 h-5" />
-                    </span>
+                    <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-5 h-5" /></span>
                     <h3 className="font-display text-lg mt-4">{rp.h1}</h3>
                     <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-green-600)]">
                       Learn more <Icon.arrow className="w-4 h-4" />

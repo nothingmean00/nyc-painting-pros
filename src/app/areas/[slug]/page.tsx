@@ -115,11 +115,9 @@ export default async function AreaPage({
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="flex items-start gap-3 card p-5 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] transition-all"
+                  className="flex items-start gap-3 card p-5 transition-all"
                 >
-                  <span className="grid place-items-center w-10 h-10 rounded-lg bg-[var(--color-green)]/12 text-[var(--color-green-600)] shrink-0">
-                    <I className="w-5 h-5" />
-                  </span>
+                  <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-5 h-5" /></span>
                   <span>
                     <span className="block font-semibold">{s.name}</span>
                     <span className="block text-sm text-[var(--color-muted)]">{s.short}</span>
@@ -141,11 +139,9 @@ export default async function AreaPage({
                     <Link
                       key={p.slug}
                       href={`/painting/${p.slug}`}
-                      className="flex items-start gap-3 rounded-2xl border border-[var(--color-line)] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[var(--color-green)] hover:shadow-[var(--shadow-soft)]"
+                      className="flex items-start gap-3 rounded-none border border-[var(--color-line)] bg-white p-5 transition-all hover:border-[var(--color-green)] "
                     >
-                      <span className="grid place-items-center w-10 h-10 rounded-lg bg-[var(--color-ink)] text-white shrink-0">
-                        <I className="w-5 h-5" />
-                      </span>
+                      <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><I className="w-5 h-5" /></span>
                       <span>
                         <span className="block font-semibold">{p.h1}</span>
                         <span className="mt-1 line-clamp-2 block text-sm leading-relaxed text-[var(--color-muted)]">
@@ -166,7 +162,7 @@ export default async function AreaPage({
             {a.neighborhoods.map((n) => (
               <span
                 key={n}
-                className="inline-flex items-center gap-1.5 text-sm rounded-full bg-white border border-[var(--color-line)] px-3 py-1.5"
+                className="inline-flex items-center gap-1.5 text-sm rounded-none bg-white border border-[var(--color-line)] px-3 py-1.5"
               >
                 <Icon.pin className="w-3.5 h-3.5 text-[var(--color-green-600)]" />
                 {n}
@@ -186,7 +182,7 @@ export default async function AreaPage({
                   <Link
                     key={x.slug}
                     href={`/areas/${x.slug}`}
-                    className="text-sm rounded-full border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)] transition-colors"
+                    className="text-sm rounded-none border border-[var(--color-line)] px-3 py-1.5 hover:border-[var(--color-green)] hover:text-[var(--color-green-600)] transition-colors"
                   >
                     {x.name}
                   </Link>

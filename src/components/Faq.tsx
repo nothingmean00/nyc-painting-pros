@@ -9,20 +9,20 @@ export function Faq({
 }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="divide-y divide-[var(--color-line)] rounded-2xl border border-[var(--color-line)] bg-white overflow-hidden">
+    <div className="divide-y divide-[var(--color-line)] border-y border-[var(--color-line)]">
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
           <div key={item.q}>
             <button
               onClick={() => setOpen(isOpen ? null : i)}
-              className="w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-5 hover:bg-[var(--color-cream)]/60 transition-colors"
+              className="w-full flex items-center justify-between gap-4 text-left py-5 hover:bg-[var(--color-cream)]/60 transition-colors"
               aria-expanded={isOpen}
             >
               <span className="font-display text-lg leading-snug">{item.q}</span>
               <span
-                className={`shrink-0 grid place-items-center w-8 h-8 rounded-full border border-[var(--color-line)] transition-transform ${
-                  isOpen ? "rotate-45 bg-[var(--color-green)] text-white border-transparent" : ""
+                className={`shrink-0 grid place-items-center w-8 h-8 text-[var(--color-ink)] transition-transform ${
+                  isOpen ? "rotate-45" : ""
                 }`}
                 aria-hidden
               >
@@ -37,7 +37,7 @@ export function Faq({
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-5 sm:px-6 pb-5 text-[var(--color-muted)] leading-relaxed">
+                <p className="pr-10 pb-5 text-[var(--color-muted)] leading-relaxed">
                   {item.a}
                 </p>
               </div>

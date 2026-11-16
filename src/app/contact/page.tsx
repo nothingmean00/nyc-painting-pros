@@ -4,6 +4,7 @@ import { getMoneyPage } from "@/lib/money-pages";
 import type { Metadata } from "next";
 import { Icon } from "@/components/Icons";
 import { EstimateForm } from "@/components/EstimateForm";
+import { CallLink } from "@/components/CallLink";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs } from "@/lib/schema";
 import { site, services } from "@/lib/site";
@@ -53,8 +54,8 @@ export default async function ContactPage({
         </div>
 
         <aside className="space-y-4 lg:sticky lg:top-32">
-          <div className="rounded-2xl bg-[var(--color-ink)] p-6 text-white">
-            <span className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-300)]">
+          <div className="editorial-note">
+            <span className="text-xs font-bold uppercase tracking-[.16em] text-[var(--color-green-600)]">
               What happens next
             </span>
             <ol className="mt-5 space-y-5">
@@ -63,8 +64,8 @@ export default async function ContactPage({
                 "We confirm whether photos or a walkthrough are needed.",
                 "You receive a clear written scope and estimate.",
               ].map((step, index) => (
-                <li key={step} className="flex gap-3 text-sm leading-relaxed text-white/75">
-                  <span className="font-display text-lg text-[var(--color-green-300)]">0{index + 1}</span>
+                <li key={step} className="flex gap-3 text-sm leading-relaxed text-[var(--color-muted)]">
+                  <span className="font-display text-lg text-[var(--color-green-600)]">0{index + 1}</span>
                   <span>{step}</span>
                 </li>
               ))}
@@ -85,9 +86,9 @@ export default async function ContactPage({
           <div className="px-2 py-3 text-sm text-[var(--color-muted)]">
             <p className="mb-3">
               Prefer a call?{" "}
-              <a href={site.phoneHref} className="font-semibold text-[var(--color-green-600)] hover:underline">
+              <CallLink placement="contact" className="inline-flex min-h-11 items-center font-semibold text-[var(--color-green-600)] hover:underline">
                 {site.phone}
-              </a>
+              </CallLink>
             </p>
             Prefer email?{" "}
             <a href={`mailto:${site.email}`} className="font-semibold text-[var(--color-green-600)] hover:underline">

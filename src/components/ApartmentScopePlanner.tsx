@@ -15,7 +15,7 @@ export function ApartmentScopePlanner() {
   const href = `/contact?service=interior-painting&projectBrief=${encodeURIComponent(brief)}`;
 
   return (
-    <section id="scope-planner" aria-labelledby="scope-planner-heading" className="my-8 scroll-mt-32 rounded-2xl border border-[var(--color-line)] bg-white p-5 sm:p-7">
+    <section id="scope-planner" aria-labelledby="scope-planner-heading" className="my-8 scroll-mt-32 rounded-none border border-[var(--color-line)] bg-white p-5 sm:p-7">
       <p className="eyebrow">Plan before you price</p>
       <h2 id="scope-planner-heading" className="mt-3 font-display text-2xl sm:text-3xl">Build a short apartment painting brief.</h2>
       <p className="mt-3 text-[var(--color-muted)]">Choose what you know. This organizes your request; it does not calculate a price or book work.</p>
@@ -27,13 +27,13 @@ export function ApartmentScopePlanner() {
         ].map((field) => (
           <label key={field.label} className="grid gap-2 text-sm font-medium">
             {field.label}
-            <select value={field.value} onChange={(event) => field.change(event.target.value)} className="min-h-12 w-full min-w-0 rounded-xl border border-[var(--color-line)] bg-white p-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)]">
+            <select value={field.value} onChange={(event) => field.change(event.target.value)} className="min-h-12 w-full min-w-0 rounded-none border border-[var(--color-line)] bg-white p-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)]">
               {field.options.map((option) => <option key={option}>{option}</option>)}
             </select>
           </label>
         ))}
       </div>
-      <div className="mt-5 rounded-xl bg-[var(--color-cream-200)]/60 p-4" aria-live="polite" aria-atomic="true">
+      <div className="mt-5 rounded-none bg-[var(--color-cream-200)]/60 p-4" aria-live="polite" aria-atomic="true">
         <p className="font-semibold">Your starting scope</p>
         <p className="mt-2 text-sm leading-relaxed">{surfaces}. {occupancy}. {repairs}.</p>
       </div>

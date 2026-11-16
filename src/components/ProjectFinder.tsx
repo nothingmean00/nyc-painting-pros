@@ -18,8 +18,8 @@ const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, 
 
 function ProjectCard({ project }: { project: Project }) {
   const Mark = Icon[project.icon];
-  return <Link href={`/painting/${project.slug}`} className="card p-6 group hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-all focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green-600)]">
-    <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--color-ink)] text-white"><Mark aria-hidden="true" className="w-5 h-5" /></span>
+  return <Link href={`/painting/${project.slug}`} className="card p-6 group transition-all focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green-600)]">
+    <span className="inline-flex text-[var(--color-ink)]" aria-hidden="true"><Mark aria-hidden="true" className="w-5 h-5" /></span>
     <h3 className="font-display text-xl mt-4">{project.title}</h3>
     <p className="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">{project.description}</p>
     <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-green-600)]">View scope & costs <Icon.arrow aria-hidden="true" className="w-4 h-4" /></span>
@@ -43,17 +43,17 @@ export function ProjectFinder({ groups }: { groups: Group[] }) {
   const reset = () => { setQuery(""); setCategory("All projects"); };
 
   return <section className="container-x py-8 sm:py-12" aria-label="Find a painting project">
-    <div className="rounded-2xl border border-[var(--color-line)] bg-white p-5 sm:p-7">
+    <div className="rounded-none border border-[var(--color-line)] bg-white p-5 sm:p-7">
       <label htmlFor="project-search" className="block font-semibold text-lg">What needs painting?</label>
       <p id="project-search-help" className="mt-1 text-sm text-[var(--color-muted)]">Search by room, surface or neighborhood, or choose a category below.</p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
-        <input id="project-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} aria-describedby="project-search-help" aria-controls="project-results" placeholder="Try apartment, cabinets or Brooklyn" className="w-full sm:flex-1 min-w-0 rounded-xl border border-[var(--color-line)] px-4 py-3 text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)]" />
+        <input id="project-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} aria-describedby="project-search-help" aria-controls="project-results" placeholder="Try apartment, cabinets or Brooklyn" className="w-full sm:flex-1 min-w-0 rounded-none border border-[var(--color-line)] px-4 py-3 text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)]" />
         {(query || category !== "All projects") && <button type="button" onClick={reset} className="min-h-11 px-3 text-sm font-semibold underline underline-offset-4">Clear search & filters</button>}
       </div>
       <fieldset className="mt-6">
         <legend className="text-sm font-semibold mb-3">Filter by project type</legend>
         <div className="flex flex-wrap gap-2">
-          {["All projects", ...orderedGroups.map((group) => group.title)].map((title) => <button key={title} type="button" aria-pressed={category === title} aria-controls="project-results" onClick={() => setCategory(title)} className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)] ${category === title ? "bg-[var(--color-ink)] border-[var(--color-ink)] text-white" : "border-[var(--color-line)] hover:bg-[var(--color-cream)]"}`}>{title}</button>)}
+          {["All projects", ...orderedGroups.map((group) => group.title)].map((title) => <button key={title} type="button" aria-pressed={category === title} aria-controls="project-results" onClick={() => setCategory(title)} className={`min-h-11 rounded-none border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-green-600)] ${category === title ? "bg-[var(--color-ink)] border-[var(--color-ink)] text-white" : "border-[var(--color-line)] hover:bg-[var(--color-cream)]"}`}>{title}</button>)}
         </div>
       </fieldset>
     </div>

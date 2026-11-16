@@ -13,7 +13,9 @@ export function AdminHeader() {
             <span className="block text-xs text-slate-400">Intake operations</span>
           </span>
         </Link>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center justify-end gap-1">
+          <Link href="/admin" className="px-3 py-3 text-sm text-slate-300 hover:text-white">Intakes</Link>
+          <Link href="/admin/calls" className="px-3 py-3 text-sm text-slate-300 hover:text-white">Call clicks</Link>
           <a
             href="/"
             target="_blank"
