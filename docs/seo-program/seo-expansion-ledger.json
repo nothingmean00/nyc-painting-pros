@@ -3456,5 +3456,137 @@
       "minimumInboundLinks": 6,
       "routeLinkSchemaCanonicalCtaRobots": "PASS"
     }
+  },
+  "week20261116": {
+    "week": "2026-11-16/2026-11-22 America/New_York",
+    "minimum": {
+      "money": 3,
+      "blog": 3
+    },
+    "delivered": {
+      "money": [],
+      "blog": []
+    },
+    "remaining": {
+      "money": 3,
+      "blog": 3
+    },
+    "originalOccurrence": "2026-11-16",
+    "recoveryOccurrence": "2026-11-20",
+    "reservations": [
+      {
+        "id": "nycpaintingpros.com-2026-11-16-high-gloss-ceiling-painting-nyc",
+        "type": "money",
+        "slug": "high-gloss-ceiling-painting-nyc",
+        "url": "https://www.nycpaintingpros.com/painting/high-gloss-ceiling-painting-nyc",
+        "intent": "Price a reflective ceiling with an agreed preparation standard and in-room sample; distinct from ordinary flat ceiling repaint.",
+        "researchSources": [
+          "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-finish"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-16-high-gloss-ceiling-sample-approval",
+        "type": "blog",
+        "slug": "high-gloss-ceiling-sample-approval",
+        "url": "https://www.nycpaintingpros.com/blog/high-gloss-ceiling-sample-approval",
+        "intent": "Price a reflective ceiling with an agreed preparation standard and in-room sample; distinct from ordinary flat ceiling repaint.",
+        "researchSources": [
+          "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-finish"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-16-cabinet-interior-painting-nyc",
+        "type": "money",
+        "slug": "cabinet-interior-painting-nyc",
+        "url": "https://www.nycpaintingpros.com/painting/cabinet-interior-painting-nyc",
+        "intent": "Decide which cabinet boxes and shelf faces to paint versus retain; distinct from exterior door refinishing and bookcase reloading.",
+        "researchSources": [
+          "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/painting-inside-kitchen-cabinets"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-16-should-you-paint-inside-kitchen-cabinets",
+        "type": "blog",
+        "slug": "should-you-paint-inside-kitchen-cabinets",
+        "url": "https://www.nycpaintingpros.com/blog/should-you-paint-inside-kitchen-cabinets",
+        "intent": "Decide which cabinet boxes and shelf faces to paint versus retain; distinct from exterior door refinishing and bookcase reloading.",
+        "researchSources": [
+          "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/painting-inside-kitchen-cabinets"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-16-wall-repair-after-wallpaper-removal-nyc",
+        "type": "money",
+        "slug": "wall-repair-after-wallpaper-removal-nyc",
+        "url": "https://www.nycpaintingpros.com/painting/wall-repair-after-wallpaper-removal-nyc",
+        "intent": "Take over exposed walls after removal by another party; assess residual adhesive and damaged facing before repair/repaint. Existing removal page sells removal; existing blog decides remove versus overpaint.",
+        "researchSources": [
+          "https://www.sherwin-williams.com/en-us/project-center/faqs/paint-faq"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-16-wallpaper-removed-are-walls-ready-to-paint",
+        "type": "blog",
+        "slug": "wallpaper-removed-are-walls-ready-to-paint",
+        "url": "https://www.nycpaintingpros.com/blog/wallpaper-removed-are-walls-ready-to-paint",
+        "intent": "Take over exposed walls after removal by another party; assess residual adhesive and damaged facing before repair/repaint. Existing removal page sells removal; existing blog decides remove versus overpaint.",
+        "researchSources": [
+          "https://www.sherwin-williams.com/en-us/project-center/faqs/paint-faq"
+        ],
+        "owner": "nyc-painting-pros-autonomous-growth",
+        "status": "reserved",
+        "baseline": "New URL; no measured baseline",
+        "reservedAt": "2026-11-20T17:27:08.300Z"
+      }
+    ],
+    "inventoryBefore": 167,
+    "checkedAt": "2026-11-20T17:27:08.300Z",
+    "rejectedHypotheses": "Building paperwork and general apartment finish decisions overlap existing co-op, sample and estimate guides; alternate scopes selected.",
+    "evidenceUse": "Fresh 28/90 exact-property exports: both 41 clicks/5251 impressions; overlapping windows, no trend inferred. Apartment-cost guide 10 clicks/1419 impressions; apartment page 2/304; high gloss painted ceilings lower manhattan 9 impressions at 7.56; kitchen cabinet painter 23 impressions at 17.61. These inform adjacent project decisions, not invented demand for new URLs.",
+    "state": "validated",
+    "updatedAt": "2026-11-20T17:36:50.213Z",
+    "securityRepair": {
+      "from": "next/eslint-config-next 16.4.3",
+      "to": "16.4.6",
+      "reason": "Build security advisory; supported patch update",
+      "source": "https://github.com/vercel/next.js/security/advisories/GHSA-mfr8-8qww-v76h"
+    },
+    "validation": {
+      "sitemapUrls": 173,
+      "errors": [],
+      "browserChecks": 15,
+      "customerSubmissions": 0,
+      "checks": [
+        "clean npm ci",
+        "lint",
+        "standalone TypeScript",
+        "production build",
+        "isolated photo/intake and call-event tests",
+        "metadata/canonicals/robots/schema",
+        "internal links and hubs",
+        "mobile/desktop",
+        "three CTA prefills"
+      ]
+    }
   }
 }
