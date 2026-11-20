@@ -3464,12 +3464,20 @@
       "blog": 3
     },
     "delivered": {
-      "money": [],
-      "blog": []
+      "money": [
+        "https://www.nycpaintingpros.com/painting/high-gloss-ceiling-painting-nyc",
+        "https://www.nycpaintingpros.com/painting/cabinet-interior-painting-nyc",
+        "https://www.nycpaintingpros.com/painting/wall-repair-after-wallpaper-removal-nyc"
+      ],
+      "blog": [
+        "https://www.nycpaintingpros.com/blog/high-gloss-ceiling-sample-approval",
+        "https://www.nycpaintingpros.com/blog/should-you-paint-inside-kitchen-cabinets",
+        "https://www.nycpaintingpros.com/blog/wallpaper-removed-are-walls-ready-to-paint"
+      ]
     },
     "remaining": {
-      "money": 3,
-      "blog": 3
+      "money": 0,
+      "blog": 0
     },
     "originalOccurrence": "2026-11-16",
     "recoveryOccurrence": "2026-11-20",
@@ -3484,9 +3492,18 @@
           "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-finish"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       },
       {
         "id": "nycpaintingpros.com-2026-11-16-high-gloss-ceiling-sample-approval",
@@ -3498,9 +3515,18 @@
           "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-finish"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       },
       {
         "id": "nycpaintingpros.com-2026-11-16-cabinet-interior-painting-nyc",
@@ -3512,9 +3538,18 @@
           "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/painting-inside-kitchen-cabinets"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       },
       {
         "id": "nycpaintingpros.com-2026-11-16-should-you-paint-inside-kitchen-cabinets",
@@ -3526,9 +3561,18 @@
           "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/painting-inside-kitchen-cabinets"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       },
       {
         "id": "nycpaintingpros.com-2026-11-16-wall-repair-after-wallpaper-removal-nyc",
@@ -3540,9 +3584,18 @@
           "https://www.sherwin-williams.com/en-us/project-center/faqs/paint-faq"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       },
       {
         "id": "nycpaintingpros.com-2026-11-16-wallpaper-removed-are-walls-ready-to-paint",
@@ -3554,17 +3607,26 @@
           "https://www.sherwin-williams.com/en-us/project-center/faqs/paint-faq"
         ],
         "owner": "nyc-painting-pros-autonomous-growth",
-        "status": "reserved",
+        "status": "live_verified",
         "baseline": "New URL; no measured baseline",
-        "reservedAt": "2026-11-20T17:27:08.300Z"
+        "reservedAt": "2026-11-20T17:27:08.300Z",
+        "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+        "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+        "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+        "reviewDates": [
+          "2026-12-20",
+          "2027-01-19",
+          "2027-02-18"
+        ],
+        "cta": "Contextual project estimate with service and project prefilled"
       }
     ],
     "inventoryBefore": 167,
     "checkedAt": "2026-11-20T17:27:08.300Z",
     "rejectedHypotheses": "Building paperwork and general apartment finish decisions overlap existing co-op, sample and estimate guides; alternate scopes selected.",
     "evidenceUse": "Fresh 28/90 exact-property exports: both 41 clicks/5251 impressions; overlapping windows, no trend inferred. Apartment-cost guide 10 clicks/1419 impressions; apartment page 2/304; high gloss painted ceilings lower manhattan 9 impressions at 7.56; kitchen cabinet painter 23 impressions at 17.61. These inform adjacent project decisions, not invented demand for new URLs.",
-    "state": "validated",
-    "updatedAt": "2026-11-20T17:36:50.213Z",
+    "state": "live_verified",
+    "updatedAt": "2026-11-20T17:38:18.167Z",
     "securityRepair": {
       "from": "next/eslint-config-next 16.4.3",
       "to": "16.4.6",
@@ -3587,6 +3649,18 @@
         "mobile/desktop",
         "three CTA prefills"
       ]
+    },
+    "commit": "8f8d92d75784d13344691a28420ebf1014406f08",
+    "deployment": "dpl_HEaEdRCeAd6roiYUTRMq5CSZQRnP",
+    "verifiedLiveAt": "2026-11-20T17:38:18.167Z",
+    "reviewDates": [
+      "2026-12-20",
+      "2027-01-19",
+      "2027-02-18"
+    ],
+    "dueReviews": {
+      "checkedAt": "2026-11-20T17:38:18.167Z",
+      "observation": "October technical/form cohorts due: fresh GSC collected, but qualified conversion coverage and matched causal baselines unavailable. No uplift asserted. Prior December review dates preserved."
     }
   }
 }
