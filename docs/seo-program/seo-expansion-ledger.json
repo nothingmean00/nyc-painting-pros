@@ -3668,8 +3668,8 @@
     "domain": "nycpaintingpros.com",
     "occurrence": "2026-11-23",
     "startedAt": "2026-11-24T14:50:35.1159589Z",
-    "updatedAt": "2026-11-24T15:27:20.648Z",
-    "state": "validated",
+    "updatedAt": "2026-11-24T15:30:19.871Z",
+    "state": "live_verified",
     "intent": "Interior brick condition/finish decision; laminate cabinet adhesion/repair eligibility; color drenching multi-surface specification",
     "targetUrls": [
       "https://www.nycpaintingpros.com/painting/interior-brick-wall-painting-nyc",
@@ -3695,24 +3695,43 @@
       "src/lib/blog.ts",
       "docs/seo-program/seo-expansion-ledger.json"
     ],
-    "commit": null,
+    "commit": "c354191433781962654639096c0ef68bf07761f3",
     "productionProject": "nyc-painting-pros",
-    "liveUrls": [],
+    "liveUrls": [
+      "https://www.nycpaintingpros.com/painting/interior-brick-wall-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/paint-exposed-brick-wall-decision-checklist",
+      "https://www.nycpaintingpros.com/painting/laminate-cabinet-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/laminate-cabinets-paint-or-replace-fronts",
+      "https://www.nycpaintingpros.com/painting/color-drenching-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/color-drenching-room-surface-schedule"
+    ],
     "blocker": null,
     "retryCount": 0,
-    "reviewDates": [],
+    "reviewDates": [
+      "2026-12-24",
+      "2027-01-23",
+      "2027-02-22"
+    ],
     "currentWeek": {
       "remaining": {
-        "money": 3,
-        "blog": 3
+        "money": 0,
+        "blog": 0
       },
       "delivered": {
-        "money": [],
-        "blog": []
+        "money": [
+          "https://www.nycpaintingpros.com/painting/interior-brick-wall-painting-nyc",
+          "https://www.nycpaintingpros.com/painting/laminate-cabinet-painting-nyc",
+          "https://www.nycpaintingpros.com/painting/color-drenching-painting-nyc"
+        ],
+        "blog": [
+          "https://www.nycpaintingpros.com/blog/paint-exposed-brick-wall-decision-checklist",
+          "https://www.nycpaintingpros.com/blog/laminate-cabinets-paint-or-replace-fronts",
+          "https://www.nycpaintingpros.com/blog/color-drenching-room-surface-schedule"
+        ]
       },
       "week": "2026-11-23/2026-11-29"
     },
-    "checkpoint": "Validated; ready for direct main push",
+    "checkpoint": "Six new URLs verified live on exact READY production commit; complete, do not replay.",
     "sitemapCount": 173,
     "research": [
       {
@@ -3744,7 +3763,10 @@
       "build": "passed189routes",
       "isolatedTests": "9/9",
       "browser": "12 mobile/desktop checks;3 CTA prefills;50 internal links;0errors;0submissions",
-      "metadata": "canonicals,descriptions,robots,sitemap,JSON-LD passed"
-    }
+      "metadata": "canonicals,descriptions,robots,sitemap,JSON-LD passed",
+      "live": "12 viewport checks, 3 CTA prefills, 50 links; zero errors"
+    },
+    "deployment": "dpl_BLgPHqje32A56y3TpV83XhiChzp1",
+    "verifiedLiveAt": "2026-11-24T15:30:19.871Z"
   }
 }
