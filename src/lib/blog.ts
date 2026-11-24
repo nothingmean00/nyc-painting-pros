@@ -1,3 +1,4 @@
+import { november24Posts } from "./november24-content";
 import { blogImages, type BlogPhoto } from "./blog-images";
 import { novemberProjectPosts } from "./november-project-content";
 import { detailPosts } from "./detail-content";
@@ -52,6 +53,7 @@ export function unsplash(id: string, w = 1200) {
 }
 
 export const posts: Post[] = [
+  ...november24Posts,
   ...novemberProjectPosts,
   ...detailPosts,
   ...railingPosts,

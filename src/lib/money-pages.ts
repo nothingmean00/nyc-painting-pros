@@ -1,3 +1,4 @@
+import { november24Pages } from "./november24-content";
 import { detailMoneyPages } from "./detail-content";
 import { novemberProjectPages } from "./november-project-content";
 import { railingPages } from "./railing-content";
@@ -45,6 +46,7 @@ export type MoneyPage = {
 };
 
 export const moneyPages: MoneyPage[] = [
+  ...november24Pages,
   ...novemberProjectPages,
   ...detailMoneyPages,
   ...railingPages,
@@ -2404,6 +2406,12 @@ export const moneyPages: MoneyPage[] = [
     relatedPages: ["rental-turnover-painting-nyc", "commercial-painting-manhattan", "office-painting-nyc"],
   },
 ];
+
+// Connect each new scope from its established parent project.
+for (const page of november24Pages) {
+  const parent = moneyPages.find(p => p.slug === page.relatedPages?.[0]);
+  if (parent) parent.relatedPages = [...new Set([...(parent.relatedPages ?? []), page.slug])];
+}
 
 export function getMoneyPage(slug: string) {
   return moneyPages.find((p) => p.slug === slug);

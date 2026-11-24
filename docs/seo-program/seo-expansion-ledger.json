@@ -3662,5 +3662,89 @@
       "checkedAt": "2026-11-20T17:38:18.167Z",
       "observation": "October technical/form cohorts due: fresh GSC collected, but qualified conversion coverage and matched causal baselines unavailable. No uplift asserted. Prior December review dates preserved."
     }
+  },
+  "november23Reservations": {
+    "automationId": "nyc-painting-pros-autonomous-growth",
+    "domain": "nycpaintingpros.com",
+    "occurrence": "2026-11-23",
+    "startedAt": "2026-11-24T14:50:35.1159589Z",
+    "updatedAt": "2026-11-24T15:27:20.648Z",
+    "state": "validated",
+    "intent": "Interior brick condition/finish decision; laminate cabinet adhesion/repair eligibility; color drenching multi-surface specification",
+    "targetUrls": [
+      "https://www.nycpaintingpros.com/painting/interior-brick-wall-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/paint-exposed-brick-wall-decision-checklist",
+      "https://www.nycpaintingpros.com/painting/laminate-cabinet-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/laminate-cabinets-paint-or-replace-fronts",
+      "https://www.nycpaintingpros.com/painting/color-drenching-painting-nyc",
+      "https://www.nycpaintingpros.com/blog/color-drenching-room-surface-schedule"
+    ],
+    "baseline": {
+      "observation": "Apartment cost guide: 11 clicks, 1598 impressions. Overlapping 28/90 windows; trend and conversions unknown.",
+      "impressions": 6126,
+      "property": "sc-domain:nycpaintingpros.com",
+      "clicks": 49
+    },
+    "evidenceFiles": [
+      "C:/Portfolio/seo-agency/evidence/2026-11-24-nycpaintingpros.com-28.json",
+      "C:/Portfolio/seo-agency/evidence/2026-11-24-nycpaintingpros.com-90.json"
+    ],
+    "ownedFiles": [
+      "src/lib/november24-content.ts",
+      "src/lib/money-pages.ts",
+      "src/lib/blog.ts",
+      "docs/seo-program/seo-expansion-ledger.json"
+    ],
+    "commit": null,
+    "productionProject": "nyc-painting-pros",
+    "liveUrls": [],
+    "blocker": null,
+    "retryCount": 0,
+    "reviewDates": [],
+    "currentWeek": {
+      "remaining": {
+        "money": 3,
+        "blog": 3
+      },
+      "delivered": {
+        "money": [],
+        "blog": []
+      },
+      "week": "2026-11-23/2026-11-29"
+    },
+    "checkpoint": "Validated; ready for direct main push",
+    "sitemapCount": 173,
+    "research": [
+      {
+        "id": "nycpaintingpros.com-2026-11-23-interior-brick-wall-painting-nyc",
+        "money": "interior-brick-wall-painting-nyc",
+        "blog": "paint-exposed-brick-wall-decision-checklist",
+        "source": "https://ltx-www.sherwin-williams.com/en-us/project-center/paint/how-to-paint-interior-brick",
+        "parent": "tribeca-loft-painting"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-23-laminate-cabinet-painting-nyc",
+        "money": "laminate-cabinet-painting-nyc",
+        "blog": "laminate-cabinets-paint-or-replace-fronts",
+        "source": "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/painting-laminate-furniture",
+        "parent": "kitchen-cabinet-painting-nyc"
+      },
+      {
+        "id": "nycpaintingpros.com-2026-11-23-color-drenching-painting-nyc",
+        "money": "color-drenching-painting-nyc",
+        "blog": "color-drenching-room-surface-schedule",
+        "source": "https://www.benjaminmoore.com/en-us/color-overview/color-insights/monochromatic-color-schemes",
+        "parent": "single-room-accent-wall-painting-nyc"
+      }
+    ],
+    "evidenceUse": "Fresh exact-property Nov24 28/90 snapshots both49 clicks6126 impressions. Apartment cost11/1598; color guide5/127; cabinet and cabinet repair queries support adjacent material/scope decisions. No measured new-intent demand asserted. Dark-to-light rejected due existing article. 173 URL inventory, remote main8ad32c0, no current-week release.",
+    "validation": {
+      "lint": "passed",
+      "standaloneTypeScript": "passed",
+      "build": "passed189routes",
+      "isolatedTests": "9/9",
+      "browser": "12 mobile/desktop checks;3 CTA prefills;50 internal links;0errors;0submissions",
+      "metadata": "canonicals,descriptions,robots,sitemap,JSON-LD passed"
+    }
   }
 }
