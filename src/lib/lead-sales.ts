@@ -271,8 +271,12 @@ export async function acceptLeadMail(job: ClaimedMail, providerId: string, follo
       follow_up_on = ${followUpOn}::date, reason = ${reason}, claim_token = NULL, lease_until = NULL
     WHERE id = ${job.id} AND claim_token = ${job.claim_token} AND state = 'sending'
     RETURNING kind, intake_id
-  ) UPDATE estimate_intakes AS i SET status = 'quoted', updated_at = now()
-    FROM accepted WHERE accepted.kind = 'quote' AND i.id = accepted.intake_id AND i.status IN ('new', 'contacted', 'quoted')`;
+  ) UPDATE estimate_intakes AS i
+    SET status = CASE WHEN accepted.kind = 'quote' THEN 'quoted' ELSE 'contacted' END, updated_at = now()
+    FROM accepted WHERE i.id = accepted.intake_id AND (
+      (accepted.kind = 'quote' AND i.status IN ('new', 'contacted', 'quoted'))
+      OR (accepted.kind IN ('first_reply', 'manual') AND i.status = 'new')
+    )`;
 }
 
 export async function recordLeadInbound(input: {
