@@ -10,6 +10,7 @@ import {
   verifyAdminPassword,
 } from "@/lib/admin-auth";
 import { intakeStatuses, updateIntake } from "@/lib/intakes";
+import { parseJobTracking, saveJobTracking } from "@/lib/job-tracking";
 
 export type LoginState = { error?: string } | undefined;
 
@@ -56,4 +57,19 @@ export async function updateIntakeAction(formData: FormData) {
   });
   revalidatePath("/admin");
   revalidatePath(`/admin/intakes/${id}`);
+}
+
+export async function updateJobTrackingAction(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
+    throw new Error("Invalid intake ID.");
+  }
+  const url = `/admin/intakes/${id}`;
+  const tracking = parseJobTracking(formData);
+  if (!tracking) redirect(`${url}?tracking=invalid#tracking`);
+  if (!await saveJobTracking(id, tracking)) redirect(`${url}?tracking=conflict#tracking`);
+  revalidatePath("/admin");
+  revalidatePath(url);
+  redirect(`${url}?tracking=saved#tracking`);
 }

@@ -1,6 +1,18 @@
 import sharp from "sharp";
 import { MAX_PHOTOS, MAX_PHOTO_BYTES, type ProjectPhoto } from "./project-photos";
 
+export async function normalizeProjectPhoto(bytes: Buffer, maxInputBytes = MAX_PHOTO_BYTES): Promise<ProjectPhoto> {
+  if (!bytes.length || bytes.length > maxInputBytes) throw new Error("Image size is outside the allowed range.");
+  const image = sharp(bytes, { limitInputPixels: 40_000_000, failOn: "warning" });
+  const meta = await image.metadata();
+  if (!["jpeg", "png", "webp"].includes(meta.format ?? "") || (meta.pages ?? 1) > 1) throw new Error("Unsupported image");
+  const normalized = await image.rotate()
+    .resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true })
+    .flatten({ background: "#ffffff" }).jpeg({ quality: 78 }).toBuffer();
+  if (normalized.length > MAX_PHOTO_BYTES) throw new Error("Image too large");
+  return { content: normalized.toString("base64") };
+}
+
 export async function validateProjectPhotos(value: unknown): Promise<ProjectPhoto[]> {
   if (value === undefined) return [];
   if (!Array.isArray(value) || value.length > MAX_PHOTOS) throw new Error("Choose up to 3 photos.");
@@ -12,13 +24,7 @@ export async function validateProjectPhotos(value: unknown): Promise<ProjectPhot
     const bytes = Buffer.from(item.content, "base64");
     if (!bytes.length || bytes.length > MAX_PHOTO_BYTES) throw new Error("A photo is too large. Remove it and try a smaller image.");
     try {
-      const image = sharp(bytes, { limitInputPixels: 40_000_000, failOn: "warning" });
-      const meta = await image.metadata();
-      if (!["jpeg", "png", "webp"].includes(meta.format ?? "") || (meta.pages ?? 1) > 1) throw new Error("Unsupported image");
-      // Decode and re-encode: reject disguised files and remove EXIF/GPS metadata.
-      const normalized = await image.rotate().resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true }).flatten({ background: "#ffffff" }).jpeg({ quality: 78 }).toBuffer();
-      if (normalized.length > MAX_PHOTO_BYTES) throw new Error("Image too large");
-      result.push({ content: normalized.toString("base64") });
+      result.push(await normalizeProjectPhoto(bytes));
     } catch {
       throw new Error("A photo could not be processed. Remove it and choose a different JPEG, PNG, or WebP image.");
     }

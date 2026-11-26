@@ -10,6 +10,8 @@ import {
   Save,
 } from "lucide-react";
 import { AdminHeader } from "../../AdminHeader";
+import { JobTrackingPanel } from "../../JobTrackingPanel";
+import { LeadSalesPanel } from "../../LeadSalesPanel";
 import { updateIntakeAction } from "../../actions";
 import { requireAdmin } from "@/lib/admin-auth";
 import {
@@ -30,13 +32,15 @@ function formatDate(value: string) {
 
 export default async function IntakeDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ sales?: string; tracking?: string }>;
 }) {
   await requireAdmin();
   if (!isIntakeStorageConfigured()) redirect("/admin");
 
-  const { id } = await params;
+  const [{ id }, { sales, tracking }] = await Promise.all([params, searchParams]);
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
     notFound();
   }
@@ -95,6 +99,9 @@ export default async function IntakeDetailPage({
               </p>
             </section>
 
+            <JobTrackingPanel intake={intake} notice={tracking} />
+            <LeadSalesPanel intake={intake} notice={sales} />
+
             {intake.photoCount > 0 && <section className="border border-slate-200 bg-white p-5 sm:p-6">
               <h2 className="text-sm font-semibold">Project photos ({intake.photoCount})</h2>
               <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -132,7 +139,7 @@ export default async function IntakeDetailPage({
           <aside>
             <form action={updateIntakeAction} className="border border-slate-200 bg-white p-5 sm:p-6 lg:sticky lg:top-6">
               <input type="hidden" name="id" value={intake.id} />
-              <h2 className="text-lg font-semibold">Follow-up</h2>
+              <h2 className="text-lg font-semibold">Lead status and closing</h2>
               <label className="mt-5 grid gap-2">
                 <span className="text-sm font-medium text-slate-700">Lead status</span>
                 <select name="status" defaultValue={intake.status} className="h-11 border border-slate-300 bg-white px-3 text-sm outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15">
@@ -141,6 +148,7 @@ export default async function IntakeDetailPage({
                   ))}
                 </select>
               </label>
+              <p className="mt-2 text-xs text-slate-600">Mark the job won after the customer signs the agreement.</p>
               <label className="mt-5 grid gap-2">
                 <span className="text-sm font-medium text-slate-700">Private notes</span>
                 <textarea

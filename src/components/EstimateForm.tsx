@@ -44,6 +44,7 @@ export function EstimateForm({
   const started = useRef(false);
   const blockedFields = useRef(new Set<string>());
   const [projectBrief, setProjectBrief] = useState(defaultDetails);
+  const [selectedService, setSelectedService] = useState(services.some((service) => service.name === defaultService) ? defaultService : "");
   const [photos, setPhotos] = useState<ProjectPhoto[]>([]);
   const [photosBusy, setPhotosBusy] = useState(false);
   const confirmation = useRef<HTMLDivElement>(null);
@@ -83,6 +84,10 @@ export function EstimateForm({
     setError("");
 
     const data = Object.fromEntries(new FormData(form).entries());
+    const wallEstimate = selectedService === "Interior Painting" && data.wallConditions === "yes" ? {
+      length: Number(data.wallLength), width: Number(data.wallWidth), height: Number(data.wallHeight),
+      conditionsConfirmed: true,
+    } : undefined;
     const page =
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}`
@@ -97,6 +102,7 @@ export function EstimateForm({
         body: JSON.stringify({
           ...data,
           photos,
+          wallEstimate,
           page,
           referrer,
           submissionId: submissionId.current,
@@ -245,7 +251,8 @@ export function EstimateForm({
         <select
           name="service"
           className="rounded-none border border-[var(--color-line)] bg-white px-4 py-3 outline-none focus:border-[var(--color-green)] focus:ring-2 focus:ring-[var(--color-green)]/30"
-          defaultValue={services.some((service) => service.name === defaultService) ? defaultService : ""}
+          value={selectedService}
+          onChange={(event) => setSelectedService(event.target.value)}
           required
         >
           <option value="" disabled>
@@ -259,6 +266,24 @@ export function EstimateForm({
           <option value="Other">Not sure / something else</option>
         </select>
       </label>
+      {selectedService === "Interior Painting" && (
+        <details className="border border-[var(--color-line)] p-4">
+          <summary className="cursor-pointer text-sm font-medium">Add measurements for one room (optional)</summary>
+          <p className="mt-3 text-sm text-[var(--color-muted)]">For a straightforward walls-only repaint, measure the room length, width, and ceiling height.</p>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            {[["Length", "wallLength"], ["Width", "wallWidth"], ["Height", "wallHeight"]].map(([label, field]) => (
+              <label key={field} className="min-w-0 text-xs font-medium">
+                {label} (ft)
+                <input type="number" name={field} step="0.1" min="0" max="99" className="mt-1 min-w-0 w-full border border-[var(--color-line)] px-2 py-2 text-base" />
+              </label>
+            ))}
+          </div>
+          <label className="mt-3 flex items-start gap-2 text-sm">
+            <input type="checkbox" name="wallConditions" value="yes" className="mt-1" />
+            <span>This is one clear room in NYC with sound, already painted walls. I’m supplying paint in a similar color. There are no repairs or special access requirements.</span>
+          </label>
+        </details>
+      )}
       <details open={defaultDetails ? true : undefined} className="rounded-none border border-[var(--color-line)] p-4">
       <summary className="cursor-pointer font-medium text-sm">Add project details or photos (optional)</summary>
       <div className="grid gap-4 pt-4">

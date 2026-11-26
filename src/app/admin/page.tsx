@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Database, Inbox, Search } from "lucide-react";
 import { AdminHeader } from "./AdminHeader";
 import { requireAdmin } from "@/lib/admin-auth";
+import { getJobTrackingSummary, nextActions } from "@/lib/job-tracking";
+import { formatQuoteTotal } from "@/lib/lead-sales";
 import {
   getIntakeStats,
   intakeStatuses,
@@ -45,13 +47,15 @@ export default async function AdminPage({
   const configured = isIntakeStorageConfigured();
   let intakes: Awaited<ReturnType<typeof listIntakes>> = [];
   let stats = { total: 0, new: 0, contacted: 0, quoted: 0, won: 0 };
+  let jobSummary: Awaited<ReturnType<typeof getJobTrackingSummary>> | null = null;
   let storageError = "";
 
   if (configured) {
     try {
-      [intakes, stats] = await Promise.all([
+      [intakes, stats, jobSummary] = await Promise.all([
         listIntakes({ status, search }),
         getIntakeStats(),
+        getJobTrackingSummary(),
       ]);
     } catch (error) {
       console.error("[admin] Could not load intake storage:", error);
@@ -60,6 +64,7 @@ export default async function AdminPage({
   }
 
   const connected = configured && !storageError;
+  const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/New_York" }).format(new Date());
 
   return (
     <>
@@ -102,6 +107,28 @@ export default async function AdminPage({
           </section>
         ) : (
           <>
+            {jobSummary && (jobSummary.totals.tracked > 0 || jobSummary.accounts.length > 0) && (
+              <section aria-label="Recorded job results" className="mt-5 border border-slate-200 bg-white p-4">
+                <h2 className="text-sm font-semibold">Recorded job results</h2>
+                <p className="mt-1 text-sm text-slate-600">
+                  {formatQuoteTotal(Number(jobSummary.totals.collected))} collected across {jobSummary.totals.tracked} tracked jobs.
+                  {jobSummary.totals.costed > 0 && " " + formatQuoteTotal(Number(jobSummary.totals.contribution)) + " direct cash contribution before overhead across " + jobSummary.totals.costed + " jobs with all costs recorded."}
+                </p>
+                {jobSummary.accounts.length > 0 && (
+                  <div className="mt-3">
+                    <h3 className="text-sm font-medium">Repeat accounts</h3>
+                    <ul className="mt-1 space-y-1 text-sm">
+                      {jobSummary.accounts.map((row) => (
+                        <li key={row.account}>
+                          <Link href={`/admin?q=${encodeURIComponent(row.account)}`} className="text-emerald-800 underline">{row.account}</Link>
+                          {" · " + row.jobs + " won jobs · " + formatQuoteTotal(Number(row.collected)) + " recorded collections"}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </section>
+            )}
             <form className="mt-8 flex flex-col gap-3 border border-slate-200 bg-white p-3 sm:flex-row" method="get">
               <label className="relative min-w-0 flex-1">
                 <span className="sr-only">Search intakes</span>
@@ -109,7 +136,7 @@ export default async function AdminPage({
                 <input
                   name="q"
                   defaultValue={search}
-                  placeholder="Search name, email, phone, neighborhood, or service"
+                  placeholder="Search customer, account, neighborhood, or service"
                   className="h-11 w-full border border-slate-300 bg-white pl-10 pr-3 text-sm outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
                 />
               </label>
@@ -142,7 +169,7 @@ export default async function AdminPage({
                 </div>
               ) : (
                 <div className="overflow-x-auto">
-                  <table className="w-full min-w-[880px] border-collapse text-left text-sm">
+                  <table className="w-full min-w-[980px] border-collapse text-left text-sm">
                     <thead className="border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500">
                       <tr>
                         <th className="px-5 py-3 font-medium">Received</th>
@@ -150,6 +177,7 @@ export default async function AdminPage({
                         <th className="px-5 py-3 font-medium">Project</th>
                         <th className="px-5 py-3 font-medium">Location</th>
                         <th className="px-5 py-3 font-medium">Status</th>
+                        <th className="px-5 py-3 font-medium">Next action</th>
                         <th className="px-5 py-3"><span className="sr-only">Open</span></th>
                       </tr>
                     </thead>
@@ -161,10 +189,25 @@ export default async function AdminPage({
                             <div className="font-semibold text-slate-900">{intake.name}</div>
                             <div className="mt-0.5 text-xs text-slate-500">{intake.email}</div>
                           </td>
-                          <td className="max-w-64 px-5 py-4"><div className="truncate">{intake.service}</div></td>
+                          <td className="max-w-64 px-5 py-4">
+                            <div className="truncate">{intake.service}</div>
+                            {intake.account && <div className="text-xs text-slate-500">{intake.account}</div>}
+                          </td>
                           <td className="px-5 py-4 text-slate-600">{intake.location}</td>
                           <td className="px-5 py-4">
                             <span className={`inline-flex px-2.5 py-1 text-xs font-semibold capitalize ${statusStyles[intake.status]}`}>{intake.status}</span>
+                            {intake.salesOwner && <p className="mt-1 text-xs text-slate-600">{intake.salesOwner}</p>}
+                            {intake.salesUpdate && <Link href={`/admin/intakes/${intake.id}#sales`} className="mt-1 block text-xs font-semibold text-emerald-800 underline">{intake.salesUpdate}</Link>}
+                          </td>
+                          <td className="max-w-64 px-5 py-4">
+                            <Link href={`/admin/intakes/${intake.id}#tracking`} className="break-words text-emerald-800 underline">
+                              {intake.nextAction || nextActions[intake.status]}
+                            </Link>
+                            {intake.dueOn && (
+                              <time dateTime={intake.dueOn} className={`mt-1 block text-xs ${intake.dueOn < today && !["lost", "archived"].includes(intake.status) ? "font-semibold text-rose-700" : "text-slate-500"}`}>
+                                Due {intake.dueOn}
+                              </time>
+                            )}
                           </td>
                           <td className="px-5 py-4 text-right">
                             <Link href={`/admin/intakes/${intake.id}`} aria-label={`Open intake from ${intake.name}`} className="inline-grid size-9 place-items-center text-slate-500 transition hover:bg-slate-100 hover:text-slate-950">

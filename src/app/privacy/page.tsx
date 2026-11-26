@@ -36,7 +36,7 @@ const sections = [
   },
   {
     title: "Project assistant",
-    body: "If you use the Painting Project Assistant, the messages you enter are processed by AI infrastructure providers to generate planning help. Assistant messages are not submitted as an estimate request unless you continue to and submit the estimate form. Do not enter payment information, precise apartment numbers, or other sensitive information in the assistant.",
+    body: "If you use the Painting Project Assistant, AI service providers process the messages you enter to generate planning help. Assistant messages become part of an estimate request only when you submit the estimate form. We may use AI to review the project details and photos you send through the estimate form or the business inbox, help assess the scope, and select a relevant reply or follow-up. Please leave payment information, precise apartment numbers, and other sensitive information out of the assistant, project description, and photos.",
   },
   {
     title: "Sharing and retention",

@@ -1,6 +1,7 @@
 import "server-only";
 
 import type { ProjectPhoto } from "./project-photos";
+import type { QuoteDocument } from "./automatic-estimate";
 import { neon } from "@neondatabase/serverless";
 
 export const intakeStatuses = [
@@ -43,7 +44,13 @@ export type NewIntake = Pick<
   | "details"
   | "sourcePage"
   | "referrer"
-> & { photos?: ProjectPhoto[] };
+> & {
+  photos?: ProjectPhoto[];
+  queueFirstReply?: boolean;
+  automaticQuote?: QuoteDocument;
+  initialMailSendAt?: string;
+  sourceEmail?: { id: string; messageId: string | null; subject: string };
+};
 
 type IntakeRow = {
   id: string;
@@ -63,7 +70,15 @@ type IntakeRow = {
   photo_count?: number;
 };
 
-type SqlClient = ReturnType<typeof neon>;
+type IntakeListRow = IntakeRow & {
+  sales_owner: string | null;
+  sales_update: string | null;
+  next_action: string | null;
+  due_on: string | null;
+  account: string | null;
+};
+
+type SqlClient = ReturnType<typeof neon<false, false>>;
 
 let sqlClient: SqlClient | null = null;
 let schemaPromise: Promise<void> | null = null;
@@ -113,6 +128,7 @@ async function ensureSchema() {
         )
       `;
       await sql`ALTER TABLE estimate_intakes ADD COLUMN IF NOT EXISTS photos jsonb NOT NULL DEFAULT '[]'::jsonb`;
+      await sql`ALTER TABLE estimate_intakes ADD COLUMN IF NOT EXISTS source_email jsonb`;
       await sql`
         CREATE INDEX IF NOT EXISTS estimate_intakes_created_at_idx
         ON estimate_intakes (created_at DESC)
@@ -120,6 +136,68 @@ async function ensureSchema() {
       await sql`
         CREATE INDEX IF NOT EXISTS estimate_intakes_status_idx
         ON estimate_intakes (status)
+      `;
+      await sql`
+        CREATE TABLE IF NOT EXISTS estimate_sales (
+          intake_id uuid PRIMARY KEY REFERENCES estimate_intakes(id) ON DELETE CASCADE,
+          reply_token uuid NOT NULL DEFAULT gen_random_uuid() UNIQUE,
+          owner text NOT NULL DEFAULT 'Malik' CHECK (owner IN ('Malik', 'Abiel')),
+          paused boolean NOT NULL DEFAULT false,
+          draft_scope text NOT NULL DEFAULT '',
+          draft_total_cents integer,
+          draft_timing text NOT NULL DEFAULT '',
+          draft_version integer NOT NULL DEFAULT 0,
+          approved_version integer NOT NULL DEFAULT 0
+        )
+      `;
+      await sql`
+        CREATE TABLE IF NOT EXISTS estimate_sales_mail (
+          id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+          intake_id uuid NOT NULL REFERENCES estimate_sales(intake_id) ON DELETE CASCADE,
+          kind text NOT NULL CHECK (kind IN ('first_reply', 'quote', 'follow_up', 'manual', 'received')),
+          state text NOT NULL DEFAULT 'pending'
+            CHECK (state IN ('pending', 'sending', 'accepted', 'received', 'failed', 'held', 'canceled')),
+          owner text NOT NULL DEFAULT 'Malik',
+          body text NOT NULL DEFAULT '',
+          reason text NOT NULL DEFAULT '',
+          quote_version integer,
+          parent_id uuid REFERENCES estimate_sales_mail(id),
+          provider_id text UNIQUE,
+          message_id text,
+          envelope jsonb,
+          attachment_count integer NOT NULL DEFAULT 0,
+          created_at timestamptz NOT NULL DEFAULT now(),
+          attempted_at timestamptz,
+          lease_until timestamptz,
+          claim_token uuid,
+          accepted_at timestamptz,
+          follow_up_on date,
+          UNIQUE (intake_id, kind, quote_version)
+        )
+      `;
+      await sql`
+        CREATE INDEX IF NOT EXISTS estimate_sales_mail_intake_idx
+        ON estimate_sales_mail (intake_id, created_at DESC)
+      `;
+      await sql`
+        CREATE INDEX IF NOT EXISTS estimate_sales_mail_pending_idx
+        ON estimate_sales_mail (created_at) WHERE state IN ('pending', 'sending')
+      `;
+      await sql`ALTER TABLE estimate_sales_mail ADD COLUMN IF NOT EXISTS quote_document jsonb,
+        ADD COLUMN IF NOT EXISTS automatic boolean NOT NULL DEFAULT false,
+        ADD COLUMN IF NOT EXISTS send_after timestamptz NOT NULL DEFAULT now()`;
+      await sql`
+        CREATE TABLE IF NOT EXISTS estimate_job_tracking (
+          intake_id uuid PRIMARY KEY REFERENCES estimate_intakes(id) ON DELETE CASCADE,
+          next_action text NOT NULL DEFAULT '',
+          due_on date,
+          account text NOT NULL DEFAULT '',
+          collected_cents integer CHECK (collected_cents >= 0),
+          crew_cents integer CHECK (crew_cents >= 0),
+          materials_cents integer CHECK (materials_cents >= 0),
+          other_cents integer CHECK (other_cents >= 0),
+          version integer NOT NULL DEFAULT 1
+        )
       `;
     })().catch((error) => {
       schemaPromise = null;
@@ -130,6 +208,11 @@ async function ensureSchema() {
   }
 
   await schemaPromise;
+}
+
+export async function getIntakeSql() {
+  await ensureSchema();
+  return getSql();
 }
 
 function mapIntake(row: IntakeRow): Intake {
@@ -156,15 +239,30 @@ export async function recordIntake(input: NewIntake) {
   await ensureSchema();
   const sql = getSql();
   const rows = (await sql`
-    INSERT INTO estimate_intakes (
-      id, name, phone, email, location, service, details, source_page, referrer, photos
-    ) VALUES (
-      ${input.id}, ${input.name}, ${input.phone}, ${input.email},
-      ${input.location}, ${input.service}, ${input.details},
-      ${input.sourcePage}, ${input.referrer}, ${JSON.stringify(input.photos ?? [])}::jsonb
+    WITH inserted AS (
+      INSERT INTO estimate_intakes (
+        id, name, phone, email, location, service, details, source_page, referrer, photos, source_email
+      ) VALUES (
+        ${input.id}, ${input.name}, ${input.phone}, ${input.email},
+        ${input.location}, ${input.service}, ${input.details},
+        ${input.sourcePage}, ${input.referrer}, ${JSON.stringify(input.photos ?? [])}::jsonb,
+        ${input.sourceEmail ? JSON.stringify(input.sourceEmail) : null}::jsonb
+      )
+      ON CONFLICT (id) DO NOTHING
+      RETURNING id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count
+    ), enrolled AS (
+      INSERT INTO estimate_sales (intake_id, draft_version, approved_version)
+      SELECT id, ${input.automaticQuote ? 1 : 0}, ${input.automaticQuote ? 1 : 0}
+      FROM inserted WHERE ${Boolean(input.queueFirstReply || input.automaticQuote)}
+      RETURNING intake_id
+    ), queued AS (
+      INSERT INTO estimate_sales_mail (intake_id, kind, quote_version, quote_document, automatic, send_after)
+      SELECT intake_id, ${input.automaticQuote ? "quote" : "first_reply"}, ${input.automaticQuote ? 1 : 0},
+        ${JSON.stringify(input.automaticQuote ?? null)}::jsonb, ${Boolean(input.automaticQuote)},
+        coalesce(${input.initialMailSendAt ?? null}::timestamptz, now())
+      FROM enrolled
     )
-    ON CONFLICT (id) DO NOTHING
-    RETURNING id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count
+    SELECT * FROM inserted
   `) as IntakeRow[];
 
   return rows[0] ? mapIntake(rows[0]) : null;
@@ -192,21 +290,41 @@ export async function listIntakes({
   const normalizedSearch = search.trim().slice(0, 100);
   const like = `%${normalizedSearch}%`;
   const rows = (await sql`
-    SELECT id, created_at, updated_at, name, phone, email, location, service, details, source_page, referrer, status, notes, email_delivered, jsonb_array_length(photos) AS photo_count FROM estimate_intakes
-    WHERE (${status} = 'all' OR status = ${status})
+    SELECT i.id, i.created_at, i.updated_at, i.name, i.phone, i.email, i.location, i.service, i.details,
+      i.source_page, i.referrer, i.status, i.notes, i.email_delivered, jsonb_array_length(i.photos) AS photo_count,
+      coalesce(sales.owner, 'Malik') AS sales_owner,
+      job.next_action, job.due_on::text, job.account,
+      CASE
+        WHEN i.status IN ('won', 'lost', 'archived') THEN NULL
+        WHEN latest.state IN ('failed', 'held') OR latest.kind = 'first_reply' AND latest.reason <> '' THEN 'Needs email review'
+        WHEN latest.state = 'received' THEN 'Incoming reply'
+        WHEN latest.state IN ('pending', 'sending') THEN 'Email queued'
+      END AS sales_update
+    FROM estimate_intakes AS i
+    LEFT JOIN estimate_sales AS sales ON sales.intake_id = i.id
+    LEFT JOIN estimate_job_tracking AS job ON job.intake_id = i.id
+    LEFT JOIN LATERAL (
+      SELECT kind, state, reason FROM estimate_sales_mail
+      WHERE intake_id = i.id ORDER BY created_at DESC LIMIT 1
+    ) AS latest ON true
+    WHERE (${status} = 'all' OR i.status = ${status})
       AND (
         ${normalizedSearch} = '' OR
-        name ILIKE ${like} OR
-        email ILIKE ${like} OR
-        phone ILIKE ${like} OR
-        location ILIKE ${like} OR
-        service ILIKE ${like}
+        i.name ILIKE ${like} OR
+        i.email ILIKE ${like} OR
+        i.phone ILIKE ${like} OR
+        i.location ILIKE ${like} OR
+        i.service ILIKE ${like} OR
+        job.account ILIKE ${like}
       )
-    ORDER BY created_at DESC
+    ORDER BY i.created_at DESC
     LIMIT 250
-  `) as IntakeRow[];
+  `) as IntakeListRow[];
 
-  return rows.map(mapIntake);
+  return rows.map((row) => ({
+    ...mapIntake(row), salesOwner: row.sales_owner, salesUpdate: row.sales_update,
+    nextAction: row.next_action, dueOn: row.due_on, account: row.account,
+  }));
 }
 
 export async function getIntake(id: string) {

@@ -2,6 +2,7 @@ import { november24Pages } from "./november24-content";
 import { detailMoneyPages } from "./detail-content";
 import { novemberProjectPages } from "./november-project-content";
 import { railingPages } from "./railing-content";
+import { smallRoomBudget, smallDrywallPatchBudget } from "./lead-budget-ranges";
 // ===========================================================================
 // "Money pages" — high commercial-intent landing pages built to capture NYC
 // painting search. Each entry is intentionally deep (unique intro, scope, two
@@ -1319,7 +1320,7 @@ export const moneyPages: MoneyPage[] = [
       intro: "Small-scope work is priced simply and affordably:",
       rows: [
         { item: "Accent wall", range: "$350 – $900" },
-        { item: "Single small room", range: "$550 – $1,200" },
+        { item: "Single small room", range: smallRoomBudget },
         { item: "Single large room (walls + trim)", range: "$1,000 – $2,500" },
         { item: "Color consultation", range: "Included" },
       ],
@@ -1467,7 +1468,7 @@ export const moneyPages: MoneyPage[] = [
     cost: {
       intro: "Drywall repair is priced by the number and size of repairs:",
       rows: [
-        { item: "Small hole / few nail pops", range: "$150 – $400" },
+        { item: "Small hole / few nail pops", range: smallDrywallPatchBudget },
         { item: "Multiple patches (per room)", range: "$350 – $900" },
         { item: "Water-damage / ceiling repair", range: "$500 – $2,000" },
         { item: "Section replacement", range: "Quoted on inspection" },
